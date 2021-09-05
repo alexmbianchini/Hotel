@@ -13,7 +13,9 @@ namespace Hotel.Datos
         private SqlConnection conexion = new SqlConnection();
         private SqlCommand comando = new SqlCommand();
 
-        private string cadenaConexion = @"Data Source=sql5103.site4now.net;Initial Catalog = db_a78fa0_hotel; Persist Security Info=True;User ID = db_a78fa0_hotel_admin";
+        //private string cadenaConexion = @"Data Source=sql5103.site4now.net;Initial Catalog = db_a78fa0_hotel; Persist Security Info=True;User ID = db_a78fa0_hotel_admin";
+        private string cadenaConexion = @"Data Source=sql5103.site4now.net;Initial Catalog=db_a78fa0_hotel;User ID=db_a78fa0_hotel_admin;Password=alexlufabri3k1";
+
 
         public DataTable consultar(string consultaSQL)
         {
@@ -28,5 +30,4 @@ namespace Hotel.Datos
             return tabla;
         }
     }
-    }
-}
+ }
