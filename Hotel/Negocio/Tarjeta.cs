@@ -17,5 +17,7 @@ namespace Hotel.Negocio
         public DateTime FechaCaducidad { get; set; }
 
         public string NroPasaporte { get; set; }
+
+        public bool BorradoLogico { get; set; }
     }
 }
