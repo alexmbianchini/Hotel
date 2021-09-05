@@ -56,10 +56,12 @@
     <Compile Include="Negocio\Cochera.cs" />
     <Compile Include="Negocio\Cuenta.cs" />
     <Compile Include="Negocio\DetalleServicioCuenta.cs" />
+    <Compile Include="Negocio\DetalleReserva.cs" />
     <Compile Include="Negocio\Empleado.cs" />
     <Compile Include="Negocio\EstadoReserva.cs" />
     <Compile Include="Negocio\Habitacion.cs" />
     <Compile Include="Negocio\Huesped.cs" />
+    <Compile Include="Negocio\Menu.cs" />
     <Compile Include="Negocio\Puesto.cs" />
     <Compile Include="Negocio\Reserva.cs" />
     <Compile Include="Negocio\Sesion.cs" />
