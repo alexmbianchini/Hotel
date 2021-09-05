@@ -17,6 +17,5 @@ namespace Hotel.Negocio
         public DateTime FechaSalidaTrabajo { get; set; }
         public int Puesto { get; set; }
         public bool BorradoLogico { get; set; }
-
     }
 }
