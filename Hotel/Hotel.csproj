@@ -59,6 +59,7 @@
     <Compile Include="Negocio\EstadoReserva.cs" />
     <Compile Include="Negocio\Habitacion.cs" />
     <Compile Include="Negocio\Huesped.cs" />
+    <Compile Include="Negocio\Menu.cs" />
     <Compile Include="Negocio\Puesto.cs" />
     <Compile Include="Negocio\Reserva.cs" />
     <Compile Include="Negocio\Sesion.cs" />
