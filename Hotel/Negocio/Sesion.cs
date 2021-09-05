@@ -13,5 +13,6 @@ namespace Hotel.Negocio
         public DateTime FechaHoraFin { get; set; }
         public int IdUsuario { get; set; }
         public bool BorradoLogico { get; set; }
+
     }
 }
