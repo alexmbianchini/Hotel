@@ -6,14 +6,12 @@ using System.Threading.Tasks;
 
 namespace Hotel.Negocio
 {
-    class Cuenta
+    class Sesion
     {
-        public int IdCuenta { get; set; }
-        public DateTime FechaHoraFacturacion { get; set; }
-        public int IdReserva { get; set; }
-        public int IdTarjeta { get; set; }
+        public int IdSesion { get; set; }
+        public DateTime FechaHoraInicio { get; set; }
+        public DateTime FechaHoraFin { get; set; }
         public int IdUsuario { get; set; }
         public bool BorradoLogico { get; set; }
-
     }
 }
