@@ -55,6 +55,7 @@
     </Compile>
     <Compile Include="Negocio\Cochera.cs" />
     <Compile Include="Negocio\Cuenta.cs" />
+    <Compile Include="Negocio\DetalleReserva.cs" />
     <Compile Include="Negocio\Empleado.cs" />
     <Compile Include="Negocio\EstadoReserva.cs" />
     <Compile Include="Negocio\Habitacion.cs" />
