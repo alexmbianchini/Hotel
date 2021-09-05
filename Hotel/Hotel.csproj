@@ -62,6 +62,7 @@
     <Compile Include="Negocio\Puesto.cs" />
     <Compile Include="Negocio\Reserva.cs" />
     <Compile Include="Negocio\Sesion.cs" />
+    <Compile Include="Negocio\Tarjeta.cs" />
     <Compile Include="Negocio\TipoDocumento.cs" />
     <Compile Include="Negocio\TipoHabitacion.cs" />
     <Compile Include="Negocio\Usuario.cs" />
