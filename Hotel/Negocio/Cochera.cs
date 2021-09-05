@@ -6,14 +6,12 @@ using System.Threading.Tasks;
 
 namespace Hotel.Negocio
 {
-    class Habitacion
+    class Cochera
     {
         public int Numero { get; set; }
-        public int Piso { get; set; }
-        public int TipoHabitacion { get; set; }
         public float Precio { get; set; }
-        public bool BorradoLogico { get; set; }
         public string Descripcion { get; set; }
-        public bool EstaOcupada { get; set; }
+        public bool BorradoLogico { get; set; }
+
     }
 }
