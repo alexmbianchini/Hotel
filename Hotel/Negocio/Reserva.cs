@@ -22,8 +22,5 @@ namespace Hotel.Negocio
         public int NumeroCochera { get; set; }
         public float PrecioUnitarioCochera { get; set; }
         public bool BorradoLógico { get; set; }
-
     }
 }
-
-
