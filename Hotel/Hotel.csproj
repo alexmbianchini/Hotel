@@ -65,6 +65,7 @@
     <Compile Include="Negocio\Tarjeta.cs" />
     <Compile Include="Negocio\TipoDocumento.cs" />
     <Compile Include="Negocio\TipoHabitacion.cs" />
+    <Compile Include="Negocio\TipoTarjeta.cs" />
     <Compile Include="Negocio\Usuario.cs" />
     <Compile Include="Negocio\Vehiculo.cs" />
     <Compile Include="Presentacion\frmLogin.cs">
