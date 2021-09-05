@@ -13,6 +13,5 @@ namespace Hotel.Negocio
         public string PaisResidencia { get; set; }
         public string NumeroPasaporte { get; set; }
         public bool BorradoLogico { get; set; }
-
     }
 }
