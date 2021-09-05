@@ -11,6 +11,5 @@ namespace Hotel.Negocio
         public int TipoDoc { get; set; }
         public string Descripcion { get; set; }
         public bool BorradoLogico { get; set; }
-
     }
 }
