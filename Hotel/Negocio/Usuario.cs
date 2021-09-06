@@ -44,8 +44,8 @@ namespace Hotel.Negocio
 
         public DataTable RecuperarGrilla()
         {
-            string consulta = "SELECT u.id as id, u.nombre as usuario, e.id_empleado as id_empleado, e.apellido as nombre," +
-                " e.fecha_ingreso_trabajo as fecha_ingreso, p.descripcion as puesto" +
+            string consulta = "SELECT u.id as id, u.nombre as usuario, e.id_empleado as id_empleado, e.apellido as apellido,"+
+                " e.nombre as nombre, e.fecha_ingreso_trabajo as fecha_ingreso, p.descripcion as puesto" +
                 " FROM USUARIOS u JOIN EMPLEADOS e ON (u.id_empleado = e.id_empleado)" +
                 " JOIN PUESTOS p ON (e.puesto = p.cod_puesto)" +
                 " WHERE u.borrado_logico = 0" +

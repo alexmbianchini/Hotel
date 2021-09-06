@@ -58,6 +58,8 @@ namespace Hotel.Presentacion
             combo.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
+      
+
         private void CargarGrilla(DataGridView grilla, DataTable tabla)
         {
             grilla.Rows.Clear();
@@ -67,9 +69,25 @@ namespace Hotel.Presentacion
                                 tabla.Rows[i]["usuario"],
                                 tabla.Rows[i]["id_empleado"],
                                 tabla.Rows[i]["nombre"],
+                                tabla.Rows[i]["apellido"],
                                 tabla.Rows[i]["puesto"],
                                 tabla.Rows[i]["fecha_ingreso"]);
             }
+
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            this.dtpFechaIngreso.Value = DateTime.Today;
+            this.cboIdEmpleado.SelectedIndex = -1;
+            this.cboNombreEmpleado.SelectedIndex = -1;
+            this.cboNombreUsuario.SelectedIndex = -1;
+            this.cboPuesto.SelectedIndex = -1;
+            this.cboUsuario.SelectedIndex = -1;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
 
         }
     }

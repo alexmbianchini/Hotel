@@ -35,7 +35,7 @@ namespace Hotel.Presentacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(646, 450);
+            this.ClientSize = new System.Drawing.Size(664, 450);
             this.Name = "frmUsuarioNuevoEditar";
             this.Text = "Edición";
             this.ResumeLayout(false);

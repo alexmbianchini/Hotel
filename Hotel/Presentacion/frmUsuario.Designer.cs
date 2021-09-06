@@ -30,12 +30,6 @@ namespace Hotel.Presentacion
         private void InitializeComponent()
         {
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
-            this.clmIdUusario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmNombreUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmIdEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmNombreEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmPuesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmFechaIngreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -45,7 +39,7 @@ namespace Hotel.Presentacion
             this.lblIdUsuario = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.lblNombreEmpleado = new System.Windows.Forms.Label();
+            this.lblApellidoEmpleado = new System.Windows.Forms.Label();
             this.lblPuesto = new System.Windows.Forms.Label();
             this.lblFechaIngreso = new System.Windows.Forms.Label();
             this.dtpFechaIngreso = new System.Windows.Forms.DateTimePicker();
@@ -54,6 +48,13 @@ namespace Hotel.Presentacion
             this.cboNombreEmpleado = new System.Windows.Forms.ComboBox();
             this.cboIdEmpleado = new System.Windows.Forms.ComboBox();
             this.cboNombreUsuario = new System.Windows.Forms.ComboBox();
+            this.clmIdUusario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmNombreUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmIdEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmNombreEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmApellidoEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmPuesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmFechaIngreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,15 +66,186 @@ namespace Hotel.Presentacion
             this.clmNombreUsuario,
             this.clmIdEmpleado,
             this.clmNombreEmpleado,
+            this.clmApellidoEmpleado,
             this.clmPuesto,
             this.clmFechaIngreso});
-            this.dgvUsuarios.Location = new System.Drawing.Point(0, 187);
-            this.dgvUsuarios.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvUsuarios.Location = new System.Drawing.Point(-4, 230);
+            this.dgvUsuarios.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvUsuarios.Name = "dgvUsuarios";
             this.dgvUsuarios.RowHeadersWidth = 51;
             this.dgvUsuarios.RowTemplate.Height = 24;
-            this.dgvUsuarios.Size = new System.Drawing.Size(422, 178);
+            this.dgvUsuarios.Size = new System.Drawing.Size(617, 219);
             this.dgvUsuarios.TabIndex = 0;
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Location = new System.Drawing.Point(645, 260);
+            this.btnNuevo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(75, 23);
+            this.btnNuevo.TabIndex = 1;
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.UseVisualStyleBackColor = true;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Location = new System.Drawing.Point(644, 361);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(77, 27);
+            this.btnEditar.TabIndex = 2;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(644, 411);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(77, 27);
+            this.btnEliminar.TabIndex = 3;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(644, 309);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(77, 27);
+            this.btnSalir.TabIndex = 4;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Location = new System.Drawing.Point(423, 182);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(77, 27);
+            this.btnLimpiar.TabIndex = 5;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
+            // btnConsultar
+            // 
+            this.btnConsultar.Location = new System.Drawing.Point(601, 182);
+            this.btnConsultar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(77, 27);
+            this.btnConsultar.TabIndex = 6;
+            this.btnConsultar.Text = "Consultar";
+            this.btnConsultar.UseVisualStyleBackColor = true;
+            // 
+            // lblIdUsuario
+            // 
+            this.lblIdUsuario.AutoSize = true;
+            this.lblIdUsuario.Location = new System.Drawing.Point(64, 50);
+            this.lblIdUsuario.Name = "lblIdUsuario";
+            this.lblIdUsuario.Size = new System.Drawing.Size(74, 17);
+            this.lblIdUsuario.TabIndex = 7;
+            this.lblIdUsuario.Text = "ID Usuario";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(77, 94);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(61, 17);
+            this.label1.TabIndex = 8;
+            this.label1.Text = " Usuario";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(51, 138);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(88, 17);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "ID Empleado";
+            // 
+            // lblApellidoEmpleado
+            // 
+            this.lblApellidoEmpleado.AutoSize = true;
+            this.lblApellidoEmpleado.Location = new System.Drawing.Point(467, 48);
+            this.lblApellidoEmpleado.Name = "lblApellidoEmpleado";
+            this.lblApellidoEmpleado.Size = new System.Drawing.Size(62, 17);
+            this.lblApellidoEmpleado.TabIndex = 10;
+            this.lblApellidoEmpleado.Text = "Apellido ";
+            // 
+            // lblPuesto
+            // 
+            this.lblPuesto.AutoSize = true;
+            this.lblPuesto.Location = new System.Drawing.Point(467, 94);
+            this.lblPuesto.Name = "lblPuesto";
+            this.lblPuesto.Size = new System.Drawing.Size(52, 17);
+            this.lblPuesto.TabIndex = 11;
+            this.lblPuesto.Text = "Puesto";
+            // 
+            // lblFechaIngreso
+            // 
+            this.lblFechaIngreso.AutoSize = true;
+            this.lblFechaIngreso.Location = new System.Drawing.Point(420, 138);
+            this.lblFechaIngreso.Name = "lblFechaIngreso";
+            this.lblFechaIngreso.Size = new System.Drawing.Size(98, 17);
+            this.lblFechaIngreso.TabIndex = 12;
+            this.lblFechaIngreso.Text = "Fecha Ingreso";
+            // 
+            // dtpFechaIngreso
+            // 
+            this.dtpFechaIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaIngreso.Location = new System.Drawing.Point(571, 133);
+            this.dtpFechaIngreso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtpFechaIngreso.Name = "dtpFechaIngreso";
+            this.dtpFechaIngreso.Size = new System.Drawing.Size(121, 22);
+            this.dtpFechaIngreso.TabIndex = 13;
+            // 
+            // cboUsuario
+            // 
+            this.cboUsuario.FormattingEnabled = true;
+            this.cboUsuario.Location = new System.Drawing.Point(169, 48);
+            this.cboUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cboUsuario.Name = "cboUsuario";
+            this.cboUsuario.Size = new System.Drawing.Size(121, 24);
+            this.cboUsuario.TabIndex = 14;
+            // 
+            // cboPuesto
+            // 
+            this.cboPuesto.FormattingEnabled = true;
+            this.cboPuesto.Location = new System.Drawing.Point(571, 91);
+            this.cboPuesto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cboPuesto.Name = "cboPuesto";
+            this.cboPuesto.Size = new System.Drawing.Size(121, 24);
+            this.cboPuesto.TabIndex = 15;
+            // 
+            // cboNombreEmpleado
+            // 
+            this.cboNombreEmpleado.FormattingEnabled = true;
+            this.cboNombreEmpleado.Location = new System.Drawing.Point(571, 48);
+            this.cboNombreEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cboNombreEmpleado.Name = "cboNombreEmpleado";
+            this.cboNombreEmpleado.Size = new System.Drawing.Size(121, 24);
+            this.cboNombreEmpleado.TabIndex = 16;
+            // 
+            // cboIdEmpleado
+            // 
+            this.cboIdEmpleado.FormattingEnabled = true;
+            this.cboIdEmpleado.Location = new System.Drawing.Point(169, 135);
+            this.cboIdEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cboIdEmpleado.Name = "cboIdEmpleado";
+            this.cboIdEmpleado.Size = new System.Drawing.Size(121, 24);
+            this.cboIdEmpleado.TabIndex = 17;
+            // 
+            // cboNombreUsuario
+            // 
+            this.cboNombreUsuario.FormattingEnabled = true;
+            this.cboNombreUsuario.Location = new System.Drawing.Point(169, 91);
+            this.cboNombreUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cboNombreUsuario.Name = "cboNombreUsuario";
+            this.cboNombreUsuario.Size = new System.Drawing.Size(121, 24);
+            this.cboNombreUsuario.TabIndex = 18;
             // 
             // clmIdUusario
             // 
@@ -87,6 +259,7 @@ namespace Hotel.Presentacion
             this.clmNombreUsuario.HeaderText = "Usuario";
             this.clmNombreUsuario.MinimumWidth = 6;
             this.clmNombreUsuario.Name = "clmNombreUsuario";
+            this.clmNombreUsuario.Width = 80;
             // 
             // clmIdEmpleado
             // 
@@ -101,11 +274,18 @@ namespace Hotel.Presentacion
             this.clmNombreEmpleado.MinimumWidth = 6;
             this.clmNombreEmpleado.Name = "clmNombreEmpleado";
             // 
+            // clmApellidoEmpleado
+            // 
+            this.clmApellidoEmpleado.HeaderText = "Apellido";
+            this.clmApellidoEmpleado.MinimumWidth = 6;
+            this.clmApellidoEmpleado.Name = "clmApellidoEmpleado";
+            // 
             // clmPuesto
             // 
             this.clmPuesto.HeaderText = "Puesto";
             this.clmPuesto.MinimumWidth = 6;
             this.clmPuesto.Name = "clmPuesto";
+            this.clmPuesto.Width = 80;
             // 
             // clmFechaIngreso
             // 
@@ -113,185 +293,11 @@ namespace Hotel.Presentacion
             this.clmFechaIngreso.MinimumWidth = 6;
             this.clmFechaIngreso.Name = "clmFechaIngreso";
             // 
-            // btnNuevo
-            // 
-            this.btnNuevo.Location = new System.Drawing.Point(484, 211);
-            this.btnNuevo.Margin = new System.Windows.Forms.Padding(2);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(56, 19);
-            this.btnNuevo.TabIndex = 1;
-            this.btnNuevo.Text = "Nuevo";
-            this.btnNuevo.UseVisualStyleBackColor = true;
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.Location = new System.Drawing.Point(483, 293);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(58, 22);
-            this.btnEditar.TabIndex = 2;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = true;
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Location = new System.Drawing.Point(483, 334);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(58, 22);
-            this.btnEliminar.TabIndex = 3;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.Location = new System.Drawing.Point(483, 251);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(58, 22);
-            this.btnSalir.TabIndex = 4;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.Location = new System.Drawing.Point(317, 148);
-            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(58, 22);
-            this.btnLimpiar.TabIndex = 5;
-            this.btnLimpiar.Text = "Limpiar";
-            this.btnLimpiar.UseVisualStyleBackColor = true;
-            // 
-            // btnConsultar
-            // 
-            this.btnConsultar.Location = new System.Drawing.Point(451, 148);
-            this.btnConsultar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(58, 22);
-            this.btnConsultar.TabIndex = 6;
-            this.btnConsultar.Text = "Consultar";
-            this.btnConsultar.UseVisualStyleBackColor = true;
-            // 
-            // lblIdUsuario
-            // 
-            this.lblIdUsuario.AutoSize = true;
-            this.lblIdUsuario.Location = new System.Drawing.Point(48, 41);
-            this.lblIdUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblIdUsuario.Name = "lblIdUsuario";
-            this.lblIdUsuario.Size = new System.Drawing.Size(57, 13);
-            this.lblIdUsuario.TabIndex = 7;
-            this.lblIdUsuario.Text = "ID Usuario";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 76);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 13);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Nombre Usuario";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(38, 112);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 13);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "ID Empleado";
-            // 
-            // lblNombreEmpleado
-            // 
-            this.lblNombreEmpleado.AutoSize = true;
-            this.lblNombreEmpleado.Location = new System.Drawing.Point(295, 41);
-            this.lblNombreEmpleado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblNombreEmpleado.Name = "lblNombreEmpleado";
-            this.lblNombreEmpleado.Size = new System.Drawing.Size(94, 13);
-            this.lblNombreEmpleado.TabIndex = 10;
-            this.lblNombreEmpleado.Text = "Nombre Empleado";
-            // 
-            // lblPuesto
-            // 
-            this.lblPuesto.AutoSize = true;
-            this.lblPuesto.Location = new System.Drawing.Point(350, 76);
-            this.lblPuesto.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblPuesto.Name = "lblPuesto";
-            this.lblPuesto.Size = new System.Drawing.Size(40, 13);
-            this.lblPuesto.TabIndex = 11;
-            this.lblPuesto.Text = "Puesto";
-            // 
-            // lblFechaIngreso
-            // 
-            this.lblFechaIngreso.AutoSize = true;
-            this.lblFechaIngreso.Location = new System.Drawing.Point(315, 112);
-            this.lblFechaIngreso.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblFechaIngreso.Name = "lblFechaIngreso";
-            this.lblFechaIngreso.Size = new System.Drawing.Size(75, 13);
-            this.lblFechaIngreso.TabIndex = 12;
-            this.lblFechaIngreso.Text = "Fecha Ingreso";
-            // 
-            // dtpFechaIngreso
-            // 
-            this.dtpFechaIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaIngreso.Location = new System.Drawing.Point(428, 108);
-            this.dtpFechaIngreso.Margin = new System.Windows.Forms.Padding(2);
-            this.dtpFechaIngreso.Name = "dtpFechaIngreso";
-            this.dtpFechaIngreso.Size = new System.Drawing.Size(92, 20);
-            this.dtpFechaIngreso.TabIndex = 13;
-            // 
-            // cboUsuario
-            // 
-            this.cboUsuario.FormattingEnabled = true;
-            this.cboUsuario.Location = new System.Drawing.Point(127, 39);
-            this.cboUsuario.Margin = new System.Windows.Forms.Padding(2);
-            this.cboUsuario.Name = "cboUsuario";
-            this.cboUsuario.Size = new System.Drawing.Size(92, 21);
-            this.cboUsuario.TabIndex = 14;
-            // 
-            // cboPuesto
-            // 
-            this.cboPuesto.FormattingEnabled = true;
-            this.cboPuesto.Location = new System.Drawing.Point(428, 74);
-            this.cboPuesto.Margin = new System.Windows.Forms.Padding(2);
-            this.cboPuesto.Name = "cboPuesto";
-            this.cboPuesto.Size = new System.Drawing.Size(92, 21);
-            this.cboPuesto.TabIndex = 15;
-            // 
-            // cboNombreEmpleado
-            // 
-            this.cboNombreEmpleado.FormattingEnabled = true;
-            this.cboNombreEmpleado.Location = new System.Drawing.Point(428, 39);
-            this.cboNombreEmpleado.Margin = new System.Windows.Forms.Padding(2);
-            this.cboNombreEmpleado.Name = "cboNombreEmpleado";
-            this.cboNombreEmpleado.Size = new System.Drawing.Size(92, 21);
-            this.cboNombreEmpleado.TabIndex = 16;
-            // 
-            // cboIdEmpleado
-            // 
-            this.cboIdEmpleado.FormattingEnabled = true;
-            this.cboIdEmpleado.Location = new System.Drawing.Point(127, 110);
-            this.cboIdEmpleado.Margin = new System.Windows.Forms.Padding(2);
-            this.cboIdEmpleado.Name = "cboIdEmpleado";
-            this.cboIdEmpleado.Size = new System.Drawing.Size(92, 21);
-            this.cboIdEmpleado.TabIndex = 17;
-            // 
-            // cboNombreUsuario
-            // 
-            this.cboNombreUsuario.FormattingEnabled = true;
-            this.cboNombreUsuario.Location = new System.Drawing.Point(127, 74);
-            this.cboNombreUsuario.Margin = new System.Windows.Forms.Padding(2);
-            this.cboNombreUsuario.Name = "cboNombreUsuario";
-            this.cboNombreUsuario.Size = new System.Drawing.Size(92, 21);
-            this.cboNombreUsuario.TabIndex = 18;
-            // 
             // frmUsuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.cboNombreUsuario);
             this.Controls.Add(this.cboIdEmpleado);
             this.Controls.Add(this.cboNombreEmpleado);
@@ -300,7 +306,7 @@ namespace Hotel.Presentacion
             this.Controls.Add(this.dtpFechaIngreso);
             this.Controls.Add(this.lblFechaIngreso);
             this.Controls.Add(this.lblPuesto);
-            this.Controls.Add(this.lblNombreEmpleado);
+            this.Controls.Add(this.lblApellidoEmpleado);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblIdUsuario);
@@ -311,7 +317,7 @@ namespace Hotel.Presentacion
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.dgvUsuarios);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmUsuario";
             this.Text = "Usuario";
             this.Load += new System.EventHandler(this.frmUsuario_Load);
@@ -324,12 +330,6 @@ namespace Hotel.Presentacion
         #endregion
 
         private System.Windows.Forms.DataGridView dgvUsuarios;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmIdUusario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmNombreUsuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmIdEmpleado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmNombreEmpleado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmPuesto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmFechaIngreso;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnEliminar;
@@ -339,7 +339,7 @@ namespace Hotel.Presentacion
         private System.Windows.Forms.Label lblIdUsuario;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblNombreEmpleado;
+        private System.Windows.Forms.Label lblApellidoEmpleado;
         private System.Windows.Forms.Label lblPuesto;
         private System.Windows.Forms.Label lblFechaIngreso;
         private System.Windows.Forms.DateTimePicker dtpFechaIngreso;
@@ -348,5 +348,12 @@ namespace Hotel.Presentacion
         private System.Windows.Forms.ComboBox cboNombreEmpleado;
         private System.Windows.Forms.ComboBox cboIdEmpleado;
         private System.Windows.Forms.ComboBox cboNombreUsuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmIdUusario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmNombreUsuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmIdEmpleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmNombreEmpleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmApellidoEmpleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmPuesto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmFechaIngreso;
     }
 }
