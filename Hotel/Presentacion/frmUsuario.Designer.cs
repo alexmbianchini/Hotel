@@ -43,7 +43,7 @@ namespace Hotel.Presentacion
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnConsultar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblUsuario = new System.Windows.Forms.Label();
             this.lblApellidoEmpleado = new System.Windows.Forms.Label();
             this.lblPuesto = new System.Windows.Forms.Label();
             this.lblFechaIngreso = new System.Windows.Forms.Label();
@@ -52,7 +52,7 @@ namespace Hotel.Presentacion
             this.cboApellidoEmpleado = new System.Windows.Forms.ComboBox();
             this.cboNombreUsuario = new System.Windows.Forms.ComboBox();
             this.cboNombreEmpleado = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblNombreEmpleado = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -182,15 +182,15 @@ namespace Hotel.Presentacion
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // lblUsuario
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(60, 39);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 13);
-            this.label1.TabIndex = 8;
-            this.label1.Text = " Usuario";
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Location = new System.Drawing.Point(60, 39);
+            this.lblUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(46, 13);
+            this.lblUsuario.TabIndex = 8;
+            this.lblUsuario.Text = " Usuario";
             // 
             // lblApellidoEmpleado
             // 
@@ -267,15 +267,15 @@ namespace Hotel.Presentacion
             this.cboNombreEmpleado.Size = new System.Drawing.Size(92, 21);
             this.cboNombreEmpleado.TabIndex = 20;
             // 
-            // label2
+            // lblNombreEmpleado
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 102);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 13);
-            this.label2.TabIndex = 19;
-            this.label2.Text = "Nombre Empleado";
+            this.lblNombreEmpleado.AutoSize = true;
+            this.lblNombreEmpleado.Location = new System.Drawing.Point(12, 102);
+            this.lblNombreEmpleado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNombreEmpleado.Name = "lblNombreEmpleado";
+            this.lblNombreEmpleado.Size = new System.Drawing.Size(94, 13);
+            this.lblNombreEmpleado.TabIndex = 19;
+            this.lblNombreEmpleado.Text = "Nombre Empleado";
             // 
             // frmUsuario
             // 
@@ -283,7 +283,7 @@ namespace Hotel.Presentacion
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.cboNombreEmpleado);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblNombreEmpleado);
             this.Controls.Add(this.cboNombreUsuario);
             this.Controls.Add(this.cboApellidoEmpleado);
             this.Controls.Add(this.cboPuesto);
@@ -291,7 +291,7 @@ namespace Hotel.Presentacion
             this.Controls.Add(this.lblFechaIngreso);
             this.Controls.Add(this.lblPuesto);
             this.Controls.Add(this.lblApellidoEmpleado);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnSalir);
@@ -318,7 +318,7 @@ namespace Hotel.Presentacion
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnConsultar;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Label lblApellidoEmpleado;
         private System.Windows.Forms.Label lblPuesto;
         private System.Windows.Forms.Label lblFechaIngreso;
@@ -334,6 +334,6 @@ namespace Hotel.Presentacion
         private System.Windows.Forms.DataGridViewTextBoxColumn clmPuesto;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmFechaIngreso;
         private System.Windows.Forms.ComboBox cboNombreEmpleado;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblNombreEmpleado;
     }
 }
