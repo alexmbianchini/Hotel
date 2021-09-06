@@ -16,7 +16,8 @@ namespace Hotel
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Hotel.Presentacion.frmPrincipal());
+            //Application.Run(new Hotel.Presentacion.frmPrincipal());
+            Application.Run(new Presentacion.frmUsuario());
         }
     }
 }

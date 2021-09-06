@@ -33,5 +33,27 @@ namespace Hotel.Negocio
                 return 0;
             }
         }
+
+        public DataTable RecuperarTodos()
+        {
+            string consulta = "SELECT * FROM USUARIOS WHERE borrado_logico = 0 ORDER BY 4";
+
+            DBHelper oDatos = new DBHelper();
+            return oDatos.consultar(consulta);
+        }
+
+        public DataTable RecuperarGrilla()
+        {
+            string consulta = "SELECT u.id as id, u.nombre as usuario, e.id_empleado as id_empleado, e.apellido as nombre," +
+                " e.fecha_ingreso_trabajo as fecha_ingreso, p.descripcion as puesto" +
+                " FROM USUARIOS u JOIN EMPLEADOS e ON (u.id_empleado = e.id_empleado)" +
+                " JOIN PUESTOS p ON (e.puesto = p.cod_puesto)" +
+                " WHERE u.borrado_logico = 0" +
+                " ORDER BY u.id";
+
+            DBHelper oDatos = new DBHelper();
+            return oDatos.consultar(consulta);
+        }
+
     }
 }
