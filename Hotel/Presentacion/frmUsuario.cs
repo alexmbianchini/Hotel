@@ -30,10 +30,9 @@ namespace Hotel.Presentacion
 
             //Carga de ComboBoxs
             this.CargarCombo(cboNombreUsuario, oUsuario.RecuperarTodos(), "nombre", "id");
-            this.CargarCombo(cboUsuario, oUsuario.RecuperarTodos(), "id", "id");
-            this.CargarCombo(cboIdEmpleado, oEmpleado.RecuperarTodos(), "id_empleado", "id_empleado");
-            this.CargarCombo(cboNombreEmpleado, oEmpleado.RecuperarTodos(), "apellido", "id_empleado");
+            this.CargarCombo(cboApellidoEmpleado, oEmpleado.RecuperarTodos(), "apellido", "id_empleado");
             this.CargarCombo(cboPuesto, oPuesto.RecuperarTodos(), "descripcion", "cod_puesto");
+            this.CargarCombo(cboNombreEmpleado, oEmpleado.RecuperarTodos(), "nombre", "id_empleado");
 
             //Carga de Grilla
             this.CargarGrilla(dgvUsuarios, oUsuario.RecuperarGrilla());
@@ -79,16 +78,12 @@ namespace Hotel.Presentacion
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             this.dtpFechaIngreso.Value = DateTime.Today;
-            this.cboIdEmpleado.SelectedIndex = -1;
-            this.cboNombreEmpleado.SelectedIndex = -1;
+            this.cboApellidoEmpleado.SelectedIndex = -1;
             this.cboNombreUsuario.SelectedIndex = -1;
             this.cboPuesto.SelectedIndex = -1;
-            this.cboUsuario.SelectedIndex = -1;
+            this.cboNombreEmpleado.SelectedIndex = -1;
+            
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
