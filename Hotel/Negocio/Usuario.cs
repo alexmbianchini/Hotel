@@ -55,5 +55,28 @@ namespace Hotel.Negocio
             return oDatos.consultar(consulta);
         }
 
+        public DataTable RecuperarFiltrados(string usuario, string apellido, string nombre, string puesto, string fecha)
+        {
+            string consulta = "SELECT u.id as id, u.nombre as usuario, e.id_empleado as id_empleado, e.apellido as apellido," +
+                " e.nombre as nombre, e.fecha_ingreso_trabajo as fecha_ingreso, p.descripcion as puesto" +
+                " FROM USUARIOS u JOIN EMPLEADOS e ON (u.id_empleado = e.id_empleado)" +
+                " JOIN PUESTOS p ON (e.puesto = p.cod_puesto)" +
+                " WHERE u.borrado_logico = 0";
+
+            if (!string.IsNullOrEmpty(usuario))
+                consulta += " AND u.nombre = " + usuario;
+            if (!string.IsNullOrEmpty(apellido))
+                consulta += " AND e.apellido = " + apellido;
+            if (!string.IsNullOrEmpty(nombre))
+                consulta += " AND e.nombre = " + nombre;
+            if (!string.IsNullOrEmpty(fecha))
+                consulta += " AND CONVERT(datetime, '" + fecha + "', 103) = e.fecha_ingreso_trabajo";
+
+            consulta += " ORDER BY u.id";
+
+            DBHelper oDatos = new DBHelper();
+            DataTable tabla = oDatos.consultar(consulta);
+            return tabla;
+        }
     }
 }

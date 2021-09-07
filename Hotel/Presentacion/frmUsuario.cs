@@ -85,5 +85,28 @@ namespace Hotel.Presentacion
             
         }
 
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            string _usuario, _apellido, _nombre, _puesto;
+            _usuario = _apellido = _nombre = _puesto = string.Empty;
+
+            if (dtpFechaIngreso.Value > DateTime.Today)
+            {
+                MessageBox.Show("Fecha no válida!");
+                dtpFechaIngreso.Focus();
+                return;
+            }
+            if (cboNombreUsuario.SelectedIndex != -1)
+                _usuario = cboNombreUsuario.SelectedValue.ToString();
+            if (cboApellidoEmpleado.SelectedIndex != -1)
+                _apellido = cboApellidoEmpleado.SelectedValue.ToString();
+            if (cboNombreEmpleado.SelectedIndex != -1)
+                _nombre = cboNombreEmpleado.SelectedValue.ToString();
+            if (cboPuesto.SelectedIndex != -1)
+                _puesto = cboPuesto.SelectedValue.ToString();
+
+
+            this.CargarGrilla(dgvUsuarios, oUsuario.RecuperarFiltrados(_usuario, _apellido, _nombre, _puesto, dtpFechaIngreso.Value.ToString()));
+        }
     }
 }

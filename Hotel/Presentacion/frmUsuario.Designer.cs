@@ -177,10 +177,11 @@ namespace Hotel.Presentacion
             this.btnConsultar.Location = new System.Drawing.Point(451, 148);
             this.btnConsultar.Margin = new System.Windows.Forms.Padding(2);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(58, 22);
+            this.btnConsultar.Size = new System.Drawing.Size(67, 22);
             this.btnConsultar.TabIndex = 6;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // lblUsuario
             // 
