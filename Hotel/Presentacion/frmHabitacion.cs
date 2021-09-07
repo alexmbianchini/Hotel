@@ -15,6 +15,7 @@ namespace Hotel.Presentacion
     {
         Habitacion oHabitacion = new Habitacion();
         TipoHabitacion oTipoH = new TipoHabitacion();
+        EstadoHabitacion oEstadoH = new EstadoHabitacion();
 
         public frmHabitacion()
         {
@@ -27,6 +28,7 @@ namespace Hotel.Presentacion
             this.CargarCombo(cboNumero, oHabitacion.RecuperarTodos(), "numero", "numero");
             this.CargarCombo(cboPiso, oHabitacion.RecuperarTodos(), "piso", "numero");
             this.CargarCombo(cboTipo, oTipoH.RecuperarTodos(), "descripcion", "cod_tipo");
+            this.CargarCombo(cboEstado, oEstadoH.RecuperarTodos(), "descripcion", "idEstado");
 
             //Carga Grilla
             this.CargarGrilla(dgvHabitaciones, oHabitacion.RecuperarGrilla());
@@ -61,17 +63,10 @@ namespace Hotel.Presentacion
 
         }
 
-        private void btnLimpiar_Click(object sender, EventArgs e)
-        {
-            this.cboNumero.SelectedIndex = -1;
-            this.cboPiso.SelectedIndex = -1;
-            this.cboTipo.SelectedIndex = -1;
-        }
-
         private void btConsultar_Click(object sender, EventArgs e)
         {
-            string _numero, _piso, _tipo;
-            _numero = _piso = _tipo = string.Empty;
+            string _numero, _piso, _tipo, _estado;
+            _numero = _piso = _tipo = _estado = string.Empty;
 
 
             if (cboNumero.SelectedIndex != -1)
@@ -80,11 +75,19 @@ namespace Hotel.Presentacion
                 _piso = cboPiso.SelectedValue.ToString();
             if (cboTipo.SelectedIndex != -1)
                 _tipo = cboTipo.SelectedValue.ToString();
+            if (cboEstado.SelectedIndex != -1)
+                _estado = cboEstado.SelectedValue.ToString();
 
 
-            this.CargarGrilla(dgvHabitaciones, oHabitacion.RecuperarFiltrados(_numero, _piso, _tipo));
+            this.CargarGrilla(dgvHabitaciones, oHabitacion.RecuperarFiltrados(_numero, _piso, _tipo, _estado));
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            this.cboNumero.SelectedIndex = -1;
+            this.cboPiso.SelectedIndex = -1;
+            this.cboTipo.SelectedIndex = -1;
+            this.cboEstado.SelectedIndex = -1;
         }
     }
-
-
 }
