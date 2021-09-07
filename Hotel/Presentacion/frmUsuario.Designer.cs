@@ -67,12 +67,12 @@ namespace Hotel.Presentacion
             this.clmApellidoEmpleado,
             this.clmPuesto,
             this.clmFechaIngreso});
-            this.dgvUsuarios.Location = new System.Drawing.Point(-3, 187);
-            this.dgvUsuarios.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvUsuarios.Location = new System.Drawing.Point(-4, 230);
+            this.dgvUsuarios.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvUsuarios.Name = "dgvUsuarios";
             this.dgvUsuarios.RowHeadersWidth = 51;
             this.dgvUsuarios.RowTemplate.Height = 24;
-            this.dgvUsuarios.Size = new System.Drawing.Size(463, 178);
+            this.dgvUsuarios.Size = new System.Drawing.Size(617, 219);
             this.dgvUsuarios.TabIndex = 0;
             // 
             // clmIdUusario
@@ -101,12 +101,14 @@ namespace Hotel.Presentacion
             this.clmNombreEmpleado.HeaderText = "Nombre";
             this.clmNombreEmpleado.MinimumWidth = 6;
             this.clmNombreEmpleado.Name = "clmNombreEmpleado";
+            this.clmNombreEmpleado.Width = 125;
             // 
             // clmApellidoEmpleado
             // 
             this.clmApellidoEmpleado.HeaderText = "Apellido";
             this.clmApellidoEmpleado.MinimumWidth = 6;
             this.clmApellidoEmpleado.Name = "clmApellidoEmpleado";
+            this.clmApellidoEmpleado.Width = 125;
             // 
             // clmPuesto
             // 
@@ -120,53 +122,54 @@ namespace Hotel.Presentacion
             this.clmFechaIngreso.HeaderText = "Fecha Ingreso";
             this.clmFechaIngreso.MinimumWidth = 6;
             this.clmFechaIngreso.Name = "clmFechaIngreso";
+            this.clmFechaIngreso.Width = 125;
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(484, 211);
-            this.btnNuevo.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNuevo.Location = new System.Drawing.Point(645, 260);
+            this.btnNuevo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(56, 19);
+            this.btnNuevo.Size = new System.Drawing.Size(75, 23);
             this.btnNuevo.TabIndex = 1;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(483, 293);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEditar.Location = new System.Drawing.Point(645, 308);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(58, 22);
+            this.btnEditar.Size = new System.Drawing.Size(77, 27);
             this.btnEditar.TabIndex = 2;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(483, 334);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEliminar.Location = new System.Drawing.Point(645, 357);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(58, 22);
+            this.btnEliminar.Size = new System.Drawing.Size(77, 27);
             this.btnEliminar.TabIndex = 3;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(483, 251);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSalir.Location = new System.Drawing.Point(645, 412);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(58, 22);
+            this.btnSalir.Size = new System.Drawing.Size(77, 27);
             this.btnSalir.TabIndex = 4;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(317, 148);
-            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLimpiar.Location = new System.Drawing.Point(423, 182);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(58, 22);
+            this.btnLimpiar.Size = new System.Drawing.Size(77, 27);
             this.btnLimpiar.TabIndex = 5;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
@@ -174,10 +177,10 @@ namespace Hotel.Presentacion
             // 
             // btnConsultar
             // 
-            this.btnConsultar.Location = new System.Drawing.Point(451, 148);
-            this.btnConsultar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnConsultar.Location = new System.Drawing.Point(601, 182);
+            this.btnConsultar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(67, 22);
+            this.btnConsultar.Size = new System.Drawing.Size(89, 27);
             this.btnConsultar.TabIndex = 6;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = true;
@@ -186,103 +189,98 @@ namespace Hotel.Presentacion
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(60, 39);
-            this.lblUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUsuario.Location = new System.Drawing.Point(80, 48);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(46, 13);
+            this.lblUsuario.Size = new System.Drawing.Size(61, 17);
             this.lblUsuario.TabIndex = 8;
             this.lblUsuario.Text = " Usuario";
             // 
             // lblApellidoEmpleado
             // 
             this.lblApellidoEmpleado.AutoSize = true;
-            this.lblApellidoEmpleado.Location = new System.Drawing.Point(12, 71);
-            this.lblApellidoEmpleado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblApellidoEmpleado.Location = new System.Drawing.Point(16, 87);
             this.lblApellidoEmpleado.Name = "lblApellidoEmpleado";
-            this.lblApellidoEmpleado.Size = new System.Drawing.Size(94, 13);
+            this.lblApellidoEmpleado.Size = new System.Drawing.Size(125, 17);
             this.lblApellidoEmpleado.TabIndex = 10;
             this.lblApellidoEmpleado.Text = "Apellido Empleado";
             // 
             // lblPuesto
             // 
             this.lblPuesto.AutoSize = true;
-            this.lblPuesto.Location = new System.Drawing.Point(348, 39);
-            this.lblPuesto.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPuesto.Location = new System.Drawing.Point(464, 48);
             this.lblPuesto.Name = "lblPuesto";
-            this.lblPuesto.Size = new System.Drawing.Size(40, 13);
+            this.lblPuesto.Size = new System.Drawing.Size(52, 17);
             this.lblPuesto.TabIndex = 11;
             this.lblPuesto.Text = "Puesto";
             // 
             // lblFechaIngreso
             // 
             this.lblFechaIngreso.AutoSize = true;
-            this.lblFechaIngreso.Location = new System.Drawing.Point(313, 75);
-            this.lblFechaIngreso.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblFechaIngreso.Location = new System.Drawing.Point(417, 92);
             this.lblFechaIngreso.Name = "lblFechaIngreso";
-            this.lblFechaIngreso.Size = new System.Drawing.Size(75, 13);
+            this.lblFechaIngreso.Size = new System.Drawing.Size(98, 17);
             this.lblFechaIngreso.TabIndex = 12;
             this.lblFechaIngreso.Text = "Fecha Ingreso";
             // 
             // dtpFechaIngreso
             // 
             this.dtpFechaIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaIngreso.Location = new System.Drawing.Point(426, 71);
-            this.dtpFechaIngreso.Margin = new System.Windows.Forms.Padding(2);
+            this.dtpFechaIngreso.Location = new System.Drawing.Point(568, 87);
+            this.dtpFechaIngreso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpFechaIngreso.Name = "dtpFechaIngreso";
-            this.dtpFechaIngreso.Size = new System.Drawing.Size(92, 20);
+            this.dtpFechaIngreso.Size = new System.Drawing.Size(121, 22);
             this.dtpFechaIngreso.TabIndex = 13;
             // 
             // cboPuesto
             // 
             this.cboPuesto.FormattingEnabled = true;
-            this.cboPuesto.Location = new System.Drawing.Point(426, 37);
-            this.cboPuesto.Margin = new System.Windows.Forms.Padding(2);
+            this.cboPuesto.Location = new System.Drawing.Point(568, 46);
+            this.cboPuesto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboPuesto.Name = "cboPuesto";
-            this.cboPuesto.Size = new System.Drawing.Size(92, 21);
+            this.cboPuesto.Size = new System.Drawing.Size(121, 24);
             this.cboPuesto.TabIndex = 15;
             // 
             // cboApellidoEmpleado
             // 
             this.cboApellidoEmpleado.FormattingEnabled = true;
-            this.cboApellidoEmpleado.Location = new System.Drawing.Point(129, 68);
-            this.cboApellidoEmpleado.Margin = new System.Windows.Forms.Padding(2);
+            this.cboApellidoEmpleado.Location = new System.Drawing.Point(172, 84);
+            this.cboApellidoEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboApellidoEmpleado.Name = "cboApellidoEmpleado";
-            this.cboApellidoEmpleado.Size = new System.Drawing.Size(92, 21);
+            this.cboApellidoEmpleado.Size = new System.Drawing.Size(121, 24);
             this.cboApellidoEmpleado.TabIndex = 16;
             // 
             // cboNombreUsuario
             // 
             this.cboNombreUsuario.FormattingEnabled = true;
-            this.cboNombreUsuario.Location = new System.Drawing.Point(129, 36);
-            this.cboNombreUsuario.Margin = new System.Windows.Forms.Padding(2);
+            this.cboNombreUsuario.Location = new System.Drawing.Point(172, 44);
+            this.cboNombreUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboNombreUsuario.Name = "cboNombreUsuario";
-            this.cboNombreUsuario.Size = new System.Drawing.Size(92, 21);
+            this.cboNombreUsuario.Size = new System.Drawing.Size(121, 24);
             this.cboNombreUsuario.TabIndex = 18;
             // 
             // cboNombreEmpleado
             // 
             this.cboNombreEmpleado.FormattingEnabled = true;
-            this.cboNombreEmpleado.Location = new System.Drawing.Point(129, 102);
-            this.cboNombreEmpleado.Margin = new System.Windows.Forms.Padding(2);
+            this.cboNombreEmpleado.Location = new System.Drawing.Point(172, 126);
+            this.cboNombreEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboNombreEmpleado.Name = "cboNombreEmpleado";
-            this.cboNombreEmpleado.Size = new System.Drawing.Size(92, 21);
+            this.cboNombreEmpleado.Size = new System.Drawing.Size(121, 24);
             this.cboNombreEmpleado.TabIndex = 20;
             // 
             // lblNombreEmpleado
             // 
             this.lblNombreEmpleado.AutoSize = true;
-            this.lblNombreEmpleado.Location = new System.Drawing.Point(12, 102);
-            this.lblNombreEmpleado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNombreEmpleado.Location = new System.Drawing.Point(16, 126);
             this.lblNombreEmpleado.Name = "lblNombreEmpleado";
-            this.lblNombreEmpleado.Size = new System.Drawing.Size(94, 13);
+            this.lblNombreEmpleado.Size = new System.Drawing.Size(125, 17);
             this.lblNombreEmpleado.TabIndex = 19;
             this.lblNombreEmpleado.Text = "Nombre Empleado";
             // 
             // frmUsuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.cboNombreEmpleado);
             this.Controls.Add(this.lblNombreEmpleado);
             this.Controls.Add(this.cboNombreUsuario);
@@ -300,7 +298,7 @@ namespace Hotel.Presentacion
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.dgvUsuarios);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmUsuario";
             this.Text = "Usuario";
             this.Load += new System.EventHandler(this.frmUsuario_Load);
