@@ -16,5 +16,15 @@ namespace Hotel.Presentacion
         {
             InitializeComponent();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmUsuarioNuevoEditar_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
