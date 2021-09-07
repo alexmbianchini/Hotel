@@ -11,7 +11,6 @@ namespace Hotel.Negocio
     class Usuario
     {
         public int Id { get; set; }
-        public DateTime Caducidad { get; set; }
         public string Contrasena { get; set; }
         public string Nombre { get; set; }
         public int IdEmpleado { get; set; }

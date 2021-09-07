@@ -16,7 +16,7 @@ namespace Hotel.Negocio
         public float Precio { get; set; }
         public bool BorradoLogico { get; set; }
         public string Descripcion { get; set; }
-        public bool EstaOcupada { get; set; }
+        public bool Estado { get; set; }
 
         public DataTable RecuperarTodos()
         {
@@ -28,7 +28,7 @@ namespace Hotel.Negocio
 
         public DataTable RecuperarGrilla()
         {
-            string consulta = "SELECT h.numero, h.esta_ocupada as estado, h.piso, h.descripcion as descripcion, h.precio, t.descripcion as tipo" +
+            string consulta = "SELECT h.numero, h.estado as estado, h.piso, h.descripcion as descripcion, h.precio, t.descripcion as tipo" +
                 " FROM HABITACIONES h JOIN TIPO_HABITACION t ON(h.tipo_habitacion = t.cod_tipo)" +
                 " WHERE h.borrado_logico = 0" +
                 " ORDER BY 1";
@@ -39,7 +39,7 @@ namespace Hotel.Negocio
         }
         public DataTable RecuperarFiltrados(string numero, string piso, string tipo)
         {
-            string consulta = "SELECT h.numero, h.esta_ocupada as estado, h.piso, h.descripcion as descripcion, h.precio, t.descripcion as tipo" +
+            string consulta = "SELECT h.numero, h.estado as estado, h.piso, h.descripcion as descripcion, h.precio, t.descripcion as tipo" +
                 " FROM HABITACIONES h JOIN TIPO_HABITACION t ON(h.tipo_habitacion = t.cod_tipo)" +
                 " WHERE h.borrado_logico = 0";
 
