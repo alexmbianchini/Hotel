@@ -77,5 +77,37 @@ namespace Hotel.Negocio
             DataTable tabla = oDatos.consultar(consulta);
             return tabla;
         }
+
+        public string validarUsuarioExistente(string nombre)
+        {
+
+            string consulta = "SELECT * FROM Usuarios WHERE nombre ='" + nombre + "'";
+
+            DBHelper oDatos = new DBHelper();
+            DataTable tabla = oDatos.consultar(consulta);
+            if (tabla.Rows.Count > 0)
+            {
+                return string.Empty;
+            }
+            else
+            {
+                return nombre;
+            }
+        }
+
+        internal bool Crear(Usuario oUsuario)
+        {
+            string consulta = "INSERT INTO USUARIOS (id, contraseña, nombre, id_empleado, borrado_logico)" +
+                " VALUES (" +
+                 " '" + oUsuario.Id + "'," +
+                 " '" + oUsuario.Contrasena + "'," +
+                 " '" + oUsuario.Nombre + "'," +
+                 " '" + oUsuario.IdEmpleado + "', 0);";
+
+            DBHelper oDatos = new DBHelper();
+            oDatos.consultar(consulta);
+            return true;
+        }
+
     }
 }

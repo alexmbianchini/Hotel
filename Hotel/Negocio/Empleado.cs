@@ -27,5 +27,39 @@ namespace Hotel.Negocio
             DBHelper oDatos = new DBHelper();
             return oDatos.consultar(consulta);
         }
+
+        public string validarEmpleadoExistente(string nroDoc, string tipoDoc){
+
+            string consulta = "SELECT * FROM EMPLEADOS WHERE nro_doc ='" + nroDoc + "' AND tipo_doc= '"+ tipoDoc +"'";
+
+            DBHelper oDatos = new DBHelper();
+            DataTable tabla = oDatos.consultar(consulta);
+            if (tabla.Rows.Count > 0)
+            {
+                return string.Empty;
+            }
+            else
+            {
+                return nroDoc;
+            }
+        }
+
+        internal bool Crear(Empleado oEmpleado)
+        {
+            string consulta = "INSERT INTO EMPLEADOS (id_empleado, tipo_doc, nro_doc, apellido, nombre, fecha_ingreso_trabajo, fecha_salida_trabajo, puesto, borrado_logico)" +
+                " VALUES (" +
+                " '" + oEmpleado.IdEmpleado + "'," +
+                " '" + oEmpleado.TipoDoc + "'," +
+                " '" + oEmpleado.NroDoc + "'," +
+                " '" + oEmpleado.Apellido + "'," +
+                " '" + oEmpleado.Nombre + "'," +
+                " '" + oEmpleado.FechaIngresoTrabajo + "'," +
+                " Null," +
+                " '" + oEmpleado.Puesto + "', 0)";
+
+            DBHelper oDatos = new DBHelper();
+            oDatos.consultar(consulta);
+            return true;
+        }
     }
 }

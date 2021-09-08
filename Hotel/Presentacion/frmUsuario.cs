@@ -108,5 +108,17 @@ namespace Hotel.Presentacion
 
             this.CargarGrilla(dgvUsuarios, oUsuario.RecuperarFiltrados(_usuario, _apellido, _nombre, _puesto, dtpFechaIngreso.Value.ToString()));
         }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            frmUsuarioNuevoEditar frmNuevo = new frmUsuarioNuevoEditar();
+
+            frmNuevo.Show();
+        }
+
+        private void dgvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
