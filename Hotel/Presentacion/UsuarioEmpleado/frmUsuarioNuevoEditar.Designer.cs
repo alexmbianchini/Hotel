@@ -1,7 +1,7 @@
 ﻿
 namespace Hotel.Presentacion
 {
-    partial class frmUsuarioNuevoEditar
+    partial class frmUsuarioNuevo
     {
         /// <summary>
         /// Required designer variable.
@@ -188,6 +188,7 @@ namespace Hotel.Presentacion
             this.btnCancelar.TabIndex = 21;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // lblNumeroDoc
             // 
@@ -198,7 +199,7 @@ namespace Hotel.Presentacion
             this.lblNumeroDoc.TabIndex = 22;
             this.lblNumeroDoc.Text = "Número Documento  *";
             // 
-            // frmUsuarioNuevoEditar
+            // frmUsuarioNuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -221,8 +222,8 @@ namespace Hotel.Presentacion
             this.Controls.Add(this.lblTipoDoc);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblUsuario);
-            this.Name = "frmUsuarioNuevoEditar";
-            this.Text = "Edición";
+            this.Name = "frmUsuarioNuevo";
+            this.Text = "Nuevo Empleado";
             this.Load += new System.EventHandler(this.frmUsuarioNuevoEditar_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

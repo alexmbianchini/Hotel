@@ -66,10 +66,10 @@
     <Compile Include="Negocio\TipoTarjeta.cs" />
     <Compile Include="Negocio\Usuario.cs" />
     <Compile Include="Negocio\Vehiculo.cs" />
-    <Compile Include="Presentacion\frmHabitacion.cs">
+    <Compile Include="Presentacion\Habitacion\frmHabitacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\frmHabitacion.Designer.cs">
+    <Compile Include="Presentacion\Habitacion\frmHabitacion.Designer.cs">
       <DependentUpon>frmHabitacion.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\frmLogin.cs">
@@ -78,10 +78,10 @@
     <Compile Include="Presentacion\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\frmNuevaHabitacion.cs">
+    <Compile Include="Presentacion\Habitacion\frmNuevaHabitacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\frmNuevaHabitacion.Designer.cs">
+    <Compile Include="Presentacion\Habitacion\frmNuevaHabitacion.Designer.cs">
       <DependentUpon>frmNuevaHabitacion.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\frmPrincipal.cs">
@@ -90,36 +90,45 @@
     <Compile Include="Presentacion\frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\frmUsuario.cs">
+    <Compile Include="Presentacion\UsuarioEmpleado\frmUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\frmUsuario.Designer.cs">
+    <Compile Include="Presentacion\UsuarioEmpleado\frmUsuario.Designer.cs">
       <DependentUpon>frmUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\frmUsuarioNuevoEditar.cs">
+    <Compile Include="Presentacion\UsuarioEmpleado\frmUsuarioEditar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\frmUsuarioNuevoEditar.Designer.cs">
+    <Compile Include="Presentacion\UsuarioEmpleado\frmUsuarioEditar.Designer.cs">
+      <DependentUpon>frmUsuarioEditar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\UsuarioEmpleado\frmUsuarioNuevoEditar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\UsuarioEmpleado\frmUsuarioNuevoEditar.Designer.cs">
       <DependentUpon>frmUsuarioNuevoEditar.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Presentacion\frmHabitacion.resx">
+    <EmbeddedResource Include="Presentacion\Habitacion\frmHabitacion.resx">
       <DependentUpon>frmHabitacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\frmNuevaHabitacion.resx">
+    <EmbeddedResource Include="Presentacion\Habitacion\frmNuevaHabitacion.resx">
       <DependentUpon>frmNuevaHabitacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\frmUsuario.resx">
+    <EmbeddedResource Include="Presentacion\UsuarioEmpleado\frmUsuario.resx">
       <DependentUpon>frmUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\frmUsuarioNuevoEditar.resx">
+    <EmbeddedResource Include="Presentacion\UsuarioEmpleado\frmUsuarioEditar.resx">
+      <DependentUpon>frmUsuarioEditar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\UsuarioEmpleado\frmUsuarioNuevoEditar.resx">
       <DependentUpon>frmUsuarioNuevoEditar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

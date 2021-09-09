@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Hotel.Presentacion
 {
-    public partial class frmUsuarioNuevoEditar : Form
+    public partial class frmUsuarioNuevo : Form
     {
         // Instanciar objetos necesarios
         Usuario oUsuario = new Usuario();
@@ -19,7 +19,7 @@ namespace Hotel.Presentacion
         TipoDocumento oTipoDoc = new TipoDocumento();
         Puesto oPuesto = new Puesto();
 
-        public frmUsuarioNuevoEditar()
+        public frmUsuarioNuevo()
         {
             InitializeComponent();
         }
@@ -107,9 +107,19 @@ namespace Hotel.Presentacion
                 return;
             }
 
-            // Validar que las dos Contraseñas sean iguales
-            this.ValidarConfirmacionPassword(this.txtPassword.Text, this.txtConfirmarPassword.Text);
 
+
+
+            // Validar que las dos Contraseñas sean iguales
+            bool _validacion = this.ValidarConfirmacionPassword(this.txtPassword.Text, this.txtConfirmarPassword.Text);
+
+            if (_validacion == false)
+            {
+                MessageBox.Show("Las Contraseñas no coinciden");
+                this.txtConfirmarPassword.Focus();
+                this.txtConfirmarPassword.Clear();
+                return;
+            }
 
             // Validar que no exista un empleado con es tipo y número de documento
             string _nroDoc = this.oEmpleado.validarEmpleadoExistente(this.txtNumeroDoc.Text, this.cboTipoDoc.SelectedValue.ToString());
@@ -138,8 +148,8 @@ namespace Hotel.Presentacion
 
 
             // Generar los id's de Usuario y Empleado
-            int _idUsuario = this.GenerarId(this.oUsuario.RecuperarTodos());
-            int _idEmpleado = this.GenerarId(this.oEmpleado.RecuperarTodos());
+            int _idUsuario = this.GenerarId(this.oUsuario.RecuperarIds());
+            int _idEmpleado = this.GenerarId(this.oEmpleado.RecuperarIds());
 
 
             // Asignar valores a los atributos de los objetos
@@ -181,17 +191,15 @@ namespace Hotel.Presentacion
         }
 
         // Valida coincidencia de contraseñas
-        private void ValidarConfirmacionPassword(string Password, string Confirmacion)
+        private bool ValidarConfirmacionPassword(string Password, string Confirmacion)
         {
             if (Password == Confirmacion)
             {
-                return;
+                return true;
             }
             else
             {
-                MessageBox.Show("Las Contraseñas no coinciden");
-                this.txtConfirmarPassword.Focus();
-                return;
+                return false;
             }
         }
 
@@ -201,6 +209,14 @@ namespace Hotel.Presentacion
             int id = tabla.Rows.Count + 1;
 
             return id;
-        } 
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Seguro que desea Cancelar la Acción?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                this.Close();
+            }
+        }
     }
 }

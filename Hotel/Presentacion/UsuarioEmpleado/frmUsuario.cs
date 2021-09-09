@@ -1,4 +1,5 @@
 ﻿using Hotel.Negocio;
+using Hotel.Presentacion.UsuarioEmpleado;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -111,13 +112,41 @@ namespace Hotel.Presentacion
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            frmUsuarioNuevoEditar frmNuevo = new frmUsuarioNuevoEditar();
+            frmUsuarioNuevo frmNuevo = new frmUsuarioNuevo();
 
             frmNuevo.Show();
         }
 
         private void dgvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Seguro que desea habilitar/deshabilitar el usuario seleccionado?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                this.oUsuario.Id = (int)dgvUsuarios.CurrentRow.Cells["clmIdUsuario"].Value;
+                this.oEmpleado.IdEmpleado = (int)dgvUsuarios.CurrentRow.Cells["clmIdEmpleado"].Value;
+                this.oEmpleado.FechaSalidaTrabajo = DateTime.Today;
+
+                if (oEmpleado.Eliminar(oEmpleado) && oUsuario.Eliminar(oUsuario))
+                {
+                    MessageBox.Show("Empleado Eliminado con Éxito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Error al eliminar el Empleado", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            frmUsuarioEditar oEditar = new frmUsuarioEditar(Convert.ToInt32(dgvUsuarios.CurrentRow.Cells["clmIdUsuario"].Value), Convert.ToInt32(dgvUsuarios.CurrentRow.Cells["clmIdEmpleado"].Value));
+            oEditar.ShowDialog();
+
 
         }
     }

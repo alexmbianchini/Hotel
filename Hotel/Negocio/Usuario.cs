@@ -41,6 +41,23 @@ namespace Hotel.Negocio
             return oDatos.consultar(consulta);
         }
 
+        public DataTable RecuperarIds()
+        {
+            string consulta = "SELECT Id FROM USUARIOS";
+
+            DBHelper oDatos = new DBHelper();
+            return oDatos.consultar(consulta);
+        }
+
+
+        public DataTable RecuperarPorId(int id)
+        {
+            string consulta = "SELECT nombre FROM USUARIOS" +
+                " WHERE id=" + id;
+
+            DBHelper oDatos = new DBHelper();
+            return oDatos.consultar(consulta);
+        }
         public DataTable RecuperarGrilla()
         {
             string consulta = "SELECT u.id as id, u.nombre as usuario, e.id_empleado as id_empleado, e.apellido as apellido,"+
@@ -109,5 +126,46 @@ namespace Hotel.Negocio
             return true;
         }
 
+        internal bool Eliminar(Usuario oUsuario)
+        {
+            string consulta = "UPDATE USUARIOS SET borrado_logico = 1" +
+                " WHERE id =" + oUsuario.Id;
+
+            DBHelper oDatos = new DBHelper();
+            oDatos.consultar(consulta);
+            return true;
+        }
+
+        internal bool Modificar(Usuario oUsuario)
+        {
+            string consulta = "UPDATE USUARIOS SET " +
+                " contraseña = '" + oUsuario.Contrasena + "'," +
+                " nombre = '" + oUsuario.Nombre + "'" +
+                " WHERE id = " + oUsuario.Id;
+
+            DBHelper oDatos = new DBHelper();
+            oDatos.consultar(consulta);
+            return true;
+        }
+
+        public int validarPassword(int id, string clave)
+        {
+
+            string consulta = "SELECT * FROM Usuarios WHERE id ='" + id + "' AND contraseña ='" + clave + "'";
+
+            DBHelper oDatos = new DBHelper();
+            DataTable tabla = oDatos.consultar(consulta);
+            if (tabla.Rows.Count > 0)
+            {
+                return (int)tabla.Rows[0][0];
+            }
+
+            else
+            {
+                return 0;
+            }
+        }
+
     }
+
 }

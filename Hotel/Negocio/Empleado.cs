@@ -28,6 +28,24 @@ namespace Hotel.Negocio
             return oDatos.consultar(consulta);
         }
 
+        public DataTable RecuperarIds()
+        {
+            string consulta = "SELECT id_empleado FROM EMPLEADOS";
+
+            DBHelper oDatos = new DBHelper();
+            return oDatos.consultar(consulta);
+        }
+
+        public DataTable RecuperarPorId(int id)
+        {
+            string consulta = "SELECT id_empleado, tipo_doc, nro_doc, apellido, nombre, puesto" +
+                " FROM EMPLEADOS" +
+                " WHERE id_empleado =" + id;
+
+            DBHelper oDatos = new DBHelper();
+            return oDatos.consultar(consulta);
+        }
+
         public string validarEmpleadoExistente(string nroDoc, string tipoDoc){
 
             string consulta = "SELECT * FROM EMPLEADOS WHERE nro_doc ='" + nroDoc + "' AND tipo_doc= '"+ tipoDoc +"'";
@@ -56,6 +74,32 @@ namespace Hotel.Negocio
                 " '" + oEmpleado.FechaIngresoTrabajo + "'," +
                 " Null," +
                 " '" + oEmpleado.Puesto + "', 0)";
+
+            DBHelper oDatos = new DBHelper();
+            oDatos.consultar(consulta);
+            return true;
+        }
+
+        internal bool Eliminar(Empleado oEmpleado)
+        {
+            string consulta = "UPDATE EMPLEADOS SET borrado_logico = 1," +
+                " fecha_salida_trabajo = '" + oEmpleado.FechaSalidaTrabajo +"'"+
+                " WHERE id_empleado =" + oEmpleado.IdEmpleado;
+
+            DBHelper oDatos = new DBHelper();
+            oDatos.consultar(consulta);
+            return true;
+        }
+
+        internal bool Modificar(Empleado oEmpleado)
+        {
+            string consulta = "UPDATE EMPLEADOS SET " +
+                " tipo_doc = '" + oEmpleado.TipoDoc + "'," +
+                " nro_doc = '" + oEmpleado.NroDoc + "'," +
+                " apellido = '" + oEmpleado.Apellido + "'," +
+                " nombre = '" + oEmpleado.Nombre + "', " +
+                " puesto = '" + oEmpleado.Puesto + "'" +
+                " WHERE id_empleado = " + oEmpleado.IdEmpleado;
 
             DBHelper oDatos = new DBHelper();
             oDatos.consultar(consulta);

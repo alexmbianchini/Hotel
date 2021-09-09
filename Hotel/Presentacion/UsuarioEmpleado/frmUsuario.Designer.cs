@@ -30,7 +30,7 @@ namespace Hotel.Presentacion
         private void InitializeComponent()
         {
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
-            this.clmIdUusario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmIdUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmNombreUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmIdEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmNombreEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,7 +60,7 @@ namespace Hotel.Presentacion
             // 
             this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.clmIdUusario,
+            this.clmIdUsuario,
             this.clmNombreUsuario,
             this.clmIdEmpleado,
             this.clmNombreEmpleado,
@@ -72,16 +72,17 @@ namespace Hotel.Presentacion
             this.dgvUsuarios.Name = "dgvUsuarios";
             this.dgvUsuarios.RowHeadersWidth = 51;
             this.dgvUsuarios.RowTemplate.Height = 24;
+            this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUsuarios.Size = new System.Drawing.Size(651, 219);
             this.dgvUsuarios.TabIndex = 0;
             this.dgvUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellContentClick);
             // 
-            // clmIdUusario
+            // clmIdUsuario
             // 
-            this.clmIdUusario.HeaderText = "ID";
-            this.clmIdUusario.MinimumWidth = 6;
-            this.clmIdUusario.Name = "clmIdUusario";
-            this.clmIdUusario.Width = 30;
+            this.clmIdUsuario.HeaderText = "ID";
+            this.clmIdUsuario.MinimumWidth = 6;
+            this.clmIdUsuario.Name = "clmIdUsuario";
+            this.clmIdUsuario.Width = 30;
             // 
             // clmNombreUsuario
             // 
@@ -145,6 +146,7 @@ namespace Hotel.Presentacion
             this.btnEditar.TabIndex = 2;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnEliminar
             // 
@@ -155,6 +157,7 @@ namespace Hotel.Presentacion
             this.btnEliminar.TabIndex = 3;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnSalir
             // 
@@ -327,14 +330,14 @@ namespace Hotel.Presentacion
         private System.Windows.Forms.ComboBox cboPuesto;
         private System.Windows.Forms.ComboBox cboApellidoEmpleado;
         private System.Windows.Forms.ComboBox cboNombreUsuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmIdUusario;
+        private System.Windows.Forms.ComboBox cboNombreEmpleado;
+        private System.Windows.Forms.Label lblNombreEmpleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmIdUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmNombreUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmIdEmpleado;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmNombreEmpleado;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmApellidoEmpleado;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmPuesto;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmFechaIngreso;
-        private System.Windows.Forms.ComboBox cboNombreEmpleado;
-        private System.Windows.Forms.Label lblNombreEmpleado;
     }
 }
