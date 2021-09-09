@@ -72,7 +72,7 @@ namespace Hotel.Presentacion
             this.dgvUsuarios.Name = "dgvUsuarios";
             this.dgvUsuarios.RowHeadersWidth = 51;
             this.dgvUsuarios.RowTemplate.Height = 24;
-            this.dgvUsuarios.Size = new System.Drawing.Size(617, 219);
+            this.dgvUsuarios.Size = new System.Drawing.Size(651, 219);
             this.dgvUsuarios.TabIndex = 0;
             this.dgvUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellContentClick);
             // 
@@ -127,7 +127,7 @@ namespace Hotel.Presentacion
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(645, 260);
+            this.btnNuevo.Location = new System.Drawing.Point(701, 260);
             this.btnNuevo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(75, 23);
@@ -138,7 +138,7 @@ namespace Hotel.Presentacion
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(645, 308);
+            this.btnEditar.Location = new System.Drawing.Point(699, 308);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(77, 27);
@@ -148,7 +148,7 @@ namespace Hotel.Presentacion
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(645, 357);
+            this.btnEliminar.Location = new System.Drawing.Point(701, 356);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(77, 27);
@@ -158,7 +158,7 @@ namespace Hotel.Presentacion
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(645, 412);
+            this.btnSalir.Location = new System.Drawing.Point(699, 403);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(77, 27);

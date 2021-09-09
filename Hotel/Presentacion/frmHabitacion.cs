@@ -89,5 +89,11 @@ namespace Hotel.Presentacion
             this.cboTipo.SelectedIndex = -1;
             this.cboEstado.SelectedIndex = -1;
         }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            frmNuevaHabitacion frmNueva = new frmNuevaHabitacion();
+            frmNueva.Show();
+        }
     }
 }

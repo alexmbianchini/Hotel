@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hotel.Negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,32 @@ namespace Hotel.Presentacion
 {
     public partial class frmNuevaHabitacion : Form
     {
+        // Instanciar objetos 
+
+        Habitacion oHabitacion = new Habitacion();
+        TipoHabitacion oTipoHabitacion = new TipoHabitacion();
         public frmNuevaHabitacion()
         {
             InitializeComponent();
         }
+
+        private void frmNuevaHabitacion_Load(object sender, EventArgs e)
+        {
+            // Cargar combo
+            this.CargarCombo(cboTipoHabitacion, oTipoHabitacion.RecuperarTodos(), "descripcion", "cod_tipo");
+
+
+        }
+
+        // Funcion para cargar combo
+        private void CargarCombo(ComboBox combo, DataTable tabla, string campoMostrar, string campoValor)
+        {
+            combo.DataSource = tabla;
+            combo.DisplayMember = campoMostrar;
+            combo.ValueMember = campoValor;
+            combo.SelectedIndex = -1;
+            combo.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
     }
+
 }

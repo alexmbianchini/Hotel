@@ -143,6 +143,7 @@ namespace Hotel.Presentacion
             this.Controls.Add(this.lblPisoHabitacion);
             this.Name = "frmNuevaHabitacion";
             this.Text = "Gestión Habitación";
+            this.Load += new System.EventHandler(this.frmNuevaHabitacion_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

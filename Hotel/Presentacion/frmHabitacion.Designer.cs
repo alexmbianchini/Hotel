@@ -63,12 +63,12 @@ namespace Hotel.Presentacion
             this.clmTipoHabitacion,
             this.clmPrecio,
             this.clmDescripcion});
-            this.dgvHabitaciones.Location = new System.Drawing.Point(2, 266);
-            this.dgvHabitaciones.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvHabitaciones.Location = new System.Drawing.Point(3, 327);
+            this.dgvHabitaciones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvHabitaciones.Name = "dgvHabitaciones";
             this.dgvHabitaciones.RowHeadersWidth = 51;
             this.dgvHabitaciones.RowTemplate.Height = 24;
-            this.dgvHabitaciones.Size = new System.Drawing.Size(496, 201);
+            this.dgvHabitaciones.Size = new System.Drawing.Size(661, 247);
             this.dgvHabitaciones.TabIndex = 0;
             // 
             // clmNumero
@@ -115,10 +115,10 @@ namespace Hotel.Presentacion
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(322, 48);
-            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLimpiar.Location = new System.Drawing.Point(429, 59);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(66, 19);
+            this.btnLimpiar.Size = new System.Drawing.Size(88, 23);
             this.btnLimpiar.TabIndex = 1;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
@@ -126,50 +126,51 @@ namespace Hotel.Presentacion
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(536, 411);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSalir.Location = new System.Drawing.Point(715, 506);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(56, 19);
+            this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 2;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(536, 368);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEliminar.Location = new System.Drawing.Point(715, 453);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(56, 19);
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 3;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(536, 324);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEditar.Location = new System.Drawing.Point(715, 399);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(56, 19);
+            this.btnEditar.Size = new System.Drawing.Size(75, 23);
             this.btnEditar.TabIndex = 4;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(536, 277);
-            this.btnNuevo.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNuevo.Location = new System.Drawing.Point(715, 341);
+            this.btnNuevo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(56, 19);
+            this.btnNuevo.Size = new System.Drawing.Size(75, 23);
             this.btnNuevo.TabIndex = 5;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btConsultar
             // 
-            this.btConsultar.Location = new System.Drawing.Point(322, 130);
-            this.btConsultar.Margin = new System.Windows.Forms.Padding(2);
+            this.btConsultar.Location = new System.Drawing.Point(429, 160);
+            this.btConsultar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btConsultar.Name = "btConsultar";
-            this.btConsultar.Size = new System.Drawing.Size(66, 19);
+            this.btConsultar.Size = new System.Drawing.Size(88, 23);
             this.btConsultar.TabIndex = 6;
             this.btConsultar.Text = "Consultar";
             this.btConsultar.UseVisualStyleBackColor = true;
@@ -178,84 +179,80 @@ namespace Hotel.Presentacion
             // lblNumero
             // 
             this.lblNumero.AutoSize = true;
-            this.lblNumero.Location = new System.Drawing.Point(68, 48);
-            this.lblNumero.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNumero.Location = new System.Drawing.Point(91, 59);
             this.lblNumero.Name = "lblNumero";
-            this.lblNumero.Size = new System.Drawing.Size(44, 13);
+            this.lblNumero.Size = new System.Drawing.Size(58, 17);
             this.lblNumero.TabIndex = 7;
             this.lblNumero.Text = "Número";
             // 
             // lblTipo
             // 
             this.lblTipo.AutoSize = true;
-            this.lblTipo.Location = new System.Drawing.Point(68, 130);
-            this.lblTipo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTipo.Location = new System.Drawing.Point(91, 160);
             this.lblTipo.Name = "lblTipo";
-            this.lblTipo.Size = new System.Drawing.Size(28, 13);
+            this.lblTipo.Size = new System.Drawing.Size(36, 17);
             this.lblTipo.TabIndex = 8;
             this.lblTipo.Text = "Tipo";
             // 
             // lblPiso
             // 
             this.lblPiso.AutoSize = true;
-            this.lblPiso.Location = new System.Drawing.Point(68, 88);
-            this.lblPiso.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPiso.Location = new System.Drawing.Point(91, 108);
             this.lblPiso.Name = "lblPiso";
-            this.lblPiso.Size = new System.Drawing.Size(27, 13);
+            this.lblPiso.Size = new System.Drawing.Size(35, 17);
             this.lblPiso.TabIndex = 9;
             this.lblPiso.Text = "Piso";
             // 
             // cboPiso
             // 
             this.cboPiso.FormattingEnabled = true;
-            this.cboPiso.Location = new System.Drawing.Point(128, 88);
-            this.cboPiso.Margin = new System.Windows.Forms.Padding(2);
+            this.cboPiso.Location = new System.Drawing.Point(171, 108);
+            this.cboPiso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboPiso.Name = "cboPiso";
-            this.cboPiso.Size = new System.Drawing.Size(92, 21);
+            this.cboPiso.Size = new System.Drawing.Size(121, 24);
             this.cboPiso.TabIndex = 11;
             // 
             // cboTipo
             // 
             this.cboTipo.FormattingEnabled = true;
-            this.cboTipo.Location = new System.Drawing.Point(128, 128);
-            this.cboTipo.Margin = new System.Windows.Forms.Padding(2);
+            this.cboTipo.Location = new System.Drawing.Point(171, 158);
+            this.cboTipo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboTipo.Name = "cboTipo";
-            this.cboTipo.Size = new System.Drawing.Size(92, 21);
+            this.cboTipo.Size = new System.Drawing.Size(121, 24);
             this.cboTipo.TabIndex = 12;
             // 
             // cboNumero
             // 
             this.cboNumero.FormattingEnabled = true;
-            this.cboNumero.Location = new System.Drawing.Point(128, 40);
-            this.cboNumero.Margin = new System.Windows.Forms.Padding(2);
+            this.cboNumero.Location = new System.Drawing.Point(171, 49);
+            this.cboNumero.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboNumero.Name = "cboNumero";
-            this.cboNumero.Size = new System.Drawing.Size(92, 21);
+            this.cboNumero.Size = new System.Drawing.Size(121, 24);
             this.cboNumero.TabIndex = 13;
             // 
             // lblEstado
             // 
             this.lblEstado.AutoSize = true;
-            this.lblEstado.Location = new System.Drawing.Point(68, 176);
-            this.lblEstado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblEstado.Location = new System.Drawing.Point(91, 217);
             this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(40, 13);
+            this.lblEstado.Size = new System.Drawing.Size(52, 17);
             this.lblEstado.TabIndex = 14;
             this.lblEstado.Text = "Estado";
             // 
             // cboEstado
             // 
             this.cboEstado.FormattingEnabled = true;
-            this.cboEstado.Location = new System.Drawing.Point(128, 173);
-            this.cboEstado.Margin = new System.Windows.Forms.Padding(2);
+            this.cboEstado.Location = new System.Drawing.Point(171, 213);
+            this.cboEstado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboEstado.Name = "cboEstado";
-            this.cboEstado.Size = new System.Drawing.Size(92, 21);
+            this.cboEstado.Size = new System.Drawing.Size(121, 24);
             this.cboEstado.TabIndex = 15;
             // 
             // frmHabitacion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(622, 465);
+            this.ClientSize = new System.Drawing.Size(829, 572);
             this.Controls.Add(this.cboEstado);
             this.Controls.Add(this.lblEstado);
             this.Controls.Add(this.cboNumero);
@@ -271,7 +268,7 @@ namespace Hotel.Presentacion
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.dgvHabitaciones);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmHabitacion";
             this.Text = "Habitaciones";
             this.Load += new System.EventHandler(this.frmHabitacion_Load);
