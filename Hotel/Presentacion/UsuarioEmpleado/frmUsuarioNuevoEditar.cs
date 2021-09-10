@@ -42,73 +42,8 @@ namespace Hotel.Presentacion
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             // Validar que todos los campos tengan datos 
-
-            if (string.IsNullOrEmpty(this.txtNombre.Text))
-            {
-                MessageBox.Show("Debe ingresar un Nombre");
-                this.txtNombre.Focus();
-                this.lblNombre.ForeColor = Color.Red;
-                return;
-            }
-
-            if (string.IsNullOrEmpty(this.txtApellido.Text))
-            {
-                MessageBox.Show("Debe ingresar un Apellido");
-                this.txtApellido.Focus();
-                this.lblApellido.ForeColor = Color.Red;
-                return;
-            }
-
-            if (cboTipoDoc.SelectedIndex == -1)
-            {
-                MessageBox.Show("Debe ingresar un Tipo de Documento");
-                this.cboTipoDoc.Focus();
-                this.lblTipoDoc.ForeColor = Color.Red;
-                return;
-            }
-
-            if (string.IsNullOrEmpty(this.txtNumeroDoc.Text))
-            {
-                MessageBox.Show("Debe seleccionar un Número de Documento");
-                this.txtNumeroDoc.Focus();
-                this.lblNumeroDoc.ForeColor = Color.Red;
-                return;
-            }
-
-            if (string.IsNullOrEmpty(this.txtUsuario.Text))
-            {
-                MessageBox.Show("Debe ingresar un Usuario");
-                this.txtUsuario.Focus();
-                this.lblUsuario.ForeColor = Color.Red;
-                return;
-            }
-
-            if (string.IsNullOrEmpty(this.txtPassword.Text))
-            {
-                MessageBox.Show("Debe ingresar una Contraseña");
-                this.txtPassword.Focus();
-                this.lblPassword.ForeColor = Color.Red;
-                return;
-            }
-
-            if (string.IsNullOrEmpty(this.txtConfirmarPassword.Text))
-            {
-                MessageBox.Show("Debe confirmar la Contraseña");
-                this.txtConfirmarPassword.Focus();
-                this.lblConfirmarPassword.ForeColor = Color.Red;
-                return;
-            }
-
-            if (cboPuesto.SelectedIndex == -1)
-            {
-                MessageBox.Show("Debe Seleccionar un Puesto");
-                this.cboPuesto.Focus();
-                this.lblPuesto.ForeColor = Color.Red;
-                return;
-            }
-
-
-
+            ValidarCampos();
+            
 
             // Validar que las dos Contraseñas sean iguales
             bool _validacion = this.ValidarConfirmacionPassword(this.txtPassword.Text, this.txtConfirmarPassword.Text);
@@ -180,6 +115,76 @@ namespace Hotel.Presentacion
             
        
         }
+
+        // Valida que los campos tengan datos
+        private void ValidarCampos()
+        {
+            if (string.IsNullOrEmpty(this.txtNombre.Text))
+            {
+                MessageBox.Show("Debe ingresar un Nombre");
+                this.txtNombre.Focus();
+                this.lblNombre.ForeColor = Color.Red;
+                return;
+            }
+
+            if (string.IsNullOrEmpty(this.txtApellido.Text))
+            {
+                MessageBox.Show("Debe ingresar un Apellido");
+                this.txtApellido.Focus();
+                this.lblApellido.ForeColor = Color.Red;
+                return;
+            }
+
+            if (cboTipoDoc.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe ingresar un Tipo de Documento");
+                this.cboTipoDoc.Focus();
+                this.lblTipoDoc.ForeColor = Color.Red;
+                return;
+            }
+
+            if (string.IsNullOrEmpty(this.txtNumeroDoc.Text))
+            {
+                MessageBox.Show("Debe seleccionar un Número de Documento");
+                this.txtNumeroDoc.Focus();
+                this.lblNumeroDoc.ForeColor = Color.Red;
+                return;
+            }
+
+            if (string.IsNullOrEmpty(this.txtUsuario.Text))
+            {
+                MessageBox.Show("Debe ingresar un Usuario");
+                this.txtUsuario.Focus();
+                this.lblUsuario.ForeColor = Color.Red;
+                return;
+            }
+
+            if (string.IsNullOrEmpty(this.txtPassword.Text))
+            {
+                MessageBox.Show("Debe ingresar una Contraseña");
+                this.txtPassword.Focus();
+                this.lblPassword.ForeColor = Color.Red;
+                return;
+            }
+
+            if (string.IsNullOrEmpty(this.txtConfirmarPassword.Text))
+            {
+                MessageBox.Show("Debe confirmar la Contraseña");
+                this.txtConfirmarPassword.Focus();
+                this.lblConfirmarPassword.ForeColor = Color.Red;
+                return;
+            }
+
+            if (cboPuesto.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe Seleccionar un Puesto");
+                this.cboPuesto.Focus();
+                this.lblPuesto.ForeColor = Color.Red;
+                return;
+            }
+        }
+
+
         // Función que nos permite cargar los comboBox
         private void CargarCombo(ComboBox combo, DataTable tabla, string campoMostrar, string campoValor)
         {
@@ -211,6 +216,7 @@ namespace Hotel.Presentacion
             return id;
         }
 
+        // Btón para cancelar la acción
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Seguro que desea Cancelar la Acción?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
