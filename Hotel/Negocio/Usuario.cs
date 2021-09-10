@@ -61,9 +61,10 @@ namespace Hotel.Negocio
         public DataTable RecuperarGrilla()
         {
             string consulta = "SELECT u.id as id, u.nombre as usuario, e.id_empleado as id_empleado, e.apellido as apellido,"+
-                " e.nombre as nombre, e.fecha_ingreso_trabajo as fecha_ingreso, p.descripcion as puesto" +
+                " e.nombre as nombre, e.tipo_doc, e.nro_doc, p.descripcion as puesto, t.descripcion as tpo_doc" +
                 " FROM USUARIOS u JOIN EMPLEADOS e ON (u.id_empleado = e.id_empleado)" +
                 " JOIN PUESTOS p ON (e.puesto = p.cod_puesto)" +
+                " JOIN TIPO_DOCUMENTO t ON (e.tipo_doc = t.tipo_doc)" +
                 " WHERE u.borrado_logico = 0" +
                 " ORDER BY u.id";
 
@@ -71,22 +72,27 @@ namespace Hotel.Negocio
             return oDatos.consultar(consulta);
         }
 
-        public DataTable RecuperarFiltrados(string usuario, string apellido, string nombre, string puesto, string fecha)
+        public DataTable RecuperarFiltrados(string usuario, string apellido, string nombre, string puesto, string tipodoc, string nrodoc)
         {
             string consulta = "SELECT u.id as id, u.nombre as usuario, e.id_empleado as id_empleado, e.apellido as apellido," +
-                " e.nombre as nombre, e.fecha_ingreso_trabajo as fecha_ingreso, p.descripcion as puesto" +
+                " e.nombre as nombre, e.tipo_doc, e.nro_doc, p.descripcion as puesto, t.descripcion as tpo_doc" +
                 " FROM USUARIOS u JOIN EMPLEADOS e ON (u.id_empleado = e.id_empleado)" +
                 " JOIN PUESTOS p ON (e.puesto = p.cod_puesto)" +
+                " JOIN TIPO_DOCUMENTO t ON (e.tipo_doc = t.tipo_doc)" +
                 " WHERE u.borrado_logico = 0";
 
             if (!string.IsNullOrEmpty(usuario))
-                consulta += " AND u.nombre = " + usuario;
+                consulta += " AND u.nombre = '" + usuario + "'";
+            if (!string.IsNullOrEmpty(tipodoc))
+                consulta += " AND e.tipo_doc = " + tipodoc;
+            if (!string.IsNullOrEmpty(nrodoc))
+                consulta += " AND e.nro_doc = " + nrodoc;
             if (!string.IsNullOrEmpty(apellido))
-                consulta += " AND e.apellido = " + apellido;
+                consulta += " AND e.apellido = '" + apellido + "'";
             if (!string.IsNullOrEmpty(nombre))
-                consulta += " AND e.nombre = " + nombre;
-            if (!string.IsNullOrEmpty(fecha))
-                consulta += " AND CONVERT(datetime, '" + fecha + "', 103) = e.fecha_ingreso_trabajo";
+                consulta += " AND e.nombre = '" + nombre + "'";
+            if (!string.IsNullOrEmpty(puesto))
+                consulta += " AND p.cod_puesto = " + puesto;
 
             consulta += " ORDER BY u.id";
 
@@ -95,7 +101,7 @@ namespace Hotel.Negocio
             return tabla;
         }
 
-        public string validarUsuarioExistente(string nombre)
+        public string ValidarUsuarioExistente(string nombre)
         {
 
             string consulta = "SELECT * FROM Usuarios WHERE nombre ='" + nombre + "'";

@@ -17,6 +17,7 @@ namespace Hotel.Presentacion
         Usuario oUsuario = new Usuario();
         Empleado oEmpleado = new Empleado();
         Puesto oPuesto = new Puesto();
+        TipoDocumento oTipoDoc = new TipoDocumento();
 
         public frmUsuario()
         {
@@ -26,14 +27,16 @@ namespace Hotel.Presentacion
         private void frmUsuario_Load(object sender, EventArgs e)
         {   
             // Inicializamos los dateTimePicker con la fecha actual
-            this.dtpFechaIngreso.Value= DateTime.Today;
+            //this.dtpFechaIngreso.Value= DateTime.Today;
 
 
             //Carga de ComboBoxs
-            this.CargarCombo(cboNombreUsuario, oUsuario.RecuperarTodos(), "nombre", "id");
-            this.CargarCombo(cboApellidoEmpleado, oEmpleado.RecuperarTodos(), "apellido", "id_empleado");
+            this.CargarCombo(cboNombreUsuario, oUsuario.RecuperarTodos(), "nombre", "nombre");
+            this.CargarCombo(cboApellidoEmpleado, oEmpleado.RecuperarTodos(), "apellido", "apellido");
             this.CargarCombo(cboPuesto, oPuesto.RecuperarTodos(), "descripcion", "cod_puesto");
-            this.CargarCombo(cboNombreEmpleado, oEmpleado.RecuperarTodos(), "nombre", "id_empleado");
+            this.CargarCombo(cboNombreEmpleado, oEmpleado.RecuperarTodos(), "nombre", "nombre");
+            this.CargarCombo(cboTipoDoc, oTipoDoc.RecuperarTodos(), "descripcion", "tipo_doc");
+            this.CargarCombo(cboNroDoc, oEmpleado.RecuperarTodos(), "nro_doc", "nro_doc");
 
             //Carga de Grilla
             this.CargarGrilla(dgvUsuarios, oUsuario.RecuperarGrilla());
@@ -68,35 +71,41 @@ namespace Hotel.Presentacion
                 grilla.Rows.Add(tabla.Rows[i]["id"],
                                 tabla.Rows[i]["usuario"],
                                 tabla.Rows[i]["id_empleado"],
+                                tabla.Rows[i]["tpo_doc"],
+                                tabla.Rows[i]["nro_doc"],
                                 tabla.Rows[i]["nombre"],
                                 tabla.Rows[i]["apellido"],
-                                tabla.Rows[i]["puesto"],
-                                tabla.Rows[i]["fecha_ingreso"]);
+                                tabla.Rows[i]["puesto"]);
             }
 
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            this.dtpFechaIngreso.Value = DateTime.Today;
+            //this.dtpFechaIngreso.Value = DateTime.Today;
             this.cboApellidoEmpleado.SelectedIndex = -1;
             this.cboNombreUsuario.SelectedIndex = -1;
             this.cboPuesto.SelectedIndex = -1;
             this.cboNombreEmpleado.SelectedIndex = -1;
+            this.cboTipoDoc.SelectedIndex = -1;
+            this.cboNroDoc.SelectedIndex = -1;
+
             
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-            string _usuario, _apellido, _nombre, _puesto;
-            _usuario = _apellido = _nombre = _puesto = string.Empty;
+            string _usuario, _apellido, _nombre, _puesto, _tipo_doc, _nro_doc;
+            _usuario = _apellido = _nombre = _puesto = _tipo_doc = _nro_doc = string.Empty;
 
+            /*
             if (dtpFechaIngreso.Value > DateTime.Today)
             {
                 MessageBox.Show("Fecha no válida!");
                 dtpFechaIngreso.Focus();
                 return;
             }
+            */
             if (cboNombreUsuario.SelectedIndex != -1)
                 _usuario = cboNombreUsuario.SelectedValue.ToString();
             if (cboApellidoEmpleado.SelectedIndex != -1)
@@ -105,9 +114,14 @@ namespace Hotel.Presentacion
                 _nombre = cboNombreEmpleado.SelectedValue.ToString();
             if (cboPuesto.SelectedIndex != -1)
                 _puesto = cboPuesto.SelectedValue.ToString();
+            if (cboTipoDoc.SelectedIndex != -1)
+                _tipo_doc = cboTipoDoc.SelectedValue.ToString();
+            if (cboNroDoc.SelectedIndex != -1)
+                _nro_doc = cboNroDoc.SelectedValue.ToString();
 
 
-            this.CargarGrilla(dgvUsuarios, oUsuario.RecuperarFiltrados(_usuario, _apellido, _nombre, _puesto, dtpFechaIngreso.Value.ToString()));
+            //dtpFechaIngreso.Value.ToString()) en caso de agregar fecha
+            this.CargarGrilla(dgvUsuarios, oUsuario.RecuperarFiltrados(_usuario, _apellido, _nombre, _puesto, _tipo_doc, _nro_doc));
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)

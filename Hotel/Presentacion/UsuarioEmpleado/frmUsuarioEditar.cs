@@ -201,7 +201,7 @@ namespace Hotel.Presentacion.UsuarioEmpleado
             }
 
             // Validar que si ya existe el usuario
-            string _usuario = this.oUsuario.validarUsuarioExistente(this.txtUsuario.Text);
+            string _usuario = this.oUsuario.ValidarUsuarioExistente(this.txtUsuario.Text);
 
             if (_usuario == string.Empty)
             {

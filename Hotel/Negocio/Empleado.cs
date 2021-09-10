@@ -22,7 +22,17 @@ namespace Hotel.Negocio
 
         public DataTable RecuperarTodos()
         {
-            string consulta = "SELECT * FROM EMPLEADOS WHERE borrado_logico = 0 ORDER BY 4";
+            /*
+            string consulta = "SELECT e.id_empleado, e.nro_doc, e.apellido, e.nombre, t.tipo_doc," +
+                " t.descripcion as tpo_doc, p.cod_puesto, p.descripcion as puesto" +
+                " FROM EMPLEADOS e" +
+                " JOIN TIPO_DOCUMENTO t ON (e.tipo_doc = t.tipo_doc)" +
+                " JOIN PUESTOS p on (e.puesto = p.cod_puesto)" +
+                " WHERE e.borrado_logico = 0 " +
+                " ORDER BY e.id_empleado";
+            */
+
+            string consulta = "SELECT * FROM EMPLEADOS WHERE borrado_logico = 0 ORDER BY 3";
 
             DBHelper oDatos = new DBHelper();
             return oDatos.consultar(consulta);
