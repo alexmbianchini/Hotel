@@ -14,14 +14,19 @@ namespace Hotel.Presentacion.UsuarioEmpleado
    
     public partial class frmUsuarioEditar : Form
     {
+        // Instanciar objetos necesarios
         TipoDocumento oTipoDoc = new TipoDocumento();
         Puesto oPuesto = new Puesto();
         Usuario oUsuario = new Usuario();
         Empleado oEmpleado = new Empleado();
 
+
+        // Variables a utilizar
         int IdUsuario;
         int IdEmpleado;
 
+
+        // Nos permite pasarle parámetros a este formulario desde otro
         public frmUsuarioEditar(int IdUsuario, int IdEmpleado)
         {
             InitializeComponent();
@@ -42,10 +47,13 @@ namespace Hotel.Presentacion.UsuarioEmpleado
         private void frmUsuarioEditar_Load(object sender, EventArgs e)
         {
 
+            // Cargar los campos con los atributos de los objetos seleccionados
             CargarCampos();
             
         }
 
+
+        // Método para cargar los campos
         private void CargarCampos()
         {
             DataTable tablaUsuario = new DataTable();
@@ -62,6 +70,7 @@ namespace Hotel.Presentacion.UsuarioEmpleado
             txtUsuario.Text = tablaUsuario.Rows[0]["nombre"].ToString();
         }
 
+
         // Función que nos permite cargar los comboBox
         private void CargarCombo(ComboBox combo, DataTable tabla, string campoMostrar, string campoValor, int campoIndice)
         {
@@ -71,6 +80,7 @@ namespace Hotel.Presentacion.UsuarioEmpleado
             combo.SelectedIndex = campoIndice - 1;
             combo.DropDownStyle = ComboBoxStyle.DropDownList;
         }
+
 
         // Valida que los campos tengan datos ingresados/seleccionados
 
@@ -149,6 +159,7 @@ namespace Hotel.Presentacion.UsuarioEmpleado
             }
         }
 
+
         // Valida coincidencia de contraseñas
         private bool ValidarConfirmacionPassword(string Password, string Confirmacion)
         {
@@ -164,7 +175,9 @@ namespace Hotel.Presentacion.UsuarioEmpleado
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            // Valida que los campos esté cargados 
             ValidarCampos();
+
 
             // Validar que la contraseña actual del usuario es correcta
             int _validarActual = this.oUsuario.validarPassword(this.IdUsuario, this.txtPasswordActual.Text);
@@ -177,7 +190,8 @@ namespace Hotel.Presentacion.UsuarioEmpleado
                 return;
             }
 
-            // Validar que las dos Contraseñas sean iguales
+
+            // Validar que las dos Contraseñas  nuevas sean iguales
             bool _validacion = this.ValidarConfirmacionPassword(this.txtPasswordNueva.Text, this.txtPasswordConfirmar.Text);
 
             if (_validacion == false)
@@ -187,6 +201,7 @@ namespace Hotel.Presentacion.UsuarioEmpleado
                 this.txtPasswordConfirmar.Clear();
                 return;
             }
+
 
             // Validar que no exista un empleado con es tipo y número de documento
             string _nroDoc = this.oEmpleado.validarEmpleadoExistente(this.txtNumeroDocumento.Text, this.cboTipoDocumento.SelectedValue.ToString());
@@ -200,6 +215,7 @@ namespace Hotel.Presentacion.UsuarioEmpleado
                 return;
             }
 
+
             // Validar que si ya existe el usuario
             string _usuario = this.oUsuario.ValidarUsuarioExistente(this.txtUsuario.Text);
 
@@ -210,6 +226,7 @@ namespace Hotel.Presentacion.UsuarioEmpleado
                 this.txtUsuario.Focus();
                 return;
             }
+
 
             // Asignar Valores a los atributos de los objetos
             this.oEmpleado.IdEmpleado = IdEmpleado;
@@ -224,7 +241,8 @@ namespace Hotel.Presentacion.UsuarioEmpleado
             this.oUsuario.Contrasena = this.txtPasswordNueva.Text;
             this.oUsuario.IdEmpleado = IdEmpleado;
 
-            // Insertar datos en la base de datos y verificar que se inserten con éxito
+
+            // Modificar datos en la base de datos y verificar que se inserten con éxito
             if (oEmpleado.Modificar(oEmpleado) && oUsuario.Modificar(oUsuario))
             {
                 MessageBox.Show("Datos Agregados Con Éxito!");
@@ -236,6 +254,8 @@ namespace Hotel.Presentacion.UsuarioEmpleado
             }
         }
 
+
+        // Botón para cancelar la acción
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Seguro que desea Cancelar la Acción?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
