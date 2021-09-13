@@ -21,7 +21,23 @@ namespace Hotel.Presentacion
             InitializeComponent();
         }
 
-        private void btnIngresar_Click(object sender, EventArgs e)
+
+        private void txtUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnIngresar_Click_1(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(this.txtUsuario.Text))
             {
@@ -36,7 +52,7 @@ namespace Hotel.Presentacion
                 this.txtPassword.Focus();
                 return;
             }
-            
+
             this.miUsuario.Nombre = this.txtUsuario.Text;
             this.miUsuario.Contrasena = this.txtPassword.Text;
 
@@ -55,29 +71,11 @@ namespace Hotel.Presentacion
                 this.txtPassword.Text = string.Empty;
                 this.txtUsuario.Focus();
             }
-            
-
-
         }
 
-        private void btnSalir_Click(object sender, EventArgs e)
+        private void btnSalir_Click_1(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void txtUsuario_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtPassword_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void frmLogin_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
