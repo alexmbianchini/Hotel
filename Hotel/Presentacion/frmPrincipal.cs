@@ -32,5 +32,17 @@ namespace Hotel.Presentacion
                 this.Text += " - Usuario: " + fLog.MiUsuario.Nombre;
             }
         }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            frmUsuario fru = new frmUsuario();
+            fru.ShowDialog();
+        }
+
+        private void btnHabitaciones_Click(object sender, EventArgs e)
+        {
+            frmHabitacion frh = new frmHabitacion();
+            frh.ShowDialog();
+        }
     }
 }

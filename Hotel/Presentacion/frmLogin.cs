@@ -61,7 +61,6 @@ namespace Hotel.Presentacion
             //if (this.txtUsuario.Text == this.user && this.txtContrasena.Text == this.pass)
             if (miUsuario.Id != 0)
             {
-                MessageBox.Show("Login OK", "Ingreso al Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
             else

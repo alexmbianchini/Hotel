@@ -44,8 +44,8 @@ namespace Hotel.Presentacion
 
             //Habilitacion de Botones
             this.btnConsultar.Enabled = true;
-            this.btnEditar.Enabled = true;
-            this.btnEliminar.Enabled = true;
+            this.btnEditar.Enabled = false;
+            this.btnEliminar.Enabled = false;
             this.btnLimpiar.Enabled = true;
             this.btnNuevo.Enabled = true;
             this.btnSalir.Enabled = true;
@@ -80,7 +80,15 @@ namespace Hotel.Presentacion
 
         }
 
-        private void btnLimpiar_Click(object sender, EventArgs e)
+
+
+        private void dgvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+
+        private void btnLimpiar_Click_1(object sender, EventArgs e)
         {
             //this.dtpFechaIngreso.Value = DateTime.Today;
             this.cboApellidoEmpleado.SelectedIndex = -1;
@@ -89,11 +97,9 @@ namespace Hotel.Presentacion
             this.cboNombreEmpleado.SelectedIndex = -1;
             this.cboTipoDoc.SelectedIndex = -1;
             this.cboNroDoc.SelectedIndex = -1;
-
-            
         }
 
-        private void btnConsultar_Click(object sender, EventArgs e)
+        private void btnConsultar_Click_1(object sender, EventArgs e)
         {
             string _usuario, _apellido, _nombre, _puesto, _tipo_doc, _nro_doc;
             _usuario = _apellido = _nombre = _puesto = _tipo_doc = _nro_doc = string.Empty;
@@ -124,19 +130,20 @@ namespace Hotel.Presentacion
             this.CargarGrilla(dgvUsuarios, oUsuario.RecuperarFiltrados(_usuario, _apellido, _nombre, _puesto, _tipo_doc, _nro_doc));
         }
 
-        private void btnNuevo_Click(object sender, EventArgs e)
+        private void btnNuevo_Click_1(object sender, EventArgs e)
         {
             frmUsuarioNuevo frmNuevo = new frmUsuarioNuevo();
 
             frmNuevo.Show();
         }
 
-        private void dgvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnEditar_Click_1(object sender, EventArgs e)
         {
-
+            frmUsuarioEditar oEditar = new frmUsuarioEditar(Convert.ToInt32(dgvUsuarios.CurrentRow.Cells["clmIdUsuario"].Value), Convert.ToInt32(dgvUsuarios.CurrentRow.Cells["clmIdEmpleado"].Value));
+            oEditar.ShowDialog();
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void btnEliminar_Click_1(object sender, EventArgs e)
         {
             if (MessageBox.Show("Seguro que desea habilitar/deshabilitar el usuario seleccionado?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
@@ -156,17 +163,15 @@ namespace Hotel.Presentacion
             }
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-            frmUsuarioEditar oEditar = new frmUsuarioEditar(Convert.ToInt32(dgvUsuarios.CurrentRow.Cells["clmIdUsuario"].Value), Convert.ToInt32(dgvUsuarios.CurrentRow.Cells["clmIdEmpleado"].Value));
-            oEditar.ShowDialog();
-
-
-        }
-
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.btnEditar.Enabled = true;
+            this.btnEliminar.Enabled = true;
         }
     }
 }

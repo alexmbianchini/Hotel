@@ -34,15 +34,12 @@ namespace Hotel.Presentacion.UsuarioEmpleado
             this.IdEmpleado = IdEmpleado;
 
         }
+
         public frmUsuarioEditar()
         {
             InitializeComponent();
         }
 
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
 
         private void frmUsuarioEditar_Load(object sender, EventArgs e)
         {
@@ -173,7 +170,9 @@ namespace Hotel.Presentacion.UsuarioEmpleado
             }
         }
 
-        private void btnAceptar_Click(object sender, EventArgs e)
+
+
+        private void btnAceptar_Click_1(object sender, EventArgs e)
         {
             // Valida que los campos esté cargados 
             ValidarCampos();
@@ -255,8 +254,9 @@ namespace Hotel.Presentacion.UsuarioEmpleado
         }
 
 
-        // Botón para cancelar la acción
-        private void btnCancelar_Click(object sender, EventArgs e)
+
+        //Boton para cancelar la accion
+        private void btnCancelar_Click_1(object sender, EventArgs e)
         {
             if (MessageBox.Show("Seguro que desea Cancelar la Acción?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
