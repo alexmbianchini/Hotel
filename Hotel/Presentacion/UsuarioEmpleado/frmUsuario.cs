@@ -145,7 +145,7 @@ namespace Hotel.Presentacion
 
         private void btnEliminar_Click_1(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Seguro que desea habilitar/deshabilitar el usuario seleccionado?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            if (MessageBox.Show("Seguro que desea Eliminar el Empleado seleccionado?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
                 this.oUsuario.Id = (int)dgvUsuarios.CurrentRow.Cells["clmIdUsuario"].Value;
                 this.oEmpleado.IdEmpleado = (int)dgvUsuarios.CurrentRow.Cells["clmIdEmpleado"].Value;

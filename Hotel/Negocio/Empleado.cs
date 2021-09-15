@@ -81,7 +81,7 @@ namespace Hotel.Negocio
                 " '" + oEmpleado.NroDoc + "'," +
                 " '" + oEmpleado.Apellido + "'," +
                 " '" + oEmpleado.Nombre + "'," +
-                " '" + oEmpleado.FechaIngresoTrabajo + "'," +
+                " CONVERT(DATETIME, '" + oEmpleado.FechaIngresoTrabajo + "', 103)," +
                 " Null," +
                 " '" + oEmpleado.Puesto + "', 0)";
 
@@ -93,7 +93,7 @@ namespace Hotel.Negocio
         internal bool Eliminar(Empleado oEmpleado)
         {
             string consulta = "UPDATE EMPLEADOS SET borrado_logico = 1," +
-                " fecha_salida_trabajo = '" + oEmpleado.FechaSalidaTrabajo +"'"+
+                " fecha_salida_trabajo = CONVERT(DATETIME,'" + oEmpleado.FechaSalidaTrabajo +"', 103)"+
                 " WHERE id_empleado =" + oEmpleado.IdEmpleado;
 
             DBHelper oDatos = new DBHelper();
