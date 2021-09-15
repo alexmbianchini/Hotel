@@ -59,6 +59,13 @@
       <DependentUpon>RJTextBox.cs</DependentUpon>
     </Compile>
     <Compile Include="Datos\DBHelper.cs" />
+    <Compile Include="Datos\EmpleadoDao.cs" />
+    <Compile Include="Datos\EstadoHabitacionDao.cs" />
+    <Compile Include="Datos\HabitacionDao.cs" />
+    <Compile Include="Datos\PuestoDao.cs" />
+    <Compile Include="Datos\TipoDocumentoDao.cs" />
+    <Compile Include="Datos\TipoHabitacionDao.cs" />
+    <Compile Include="Datos\UsuarioDao.cs" />
     <Compile Include="Negocio\Cochera.cs" />
     <Compile Include="Negocio\Cuenta.cs" />
     <Compile Include="Negocio\DetalleServicioCuenta.cs" />

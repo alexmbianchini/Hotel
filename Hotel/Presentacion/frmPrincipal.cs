@@ -23,13 +23,13 @@ namespace Hotel.Presentacion
             fLog.ShowDialog();
 
 
-            if (fLog.MiUsuario.Id == 0)
+            if (fLog.MiUsuarioSelected.Id == 0)
             {
                 this.Close();
             }
             else
             {
-                this.Text += " - Usuario: " + fLog.MiUsuario.Nombre;
+                this.Text += " - Usuario: " + fLog.MiUsuarioSelected.Nombre;
             }
         }
 

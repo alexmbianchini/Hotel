@@ -1,4 +1,5 @@
-﻿using Hotel.Negocio;
+﻿using Hotel.Datos;
+using Hotel.Negocio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,9 +14,9 @@ namespace Hotel.Presentacion
 {
     public partial class frmHabitacion : Form
     {
-        Habitacion oHabitacion = new Habitacion();
-        TipoHabitacion oTipoH = new TipoHabitacion();
-        EstadoHabitacion oEstadoH = new EstadoHabitacion();
+        HabitacionDao oHabitacion = new HabitacionDao();
+        TipoHabitacionDao oTipoH = new TipoHabitacionDao();
+        EstadoHabitacionDao oEstadoH = new EstadoHabitacionDao();
 
         public frmHabitacion()
         {

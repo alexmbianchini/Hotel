@@ -1,4 +1,5 @@
-﻿using Hotel.Negocio;
+﻿using Hotel.Datos;
+using Hotel.Negocio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,10 +15,12 @@ namespace Hotel.Presentacion
     public partial class frmUsuarioNuevo : Form
     {
         // Instanciar objetos necesarios
-        Usuario oUsuario = new Usuario();
-        Empleado oEmpleado = new Empleado();
-        TipoDocumento oTipoDoc = new TipoDocumento();
-        Puesto oPuesto = new Puesto();
+        UsuarioDao oUsuario = new UsuarioDao();
+        EmpleadoDao oEmpleado = new EmpleadoDao();
+        TipoDocumentoDao oTipoDoc = new TipoDocumentoDao();
+        PuestoDao oPuesto = new PuestoDao();
+        Usuario oUsuarioSelected = new Usuario();
+        Empleado oEmpleadoSelected = new Empleado();
 
         public frmUsuarioNuevo()
         {
@@ -87,22 +90,22 @@ namespace Hotel.Presentacion
 
 
             // Asignar valores a los atributos de los objetos
-            this.oEmpleado.IdEmpleado = _idEmpleado;
-            this.oEmpleado.Nombre = this.txtNombre.Text;
-            this.oEmpleado.Apellido = this.txtApellido.Text;
-            this.oEmpleado.TipoDoc = Convert.ToInt32(this.cboTipoDoc.SelectedValue);
-            this.oEmpleado.NroDoc = Convert.ToInt32(this.txtNumeroDoc.Text);
-            this.oEmpleado.FechaIngresoTrabajo = DateTime.Today;
-            this.oEmpleado.Puesto = Convert.ToInt32(this.cboPuesto.SelectedValue);
+            this.oEmpleadoSelected.IdEmpleado = _idEmpleado;
+            this.oEmpleadoSelected.Nombre = this.txtNombre.Text;
+            this.oEmpleadoSelected.Apellido = this.txtApellido.Text;
+            this.oEmpleadoSelected.TipoDoc = Convert.ToInt32(this.cboTipoDoc.SelectedValue);
+            this.oEmpleadoSelected.NroDoc = Convert.ToInt32(this.txtNumeroDoc.Text);
+            this.oEmpleadoSelected.FechaIngresoTrabajo = DateTime.Today;
+            this.oEmpleadoSelected.Puesto = Convert.ToInt32(this.cboPuesto.SelectedValue);
 
-            this.oUsuario.Id = _idUsuario;
-            this.oUsuario.Nombre = _usuario;
-            this.oUsuario.Contrasena = this.txtPassword.Text;
-            this.oUsuario.IdEmpleado = _idEmpleado;
+            this.oUsuarioSelected.Id = _idUsuario;
+            this.oUsuarioSelected.Nombre = _usuario;
+            this.oUsuarioSelected.Contrasena = this.txtPassword.Text;
+            this.oUsuarioSelected.IdEmpleado = _idEmpleado;
 
 
             // Insertar datos en la base de datos y verificar que se inserten con éxito
-            if (oEmpleado.Crear(oEmpleado) && oUsuario.Crear(oUsuario))
+            if (oEmpleado.Crear(oEmpleadoSelected) && oUsuario.Crear(oUsuarioSelected))
             {
                 MessageBox.Show("Datos Agregados Con Éxito!");
                 this.Close();

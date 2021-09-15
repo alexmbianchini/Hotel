@@ -1,4 +1,5 @@
-﻿using Hotel.Negocio;
+﻿using Hotel.Datos;
+using Hotel.Negocio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,8 +14,10 @@ namespace Hotel.Presentacion
 {
     public partial class frmLogin : Form
     {
-        private Usuario miUsuario = new Usuario();
-        internal Usuario MiUsuario { get => miUsuario; set => miUsuario = value; }
+        Usuario miUsuarioSelected = new Usuario();
+        private UsuarioDao miUsuario = new UsuarioDao();
+        internal UsuarioDao MiUsuario { get => miUsuario; set => miUsuario = value; }
+        internal Usuario MiUsuarioSelected { get => miUsuarioSelected; set => miUsuarioSelected = value; }
 
         public frmLogin()
         {
@@ -53,13 +56,13 @@ namespace Hotel.Presentacion
                 return;
             }
 
-            this.miUsuario.Nombre = this.txtUsuario.Text;
-            this.miUsuario.Contrasena = this.txtPassword.Text;
+            this.MiUsuarioSelected.Nombre = this.txtUsuario.Text;
+            this.MiUsuarioSelected.Contrasena = this.txtPassword.Text;
 
-            this.miUsuario.Id = this.miUsuario.validarUsuario(miUsuario.Nombre, miUsuario.Contrasena);
+            this.MiUsuarioSelected.Id = this.miUsuario.validarUsuario(MiUsuarioSelected.Nombre, MiUsuarioSelected.Contrasena);
 
             //if (this.txtUsuario.Text == this.user && this.txtContrasena.Text == this.pass)
-            if (miUsuario.Id != 0)
+            if (MiUsuarioSelected.Id != 0)
             {
                 this.Close();
             }
