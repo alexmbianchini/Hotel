@@ -24,6 +24,8 @@ namespace Hotel.Presentacion.UsuarioEmpleado
         // Variables a utilizar
         int IdUsuario;
         int IdEmpleado;
+        string nroDocActual;
+        string nombreUsuario;
 
 
         // Nos permite pasarle parámetros a este formulario desde otro
@@ -45,8 +47,104 @@ namespace Hotel.Presentacion.UsuarioEmpleado
         {
 
             // Cargar los campos con los atributos de los objetos seleccionados
-            CargarCampos();
+            this.CargarCampos();
+
+            // Guardado de valor paraa futuras comparaciones
+            nroDocActual = this.txtNumeroDocumento.Text;
+            nombreUsuario = this.txtUsuario.Text;
+        }
+        private void btnAceptar_Click_1(object sender, EventArgs e)
+        {
+            // Valida que los campos esté cargados 
+            this.ValidarCampos();
+
+
+            // Validar que la contraseña actual del usuario es correcta
+            int _validarActual = this.oUsuario.validarPassword(this.IdUsuario, this.txtPasswordActual.Text);
+
+            if (_validarActual == 0)
+            {
+                MessageBox.Show("La contraseña actual es incorrecta");
+                this.txtPasswordActual.Focus();
+                this.txtPasswordActual.Clear();
+                return;
+            }
+
+
+            // Validar que las dos Contraseñas  nuevas sean iguales
+            bool _validacion = this.ValidarConfirmacionPassword(this.txtPasswordNueva.Text, this.txtPasswordConfirmar.Text);
+
+            if (_validacion == false)
+            {
+                MessageBox.Show("Las Contraseñas no coinciden");
+                this.txtPasswordConfirmar.Focus();
+                this.txtPasswordConfirmar.Clear();
+                return;
+            }
+
+
+            // Validar que no exista un empleado con es tipo y número de documento
+            string _nroDoc = this.oEmpleado.validarEmpleadoExistente(this.txtNumeroDocumento.Text, this.cboTipoDocumento.SelectedValue.ToString());
+
             
+
+            if (_nroDoc == string.Empty && this.txtNumeroDocumento.Text != nroDocActual) 
+            {
+                MessageBox.Show("Ya existe un Empleado con ese Tipo y Número de Documento");
+                this.txtNumeroDocumento.Clear();
+                this.cboTipoDocumento.SelectedIndex = -1;
+                this.cboTipoDocumento.Focus();
+                return;
+            }
+
+
+            // Validar que si ya existe el usuario
+            string _usuario = this.oUsuario.ValidarUsuarioExistente(this.txtUsuario.Text);
+
+            if (_usuario == string.Empty && nombreUsuario != this.txtUsuario.Text)
+            {
+                MessageBox.Show("El nombre de usuario ya existe, por favor ingrese otro");
+                this.txtUsuario.Clear();
+                this.txtUsuario.Focus();
+                return;
+            }
+
+
+            // Asignar Valores a los atributos de los objetos
+            this.oEmpleado.IdEmpleado = IdEmpleado;
+            this.oEmpleado.Nombre = this.txtNombre.Text;
+            this.oEmpleado.Apellido = this.txtApellido.Text;
+            this.oEmpleado.TipoDoc = Convert.ToInt32(this.cboTipoDocumento.SelectedValue);
+            this.oEmpleado.NroDoc = Convert.ToInt32(this.txtNumeroDocumento.Text);
+            this.oEmpleado.Puesto = Convert.ToInt32(this.cboPuesto.SelectedValue);
+
+            this.oUsuario.Id = IdUsuario;
+            this.oUsuario.Nombre = this.txtUsuario.Text;
+            this.oUsuario.Contrasena = this.txtPasswordNueva.Text;
+            this.oUsuario.IdEmpleado = IdEmpleado;
+
+
+            // Modificar datos en la base de datos y verificar que se inserten con éxito
+            if (oEmpleado.Modificar(oEmpleado) && oUsuario.Modificar(oUsuario))
+            {
+                MessageBox.Show("Datos Editados Con Éxito!");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Ha ocurrido un Error al Editar los datos");
+            }
+        }
+
+
+
+        //Boton para cancelar la accion
+        private void btnCancelar_Click_1(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Seguro que desea Cancelar la Acción?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                this.Close();
+            }
         }
 
 
@@ -65,6 +163,8 @@ namespace Hotel.Presentacion.UsuarioEmpleado
             txtNumeroDocumento.Text = tablaEmpleado.Rows[0]["nro_doc"].ToString();
 
             txtUsuario.Text = tablaUsuario.Rows[0]["nombre"].ToString();
+
+
         }
 
 
@@ -172,97 +272,7 @@ namespace Hotel.Presentacion.UsuarioEmpleado
 
 
 
-        private void btnAceptar_Click_1(object sender, EventArgs e)
-        {
-            // Valida que los campos esté cargados 
-            ValidarCampos();
 
-
-            // Validar que la contraseña actual del usuario es correcta
-            int _validarActual = this.oUsuario.validarPassword(this.IdUsuario, this.txtPasswordActual.Text);
-
-            if (_validarActual == 0)
-            {
-                MessageBox.Show("La contraseña actual es incorrecta");
-                this.txtPasswordActual.Focus();
-                this.txtPasswordActual.Clear();
-                return;
-            }
-
-
-            // Validar que las dos Contraseñas  nuevas sean iguales
-            bool _validacion = this.ValidarConfirmacionPassword(this.txtPasswordNueva.Text, this.txtPasswordConfirmar.Text);
-
-            if (_validacion == false)
-            {
-                MessageBox.Show("Las Contraseñas no coinciden");
-                this.txtPasswordConfirmar.Focus();
-                this.txtPasswordConfirmar.Clear();
-                return;
-            }
-
-
-            // Validar que no exista un empleado con es tipo y número de documento
-            string _nroDoc = this.oEmpleado.validarEmpleadoExistente(this.txtNumeroDocumento.Text, this.cboTipoDocumento.SelectedValue.ToString());
-
-            if (_nroDoc == string.Empty)
-            {
-                MessageBox.Show("Ya existe un Empleado con ese Tipo y Número de Documento");
-                this.txtNumeroDocumento.Clear();
-                this.cboTipoDocumento.SelectedIndex = -1;
-                this.cboTipoDocumento.Focus();
-                return;
-            }
-
-
-            // Validar que si ya existe el usuario
-            string _usuario = this.oUsuario.ValidarUsuarioExistente(this.txtUsuario.Text);
-
-            if (_usuario == string.Empty)
-            {
-                MessageBox.Show("El nombre de usuario ya existe, por favor ingrese otro");
-                this.txtUsuario.Clear();
-                this.txtUsuario.Focus();
-                return;
-            }
-
-
-            // Asignar Valores a los atributos de los objetos
-            this.oEmpleado.IdEmpleado = IdEmpleado;
-            this.oEmpleado.Nombre = this.txtNombre.Text;
-            this.oEmpleado.Apellido = this.txtApellido.Text;
-            this.oEmpleado.TipoDoc = Convert.ToInt32(this.cboTipoDocumento.SelectedValue);
-            this.oEmpleado.NroDoc = Convert.ToInt32(this.txtNumeroDocumento.Text);
-            this.oEmpleado.Puesto = Convert.ToInt32(this.cboPuesto.SelectedValue);
-
-            this.oUsuario.Id = IdUsuario;
-            this.oUsuario.Nombre = _usuario;
-            this.oUsuario.Contrasena = this.txtPasswordNueva.Text;
-            this.oUsuario.IdEmpleado = IdEmpleado;
-
-
-            // Modificar datos en la base de datos y verificar que se inserten con éxito
-            if (oEmpleado.Modificar(oEmpleado) && oUsuario.Modificar(oUsuario))
-            {
-                MessageBox.Show("Datos Agregados Con Éxito!");
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Ha ocurrido un Error al insertar los datos");
-            }
-        }
-
-
-
-        //Boton para cancelar la accion
-        private void btnCancelar_Click_1(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Seguro que desea Cancelar la Acción?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
-            {
-                this.Close();
-            }
-        }
     }
 
 }

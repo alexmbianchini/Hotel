@@ -104,7 +104,8 @@ namespace Hotel.Negocio
         public string ValidarUsuarioExistente(string nombre)
         {
 
-            string consulta = "SELECT * FROM Usuarios WHERE nombre ='" + nombre + "'";
+            string consulta = "SELECT * FROM Usuarios WHERE nombre ='" + nombre + "'" +
+                " AND borrado_logico = 0";
 
             DBHelper oDatos = new DBHelper();
             DataTable tabla = oDatos.consultar(consulta);

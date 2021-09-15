@@ -38,6 +38,94 @@ namespace Hotel.Presentacion
 
         }
         
+        private void btnAceptar_Click_1(object sender, EventArgs e)
+        {
+            // Validar que todos los campos tengan datos 
+            ValidarCampos();
+
+
+            // Validar que las dos Contraseñas sean iguales
+            bool _validacion = this.ValidarConfirmacionPassword(this.txtPassword.Text, this.txtConfirmarPassword.Text);
+
+            if (_validacion == false)
+            {
+                MessageBox.Show("Las Contraseñas no coinciden");
+                this.txtConfirmarPassword.Focus();
+                this.txtConfirmarPassword.Clear();
+                return;
+            }
+
+            // Validar que no exista un empleado con es tipo y número de documento
+            string _nroDoc = this.oEmpleado.validarEmpleadoExistente(this.txtNumeroDoc.Text, this.cboTipoDoc.SelectedValue.ToString());
+
+            if (_nroDoc == string.Empty)
+            {
+                MessageBox.Show("Ya existe un Empleado con ese Tipo y Número de Documento");
+                this.txtNumeroDoc.Clear();
+                this.cboTipoDoc.SelectedIndex = -1;
+                this.cboTipoDoc.Focus();
+                return;
+            }
+
+
+            // Validar que si ya existe el usuario
+            string _usuario = this.oUsuario.ValidarUsuarioExistente(this.txtUsuario.Text);
+
+            if (_usuario == string.Empty)
+            {
+                MessageBox.Show("El nombre de usuario ya existe, por favor ingrese otro");
+                this.txtUsuario.Clear();
+                this.txtUsuario.Focus();
+                return;
+            }
+
+
+
+            // Generar los id's de Usuario y Empleado
+            int _idUsuario = this.GenerarId(this.oUsuario.RecuperarIds());
+            int _idEmpleado = this.GenerarId(this.oEmpleado.RecuperarIds());
+
+
+            // Asignar valores a los atributos de los objetos
+            this.oEmpleado.IdEmpleado = _idEmpleado;
+            this.oEmpleado.Nombre = this.txtNombre.Text;
+            this.oEmpleado.Apellido = this.txtApellido.Text;
+            this.oEmpleado.TipoDoc = Convert.ToInt32(this.cboTipoDoc.SelectedValue);
+            this.oEmpleado.NroDoc = Convert.ToInt32(this.txtNumeroDoc.Text);
+            this.oEmpleado.FechaIngresoTrabajo = DateTime.Today;
+            this.oEmpleado.Puesto = Convert.ToInt32(this.cboPuesto.SelectedValue);
+
+            this.oUsuario.Id = _idUsuario;
+            this.oUsuario.Nombre = _usuario;
+            this.oUsuario.Contrasena = this.txtPassword.Text;
+            this.oUsuario.IdEmpleado = _idEmpleado;
+
+
+            // Insertar datos en la base de datos y verificar que se inserten con éxito
+            if (oEmpleado.Crear(oEmpleado) && oUsuario.Crear(oUsuario))
+            {
+                MessageBox.Show("Datos Agregados Con Éxito!");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Ha ocurrido un Error al insertar los datos");
+            }
+
+
+        }
+
+
+
+        //Boton para cancelar la accion
+        private void btnCancelar_Click_1(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Seguro que desea Cancelar la Acción?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                this.Close();
+            }
+        }
+
 
 
         // Valida que los campos tengan datos
@@ -138,95 +226,6 @@ namespace Hotel.Presentacion
             int id = tabla.Rows.Count + 1;
 
             return id;
-        }
-
-
-        private void btnAceptar_Click_1(object sender, EventArgs e)
-        {
-            // Validar que todos los campos tengan datos 
-            ValidarCampos();
-
-
-            // Validar que las dos Contraseñas sean iguales
-            bool _validacion = this.ValidarConfirmacionPassword(this.txtPassword.Text, this.txtConfirmarPassword.Text);
-
-            if (_validacion == false)
-            {
-                MessageBox.Show("Las Contraseñas no coinciden");
-                this.txtConfirmarPassword.Focus();
-                this.txtConfirmarPassword.Clear();
-                return;
-            }
-
-            // Validar que no exista un empleado con es tipo y número de documento
-            string _nroDoc = this.oEmpleado.validarEmpleadoExistente(this.txtNumeroDoc.Text, this.cboTipoDoc.SelectedValue.ToString());
-
-            if (_nroDoc == string.Empty)
-            {
-                MessageBox.Show("Ya existe un Empleado con ese Tipo y Número de Documento");
-                this.txtNumeroDoc.Clear();
-                this.cboTipoDoc.SelectedIndex = -1;
-                this.cboTipoDoc.Focus();
-                return;
-            }
-
-
-            // Validar que si ya existe el usuario
-            string _usuario = this.oUsuario.ValidarUsuarioExistente(this.txtUsuario.Text);
-
-            if (_usuario == string.Empty)
-            {
-                MessageBox.Show("El nombre de usuario ya existe, por favor ingrese otro");
-                this.txtUsuario.Clear();
-                this.txtUsuario.Focus();
-                return;
-            }
-
-
-
-            // Generar los id's de Usuario y Empleado
-            int _idUsuario = this.GenerarId(this.oUsuario.RecuperarIds());
-            int _idEmpleado = this.GenerarId(this.oEmpleado.RecuperarIds());
-
-
-            // Asignar valores a los atributos de los objetos
-            this.oEmpleado.IdEmpleado = _idEmpleado;
-            this.oEmpleado.Nombre = this.txtNombre.Text;
-            this.oEmpleado.Apellido = this.txtApellido.Text;
-            this.oEmpleado.TipoDoc = Convert.ToInt32(this.cboTipoDoc.SelectedValue);
-            this.oEmpleado.NroDoc = Convert.ToInt32(this.txtNumeroDoc.Text);
-            this.oEmpleado.FechaIngresoTrabajo = DateTime.Today;
-            this.oEmpleado.Puesto = Convert.ToInt32(this.cboPuesto.SelectedValue);
-
-            this.oUsuario.Id = _idUsuario;
-            this.oUsuario.Nombre = _usuario;
-            this.oUsuario.Contrasena = this.txtPassword.Text;
-            this.oUsuario.IdEmpleado = _idEmpleado;
-
-
-            // Insertar datos en la base de datos y verificar que se inserten con éxito
-            if (oEmpleado.Crear(oEmpleado) && oUsuario.Crear(oUsuario))
-            {
-                MessageBox.Show("Datos Agregados Con Éxito!");
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Ha ocurrido un Error al insertar los datos");
-            }
-
-
-        }
-
-
-
-        //Boton para cancelar la accion
-        private void btnCancelar_Click_1(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Seguro que desea Cancelar la Acción?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
-            {
-                this.Close();
-            }
         }
     }
     

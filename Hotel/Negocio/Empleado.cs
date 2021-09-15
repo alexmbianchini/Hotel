@@ -58,7 +58,9 @@ namespace Hotel.Negocio
 
         public string validarEmpleadoExistente(string nroDoc, string tipoDoc){
 
-            string consulta = "SELECT * FROM EMPLEADOS WHERE nro_doc ='" + nroDoc + "' AND tipo_doc= '"+ tipoDoc +"'";
+            string consulta = "SELECT * FROM EMPLEADOS WHERE nro_doc ='" + nroDoc + "'" +
+                " AND tipo_doc= '"+ tipoDoc +"'" +
+                " AND borrado_logico = 0";
 
             DBHelper oDatos = new DBHelper();
             DataTable tabla = oDatos.consultar(consulta);
