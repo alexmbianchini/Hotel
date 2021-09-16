@@ -52,9 +52,10 @@ namespace Hotel.Presentacion
             this.rjButton9.FlatAppearance.BorderSize = 0;
             this.rjButton9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjButton9.ForeColor = System.Drawing.Color.White;
-            this.rjButton9.Location = new System.Drawing.Point(0, 429);
+            this.rjButton9.Location = new System.Drawing.Point(0, 528);
+            this.rjButton9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rjButton9.Name = "rjButton9";
-            this.rjButton9.Size = new System.Drawing.Size(201, 55);
+            this.rjButton9.Size = new System.Drawing.Size(268, 68);
             this.rjButton9.TabIndex = 8;
             this.rjButton9.TextColor = System.Drawing.Color.White;
             this.rjButton9.UseVisualStyleBackColor = false;
@@ -73,8 +74,9 @@ namespace Hotel.Presentacion
             this.rjButton8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjButton8.ForeColor = System.Drawing.Color.White;
             this.rjButton8.Location = new System.Drawing.Point(0, -2);
+            this.rjButton8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rjButton8.Name = "rjButton8";
-            this.rjButton8.Size = new System.Drawing.Size(201, 98);
+            this.rjButton8.Size = new System.Drawing.Size(268, 121);
             this.rjButton8.TabIndex = 7;
             this.rjButton8.TextColor = System.Drawing.Color.White;
             this.rjButton8.UseVisualStyleBackColor = false;
@@ -90,9 +92,10 @@ namespace Hotel.Presentacion
             this.rjButton7.FlatAppearance.BorderSize = 0;
             this.rjButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjButton7.ForeColor = System.Drawing.Color.White;
-            this.rjButton7.Location = new System.Drawing.Point(0, 377);
+            this.rjButton7.Location = new System.Drawing.Point(0, 464);
+            this.rjButton7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rjButton7.Name = "rjButton7";
-            this.rjButton7.Size = new System.Drawing.Size(201, 55);
+            this.rjButton7.Size = new System.Drawing.Size(268, 68);
             this.rjButton7.TabIndex = 6;
             this.rjButton7.Text = " ";
             this.rjButton7.TextColor = System.Drawing.Color.White;
@@ -110,9 +113,10 @@ namespace Hotel.Presentacion
             this.rjButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjButton6.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rjButton6.ForeColor = System.Drawing.Color.White;
-            this.rjButton6.Location = new System.Drawing.Point(0, 330);
+            this.rjButton6.Location = new System.Drawing.Point(0, 406);
+            this.rjButton6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rjButton6.Name = "rjButton6";
-            this.rjButton6.Size = new System.Drawing.Size(201, 55);
+            this.rjButton6.Size = new System.Drawing.Size(268, 68);
             this.rjButton6.TabIndex = 5;
             this.rjButton6.Text = "---";
             this.rjButton6.TextColor = System.Drawing.Color.White;
@@ -130,9 +134,10 @@ namespace Hotel.Presentacion
             this.rjButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjButton5.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rjButton5.ForeColor = System.Drawing.Color.White;
-            this.rjButton5.Location = new System.Drawing.Point(0, 278);
+            this.rjButton5.Location = new System.Drawing.Point(0, 342);
+            this.rjButton5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rjButton5.Name = "rjButton5";
-            this.rjButton5.Size = new System.Drawing.Size(201, 55);
+            this.rjButton5.Size = new System.Drawing.Size(268, 68);
             this.rjButton5.TabIndex = 4;
             this.rjButton5.Text = "---";
             this.rjButton5.TextColor = System.Drawing.Color.White;
@@ -145,18 +150,19 @@ namespace Hotel.Presentacion
             this.rjButton4.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rjButton4.BorderRadius = 0;
             this.rjButton4.BorderSize = 0;
-            this.rjButton4.Enabled = false;
             this.rjButton4.FlatAppearance.BorderSize = 0;
             this.rjButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjButton4.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rjButton4.ForeColor = System.Drawing.Color.White;
-            this.rjButton4.Location = new System.Drawing.Point(0, 231);
+            this.rjButton4.Location = new System.Drawing.Point(0, 284);
+            this.rjButton4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rjButton4.Name = "rjButton4";
-            this.rjButton4.Size = new System.Drawing.Size(201, 55);
+            this.rjButton4.Size = new System.Drawing.Size(268, 68);
             this.rjButton4.TabIndex = 3;
-            this.rjButton4.Text = "---";
+            this.rjButton4.Text = "Contraseña";
             this.rjButton4.TextColor = System.Drawing.Color.White;
             this.rjButton4.UseVisualStyleBackColor = false;
+            this.rjButton4.Click += new System.EventHandler(this.rjButton4_Click);
             // 
             // btnHabitaciones
             // 
@@ -165,14 +171,14 @@ namespace Hotel.Presentacion
             this.btnHabitaciones.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnHabitaciones.BorderRadius = 0;
             this.btnHabitaciones.BorderSize = 0;
-            this.btnHabitaciones.Enabled = false;
             this.btnHabitaciones.FlatAppearance.BorderSize = 0;
             this.btnHabitaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHabitaciones.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHabitaciones.ForeColor = System.Drawing.Color.White;
-            this.btnHabitaciones.Location = new System.Drawing.Point(0, 179);
+            this.btnHabitaciones.Location = new System.Drawing.Point(0, 220);
+            this.btnHabitaciones.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnHabitaciones.Name = "btnHabitaciones";
-            this.btnHabitaciones.Size = new System.Drawing.Size(201, 55);
+            this.btnHabitaciones.Size = new System.Drawing.Size(268, 68);
             this.btnHabitaciones.TabIndex = 2;
             this.btnHabitaciones.Text = "Habitaciones";
             this.btnHabitaciones.TextColor = System.Drawing.Color.White;
@@ -190,9 +196,10 @@ namespace Hotel.Presentacion
             this.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUsuarios.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsuarios.ForeColor = System.Drawing.Color.White;
-            this.btnUsuarios.Location = new System.Drawing.Point(0, 127);
+            this.btnUsuarios.Location = new System.Drawing.Point(0, 156);
+            this.btnUsuarios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(201, 55);
+            this.btnUsuarios.Size = new System.Drawing.Size(268, 68);
             this.btnUsuarios.TabIndex = 1;
             this.btnUsuarios.Text = "Usuarios";
             this.btnUsuarios.TextColor = System.Drawing.Color.White;
@@ -210,21 +217,22 @@ namespace Hotel.Presentacion
             this.rjButton1.FlatAppearance.BorderSize = 0;
             this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjButton1.ForeColor = System.Drawing.Color.White;
-            this.rjButton1.Location = new System.Drawing.Point(0, 75);
+            this.rjButton1.Location = new System.Drawing.Point(0, 92);
+            this.rjButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rjButton1.Name = "rjButton1";
-            this.rjButton1.Size = new System.Drawing.Size(201, 55);
+            this.rjButton1.Size = new System.Drawing.Size(268, 68);
             this.rjButton1.TabIndex = 0;
             this.rjButton1.TextColor = System.Drawing.Color.White;
             this.rjButton1.UseVisualStyleBackColor = false;
             // 
             // frmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImage = global::Hotel.Properties.Resources.hotelfondo;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(766, 463);
+            this.ClientSize = new System.Drawing.Size(1021, 570);
             this.Controls.Add(this.rjButton9);
             this.Controls.Add(this.rjButton8);
             this.Controls.Add(this.rjButton7);
@@ -237,7 +245,7 @@ namespace Hotel.Presentacion
             this.ForeColor = System.Drawing.SystemColors.Control;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

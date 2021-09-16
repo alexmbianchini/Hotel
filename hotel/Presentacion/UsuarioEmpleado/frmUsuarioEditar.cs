@@ -62,30 +62,6 @@ namespace Hotel.Presentacion.UsuarioEmpleado
             this.ValidarCampos();
 
 
-            // Validar que la contraseña actual del usuario es correcta
-            int _validarActual = this.oUsuario.validarPassword(this.IdUsuario, this.txtPasswordActual.Text);
-
-            if (_validarActual == 0)
-            {
-                MessageBox.Show("La contraseña actual es incorrecta");
-                this.txtPasswordActual.Focus();
-                this.txtPasswordActual.Clear();
-                return;
-            }
-
-
-            // Validar que las dos Contraseñas  nuevas sean iguales
-            bool _validacion = this.ValidarConfirmacionPassword(this.txtPasswordNueva.Text, this.txtPasswordConfirmar.Text);
-
-            if (_validacion == false)
-            {
-                MessageBox.Show("Las Contraseñas no coinciden");
-                this.txtPasswordConfirmar.Focus();
-                this.txtPasswordConfirmar.Clear();
-                return;
-            }
-
-
             // Validar que no exista un empleado con es tipo y número de documento
             string _nroDoc = this.oEmpleado.validarEmpleadoExistente(this.txtNumeroDocumento.Text, this.cboTipoDocumento.SelectedValue.ToString());
 
@@ -101,7 +77,7 @@ namespace Hotel.Presentacion.UsuarioEmpleado
             }
 
 
-            // Validar que si ya existe el usuario
+            // Validar si ya existe el usuario
             string _usuario = this.oUsuario.ValidarUsuarioExistente(this.txtUsuario.Text);
 
             if (_usuario == string.Empty && nombreUsuario != this.txtUsuario.Text)
@@ -123,8 +99,8 @@ namespace Hotel.Presentacion.UsuarioEmpleado
 
             this.oUsuarioSelected.Id = IdUsuario;
             this.oUsuarioSelected.Nombre = this.txtUsuario.Text;
-            this.oUsuarioSelected.Contrasena = this.txtPasswordNueva.Text;
-            this.oUsuarioSelected.IdEmpleado = IdEmpleado;
+
+ 
 
 
             // Modificar datos en la base de datos y verificar que se inserten con éxito
@@ -226,29 +202,7 @@ namespace Hotel.Presentacion.UsuarioEmpleado
                 return;
             }
 
-            if (string.IsNullOrEmpty(this.txtPasswordActual.Text))
-            {
-                MessageBox.Show("Debe ingresar una Contraseña");
-                this.txtPasswordActual.Focus();
-                this.lblPasswordActual.ForeColor = Color.Red;
-                return;
-            }
-
-            if (string.IsNullOrEmpty(this.txtPasswordNueva.Text))
-            {
-                MessageBox.Show("Debe confirmar la Contraseña");
-                this.txtPasswordNueva.Focus();
-                this.lblPasswordNueva.ForeColor = Color.Red;
-                return;
-            }
-
-            if (string.IsNullOrEmpty(this.txtPasswordConfirmar.Text))
-            {
-                MessageBox.Show("Debe confirmar la Contraseña");
-                this.txtPasswordConfirmar.Focus();
-                this.lblPasswordConfirmar.ForeColor = Color.Red;
-                return;
-            }
+            
 
             if (cboPuesto.SelectedIndex == -1)
             {
@@ -260,18 +214,7 @@ namespace Hotel.Presentacion.UsuarioEmpleado
         }
 
 
-        // Valida coincidencia de contraseñas
-        private bool ValidarConfirmacionPassword(string Password, string Confirmacion)
-        {
-            if (Password == Confirmacion)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+
 
 
 
