@@ -127,12 +127,12 @@ namespace Hotel.Presentacion.UsuarioEmpleado
             // Modificar datos en la base de datos y verificar que se inserten con éxito
             if (oEmpleado.Modificar(oEmpleado) && oUsuario.Modificar(oUsuario))
             {
-                MessageBox.Show("Datos Editados Con Éxito!");
+                MessageBox.Show("Datos Agregados Con Éxito!");
                 this.Close();
             }
             else
             {
-                MessageBox.Show("Ha ocurrido un Error al Editar los datos");
+                MessageBox.Show("Ha ocurrido un Error al insertar los datos");
             }
         }
 
