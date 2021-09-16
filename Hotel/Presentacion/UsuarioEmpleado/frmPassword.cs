@@ -10,6 +10,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using Hotel.Datos.Dao;
+using Hotel.Servicios;
 
 namespace Hotel.Presentacion.UsuarioEmpleado
 {
@@ -17,7 +19,7 @@ namespace Hotel.Presentacion.UsuarioEmpleado
     {
         // Instanciar objetos 
         Usuario oUsuarioSelected = new Usuario();
-        UsuarioDao oUsuario = new UsuarioDao();
+        UsuarioService oUsuario = new UsuarioService();
 
 
         // Creación de constructor 
@@ -46,7 +48,7 @@ namespace Hotel.Presentacion.UsuarioEmpleado
             if (this.ValidarCampos())
             {
                 // Validar que la contraseña actual del usuario es correcta
-                int _validarActual = this.oUsuario.validarPassword(this.oUsuarioSelected.Id, this.txtPasswordActual.Text);
+                int _validarActual = this.oUsuario.ValidarPassword(this.oUsuarioSelected.Id, this.txtPasswordActual.Text);
 
                 if (_validarActual == 0)
                 {
@@ -123,7 +125,7 @@ namespace Hotel.Presentacion.UsuarioEmpleado
             //cualquier caracter del conjunto
             Regex caracEsp = new Regex("[!\"#\\$%&'()*+,-./:;=?@\\[\\]^_`{|}~]");
 
-            Boolean cumpleCriterios = false;
+            
 
             //si no contiene las letras, regresa false
             if (!letras.IsMatch(PasswordSinVerificar))
