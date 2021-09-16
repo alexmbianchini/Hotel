@@ -1,5 +1,4 @@
-﻿using Hotel.Datos.Interfaces;
-using Hotel.Negocio;
+﻿using Hotel.Negocio;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -9,15 +8,15 @@ using System.Threading.Tasks;
 
 namespace Hotel.Datos.Dao
 {
-    class UsuarioDao : IUsuario
+    class UsuarioDao
     {
-        public int ValidarUsuario(string nombre, string clave)
+        public int validarUsuario(string nombre, string clave)
         {
 
             string consulta = "SELECT * FROM Usuarios WHERE nombre ='" + nombre + "' AND contraseña ='" + clave + "'";
 
-
-            DataTable tabla = DBHelper.ObtenerInstancia().Ejecutar(consulta);
+            DBHelper oDatos = new DBHelper();
+            DataTable tabla = oDatos.Ejecutar(consulta);
             if (tabla.Rows.Count > 0)
             {
                 return (int)tabla.Rows[0][0];
@@ -32,16 +31,16 @@ namespace Hotel.Datos.Dao
         {
             string consulta = "SELECT * FROM USUARIOS WHERE borrado_logico = 0 ORDER BY 4";
 
-            
-            return DBHelper.ObtenerInstancia().Ejecutar(consulta);
+            DBHelper oDatos = new DBHelper();
+            return oDatos.Ejecutar(consulta);
         }
 
         public DataTable RecuperarIds()
         {
             string consulta = "SELECT Id FROM USUARIOS";
 
-            
-            return DBHelper.ObtenerInstancia().Ejecutar(consulta);
+            DBHelper oDatos = new DBHelper();
+            return oDatos.Ejecutar(consulta);
         }
 
 
@@ -50,8 +49,8 @@ namespace Hotel.Datos.Dao
             string consulta = "SELECT nombre FROM USUARIOS" +
                 " WHERE id=" + id;
 
-          
-            return DBHelper.ObtenerInstancia().Ejecutar(consulta);
+            DBHelper oDatos = new DBHelper();
+            return oDatos.Ejecutar(consulta);
         }
         public DataTable RecuperarGrilla()
         {
@@ -63,8 +62,8 @@ namespace Hotel.Datos.Dao
                 " WHERE u.borrado_logico = 0" +
                 " ORDER BY u.id";
 
-            
-            return DBHelper.ObtenerInstancia().Ejecutar(consulta);
+            DBHelper oDatos = new DBHelper();
+            return oDatos.Ejecutar(consulta);
         }
 
         public DataTable RecuperarFiltrados(string usuario, string apellido, string nombre, string puesto, string tipodoc, string nrodoc)
@@ -91,8 +90,8 @@ namespace Hotel.Datos.Dao
 
             consulta += " ORDER BY u.id";
 
-     
-            DataTable tabla = DBHelper.ObtenerInstancia().Ejecutar(consulta);
+            DBHelper oDatos = new DBHelper();
+            DataTable tabla = oDatos.Ejecutar(consulta);
             return tabla;
         }
 
@@ -102,8 +101,8 @@ namespace Hotel.Datos.Dao
             string consulta = "SELECT * FROM Usuarios WHERE nombre ='" + nombre + "'" +
                 " AND borrado_logico = 0";
 
-            
-            DataTable tabla = DBHelper.ObtenerInstancia().Ejecutar(consulta);
+            DBHelper oDatos = new DBHelper();
+            DataTable tabla = oDatos.Ejecutar(consulta);
             if (tabla.Rows.Count > 0)
             {
                 return string.Empty;
@@ -114,7 +113,7 @@ namespace Hotel.Datos.Dao
             }
         }
 
-        public bool Crear(Usuario oUsuario)
+        internal bool Crear(Usuario oUsuario)
         {
             string consulta = "INSERT INTO USUARIOS (id, contraseña, nombre, id_empleado, borrado_logico)" +
                 " VALUES (" +
@@ -123,37 +122,40 @@ namespace Hotel.Datos.Dao
                  " '" + oUsuario.Nombre + "'," +
                  " '" + oUsuario.IdEmpleado + "', 0);";
 
-            DBHelper.ObtenerInstancia().Ejecutar(consulta);
+            DBHelper oDatos = new DBHelper();
+            oDatos.Ejecutar(consulta);
             return true;
         }
 
-        public bool Eliminar(Usuario oUsuario)
+        internal bool Eliminar(Usuario oUsuario)
         {
             string consulta = "UPDATE USUARIOS SET borrado_logico = 1" +
                 " WHERE id =" + oUsuario.Id;
 
-            DBHelper.ObtenerInstancia().Ejecutar(consulta);
+            DBHelper oDatos = new DBHelper();
+            oDatos.Ejecutar(consulta);
             return true;
         }
 
-        public bool Modificar(Usuario oUsuario)
+        internal bool Modificar(Usuario oUsuario)
         {
             string consulta = "UPDATE USUARIOS SET " +
                 " contraseña = '" + oUsuario.Contrasena + "'," +
                 " nombre = '" + oUsuario.Nombre + "'" +
                 " WHERE id = " + oUsuario.Id;
 
-            DBHelper.ObtenerInstancia().Ejecutar(consulta);
+            DBHelper oDatos = new DBHelper();
+            oDatos.Ejecutar(consulta);
             return true;
         }
 
-        public int ValidarPassword(int id, string clave)
+        public int validarPassword(int id, string clave)
         {
 
             string consulta = "SELECT * FROM Usuarios WHERE id ='" + id + "' AND contraseña ='" + clave + "'";
 
-            
-            DataTable tabla = DBHelper.ObtenerInstancia().Ejecutar(consulta);
+            DBHelper oDatos = new DBHelper();
+            DataTable tabla = oDatos.Ejecutar(consulta);
             if (tabla.Rows.Count > 0)
             {
                 return (int)tabla.Rows[0][0];
