@@ -1,5 +1,6 @@
 ﻿using Hotel.Datos;
 using Hotel.Negocio;
+using Hotel.Servicios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,8 +17,8 @@ namespace Hotel.Presentacion
     {
         // Instanciar objetos 
 
-        HabitacionDao oHabitacion = new HabitacionDao();
-        TipoHabitacionDao oTipoHabitacion = new TipoHabitacionDao();
+        HabitacionService oHabitacion = new HabitacionService();
+        TipoHabitacionService oTipoHabitacion = new TipoHabitacionService();
         public frmNuevaHabitacion()
         {
             InitializeComponent();

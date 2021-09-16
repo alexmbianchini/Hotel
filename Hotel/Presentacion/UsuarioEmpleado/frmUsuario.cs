@@ -1,6 +1,7 @@
 ﻿using Hotel.Datos;
 using Hotel.Negocio;
 using Hotel.Presentacion.UsuarioEmpleado;
+using Hotel.Servicios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,10 +16,10 @@ namespace Hotel.Presentacion
 {
     public partial class frmUsuario : Form
     {
-        UsuarioDao oUsuario = new UsuarioDao();
-        EmpleadoDao oEmpleado = new EmpleadoDao();
-        PuestoDao oPuesto = new PuestoDao();
-        TipoDocumentoDao oTipoDoc = new TipoDocumentoDao();
+        UsuarioService oUsuario = new UsuarioService();
+        EmpleadoService oEmpleado = new EmpleadoService();
+        PuestoService oPuesto = new PuestoService();
+        TipoDocumentoService oTipoDoc = new TipoDocumentoService();
         Usuario oUsuarioSelected = new Usuario();
         Empleado oEmpleadoSelected = new Empleado();
 

@@ -70,7 +70,9 @@
     <Compile Include="Datos\Interfaces\IEstadoHabitacion.cs" />
     <Compile Include="Datos\Interfaces\IHabitacion.cs" />
     <Compile Include="Datos\Interfaces\IPuesto.cs" />
+    <Compile Include="Datos\Interfaces\ITipoDocumento.cs" />
     <Compile Include="Datos\Interfaces\ITipoHabitacion.cs" />
+    <Compile Include="Datos\Interfaces\IUsuario.cs" />
     <Compile Include="Negocio\Cochera.cs" />
     <Compile Include="Negocio\Cuenta.cs" />
     <Compile Include="Negocio\DetalleServicioCuenta.cs" />
@@ -144,7 +146,9 @@
     <Compile Include="Servicios\EstadoHabitacionService.cs" />
     <Compile Include="Servicios\HabitacionService.cs" />
     <Compile Include="Servicios\PuestoService.cs" />
+    <Compile Include="Servicios\TipoDocumentoService.cs" />
     <Compile Include="Servicios\TipoHabitacionService.cs" />
+    <Compile Include="Servicios\UsuarioService.cs" />
     <EmbeddedResource Include="Custom\RJTextBox.resx">
       <DependentUpon>RJTextBox.cs</DependentUpon>
     </EmbeddedResource>
