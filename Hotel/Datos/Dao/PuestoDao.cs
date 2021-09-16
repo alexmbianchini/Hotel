@@ -5,16 +5,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hotel.Datos
+namespace Hotel.Datos.Dao
 {
-    class EstadoHabitacionDao
+    class PuestoDao
     {
         public DataTable RecuperarTodos()
         {
-            string consulta = "SELECT * FROM ESTADO_HABITACION WHERE borrado_logico = 0 ORDER BY 1";
+            string consulta = "SELECT * FROM PUESTOS WHERE borrado_logico = 0 ORDER BY 1";
 
             DBHelper oDatos = new DBHelper();
-            return oDatos.consultar(consulta);
+            return oDatos.Ejecutar(consulta);
         }
     }
 }

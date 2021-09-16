@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hotel.Datos
+namespace Hotel.Datos.Dao
 {
     class HabitacionDao
     {
@@ -14,7 +14,7 @@ namespace Hotel.Datos
             string consulta = "SELECT * FROM HABITACIONES WHERE borrado_logico = 0 ORDER BY 1";
 
             DBHelper oDatos = new DBHelper();
-            return oDatos.consultar(consulta);
+            return oDatos.Ejecutar(consulta);
         }
 
         public DataTable RecuperarGrilla()
@@ -27,7 +27,7 @@ namespace Hotel.Datos
 
 
             DBHelper oDatos = new DBHelper();
-            return oDatos.consultar(consulta);
+            return oDatos.Ejecutar(consulta);
         }
         public DataTable RecuperarFiltrados(string numero, string piso, string tipo, string estado)
         {
@@ -48,7 +48,7 @@ namespace Hotel.Datos
 
             consulta += "ORDER BY 1";
             DBHelper oDatos = new DBHelper();
-            return oDatos.consultar(consulta);
+            return oDatos.Ejecutar(consulta);
         }
     }
 }

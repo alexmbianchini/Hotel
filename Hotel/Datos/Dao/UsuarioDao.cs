@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hotel.Datos
+namespace Hotel.Datos.Dao
 {
     class UsuarioDao
     {
@@ -16,7 +16,7 @@ namespace Hotel.Datos
             string consulta = "SELECT * FROM Usuarios WHERE nombre ='" + nombre + "' AND contraseña ='" + clave + "'";
 
             DBHelper oDatos = new DBHelper();
-            DataTable tabla = oDatos.consultar(consulta);
+            DataTable tabla = oDatos.Ejecutar(consulta);
             if (tabla.Rows.Count > 0)
             {
                 return (int)tabla.Rows[0][0];
@@ -32,7 +32,7 @@ namespace Hotel.Datos
             string consulta = "SELECT * FROM USUARIOS WHERE borrado_logico = 0 ORDER BY 4";
 
             DBHelper oDatos = new DBHelper();
-            return oDatos.consultar(consulta);
+            return oDatos.Ejecutar(consulta);
         }
 
         public DataTable RecuperarIds()
@@ -40,7 +40,7 @@ namespace Hotel.Datos
             string consulta = "SELECT Id FROM USUARIOS";
 
             DBHelper oDatos = new DBHelper();
-            return oDatos.consultar(consulta);
+            return oDatos.Ejecutar(consulta);
         }
 
 
@@ -50,7 +50,7 @@ namespace Hotel.Datos
                 " WHERE id=" + id;
 
             DBHelper oDatos = new DBHelper();
-            return oDatos.consultar(consulta);
+            return oDatos.Ejecutar(consulta);
         }
         public DataTable RecuperarGrilla()
         {
@@ -63,7 +63,7 @@ namespace Hotel.Datos
                 " ORDER BY u.id";
 
             DBHelper oDatos = new DBHelper();
-            return oDatos.consultar(consulta);
+            return oDatos.Ejecutar(consulta);
         }
 
         public DataTable RecuperarFiltrados(string usuario, string apellido, string nombre, string puesto, string tipodoc, string nrodoc)
@@ -91,7 +91,7 @@ namespace Hotel.Datos
             consulta += " ORDER BY u.id";
 
             DBHelper oDatos = new DBHelper();
-            DataTable tabla = oDatos.consultar(consulta);
+            DataTable tabla = oDatos.Ejecutar(consulta);
             return tabla;
         }
 
@@ -102,7 +102,7 @@ namespace Hotel.Datos
                 " AND borrado_logico = 0";
 
             DBHelper oDatos = new DBHelper();
-            DataTable tabla = oDatos.consultar(consulta);
+            DataTable tabla = oDatos.Ejecutar(consulta);
             if (tabla.Rows.Count > 0)
             {
                 return string.Empty;
@@ -123,7 +123,7 @@ namespace Hotel.Datos
                  " '" + oUsuario.IdEmpleado + "', 0);";
 
             DBHelper oDatos = new DBHelper();
-            oDatos.consultar(consulta);
+            oDatos.Ejecutar(consulta);
             return true;
         }
 
@@ -133,7 +133,7 @@ namespace Hotel.Datos
                 " WHERE id =" + oUsuario.Id;
 
             DBHelper oDatos = new DBHelper();
-            oDatos.consultar(consulta);
+            oDatos.Ejecutar(consulta);
             return true;
         }
 
@@ -145,7 +145,7 @@ namespace Hotel.Datos
                 " WHERE id = " + oUsuario.Id;
 
             DBHelper oDatos = new DBHelper();
-            oDatos.consultar(consulta);
+            oDatos.Ejecutar(consulta);
             return true;
         }
 
@@ -155,7 +155,7 @@ namespace Hotel.Datos
             string consulta = "SELECT * FROM Usuarios WHERE id ='" + id + "' AND contraseña ='" + clave + "'";
 
             DBHelper oDatos = new DBHelper();
-            DataTable tabla = oDatos.consultar(consulta);
+            DataTable tabla = oDatos.Ejecutar(consulta);
             if (tabla.Rows.Count > 0)
             {
                 return (int)tabla.Rows[0][0];
