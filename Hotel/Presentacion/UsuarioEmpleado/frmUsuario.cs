@@ -1,4 +1,5 @@
-﻿using Hotel.Negocio;
+﻿using Hotel.Datos;
+using Hotel.Negocio;
 using Hotel.Presentacion.UsuarioEmpleado;
 using System;
 using System.Collections.Generic;
@@ -14,10 +15,12 @@ namespace Hotel.Presentacion
 {
     public partial class frmUsuario : Form
     {
-        Usuario oUsuario = new Usuario();
-        Empleado oEmpleado = new Empleado();
-        Puesto oPuesto = new Puesto();
-        TipoDocumento oTipoDoc = new TipoDocumento();
+        UsuarioDao oUsuario = new UsuarioDao();
+        EmpleadoDao oEmpleado = new EmpleadoDao();
+        PuestoDao oPuesto = new PuestoDao();
+        TipoDocumentoDao oTipoDoc = new TipoDocumentoDao();
+        Usuario oUsuarioSelected = new Usuario();
+        Empleado oEmpleadoSelected = new Empleado();
 
         public frmUsuario()
         {
@@ -147,11 +150,11 @@ namespace Hotel.Presentacion
         {
             if (MessageBox.Show("Seguro que desea Eliminar el Empleado seleccionado?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
-                this.oUsuario.Id = (int)dgvUsuarios.CurrentRow.Cells["clmIdUsuario"].Value;
-                this.oEmpleado.IdEmpleado = (int)dgvUsuarios.CurrentRow.Cells["clmIdEmpleado"].Value;
-                this.oEmpleado.FechaSalidaTrabajo = DateTime.Today;
+                this.oUsuarioSelected.Id = (int)dgvUsuarios.CurrentRow.Cells["clmIdUsuario"].Value;
+                this.oEmpleadoSelected.IdEmpleado = (int)dgvUsuarios.CurrentRow.Cells["clmIdEmpleado"].Value;
+                this.oEmpleadoSelected.FechaSalidaTrabajo = DateTime.Today;
 
-                if (oEmpleado.Eliminar(oEmpleado) && oUsuario.Eliminar(oUsuario))
+                if (oEmpleado.Eliminar(oEmpleadoSelected) && oUsuario.Eliminar(oUsuarioSelected))
                 {
                     MessageBox.Show("Empleado Eliminado con Éxito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();

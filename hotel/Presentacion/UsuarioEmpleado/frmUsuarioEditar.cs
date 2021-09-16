@@ -1,4 +1,5 @@
-﻿using Hotel.Negocio;
+﻿using Hotel.Datos;
+using Hotel.Negocio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,10 +16,12 @@ namespace Hotel.Presentacion.UsuarioEmpleado
     public partial class frmUsuarioEditar : Form
     {
         // Instanciar objetos necesarios
-        TipoDocumento oTipoDoc = new TipoDocumento();
-        Puesto oPuesto = new Puesto();
-        Usuario oUsuario = new Usuario();
-        Empleado oEmpleado = new Empleado();
+        TipoDocumentoDao oTipoDoc = new TipoDocumentoDao();
+        PuestoDao oPuesto = new PuestoDao();
+        UsuarioDao oUsuario = new UsuarioDao();
+        EmpleadoDao oEmpleado = new EmpleadoDao();
+        Usuario oUsuarioSelected = new Usuario();
+        Empleado oEmpleadoSelected = new Empleado();
 
 
         // Variables a utilizar
@@ -59,30 +62,6 @@ namespace Hotel.Presentacion.UsuarioEmpleado
             this.ValidarCampos();
 
 
-            // Validar que la contraseña actual del usuario es correcta
-            int _validarActual = this.oUsuario.validarPassword(this.IdUsuario, this.txtPasswordActual.Text);
-
-            if (_validarActual == 0)
-            {
-                MessageBox.Show("La contraseña actual es incorrecta");
-                this.txtPasswordActual.Focus();
-                this.txtPasswordActual.Clear();
-                return;
-            }
-
-
-            // Validar que las dos Contraseñas  nuevas sean iguales
-            bool _validacion = this.ValidarConfirmacionPassword(this.txtPasswordNueva.Text, this.txtPasswordConfirmar.Text);
-
-            if (_validacion == false)
-            {
-                MessageBox.Show("Las Contraseñas no coinciden");
-                this.txtPasswordConfirmar.Focus();
-                this.txtPasswordConfirmar.Clear();
-                return;
-            }
-
-
             // Validar que no exista un empleado con es tipo y número de documento
             string _nroDoc = this.oEmpleado.validarEmpleadoExistente(this.txtNumeroDocumento.Text, this.cboTipoDocumento.SelectedValue.ToString());
 
@@ -98,7 +77,7 @@ namespace Hotel.Presentacion.UsuarioEmpleado
             }
 
 
-            // Validar que si ya existe el usuario
+            // Validar si ya existe el usuario
             string _usuario = this.oUsuario.ValidarUsuarioExistente(this.txtUsuario.Text);
 
             if (_usuario == string.Empty && nombreUsuario != this.txtUsuario.Text)
@@ -111,21 +90,21 @@ namespace Hotel.Presentacion.UsuarioEmpleado
 
 
             // Asignar Valores a los atributos de los objetos
-            this.oEmpleado.IdEmpleado = IdEmpleado;
-            this.oEmpleado.Nombre = this.txtNombre.Text;
-            this.oEmpleado.Apellido = this.txtApellido.Text;
-            this.oEmpleado.TipoDoc = Convert.ToInt32(this.cboTipoDocumento.SelectedValue);
-            this.oEmpleado.NroDoc = Convert.ToInt32(this.txtNumeroDocumento.Text);
-            this.oEmpleado.Puesto = Convert.ToInt32(this.cboPuesto.SelectedValue);
+            this.oEmpleadoSelected.IdEmpleado = IdEmpleado;
+            this.oEmpleadoSelected.Nombre = this.txtNombre.Text;
+            this.oEmpleadoSelected.Apellido = this.txtApellido.Text;
+            this.oEmpleadoSelected.TipoDoc = Convert.ToInt32(this.cboTipoDocumento.SelectedValue);
+            this.oEmpleadoSelected.NroDoc = Convert.ToInt32(this.txtNumeroDocumento.Text);
+            this.oEmpleadoSelected.Puesto = Convert.ToInt32(this.cboPuesto.SelectedValue);
 
-            this.oUsuario.Id = IdUsuario;
-            this.oUsuario.Nombre = this.txtUsuario.Text;
-            this.oUsuario.Contrasena = this.txtPasswordNueva.Text;
-            this.oUsuario.IdEmpleado = IdEmpleado;
+            this.oUsuarioSelected.Id = IdUsuario;
+            this.oUsuarioSelected.Nombre = this.txtUsuario.Text;
+
+ 
 
 
             // Modificar datos en la base de datos y verificar que se inserten con éxito
-            if (oEmpleado.Modificar(oEmpleado) && oUsuario.Modificar(oUsuario))
+            if (oEmpleado.Modificar(oEmpleadoSelected) && oUsuario.Modificar(oUsuarioSelected))
             {
                 MessageBox.Show("Datos Agregados Con Éxito!");
                 this.Close();
@@ -223,29 +202,7 @@ namespace Hotel.Presentacion.UsuarioEmpleado
                 return;
             }
 
-            if (string.IsNullOrEmpty(this.txtPasswordActual.Text))
-            {
-                MessageBox.Show("Debe ingresar una Contraseña");
-                this.txtPasswordActual.Focus();
-                this.lblPasswordActual.ForeColor = Color.Red;
-                return;
-            }
-
-            if (string.IsNullOrEmpty(this.txtPasswordNueva.Text))
-            {
-                MessageBox.Show("Debe confirmar la Contraseña");
-                this.txtPasswordNueva.Focus();
-                this.lblPasswordNueva.ForeColor = Color.Red;
-                return;
-            }
-
-            if (string.IsNullOrEmpty(this.txtPasswordConfirmar.Text))
-            {
-                MessageBox.Show("Debe confirmar la Contraseña");
-                this.txtPasswordConfirmar.Focus();
-                this.lblPasswordConfirmar.ForeColor = Color.Red;
-                return;
-            }
+            
 
             if (cboPuesto.SelectedIndex == -1)
             {
@@ -257,18 +214,7 @@ namespace Hotel.Presentacion.UsuarioEmpleado
         }
 
 
-        // Valida coincidencia de contraseñas
-        private bool ValidarConfirmacionPassword(string Password, string Confirmacion)
-        {
-            if (Password == Confirmacion)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+
 
 
 

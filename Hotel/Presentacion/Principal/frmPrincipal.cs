@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hotel.Presentacion.UsuarioEmpleado;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace Hotel.Presentacion
 {
     public partial class frmPrincipal : Form
     {
+        frmLogin fLog = new frmLogin();
         public frmPrincipal()
         {
             InitializeComponent();
@@ -19,18 +21,23 @@ namespace Hotel.Presentacion
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
-            frmLogin fLog = new frmLogin();
+            
             fLog.ShowDialog();
 
 
-            if (fLog.MiUsuario.Id == 0)
+            if (fLog.MiUsuarioSelected.Id == 0)
             {
                 this.Close();
             }
             else
             {
-                this.Text += " - Usuario: " + fLog.MiUsuario.Nombre;
+                this.Text += " - Usuario: " + fLog.MiUsuarioSelected.Nombre;
+
+                
             }
+
+
+            
         }
 
         private void btnUsuarios_Click(object sender, EventArgs e)
@@ -43,6 +50,12 @@ namespace Hotel.Presentacion
         {
             frmHabitacion frh = new frmHabitacion();
             frh.ShowDialog();
+        }
+
+        private void rjButton4_Click(object sender, EventArgs e)
+        {
+            frmPassword frmP = new frmPassword(fLog.MiUsuarioSelected.Id);
+            frmP.ShowDialog();
         }
     }
 }
