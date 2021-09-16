@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Hotel.Datos.Interfaces
 {
-    interface IEstadoHabitacion
+    interface IPuesto
     {
         DataTable RecuperarTodos();
     }
