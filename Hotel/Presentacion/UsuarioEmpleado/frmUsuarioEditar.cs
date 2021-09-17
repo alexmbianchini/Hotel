@@ -1,5 +1,6 @@
 ﻿using Hotel.Datos;
 using Hotel.Negocio;
+using Hotel.Servicios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,10 +17,10 @@ namespace Hotel.Presentacion.UsuarioEmpleado
     public partial class frmUsuarioEditar : Form
     {
         // Instanciar objetos necesarios
-        TipoDocumentoDao oTipoDoc = new TipoDocumentoDao();
-        PuestoDao oPuesto = new PuestoDao();
-        UsuarioDao oUsuario = new UsuarioDao();
-        EmpleadoDao oEmpleado = new EmpleadoDao();
+        TipoDocumentoService oTipoDoc = new TipoDocumentoService();
+        PuestoService oPuesto = new PuestoService();
+        UsuarioService oUsuario = new UsuarioService();
+        EmpleadoService oEmpleado = new EmpleadoService();
         Usuario oUsuarioSelected = new Usuario();
         Empleado oEmpleadoSelected = new Empleado();
 
@@ -63,7 +64,7 @@ namespace Hotel.Presentacion.UsuarioEmpleado
 
 
             // Validar que no exista un empleado con es tipo y número de documento
-            string _nroDoc = this.oEmpleado.validarEmpleadoExistente(this.txtNumeroDocumento.Text, this.cboTipoDocumento.SelectedValue.ToString());
+            string _nroDoc = this.oEmpleado.ValidarEmpleadoExistente(this.txtNumeroDocumento.Text, this.cboTipoDocumento.SelectedValue.ToString());
 
             
 
