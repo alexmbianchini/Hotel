@@ -53,8 +53,7 @@ namespace Hotel.Presentacion
 
         private void frmLogin_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((int)e.KeyChar == (int)Keys.Enter)
-                this.Verificar();
+            this.EsEnter(e);
         }
 
         private void Verificar()
@@ -92,16 +91,20 @@ namespace Hotel.Presentacion
             }
         }
 
-        private void txtUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        private void EsEnter(KeyPressEventArgs e)
         {
             if ((int)e.KeyChar == (int)Keys.Enter)
                 this.Verificar();
         }
 
+        private void txtUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            this.EsEnter(e);
+        }
+
         private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((int)e.KeyChar == (int)Keys.Enter)
-                this.Verificar();
+            this.EsEnter(e);
         }
     }
 }

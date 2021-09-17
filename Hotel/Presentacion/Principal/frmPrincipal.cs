@@ -52,7 +52,7 @@ namespace Hotel.Presentacion
             frh.ShowDialog();
         }
 
-        private void rjButton4_Click(object sender, EventArgs e)
+        private void btnContra_Click(object sender, EventArgs e)
         {
             frmPassword frmP = new frmPassword(fLog.MiUsuarioSelected.Id);
             frmP.ShowDialog();

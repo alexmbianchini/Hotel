@@ -30,30 +30,7 @@ namespace Hotel.Presentacion
 
         private void frmUsuario_Load(object sender, EventArgs e)
         {
-            // Inicializamos los dateTimePicker con la fecha actual
-            //this.dtpFechaIngreso.Value= DateTime.Today;
-
-
-            //Carga de ComboBoxs
-            //this.CargarCombo(cboNombreUsuario, oUsuario.RecuperarTodos(), "nombre", "nombre");
-            //this.CargarCombo(cboApellidoEmpleado, oEmpleado.RecuperarTodos(), "apellido", "apellido");
-            //this.CargarCombo(cboNombreEmpleado, oEmpleado.RecuperarTodos(), "nombre", "nombre");
-            this.CargarCombo(cboPuesto, oPuesto.RecuperarTodos(), "descripcion", "cod_puesto");
-            this.CargarCombo(cboTipoDoc, oTipoDoc.RecuperarTodos(), "descripcion", "tipo_doc");
-            this.CargarCombo(cboNroDoc, oEmpleado.RecuperarTodos(), "nro_doc", "nro_doc");
-
-            //Carga de Grilla
-            this.CargarGrilla(dgvUsuarios, oUsuario.RecuperarGrilla());
-
-
-            //Habilitacion de Botones
-            this.btnConsultar.Enabled = true;
-            this.btnEditar.Enabled = false;
-            this.btnEliminar.Enabled = false;
-            this.btnLimpiar.Enabled = true;
-            this.btnNuevo.Enabled = true;
-            this.btnSalir.Enabled = true;
-
+            this.CargarTodo();
         }
 
         private void CargarCombo(ComboBox combo, DataTable tabla, string campoMostrar, string campoValor)
@@ -86,12 +63,6 @@ namespace Hotel.Presentacion
 
 
 
-        private void dgvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-
         private void btnLimpiar_Click_1(object sender, EventArgs e)
         {
             //this.dtpFechaIngreso.Value = DateTime.Today;
@@ -100,7 +71,7 @@ namespace Hotel.Presentacion
             this.cboPuesto.SelectedIndex = -1;
             this.txtNombreEmpleado.Text = string.Empty;
             this.cboTipoDoc.SelectedIndex = -1;
-            this.cboNroDoc.SelectedIndex = -1;
+            this.txtNroDoc.Text = string.Empty;
         }
 
         private void btnConsultar_Click_1(object sender, EventArgs e)
@@ -123,8 +94,7 @@ namespace Hotel.Presentacion
                 _puesto = cboPuesto.SelectedValue.ToString();
             if (cboTipoDoc.SelectedIndex != -1)
                 _tipo_doc = cboTipoDoc.SelectedValue.ToString();
-            if (cboNroDoc.SelectedIndex != -1)
-                _nro_doc = cboNroDoc.SelectedValue.ToString();
+            _nro_doc = txtNroDoc.Text;
 
 
             //dtpFechaIngreso.Value.ToString()) en caso de agregar fecha
@@ -134,14 +104,15 @@ namespace Hotel.Presentacion
         private void btnNuevo_Click_1(object sender, EventArgs e)
         {
             frmUsuarioNuevo frmNuevo = new frmUsuarioNuevo();
-
-            frmNuevo.Show();
+            frmNuevo.ShowDialog();
+            this.CargarTodo();
         }
 
         private void btnEditar_Click_1(object sender, EventArgs e)
         {
             frmUsuarioEditar oEditar = new frmUsuarioEditar(Convert.ToInt32(dgvUsuarios.CurrentRow.Cells["clmIdUsuario"].Value), Convert.ToInt32(dgvUsuarios.CurrentRow.Cells["clmIdEmpleado"].Value));
             oEditar.ShowDialog();
+            this.CargarTodo();
         }
 
         private void btnEliminar_Click_1(object sender, EventArgs e)
@@ -155,13 +126,13 @@ namespace Hotel.Presentacion
                 if (oEmpleado.Eliminar(oEmpleadoSelected) && oUsuario.Eliminar(oUsuarioSelected))
                 {
                     MessageBox.Show("Empleado Eliminado con Éxito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
                 }
                 else
                 {
                     MessageBox.Show("Error al eliminar el Empleado", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
+            this.CargarTodo();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -188,6 +159,34 @@ namespace Hotel.Presentacion
         private void txtNombreEmpleado__TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void CargarTodo()
+        {
+            // Inicializamos los dateTimePicker con la fecha actual
+            //this.dtpFechaIngreso.Value= DateTime.Today;
+
+
+            //Carga de ComboBoxs
+            //this.CargarCombo(cboNombreUsuario, oUsuario.RecuperarTodos(), "nombre", "nombre");
+            //this.CargarCombo(cboApellidoEmpleado, oEmpleado.RecuperarTodos(), "apellido", "apellido");
+            //this.CargarCombo(cboNombreEmpleado, oEmpleado.RecuperarTodos(), "nombre", "nombre");
+            //this.CargarCombo(cboNroDoc, oEmpleado.RecuperarTodos(), "nro_doc", "nro_doc");
+            this.CargarCombo(cboPuesto, oPuesto.RecuperarTodos(), "descripcion", "cod_puesto");
+            this.CargarCombo(cboTipoDoc, oTipoDoc.RecuperarTodos(), "descripcion", "tipo_doc");
+
+
+            //Carga de Grilla
+            this.CargarGrilla(dgvUsuarios, oUsuario.RecuperarGrilla());
+
+
+            //Habilitacion de Botones
+            this.btnConsultar.Enabled = true;
+            this.btnEditar.Enabled = false;
+            this.btnEliminar.Enabled = false;
+            this.btnLimpiar.Enabled = true;
+            this.btnNuevo.Enabled = true;
+            this.btnSalir.Enabled = true;
         }
     }
 }

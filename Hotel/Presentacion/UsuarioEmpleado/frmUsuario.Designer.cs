@@ -47,7 +47,6 @@ namespace Hotel.Presentacion
             this.lblPuesto = new System.Windows.Forms.Label();
             this.cboPuesto = new System.Windows.Forms.ComboBox();
             this.lblNombreEmpleado = new System.Windows.Forms.Label();
-            this.cboNroDoc = new System.Windows.Forms.ComboBox();
             this.lblNroDoc = new System.Windows.Forms.Label();
             this.cboTipoDoc = new System.Windows.Forms.ComboBox();
             this.lblTipoDoc = new System.Windows.Forms.Label();
@@ -60,6 +59,7 @@ namespace Hotel.Presentacion
             this.btnNuevo = new Hotel.Custom.RJButton();
             this.btnConsultar = new Hotel.Custom.RJButton();
             this.btnLimpiar = new Hotel.Custom.RJButton();
+            this.txtNroDoc = new Hotel.Custom.RJTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -106,7 +106,6 @@ namespace Hotel.Presentacion
             this.dgvUsuarios.Size = new System.Drawing.Size(490, 191);
             this.dgvUsuarios.TabIndex = 0;
             this.dgvUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellClick);
-            this.dgvUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellContentClick);
             // 
             // clmIdUsuario
             // 
@@ -225,20 +224,11 @@ namespace Hotel.Presentacion
             this.lblNombreEmpleado.TabIndex = 19;
             this.lblNombreEmpleado.Text = "Nombre Empleado";
             // 
-            // cboNroDoc
-            // 
-            this.cboNroDoc.FormattingEnabled = true;
-            this.cboNroDoc.Location = new System.Drawing.Point(185, 103);
-            this.cboNroDoc.Margin = new System.Windows.Forms.Padding(2);
-            this.cboNroDoc.Name = "cboNroDoc";
-            this.cboNroDoc.Size = new System.Drawing.Size(92, 21);
-            this.cboNroDoc.TabIndex = 3;
-            // 
             // lblNroDoc
             // 
             this.lblNroDoc.AutoSize = true;
             this.lblNroDoc.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNroDoc.Location = new System.Drawing.Point(53, 103);
+            this.lblNroDoc.Location = new System.Drawing.Point(51, 112);
             this.lblNroDoc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNroDoc.Name = "lblNroDoc";
             this.lblNroDoc.Size = new System.Drawing.Size(110, 19);
@@ -433,6 +423,21 @@ namespace Hotel.Presentacion
             this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click_1);
             // 
+            // txtNroDoc
+            // 
+            this.txtNroDoc.BackColor = System.Drawing.Color.White;
+            this.txtNroDoc.BorderColor = System.Drawing.SystemColors.WindowText;
+            this.txtNroDoc.BorderFocusColor = System.Drawing.SystemColors.WindowText;
+            this.txtNroDoc.BorderSize = 2;
+            this.txtNroDoc.Location = new System.Drawing.Point(185, 103);
+            this.txtNroDoc.Multiline = false;
+            this.txtNroDoc.Name = "txtNroDoc";
+            this.txtNroDoc.Padding = new System.Windows.Forms.Padding(7);
+            this.txtNroDoc.PasswordChar = false;
+            this.txtNroDoc.Size = new System.Drawing.Size(92, 28);
+            this.txtNroDoc.TabIndex = 3;
+            this.txtNroDoc.UnderlinedStyle = false;
+            // 
             // frmUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -440,6 +445,7 @@ namespace Hotel.Presentacion
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(188)))), ((int)(((byte)(121)))));
             this.ClientSize = new System.Drawing.Size(667, 437);
             this.ControlBox = false;
+            this.Controls.Add(this.txtNroDoc);
             this.Controls.Add(this.txtApellidoEmpleado);
             this.Controls.Add(this.txtNombreEmpleado);
             this.Controls.Add(this.txtUsuario);
@@ -449,7 +455,6 @@ namespace Hotel.Presentacion
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.btnLimpiar);
-            this.Controls.Add(this.cboNroDoc);
             this.Controls.Add(this.lblNroDoc);
             this.Controls.Add(this.cboTipoDoc);
             this.Controls.Add(this.lblTipoDoc);
@@ -479,7 +484,6 @@ namespace Hotel.Presentacion
         private System.Windows.Forms.Label lblPuesto;
         private System.Windows.Forms.ComboBox cboPuesto;
         private System.Windows.Forms.Label lblNombreEmpleado;
-        private System.Windows.Forms.ComboBox cboNroDoc;
         private System.Windows.Forms.Label lblNroDoc;
         private System.Windows.Forms.ComboBox cboTipoDoc;
         private System.Windows.Forms.Label lblTipoDoc;
@@ -500,5 +504,6 @@ namespace Hotel.Presentacion
         private Custom.RJTextBox txtUsuario;
         private Custom.RJTextBox txtNombreEmpleado;
         private Custom.RJTextBox txtApellidoEmpleado;
+        private Custom.RJTextBox txtNroDoc;
     }
 }
