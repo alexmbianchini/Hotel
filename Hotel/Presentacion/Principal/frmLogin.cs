@@ -73,9 +73,9 @@ namespace Hotel.Presentacion
             }
 
             this.MiUsuarioSelected.Nombre = this.txtUsuario.Text;
-            this.MiUsuarioSelected.Contrasena = this.txtPassword.Text;
+            this.MiUsuarioSelected.Password = this.txtPassword.Text;
 
-            this.MiUsuarioSelected.Id = this.miUsuario.ValidarUsuario(MiUsuarioSelected.Nombre, MiUsuarioSelected.Contrasena);
+            this.MiUsuarioSelected.Id = this.miUsuario.ValidarUsuario(MiUsuarioSelected.Nombre, MiUsuarioSelected.Password);
 
             //if (this.txtUsuario.Text == this.user && this.txtContrasena.Text == this.pass)
             if (MiUsuarioSelected.Id != 0)

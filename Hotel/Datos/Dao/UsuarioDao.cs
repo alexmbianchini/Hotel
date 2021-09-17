@@ -14,7 +14,7 @@ namespace Hotel.Datos.Dao
         public int ValidarUsuario(string nombre, string clave)
         {
 
-            string consulta = "SELECT * FROM Usuarios WHERE nombre ='" + nombre + "' AND contraseña ='" + clave + "'";
+            string consulta = "SELECT * FROM Usuarios WHERE nombre ='" + nombre + "' AND password ='" + clave + "'";
 
             
             DataTable tabla = DBHelper.ObtenerInstancia().Ejecutar(consulta);
@@ -113,10 +113,10 @@ namespace Hotel.Datos.Dao
 
         public bool Crear(Usuario oUsuario)
         {
-            string consulta = "INSERT INTO USUARIOS (id, contraseña, nombre, id_empleado, borrado_logico)" +
+            string consulta = "INSERT INTO USUARIOS (id, password, nombre, id_empleado, borrado_logico)" +
                 " VALUES (" +
                  " '" + oUsuario.Id + "'," +
-                 " '" + oUsuario.Contrasena + "'," +
+                 " '" + oUsuario.Password + "'," +
                  " '" + oUsuario.Nombre + "'," +
                  " '" + oUsuario.IdEmpleado + "', 0);";
 
@@ -138,7 +138,7 @@ namespace Hotel.Datos.Dao
         public bool Modificar(Usuario oUsuario)
         {
             string consulta = "UPDATE USUARIOS SET " +
-                " contraseña = '" + oUsuario.Contrasena + "'," +
+                " password = '" + oUsuario.Password + "'," +
                 " nombre = '" + oUsuario.Nombre + "'" +
                 " WHERE id = " + oUsuario.Id;
 
@@ -149,7 +149,7 @@ namespace Hotel.Datos.Dao
         public int ValidarPassword(int id, string clave)
         {
 
-            string consulta = "SELECT * FROM Usuarios WHERE id ='" + id + "' AND contraseña ='" + clave + "'";
+            string consulta = "SELECT * FROM Usuarios WHERE id ='" + id + "' AND password ='" + clave + "'";
 
             
             DataTable tabla = DBHelper.ObtenerInstancia().Ejecutar(consulta);

@@ -108,7 +108,7 @@ namespace Hotel.Presentacion
 
                                 this.oUsuarioSelected.Id = _idUsuario;
                                 this.oUsuarioSelected.Nombre = _usuario;
-                                this.oUsuarioSelected.Contrasena = this.txtPassword.Text;
+                                this.oUsuarioSelected.Password = this.txtPassword.Text;
                                 this.oUsuarioSelected.IdEmpleado = _idEmpleado;
 
 

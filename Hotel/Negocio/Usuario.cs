@@ -11,7 +11,8 @@ namespace Hotel.Negocio
     class Usuario
     {
         public int Id { get; set; }
-        public string Contrasena { get; set; }
+        public string Password { get; set; }
+        public byte[] Salt { get; set; }
         public string Nombre { get; set; }
         public int IdEmpleado { get; set; }
         public bool BorradoLogico { get; set; }

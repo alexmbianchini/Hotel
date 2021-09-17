@@ -75,7 +75,7 @@ namespace Hotel.Presentacion.UsuarioEmpleado
                         else
                         {
                             // Cargar datos al objeto  
-                            this.oUsuarioSelected.Contrasena = this.txtPasswordNueva.Text;
+                            this.oUsuarioSelected.Password = this.txtPasswordNueva.Text;
 
 
                             // Modificar datos en la base de datos y verificar que se inserten con éxito
