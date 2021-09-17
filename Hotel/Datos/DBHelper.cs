@@ -15,12 +15,12 @@ namespace Hotel.Datos
         private SqlCommand comando;
 
         //private string cadenaConexion = @"Data Source=sql5103.site4now.net;Initial Catalog = db_a78fa0_hotel; Persist Security Info=True;User ID = db_a78fa0_hotel_admin";
-        private string cadenaConexion = @"Data Source=sql5103.site4now.net;Initial Catalog=db_a78fa0_hotel;User ID=db_a78fa0_hotel_admin;Password=alexlufabri3k1";
+        private string cadenaConexion;
         private DBHelper()
         {
             conexion = new SqlConnection();
             comando = new SqlCommand();
-            string cadenaConexion = @"Data Source=sql5103.site4now.net;Initial Catalog=db_a78fa0_hotel;User ID=db_a78fa0_hotel_admin;Password=alexlufabri3k1";
+            cadenaConexion = @"Data Source=sql5103.site4now.net;Initial Catalog=db_a78fa0_hotel;User ID=db_a78fa0_hotel_admin;Password=alexlufabri3k1";
 
         }
 
