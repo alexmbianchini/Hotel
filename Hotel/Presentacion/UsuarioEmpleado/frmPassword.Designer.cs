@@ -119,6 +119,7 @@ namespace Hotel.Presentacion.UsuarioEmpleado
             // 
             this.txtPasswordActual.Location = new System.Drawing.Point(66, 148);
             this.txtPasswordActual.Name = "txtPasswordActual";
+            this.txtPasswordActual.PasswordChar = '*';
             this.txtPasswordActual.Size = new System.Drawing.Size(199, 22);
             this.txtPasswordActual.TabIndex = 7;
             // 
@@ -126,6 +127,7 @@ namespace Hotel.Presentacion.UsuarioEmpleado
             // 
             this.txtPasswordNueva.Location = new System.Drawing.Point(64, 232);
             this.txtPasswordNueva.Name = "txtPasswordNueva";
+            this.txtPasswordNueva.PasswordChar = '*';
             this.txtPasswordNueva.Size = new System.Drawing.Size(201, 22);
             this.txtPasswordNueva.TabIndex = 8;
             // 
@@ -133,6 +135,7 @@ namespace Hotel.Presentacion.UsuarioEmpleado
             // 
             this.txtPasswordConfirmar.Location = new System.Drawing.Point(64, 312);
             this.txtPasswordConfirmar.Name = "txtPasswordConfirmar";
+            this.txtPasswordConfirmar.PasswordChar = '*';
             this.txtPasswordConfirmar.Size = new System.Drawing.Size(201, 22);
             this.txtPasswordConfirmar.TabIndex = 9;
             // 

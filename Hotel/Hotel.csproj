@@ -142,6 +142,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Seguridad\Encriptacion.cs" />
     <Compile Include="Servicios\EmpleadoService.cs" />
     <Compile Include="Servicios\EstadoHabitacionService.cs" />
     <Compile Include="Servicios\HabitacionService.cs" />
