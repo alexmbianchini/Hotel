@@ -28,7 +28,7 @@ namespace Hotel.Presentacion
 
         private void txtUsuario_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void txtPassword_TextChanged(object sender, EventArgs e)
@@ -42,6 +42,22 @@ namespace Hotel.Presentacion
         }
 
         private void btnIngresar_Click_1(object sender, EventArgs e)
+        {
+            this.Verificar();
+        }
+
+        private void btnSalir_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void frmLogin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+                this.Verificar();
+        }
+
+        private void Verificar()
         {
             if (string.IsNullOrEmpty(this.txtUsuario.Text))
             {
@@ -76,9 +92,16 @@ namespace Hotel.Presentacion
             }
         }
 
-        private void btnSalir_Click_1(object sender, EventArgs e)
+        private void txtUsuario_KeyPress(object sender, KeyPressEventArgs e)
         {
-            this.Close();
+            if ((int)e.KeyChar == (int)Keys.Enter)
+                this.Verificar();
+        }
+
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+                this.Verificar();
         }
     }
 }

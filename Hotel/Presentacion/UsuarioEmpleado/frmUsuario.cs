@@ -29,16 +29,16 @@ namespace Hotel.Presentacion
         }
 
         private void frmUsuario_Load(object sender, EventArgs e)
-        {   
+        {
             // Inicializamos los dateTimePicker con la fecha actual
             //this.dtpFechaIngreso.Value= DateTime.Today;
 
 
             //Carga de ComboBoxs
-            this.CargarCombo(cboNombreUsuario, oUsuario.RecuperarTodos(), "nombre", "nombre");
-            this.CargarCombo(cboApellidoEmpleado, oEmpleado.RecuperarTodos(), "apellido", "apellido");
+            //this.CargarCombo(cboNombreUsuario, oUsuario.RecuperarTodos(), "nombre", "nombre");
+            //this.CargarCombo(cboApellidoEmpleado, oEmpleado.RecuperarTodos(), "apellido", "apellido");
+            //this.CargarCombo(cboNombreEmpleado, oEmpleado.RecuperarTodos(), "nombre", "nombre");
             this.CargarCombo(cboPuesto, oPuesto.RecuperarTodos(), "descripcion", "cod_puesto");
-            this.CargarCombo(cboNombreEmpleado, oEmpleado.RecuperarTodos(), "nombre", "nombre");
             this.CargarCombo(cboTipoDoc, oTipoDoc.RecuperarTodos(), "descripcion", "tipo_doc");
             this.CargarCombo(cboNroDoc, oEmpleado.RecuperarTodos(), "nro_doc", "nro_doc");
 
@@ -95,10 +95,10 @@ namespace Hotel.Presentacion
         private void btnLimpiar_Click_1(object sender, EventArgs e)
         {
             //this.dtpFechaIngreso.Value = DateTime.Today;
-            this.cboApellidoEmpleado.SelectedIndex = -1;
-            this.cboNombreUsuario.SelectedIndex = -1;
+            this.txtApellidoEmpleado.Text = string.Empty;
+            this.txtUsuario.Text = string.Empty;
             this.cboPuesto.SelectedIndex = -1;
-            this.cboNombreEmpleado.SelectedIndex = -1;
+            this.txtNombreEmpleado.Text = string.Empty;
             this.cboTipoDoc.SelectedIndex = -1;
             this.cboNroDoc.SelectedIndex = -1;
         }
@@ -116,12 +116,9 @@ namespace Hotel.Presentacion
                 return;
             }
             */
-            if (cboNombreUsuario.SelectedIndex != -1)
-                _usuario = cboNombreUsuario.SelectedValue.ToString();
-            if (cboApellidoEmpleado.SelectedIndex != -1)
-                _apellido = cboApellidoEmpleado.SelectedValue.ToString();
-            if (cboNombreEmpleado.SelectedIndex != -1)
-                _nombre = cboNombreEmpleado.SelectedValue.ToString();
+            _usuario = txtUsuario.Text;
+            _apellido = txtApellidoEmpleado.Text;
+            _nombre = txtNombreEmpleado.Text;
             if (cboPuesto.SelectedIndex != -1)
                 _puesto = cboPuesto.SelectedValue.ToString();
             if (cboTipoDoc.SelectedIndex != -1)
@@ -176,6 +173,21 @@ namespace Hotel.Presentacion
         {
             this.btnEditar.Enabled = true;
             this.btnEliminar.Enabled = true;
+        }
+
+        private void txtUsuario__TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtApellidoEmpleado__TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNombreEmpleado__TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

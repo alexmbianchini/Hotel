@@ -34,24 +34,6 @@ namespace Hotel.Presentacion
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUsuario));
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
-            this.lblUsuario = new System.Windows.Forms.Label();
-            this.lblApellidoEmpleado = new System.Windows.Forms.Label();
-            this.lblPuesto = new System.Windows.Forms.Label();
-            this.cboPuesto = new System.Windows.Forms.ComboBox();
-            this.cboApellidoEmpleado = new System.Windows.Forms.ComboBox();
-            this.cboNombreUsuario = new System.Windows.Forms.ComboBox();
-            this.cboNombreEmpleado = new System.Windows.Forms.ComboBox();
-            this.lblNombreEmpleado = new System.Windows.Forms.Label();
-            this.cboNroDoc = new System.Windows.Forms.ComboBox();
-            this.lblNroDoc = new System.Windows.Forms.Label();
-            this.cboTipoDoc = new System.Windows.Forms.ComboBox();
-            this.lblTipoDoc = new System.Windows.Forms.Label();
-            this.btnLimpiar = new Hotel.Custom.RJButton();
-            this.btnConsultar = new Hotel.Custom.RJButton();
-            this.btnNuevo = new Hotel.Custom.RJButton();
-            this.btnEditar = new Hotel.Custom.RJButton();
-            this.btnEliminar = new Hotel.Custom.RJButton();
-            this.btnSalir = new Hotel.Custom.RJButton();
             this.clmIdUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmNombreUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmIdEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,6 +42,24 @@ namespace Hotel.Presentacion
             this.clmNombreEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmApellidoEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmPuesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblUsuario = new System.Windows.Forms.Label();
+            this.lblApellidoEmpleado = new System.Windows.Forms.Label();
+            this.lblPuesto = new System.Windows.Forms.Label();
+            this.cboPuesto = new System.Windows.Forms.ComboBox();
+            this.lblNombreEmpleado = new System.Windows.Forms.Label();
+            this.cboNroDoc = new System.Windows.Forms.ComboBox();
+            this.lblNroDoc = new System.Windows.Forms.Label();
+            this.cboTipoDoc = new System.Windows.Forms.ComboBox();
+            this.lblTipoDoc = new System.Windows.Forms.Label();
+            this.txtApellidoEmpleado = new Hotel.Custom.RJTextBox();
+            this.txtNombreEmpleado = new Hotel.Custom.RJTextBox();
+            this.txtUsuario = new Hotel.Custom.RJTextBox();
+            this.btnSalir = new Hotel.Custom.RJButton();
+            this.btnEliminar = new Hotel.Custom.RJButton();
+            this.btnEditar = new Hotel.Custom.RJButton();
+            this.btnNuevo = new Hotel.Custom.RJButton();
+            this.btnConsultar = new Hotel.Custom.RJButton();
+            this.btnLimpiar = new Hotel.Custom.RJButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -96,257 +96,17 @@ namespace Hotel.Presentacion
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvUsuarios.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvUsuarios.Location = new System.Drawing.Point(31, 270);
-            this.dgvUsuarios.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvUsuarios.Location = new System.Drawing.Point(23, 219);
+            this.dgvUsuarios.Margin = new System.Windows.Forms.Padding(2);
             this.dgvUsuarios.Name = "dgvUsuarios";
             this.dgvUsuarios.ReadOnly = true;
             this.dgvUsuarios.RowHeadersWidth = 51;
             this.dgvUsuarios.RowTemplate.Height = 24;
             this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvUsuarios.Size = new System.Drawing.Size(654, 235);
+            this.dgvUsuarios.Size = new System.Drawing.Size(490, 191);
             this.dgvUsuarios.TabIndex = 0;
             this.dgvUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellClick);
             this.dgvUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellContentClick);
-            // 
-            // lblUsuario
-            // 
-            this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(135, 43);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(77, 23);
-            this.lblUsuario.TabIndex = 8;
-            this.lblUsuario.Text = " Usuario";
-            // 
-            // lblApellidoEmpleado
-            // 
-            this.lblApellidoEmpleado.AutoSize = true;
-            this.lblApellidoEmpleado.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApellidoEmpleado.Location = new System.Drawing.Point(451, 41);
-            this.lblApellidoEmpleado.Name = "lblApellidoEmpleado";
-            this.lblApellidoEmpleado.Size = new System.Drawing.Size(167, 23);
-            this.lblApellidoEmpleado.TabIndex = 10;
-            this.lblApellidoEmpleado.Text = "Apellido Empleado";
-            // 
-            // lblPuesto
-            // 
-            this.lblPuesto.AutoSize = true;
-            this.lblPuesto.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPuesto.Location = new System.Drawing.Point(545, 124);
-            this.lblPuesto.Name = "lblPuesto";
-            this.lblPuesto.Size = new System.Drawing.Size(65, 23);
-            this.lblPuesto.TabIndex = 11;
-            this.lblPuesto.Text = "Puesto";
-            // 
-            // cboPuesto
-            // 
-            this.cboPuesto.FormattingEnabled = true;
-            this.cboPuesto.Location = new System.Drawing.Point(635, 124);
-            this.cboPuesto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cboPuesto.Name = "cboPuesto";
-            this.cboPuesto.Size = new System.Drawing.Size(121, 24);
-            this.cboPuesto.TabIndex = 15;
-            // 
-            // cboApellidoEmpleado
-            // 
-            this.cboApellidoEmpleado.FormattingEnabled = true;
-            this.cboApellidoEmpleado.Location = new System.Drawing.Point(635, 41);
-            this.cboApellidoEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cboApellidoEmpleado.Name = "cboApellidoEmpleado";
-            this.cboApellidoEmpleado.Size = new System.Drawing.Size(121, 24);
-            this.cboApellidoEmpleado.TabIndex = 16;
-            // 
-            // cboNombreUsuario
-            // 
-            this.cboNombreUsuario.FormattingEnabled = true;
-            this.cboNombreUsuario.Location = new System.Drawing.Point(247, 41);
-            this.cboNombreUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cboNombreUsuario.Name = "cboNombreUsuario";
-            this.cboNombreUsuario.Size = new System.Drawing.Size(121, 24);
-            this.cboNombreUsuario.TabIndex = 18;
-            // 
-            // cboNombreEmpleado
-            // 
-            this.cboNombreEmpleado.FormattingEnabled = true;
-            this.cboNombreEmpleado.Location = new System.Drawing.Point(635, 84);
-            this.cboNombreEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cboNombreEmpleado.Name = "cboNombreEmpleado";
-            this.cboNombreEmpleado.Size = new System.Drawing.Size(121, 24);
-            this.cboNombreEmpleado.TabIndex = 20;
-            // 
-            // lblNombreEmpleado
-            // 
-            this.lblNombreEmpleado.AutoSize = true;
-            this.lblNombreEmpleado.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreEmpleado.Location = new System.Drawing.Point(448, 82);
-            this.lblNombreEmpleado.Name = "lblNombreEmpleado";
-            this.lblNombreEmpleado.Size = new System.Drawing.Size(165, 23);
-            this.lblNombreEmpleado.TabIndex = 19;
-            this.lblNombreEmpleado.Text = "Nombre Empleado";
-            // 
-            // cboNroDoc
-            // 
-            this.cboNroDoc.FormattingEnabled = true;
-            this.cboNroDoc.Location = new System.Drawing.Point(247, 124);
-            this.cboNroDoc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cboNroDoc.Name = "cboNroDoc";
-            this.cboNroDoc.Size = new System.Drawing.Size(121, 24);
-            this.cboNroDoc.TabIndex = 24;
-            // 
-            // lblNroDoc
-            // 
-            this.lblNroDoc.AutoSize = true;
-            this.lblNroDoc.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNroDoc.Location = new System.Drawing.Point(68, 127);
-            this.lblNroDoc.Name = "lblNroDoc";
-            this.lblNroDoc.Size = new System.Drawing.Size(142, 23);
-            this.lblNroDoc.TabIndex = 23;
-            this.lblNroDoc.Text = "Nro Documento";
-            // 
-            // cboTipoDoc
-            // 
-            this.cboTipoDoc.FormattingEnabled = true;
-            this.cboTipoDoc.Location = new System.Drawing.Point(247, 84);
-            this.cboTipoDoc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cboTipoDoc.Name = "cboTipoDoc";
-            this.cboTipoDoc.Size = new System.Drawing.Size(121, 24);
-            this.cboTipoDoc.TabIndex = 22;
-            // 
-            // lblTipoDoc
-            // 
-            this.lblTipoDoc.AutoSize = true;
-            this.lblTipoDoc.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipoDoc.Location = new System.Drawing.Point(65, 82);
-            this.lblTipoDoc.Name = "lblTipoDoc";
-            this.lblTipoDoc.Size = new System.Drawing.Size(148, 23);
-            this.lblTipoDoc.TabIndex = 21;
-            this.lblTipoDoc.Text = "Tipo Documento";
-            // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
-            this.btnLimpiar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
-            this.btnLimpiar.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnLimpiar.BorderRadius = 20;
-            this.btnLimpiar.BorderSize = 0;
-            this.btnLimpiar.FlatAppearance.BorderSize = 0;
-            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpiar.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.ForeColor = System.Drawing.Color.White;
-            this.btnLimpiar.Location = new System.Drawing.Point(217, 187);
-            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(168, 49);
-            this.btnLimpiar.TabIndex = 25;
-            this.btnLimpiar.Text = "Limpiar";
-            this.btnLimpiar.TextColor = System.Drawing.Color.White;
-            this.btnLimpiar.UseVisualStyleBackColor = false;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click_1);
-            // 
-            // btnConsultar
-            // 
-            this.btnConsultar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
-            this.btnConsultar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
-            this.btnConsultar.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnConsultar.BorderRadius = 20;
-            this.btnConsultar.BorderSize = 0;
-            this.btnConsultar.FlatAppearance.BorderSize = 0;
-            this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsultar.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsultar.ForeColor = System.Drawing.Color.White;
-            this.btnConsultar.Location = new System.Drawing.Point(503, 187);
-            this.btnConsultar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(168, 49);
-            this.btnConsultar.TabIndex = 26;
-            this.btnConsultar.Text = "Consultar";
-            this.btnConsultar.TextColor = System.Drawing.Color.White;
-            this.btnConsultar.UseVisualStyleBackColor = false;
-            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click_1);
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
-            this.btnNuevo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
-            this.btnNuevo.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnNuevo.BorderRadius = 20;
-            this.btnNuevo.BorderSize = 0;
-            this.btnNuevo.FlatAppearance.BorderSize = 0;
-            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevo.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevo.ForeColor = System.Drawing.Color.White;
-            this.btnNuevo.Location = new System.Drawing.Point(733, 270);
-            this.btnNuevo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(124, 50);
-            this.btnNuevo.TabIndex = 27;
-            this.btnNuevo.Text = "Nuevo";
-            this.btnNuevo.TextColor = System.Drawing.Color.White;
-            this.btnNuevo.UseVisualStyleBackColor = false;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click_1);
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
-            this.btnEditar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
-            this.btnEditar.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnEditar.BorderRadius = 20;
-            this.btnEditar.BorderSize = 0;
-            this.btnEditar.FlatAppearance.BorderSize = 0;
-            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(733, 327);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(124, 50);
-            this.btnEditar.TabIndex = 28;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.TextColor = System.Drawing.Color.White;
-            this.btnEditar.UseVisualStyleBackColor = false;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click_1);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
-            this.btnEliminar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
-            this.btnEliminar.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnEliminar.BorderRadius = 20;
-            this.btnEliminar.BorderSize = 0;
-            this.btnEliminar.FlatAppearance.BorderSize = 0;
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(733, 385);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(124, 50);
-            this.btnEliminar.TabIndex = 29;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.TextColor = System.Drawing.Color.White;
-            this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click_1);
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
-            this.btnSalir.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
-            this.btnSalir.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnSalir.BorderRadius = 20;
-            this.btnSalir.BorderSize = 0;
-            this.btnSalir.FlatAppearance.BorderSize = 0;
-            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalir.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(733, 443);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(124, 50);
-            this.btnSalir.TabIndex = 30;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.TextColor = System.Drawing.Color.White;
-            this.btnSalir.UseVisualStyleBackColor = false;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // clmIdUsuario
             // 
@@ -412,13 +172,277 @@ namespace Hotel.Presentacion
             this.clmPuesto.ReadOnly = true;
             this.clmPuesto.Width = 80;
             // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.Location = new System.Drawing.Point(101, 33);
+            this.lblUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(60, 19);
+            this.lblUsuario.TabIndex = 8;
+            this.lblUsuario.Text = " Usuario";
+            // 
+            // lblApellidoEmpleado
+            // 
+            this.lblApellidoEmpleado.AutoSize = true;
+            this.lblApellidoEmpleado.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApellidoEmpleado.Location = new System.Drawing.Point(338, 33);
+            this.lblApellidoEmpleado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblApellidoEmpleado.Name = "lblApellidoEmpleado";
+            this.lblApellidoEmpleado.Size = new System.Drawing.Size(122, 19);
+            this.lblApellidoEmpleado.TabIndex = 10;
+            this.lblApellidoEmpleado.Text = "Apellido Empleado";
+            // 
+            // lblPuesto
+            // 
+            this.lblPuesto.AutoSize = true;
+            this.lblPuesto.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPuesto.Location = new System.Drawing.Point(409, 102);
+            this.lblPuesto.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPuesto.Name = "lblPuesto";
+            this.lblPuesto.Size = new System.Drawing.Size(51, 19);
+            this.lblPuesto.TabIndex = 11;
+            this.lblPuesto.Text = "Puesto";
+            // 
+            // cboPuesto
+            // 
+            this.cboPuesto.FormattingEnabled = true;
+            this.cboPuesto.Location = new System.Drawing.Point(476, 101);
+            this.cboPuesto.Margin = new System.Windows.Forms.Padding(2);
+            this.cboPuesto.Name = "cboPuesto";
+            this.cboPuesto.Size = new System.Drawing.Size(92, 21);
+            this.cboPuesto.TabIndex = 6;
+            // 
+            // lblNombreEmpleado
+            // 
+            this.lblNombreEmpleado.AutoSize = true;
+            this.lblNombreEmpleado.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreEmpleado.Location = new System.Drawing.Point(336, 69);
+            this.lblNombreEmpleado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNombreEmpleado.Name = "lblNombreEmpleado";
+            this.lblNombreEmpleado.Size = new System.Drawing.Size(124, 19);
+            this.lblNombreEmpleado.TabIndex = 19;
+            this.lblNombreEmpleado.Text = "Nombre Empleado";
+            // 
+            // cboNroDoc
+            // 
+            this.cboNroDoc.FormattingEnabled = true;
+            this.cboNroDoc.Location = new System.Drawing.Point(185, 103);
+            this.cboNroDoc.Margin = new System.Windows.Forms.Padding(2);
+            this.cboNroDoc.Name = "cboNroDoc";
+            this.cboNroDoc.Size = new System.Drawing.Size(92, 21);
+            this.cboNroDoc.TabIndex = 3;
+            // 
+            // lblNroDoc
+            // 
+            this.lblNroDoc.AutoSize = true;
+            this.lblNroDoc.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNroDoc.Location = new System.Drawing.Point(53, 103);
+            this.lblNroDoc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNroDoc.Name = "lblNroDoc";
+            this.lblNroDoc.Size = new System.Drawing.Size(110, 19);
+            this.lblNroDoc.TabIndex = 23;
+            this.lblNroDoc.Text = "Nro Documento";
+            // 
+            // cboTipoDoc
+            // 
+            this.cboTipoDoc.FormattingEnabled = true;
+            this.cboTipoDoc.Location = new System.Drawing.Point(185, 70);
+            this.cboTipoDoc.Margin = new System.Windows.Forms.Padding(2);
+            this.cboTipoDoc.Name = "cboTipoDoc";
+            this.cboTipoDoc.Size = new System.Drawing.Size(92, 21);
+            this.cboTipoDoc.TabIndex = 2;
+            // 
+            // lblTipoDoc
+            // 
+            this.lblTipoDoc.AutoSize = true;
+            this.lblTipoDoc.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTipoDoc.Location = new System.Drawing.Point(51, 70);
+            this.lblTipoDoc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTipoDoc.Name = "lblTipoDoc";
+            this.lblTipoDoc.Size = new System.Drawing.Size(112, 19);
+            this.lblTipoDoc.TabIndex = 21;
+            this.lblTipoDoc.Text = "Tipo Documento";
+            // 
+            // txtApellidoEmpleado
+            // 
+            this.txtApellidoEmpleado.BackColor = System.Drawing.Color.White;
+            this.txtApellidoEmpleado.BorderColor = System.Drawing.SystemColors.WindowText;
+            this.txtApellidoEmpleado.BorderFocusColor = System.Drawing.SystemColors.WindowText;
+            this.txtApellidoEmpleado.BorderSize = 2;
+            this.txtApellidoEmpleado.Location = new System.Drawing.Point(476, 26);
+            this.txtApellidoEmpleado.Multiline = false;
+            this.txtApellidoEmpleado.Name = "txtApellidoEmpleado";
+            this.txtApellidoEmpleado.Padding = new System.Windows.Forms.Padding(7);
+            this.txtApellidoEmpleado.PasswordChar = false;
+            this.txtApellidoEmpleado.Size = new System.Drawing.Size(92, 28);
+            this.txtApellidoEmpleado.TabIndex = 4;
+            this.txtApellidoEmpleado.UnderlinedStyle = false;
+            this.txtApellidoEmpleado._TextChanged += new System.EventHandler(this.txtApellidoEmpleado__TextChanged);
+            // 
+            // txtNombreEmpleado
+            // 
+            this.txtNombreEmpleado.BackColor = System.Drawing.Color.White;
+            this.txtNombreEmpleado.BorderColor = System.Drawing.SystemColors.WindowText;
+            this.txtNombreEmpleado.BorderFocusColor = System.Drawing.SystemColors.WindowText;
+            this.txtNombreEmpleado.BorderSize = 2;
+            this.txtNombreEmpleado.Location = new System.Drawing.Point(476, 63);
+            this.txtNombreEmpleado.Multiline = false;
+            this.txtNombreEmpleado.Name = "txtNombreEmpleado";
+            this.txtNombreEmpleado.Padding = new System.Windows.Forms.Padding(7);
+            this.txtNombreEmpleado.PasswordChar = false;
+            this.txtNombreEmpleado.Size = new System.Drawing.Size(92, 28);
+            this.txtNombreEmpleado.TabIndex = 5;
+            this.txtNombreEmpleado.UnderlinedStyle = false;
+            this.txtNombreEmpleado._TextChanged += new System.EventHandler(this.txtNombreEmpleado__TextChanged);
+            // 
+            // txtUsuario
+            // 
+            this.txtUsuario.BackColor = System.Drawing.Color.White;
+            this.txtUsuario.BorderColor = System.Drawing.SystemColors.WindowText;
+            this.txtUsuario.BorderFocusColor = System.Drawing.SystemColors.WindowText;
+            this.txtUsuario.BorderSize = 2;
+            this.txtUsuario.Location = new System.Drawing.Point(185, 26);
+            this.txtUsuario.Multiline = false;
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Padding = new System.Windows.Forms.Padding(7);
+            this.txtUsuario.PasswordChar = false;
+            this.txtUsuario.Size = new System.Drawing.Size(92, 28);
+            this.txtUsuario.TabIndex = 1;
+            this.txtUsuario.UnderlinedStyle = false;
+            this.txtUsuario._TextChanged += new System.EventHandler(this.txtUsuario__TextChanged);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
+            this.btnSalir.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
+            this.btnSalir.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnSalir.BorderRadius = 20;
+            this.btnSalir.BorderSize = 0;
+            this.btnSalir.FlatAppearance.BorderSize = 0;
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.ForeColor = System.Drawing.Color.White;
+            this.btnSalir.Location = new System.Drawing.Point(550, 360);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(93, 41);
+            this.btnSalir.TabIndex = 12;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.TextColor = System.Drawing.Color.White;
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
+            this.btnEliminar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
+            this.btnEliminar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnEliminar.BorderRadius = 20;
+            this.btnEliminar.BorderSize = 0;
+            this.btnEliminar.FlatAppearance.BorderSize = 0;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.Color.White;
+            this.btnEliminar.Location = new System.Drawing.Point(550, 313);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(93, 41);
+            this.btnEliminar.TabIndex = 11;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.TextColor = System.Drawing.Color.White;
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click_1);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
+            this.btnEditar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
+            this.btnEditar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnEditar.BorderRadius = 20;
+            this.btnEditar.BorderSize = 0;
+            this.btnEditar.FlatAppearance.BorderSize = 0;
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditar.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.ForeColor = System.Drawing.Color.White;
+            this.btnEditar.Location = new System.Drawing.Point(550, 266);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(93, 41);
+            this.btnEditar.TabIndex = 10;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.TextColor = System.Drawing.Color.White;
+            this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click_1);
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
+            this.btnNuevo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
+            this.btnNuevo.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnNuevo.BorderRadius = 20;
+            this.btnNuevo.BorderSize = 0;
+            this.btnNuevo.FlatAppearance.BorderSize = 0;
+            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevo.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevo.ForeColor = System.Drawing.Color.White;
+            this.btnNuevo.Location = new System.Drawing.Point(550, 219);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(93, 41);
+            this.btnNuevo.TabIndex = 9;
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.TextColor = System.Drawing.Color.White;
+            this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click_1);
+            // 
+            // btnConsultar
+            // 
+            this.btnConsultar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
+            this.btnConsultar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
+            this.btnConsultar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnConsultar.BorderRadius = 20;
+            this.btnConsultar.BorderSize = 0;
+            this.btnConsultar.FlatAppearance.BorderSize = 0;
+            this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultar.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsultar.ForeColor = System.Drawing.Color.White;
+            this.btnConsultar.Location = new System.Drawing.Point(377, 152);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(126, 40);
+            this.btnConsultar.TabIndex = 8;
+            this.btnConsultar.Text = "Consultar";
+            this.btnConsultar.TextColor = System.Drawing.Color.White;
+            this.btnConsultar.UseVisualStyleBackColor = false;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click_1);
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
+            this.btnLimpiar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
+            this.btnLimpiar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnLimpiar.BorderRadius = 20;
+            this.btnLimpiar.BorderSize = 0;
+            this.btnLimpiar.FlatAppearance.BorderSize = 0;
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.ForeColor = System.Drawing.Color.White;
+            this.btnLimpiar.Location = new System.Drawing.Point(163, 152);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(126, 40);
+            this.btnLimpiar.TabIndex = 7;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.TextColor = System.Drawing.Color.White;
+            this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click_1);
+            // 
             // frmUsuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(188)))), ((int)(((byte)(121)))));
-            this.ClientSize = new System.Drawing.Size(889, 538);
+            this.ClientSize = new System.Drawing.Size(667, 437);
             this.ControlBox = false;
+            this.Controls.Add(this.txtApellidoEmpleado);
+            this.Controls.Add(this.txtNombreEmpleado);
+            this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
@@ -429,17 +453,14 @@ namespace Hotel.Presentacion
             this.Controls.Add(this.lblNroDoc);
             this.Controls.Add(this.cboTipoDoc);
             this.Controls.Add(this.lblTipoDoc);
-            this.Controls.Add(this.cboNombreEmpleado);
             this.Controls.Add(this.lblNombreEmpleado);
-            this.Controls.Add(this.cboNombreUsuario);
-            this.Controls.Add(this.cboApellidoEmpleado);
             this.Controls.Add(this.cboPuesto);
             this.Controls.Add(this.lblPuesto);
             this.Controls.Add(this.lblApellidoEmpleado);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.dgvUsuarios);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Usuario";
@@ -457,9 +478,6 @@ namespace Hotel.Presentacion
         private System.Windows.Forms.Label lblApellidoEmpleado;
         private System.Windows.Forms.Label lblPuesto;
         private System.Windows.Forms.ComboBox cboPuesto;
-        private System.Windows.Forms.ComboBox cboApellidoEmpleado;
-        private System.Windows.Forms.ComboBox cboNombreUsuario;
-        private System.Windows.Forms.ComboBox cboNombreEmpleado;
         private System.Windows.Forms.Label lblNombreEmpleado;
         private System.Windows.Forms.ComboBox cboNroDoc;
         private System.Windows.Forms.Label lblNroDoc;
@@ -479,5 +497,8 @@ namespace Hotel.Presentacion
         private System.Windows.Forms.DataGridViewTextBoxColumn clmNombreEmpleado;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmApellidoEmpleado;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmPuesto;
+        private Custom.RJTextBox txtUsuario;
+        private Custom.RJTextBox txtNombreEmpleado;
+        private Custom.RJTextBox txtApellidoEmpleado;
     }
 }

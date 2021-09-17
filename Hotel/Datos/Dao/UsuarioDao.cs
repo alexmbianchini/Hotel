@@ -76,16 +76,13 @@ namespace Hotel.Datos.Dao
                 " JOIN TIPO_DOCUMENTO t ON (e.tipo_doc = t.tipo_doc)" +
                 " WHERE u.borrado_logico = 0";
 
-            if (!string.IsNullOrEmpty(usuario))
-                consulta += " AND u.nombre = '" + usuario + "'";
+            consulta += " AND u.nombre LIKE '%" + usuario + "%'";
             if (!string.IsNullOrEmpty(tipodoc))
                 consulta += " AND e.tipo_doc = " + tipodoc;
             if (!string.IsNullOrEmpty(nrodoc))
                 consulta += " AND e.nro_doc = " + nrodoc;
-            if (!string.IsNullOrEmpty(apellido))
-                consulta += " AND e.apellido = '" + apellido + "'";
-            if (!string.IsNullOrEmpty(nombre))
-                consulta += " AND e.nombre = '" + nombre + "'";
+            consulta += " AND e.apellido LIKE '%" + apellido + "%'";
+            consulta += " AND e.nombre LIKE '%" + nombre + "%'";
             if (!string.IsNullOrEmpty(puesto))
                 consulta += " AND p.cod_puesto = " + puesto;
 
