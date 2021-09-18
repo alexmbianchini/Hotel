@@ -1,4 +1,5 @@
-﻿using Hotel.Presentacion.UsuarioEmpleado;
+﻿using Hotel.Negocio;
+using Hotel.Presentacion.UsuarioEmpleado;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,9 @@ namespace Hotel.Presentacion
 {
     public partial class frmPrincipal : Form
     {
+        Empleado oEmpleadoSelected = new Empleado();
+
+        
         frmLogin fLog = new frmLogin();
         public frmPrincipal()
         {

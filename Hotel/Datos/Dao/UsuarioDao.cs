@@ -163,5 +163,10 @@ namespace Hotel.Datos.Dao
                 return 0;
             }
         }
+
+        /*public string traerPuesto(int id)
+        {
+            string consulta = "Select P.nombre"
+        }*/
     }
 }
