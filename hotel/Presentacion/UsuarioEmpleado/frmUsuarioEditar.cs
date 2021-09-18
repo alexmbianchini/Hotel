@@ -60,59 +60,67 @@ namespace Hotel.Presentacion.UsuarioEmpleado
         private void btnAceptar_Click_1(object sender, EventArgs e)
         {
             // Valida que los campos esté cargados 
-            this.ValidarCampos();
-
-
-            // Validar que no exista un empleado con es tipo y número de documento
-            string _nroDoc = this.oEmpleado.ValidarEmpleadoExistente(this.txtNumeroDocumento.Text, this.cboTipoDocumento.SelectedValue.ToString());
-
-            
-
-            if (_nroDoc == string.Empty && this.txtNumeroDocumento.Text != nroDocActual) 
+            if (this.ValidarCampos())
             {
-                MessageBox.Show("Ya existe un Empleado con ese Tipo y Número de Documento");
-                this.txtNumeroDocumento.Clear();
-                this.cboTipoDocumento.SelectedIndex = -1;
-                this.cboTipoDocumento.Focus();
-                return;
-            }
+
+                // Validar que no exista un empleado con es tipo y número de documento
+                string _nroDoc = this.oEmpleado.ValidarEmpleadoExistente(this.txtNumeroDocumento.Text, this.cboTipoDocumento.SelectedValue.ToString());
 
 
-            // Validar si ya existe el usuario
-            string _usuario = this.oUsuario.ValidarUsuarioExistente(this.txtUsuario.Text);
 
-            if (_usuario == string.Empty && nombreUsuario != this.txtUsuario.Text)
-            {
-                MessageBox.Show("El nombre de usuario ya existe, por favor ingrese otro");
-                this.txtUsuario.Clear();
-                this.txtUsuario.Focus();
-                return;
-            }
+                if (_nroDoc == string.Empty && this.txtNumeroDocumento.Text != nroDocActual)
+                {
+                    MessageBox.Show("Ya existe un Empleado con ese Tipo y Número de Documento");
+                    this.txtNumeroDocumento.Clear();
+                    this.cboTipoDocumento.SelectedIndex = -1;
+                    this.cboTipoDocumento.Focus();
+                    return;
+                }
 
-
-            // Asignar Valores a los atributos de los objetos
-            this.oEmpleadoSelected.IdEmpleado = IdEmpleado;
-            this.oEmpleadoSelected.Nombre = this.txtNombre.Text;
-            this.oEmpleadoSelected.Apellido = this.txtApellido.Text;
-            this.oEmpleadoSelected.TipoDoc = Convert.ToInt32(this.cboTipoDocumento.SelectedValue);
-            this.oEmpleadoSelected.NroDoc = Convert.ToInt32(this.txtNumeroDocumento.Text);
-            this.oEmpleadoSelected.Puesto = Convert.ToInt32(this.cboPuesto.SelectedValue);
-
-            this.oUsuarioSelected.Id = IdUsuario;
-            this.oUsuarioSelected.Nombre = this.txtUsuario.Text;
-
- 
+                else
+                {
 
 
-            // Modificar datos en la base de datos y verificar que se inserten con éxito
-            if (oEmpleado.Modificar(oEmpleadoSelected) && oUsuario.Modificar(oUsuarioSelected))
-            {
-                MessageBox.Show("Datos Agregados Con Éxito!");
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Ha ocurrido un Error al insertar los datos");
+                    // Validar si ya existe el usuario
+                    string _usuario = this.oUsuario.ValidarUsuarioExistente(this.txtUsuario.Text);
+
+                    if (_usuario == string.Empty && nombreUsuario != this.txtUsuario.Text)
+                    {
+                        MessageBox.Show("El nombre de usuario ya existe, por favor ingrese otro");
+                        this.txtUsuario.Clear();
+                        this.txtUsuario.Focus();
+                        return;
+                    }
+                    else
+                    {
+
+
+                        // Asignar Valores a los atributos de los objetos
+                        this.oEmpleadoSelected.IdEmpleado = IdEmpleado;
+                        this.oEmpleadoSelected.Nombre = this.txtNombre.Text;
+                        this.oEmpleadoSelected.Apellido = this.txtApellido.Text;
+                        this.oEmpleadoSelected.TipoDoc = Convert.ToInt32(this.cboTipoDocumento.SelectedValue);
+                        this.oEmpleadoSelected.NroDoc = Convert.ToInt32(this.txtNumeroDocumento.Text);
+                        this.oEmpleadoSelected.Puesto = Convert.ToInt32(this.cboPuesto.SelectedValue);
+
+                        this.oUsuarioSelected.Id = IdUsuario;
+                        this.oUsuarioSelected.Nombre = this.txtUsuario.Text;
+
+
+
+
+                        // Modificar datos en la base de datos y verificar que se inserten con éxito
+                        if (oEmpleado.Modificar(oEmpleadoSelected) && oUsuario.Modificar(oUsuarioSelected))
+                        {
+                            MessageBox.Show("Datos Agregados Con Éxito!");
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ha ocurrido un Error al insertar los datos");
+                        }
+                    }
+                }
             }
         }
 
@@ -161,14 +169,14 @@ namespace Hotel.Presentacion.UsuarioEmpleado
 
         // Valida que los campos tengan datos ingresados/seleccionados
 
-        private void ValidarCampos()
+        private bool ValidarCampos()
         {
             if (string.IsNullOrEmpty(this.txtNombre.Text))
             {
                 MessageBox.Show("Debe ingresar un Nombre");
                 this.txtNombre.Focus();
                 this.lblNombre.ForeColor = Color.Red;
-                return;
+                return false;
             }
 
             if (string.IsNullOrEmpty(this.txtApellido.Text))
@@ -176,7 +184,7 @@ namespace Hotel.Presentacion.UsuarioEmpleado
                 MessageBox.Show("Debe ingresar un Apellido");
                 this.txtApellido.Focus();
                 this.lblApellido.ForeColor = Color.Red;
-                return;
+                return false;
             }
 
             if (cboTipoDocumento.SelectedIndex == -1)
@@ -184,7 +192,7 @@ namespace Hotel.Presentacion.UsuarioEmpleado
                 MessageBox.Show("Debe ingresar un Tipo de Documento");
                 this.cboTipoDocumento.Focus();
                 this.lblTipoDocumento.ForeColor = Color.Red;
-                return;
+                return false;
             }
 
             if (string.IsNullOrEmpty(this.txtNumeroDocumento.Text))
@@ -192,7 +200,7 @@ namespace Hotel.Presentacion.UsuarioEmpleado
                 MessageBox.Show("Debe seleccionar un Número de Documento");
                 this.txtNumeroDocumento.Focus();
                 this.lblNumeroDocumento.ForeColor = Color.Red;
-                return;
+                return false;
             }
 
             if (string.IsNullOrEmpty(this.txtUsuario.Text))
@@ -200,7 +208,7 @@ namespace Hotel.Presentacion.UsuarioEmpleado
                 MessageBox.Show("Debe ingresar un Usuario");
                 this.txtUsuario.Focus();
                 this.lblUsuario.ForeColor = Color.Red;
-                return;
+                return false;
             }
 
             
@@ -210,8 +218,10 @@ namespace Hotel.Presentacion.UsuarioEmpleado
                 MessageBox.Show("Debe Seleccionar un Puesto");
                 this.cboPuesto.Focus();
                 this.lblPuesto.ForeColor = Color.Red;
-                return;
+                return false;
             }
+
+            return true; 
         }
 
 

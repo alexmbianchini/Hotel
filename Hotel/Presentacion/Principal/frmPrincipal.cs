@@ -1,4 +1,5 @@
-﻿using Hotel.Negocio;
+﻿using Hotel.Datos.Dao;
+using Hotel.Negocio;
 using Hotel.Presentacion.UsuarioEmpleado;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ namespace Hotel.Presentacion
     public partial class frmPrincipal : Form
     {
         Empleado oEmpleadoSelected = new Empleado();
+        UsuarioDao oUsuario = new UsuarioDao();
 
         
         frmLogin fLog = new frmLogin();
@@ -36,14 +38,35 @@ namespace Hotel.Presentacion
             else
             {
                 this.Text += " - Usuario: " + fLog.MiUsuarioSelected.Nombre;
-
-                
+ 
             }
 
 
-            
+            // Validar que solo el Gerente pueda ingresar a las funciones de modificación de datos. 
+            string puesto = oUsuario.traerPuestoEmpleado(fLog.MiUsuarioSelected.Id);
+
+            if (puesto != "Gerente")
+            {
+                btnUsuarios.Enabled = false;
+                return;
+            }
         }
 
+        // Otra forma de verificar lo del gerente es ponerlo dentro de cada boton, ELIJAN la que más les guste
+        /*
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            if (puesto == "Gerente")
+            {
+                frmUsuario fru = new frmUsuario();
+                fru.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Acceso Denegado! No autorizado para el ingreso!");
+            }
+        }
+         */
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
             frmUsuario fru = new frmUsuario();

@@ -76,5 +76,10 @@ namespace Hotel.Servicios
 
             return dao.ValidarPassword(id, clave);
         }
+
+        public string traerPuestoEmpleado(int id)
+        {
+            return dao.traerPuestoEmpleado(id);
+        }
     }
 }

@@ -164,9 +164,14 @@ namespace Hotel.Datos.Dao
             }
         }
 
-        /*public string traerPuesto(int id)
+        public string traerPuestoEmpleado(int id)
         {
-            string consulta = "Select P.nombre"
-        }*/
+            string consulta = "Select p.descripcion" +
+                " FROM PUESTOS p JOIN EMPLEADOS e ON p.cod_puesto = e.puesto" +
+                " JOIN USUARIOS u ON e.id_empleado = " + id;
+
+            DataTable tabla = DBHelper.ObtenerInstancia().Ejecutar(consulta);
+            return tabla.Rows[0][0].ToString();
+        }
     }
 }
