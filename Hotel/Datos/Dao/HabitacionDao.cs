@@ -19,7 +19,7 @@ namespace Hotel.Datos.Dao
 
         public DataTable RecuperarGrilla()
         {
-            string consulta = "SELECT h.numero, h.estado as estado, h.piso, h.descripcion as descripcion, h.precio, t.descripcion as tipo" +
+            string consulta = "SELECT h.numero, h.piso, h.descripcion as descripcion, h.precio, t.cod_tipo, t.descripcion as tipo, e.descripcion as estado, e.idEstado" +
                 " FROM HABITACIONES h JOIN TIPO_HABITACION t ON(h.tipo_habitacion = t.cod_tipo)" +
                 " JOIN ESTADO_HABITACION e ON(h.estado = e.idEstado)" +
                 " WHERE h.borrado_logico = 0" +
@@ -28,9 +28,9 @@ namespace Hotel.Datos.Dao
 
             return DBHelper.ObtenerInstancia().Ejecutar(consulta);
         }
-        public DataTable RecuperarFiltrados(string numero, string piso, string tipo, string estado)
+        public DataTable RecuperarFiltrados(string numero, string piso, string tipo, string estado, string precioDesde, string precioHasta)
         {
-            string consulta = "SELECT h.numero, h.piso, h.descripcion as descripcion, h.precio, t.descripcion as tipo, e.descripcion as estado" +
+            string consulta = "SELECT h.numero, h.piso, h.descripcion as descripcion, h.precio, t.cod_tipo, t.descripcion as tipo, e.descripcion as estado, e.idEstado" +
                 " FROM HABITACIONES h JOIN TIPO_HABITACION t ON(h.tipo_habitacion = t.cod_tipo)" +
                 " JOIN ESTADO_HABITACION e ON(h.estado = e.idEstado)" +
                 " WHERE h.borrado_logico = 0";
@@ -40,12 +40,17 @@ namespace Hotel.Datos.Dao
             if (!string.IsNullOrEmpty(piso))
                 consulta += " AND h.piso = " + piso;
             if (!string.IsNullOrEmpty(tipo))
-                consulta += " AND t.descripcion = " + tipo;
+                consulta += " AND t.cod_tipo = " + tipo;
             if (!string.IsNullOrEmpty(estado))
-                consulta += " AND e.descripcion = " + estado;
+                consulta += " AND e.idEstado = " + estado;
+            if (!string.IsNullOrEmpty(precioDesde))
+                consulta += " AND h.precio >= " + precioDesde;
+            if (!string.IsNullOrEmpty(precioHasta))
+                consulta += " AND h.precio <= " + precioHasta;
 
 
-            consulta += "ORDER BY 1";
+
+            consulta += " ORDER BY 1";
 
             return DBHelper.ObtenerInstancia().Ejecutar(consulta);
         }

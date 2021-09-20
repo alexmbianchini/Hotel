@@ -27,8 +27,8 @@ namespace Hotel.Presentacion
         private void frmHabitacion_Load(object sender, EventArgs e)
         {
             //Carga de Combos
-            this.CargarCombo(cboNumero, oHabitacion.RecuperarTodos(), "numero", "numero");
-            this.CargarCombo(cboPiso, oHabitacion.RecuperarTodos(), "piso", "numero");
+            //this.CargarCombo(cboNumero, oHabitacion.RecuperarTodos(), "numero", "numero");
+            //this.CargarCombo(cboPiso, oHabitacion.RecuperarTodos(), "piso", "piso");
             this.CargarCombo(cboTipo, oTipoH.RecuperarTodos(), "descripcion", "cod_tipo");
             this.CargarCombo(cboEstado, oEstadoH.RecuperarTodos(), "descripcion", "idEstado");
 
@@ -67,35 +67,42 @@ namespace Hotel.Presentacion
 
         private void btConsultar_Click(object sender, EventArgs e)
         {
-            string _numero, _piso, _tipo, _estado;
-            _numero = _piso = _tipo = _estado = string.Empty;
+            string _numero, _piso, _tipo, _estado, _precioDesde, _precioHasta;
+            _numero = _piso = _tipo = _estado = _precioDesde = _precioHasta = string.Empty;
 
 
-            if (cboNumero.SelectedIndex != -1)
-                _numero = cboNumero.SelectedValue.ToString();
-            if (cboPiso.SelectedIndex != -1)
-                _piso = cboPiso.SelectedValue.ToString();
+            _numero = txtNumero.Text;
+            _piso = txtPiso.Text;
             if (cboTipo.SelectedIndex != -1)
                 _tipo = cboTipo.SelectedValue.ToString();
             if (cboEstado.SelectedIndex != -1)
                 _estado = cboEstado.SelectedValue.ToString();
+            _precioDesde = txtPrecioMin.Text;
+            _precioHasta = txtPrecioMax.Text;
 
 
-            this.CargarGrilla(dgvHabitaciones, oHabitacion.RecuperarFiltrados(_numero, _piso, _tipo, _estado));
+            this.CargarGrilla(dgvHabitaciones, oHabitacion.RecuperarFiltrados(_numero, _piso, _tipo, _estado, _precioDesde, _precioHasta));
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            this.cboNumero.SelectedIndex = -1;
-            this.cboPiso.SelectedIndex = -1;
+            this.txtNumero.Text = string.Empty;
+            this.txtPiso.Text = string.Empty;
             this.cboTipo.SelectedIndex = -1;
             this.cboEstado.SelectedIndex = -1;
+            this.txtPrecioMin.Text = string.Empty;
+            this.txtPrecioMax.Text = string.Empty;
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             frmNuevaHabitacion frmNueva = new frmNuevaHabitacion();
             frmNueva.Show();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

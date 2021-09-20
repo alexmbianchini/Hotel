@@ -26,9 +26,9 @@ namespace Hotel.Servicios
         {
             return dao.RecuperarGrilla();
         }
-        public DataTable RecuperarFiltrados(string numero, string piso, string tipo, string estado)
+        public DataTable RecuperarFiltrados(string numero, string piso, string tipo, string estado, string precioDesde, string precioHasta)
         {
-            return dao.RecuperarFiltrados(numero, piso, tipo, estado);
+            return dao.RecuperarFiltrados(numero, piso, tipo, estado, precioDesde, precioHasta);
         }
     }
 }
