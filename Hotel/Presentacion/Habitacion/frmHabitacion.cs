@@ -26,17 +26,7 @@ namespace Hotel.Presentacion
 
         private void frmHabitacion_Load(object sender, EventArgs e)
         {
-            //Carga de Combos
-            //this.CargarCombo(cboNumero, oHabitacion.RecuperarTodos(), "numero", "numero");
-            //this.CargarCombo(cboPiso, oHabitacion.RecuperarTodos(), "piso", "piso");
-            this.CargarCombo(cboTipo, oTipoH.RecuperarTodos(), "descripcion", "cod_tipo");
-            this.CargarCombo(cboEstado, oEstadoH.RecuperarTodos(), "descripcion", "idEstado");
-
-            //Carga Grilla
-            this.CargarGrilla(dgvHabitaciones, oHabitacion.RecuperarGrilla());
-
-
-
+            this.CargarTodos();
 
         }
 
@@ -97,12 +87,49 @@ namespace Hotel.Presentacion
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             frmNuevaHabitacion frmNueva = new frmNuevaHabitacion();
-            frmNueva.Show();
+            frmNueva.SeleccionarModo(frmNuevaHabitacion.FormMode.insert);
+            frmNueva.ShowDialog();
+            this.CargarTodos();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void CargarTodos()
+        {
+            //Carga de Combos
+            //this.CargarCombo(cboNumero, oHabitacion.RecuperarTodos(), "numero", "numero");
+            //this.CargarCombo(cboPiso, oHabitacion.RecuperarTodos(), "piso", "piso");
+            this.CargarCombo(cboTipo, oTipoH.RecuperarTodos(), "descripcion", "cod_tipo");
+            this.CargarCombo(cboEstado, oEstadoH.RecuperarTodos(), "descripcion", "idEstado");
+
+            //Carga Grilla
+            this.CargarGrilla(dgvHabitaciones, oHabitacion.RecuperarGrilla());
+           
+            //Habilitacion de Botones
+            this.btnConsultar.Enabled = true;
+            this.btnEditar.Enabled = false;
+            this.btnEliminar.Enabled = false;
+            this.btnLimpiar.Enabled = true;
+            this.btnNuevo.Enabled = true;
+            this.btnSalir.Enabled = true;
+        }
+
+        private void dgvHabitaciones_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.btnEditar.Enabled = true;
+            this.btnEliminar.Enabled = true;
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            frmNuevaHabitacion frmEditar = new frmNuevaHabitacion();
+            frmEditar.SeleccionarModo(frmNuevaHabitacion.FormMode.update);
+            frmEditar.ShowDialog();
+            this.CargarTodos();
+            
         }
     }
 }

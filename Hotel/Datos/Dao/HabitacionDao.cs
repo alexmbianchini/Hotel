@@ -54,5 +54,13 @@ namespace Hotel.Datos.Dao
 
             return DBHelper.ObtenerInstancia().Ejecutar(consulta);
         }
+
+        public DataTable RecuperarPorNumero(int numero)
+        {
+            string consulta = "SELECT h.piso, h.precio, h.descripcion FROM HABITACIONES h WHERE h.numero = " + numero;
+            return DBHelper.ObtenerInstancia().Ejecutar(consulta);
+                        
+        }
     }
+
 }

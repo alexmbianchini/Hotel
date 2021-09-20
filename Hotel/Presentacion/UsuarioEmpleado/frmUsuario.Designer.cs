@@ -269,7 +269,6 @@ namespace Hotel.Presentacion
             this.txtApellidoEmpleado.Size = new System.Drawing.Size(92, 28);
             this.txtApellidoEmpleado.TabIndex = 4;
             this.txtApellidoEmpleado.UnderlinedStyle = false;
-            this.txtApellidoEmpleado._TextChanged += new System.EventHandler(this.txtApellidoEmpleado__TextChanged);
             // 
             // txtNombreEmpleado
             // 
@@ -285,7 +284,6 @@ namespace Hotel.Presentacion
             this.txtNombreEmpleado.Size = new System.Drawing.Size(92, 28);
             this.txtNombreEmpleado.TabIndex = 5;
             this.txtNombreEmpleado.UnderlinedStyle = false;
-            this.txtNombreEmpleado._TextChanged += new System.EventHandler(this.txtNombreEmpleado__TextChanged);
             // 
             // txtUsuario
             // 
@@ -301,7 +299,6 @@ namespace Hotel.Presentacion
             this.txtUsuario.Size = new System.Drawing.Size(92, 28);
             this.txtUsuario.TabIndex = 1;
             this.txtUsuario.UnderlinedStyle = false;
-            this.txtUsuario._TextChanged += new System.EventHandler(this.txtUsuario__TextChanged);
             // 
             // btnSalir
             // 

@@ -146,21 +146,6 @@ namespace Hotel.Presentacion
             this.btnEliminar.Enabled = true;
         }
 
-        private void txtUsuario__TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtApellidoEmpleado__TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtNombreEmpleado__TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void CargarTodo()
         {
             // Inicializamos los dateTimePicker con la fecha actual

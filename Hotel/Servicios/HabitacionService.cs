@@ -30,5 +30,10 @@ namespace Hotel.Servicios
         {
             return dao.RecuperarFiltrados(numero, piso, tipo, estado, precioDesde, precioHasta);
         }
+
+        public DataTable RecuperarPorNumero(int numero)
+        {
+            return dao.RecuperarPorNumero(numero);
+        }
     }
 }

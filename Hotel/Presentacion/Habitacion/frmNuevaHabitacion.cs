@@ -15,19 +15,56 @@ namespace Hotel.Presentacion
 {
     public partial class frmNuevaHabitacion : Form
     {
-        // Instanciar objetos 
+        private FormMode formMode = new FormMode();
 
-        HabitacionService oHabitacion = new HabitacionService();
-        TipoHabitacionService oTipoHabitacion = new TipoHabitacionService();
+
+        // Instanciar objetos 
+        HabitacionService oHabitacion;
+        TipoHabitacionService oTipoHabitacion;
+
+        //Variables a Utilizar
+        int numHabitacion;
+       
         public frmNuevaHabitacion()
         {
             InitializeComponent();
+            oHabitacion = new HabitacionService();
+            oTipoHabitacion = new TipoHabitacionService();
         }
+        public frmNuevaHabitacion(int numHabitacion)
+        {
+            InitializeComponent();
+            oHabitacion = new HabitacionService();
+            oTipoHabitacion = new TipoHabitacionService();
+            this.numHabitacion = numHabitacion;
+
+        }
+
+        public enum FormMode
+        {
+            insert,
+            update
+        }
+
 
         private void frmNuevaHabitacion_Load(object sender, EventArgs e)
         {
             // Cargar combo
             this.CargarCombo(cboTipoHabitacion, oTipoHabitacion.RecuperarTodos(), "descripcion", "cod_tipo");
+            switch (formMode)
+            {
+                case FormMode.insert:
+                    {
+                        this.Text = "Nueva Habitación";
+                        break;
+                    }
+
+                case FormMode.update:
+                    {
+                        this.Text = "Edición Habitación";
+                        break;
+                    }
+            }
 
 
         }
@@ -41,6 +78,35 @@ namespace Hotel.Presentacion
             combo.SelectedIndex = -1;
             combo.DropDownStyle = ComboBoxStyle.DropDownList;
         }
+
+        public void SeleccionarModo(FormMode op)
+        {
+            this.formMode = op;
+        }
+
+        private void CargarCampos()
+        {
+            DataTable tablaHabitacion = new DataTable();
+            DataTable tablaTipoH = new DataTable();
+            DataTable tablaEstadoH = new DataTable();
+
+            tablaHabitacion = oHabitacion.RecuperarPorNumero(numHabitacion);
+            
+            txtPiso.Text = tablaHabitacion.Rows[0]["piso"].ToString();
+            txtPrecioHabitacion.Text = tablaHabitacion.Rows[0]["precio"].ToString();
+            txtDescripcionHabitacion.Text = tablaHabitacion.Rows[0]["descripcion"].ToString();
+
+            /*
+            txtNombre.Text = tablaEmpleado.Rows[0]["nombre"].ToString();
+            txtApellido.Text = tablaEmpleado.Rows[0]["apellido"].ToString();
+            this.CargarCombo(cboTipoDocumento, oTipoDoc.RecuperarTodos(), "descripcion", "tipo_doc", (int)tablaEmpleado.Rows[0]["tipo_doc"]);
+            this.CargarCombo(cboPuesto, oPuesto.RecuperarTodos(), "descripcion", "cod_puesto", (int)tablaEmpleado.Rows[0]["puesto"]);
+            txtNumeroDocumento.Text = tablaEmpleado.Rows[0]["nro_doc"].ToString();
+
+            txtUsuario.Text = tablaUsuario.Rows[0]["nombre"].ToString();
+            */
+        }
+
     }
 
 }

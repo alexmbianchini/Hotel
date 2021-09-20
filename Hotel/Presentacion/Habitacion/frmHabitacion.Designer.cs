@@ -41,7 +41,7 @@ namespace Hotel.Presentacion
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
-            this.btConsultar = new System.Windows.Forms.Button();
+            this.btnConsultar = new System.Windows.Forms.Button();
             this.lblNumero = new System.Windows.Forms.Label();
             this.lblTipo = new System.Windows.Forms.Label();
             this.lblPiso = new System.Windows.Forms.Label();
@@ -77,6 +77,7 @@ namespace Hotel.Presentacion
             this.dgvHabitaciones.RowTemplate.Height = 24;
             this.dgvHabitaciones.Size = new System.Drawing.Size(496, 201);
             this.dgvHabitaciones.TabIndex = 0;
+            this.dgvHabitaciones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHabitaciones_CellClick);
             // 
             // clmNumero
             // 
@@ -167,6 +168,7 @@ namespace Hotel.Presentacion
             this.btnEditar.TabIndex = 4;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnNuevo
             // 
@@ -179,16 +181,16 @@ namespace Hotel.Presentacion
             this.btnNuevo.UseVisualStyleBackColor = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
-            // btConsultar
+            // btnConsultar
             // 
-            this.btConsultar.Location = new System.Drawing.Point(496, 196);
-            this.btConsultar.Margin = new System.Windows.Forms.Padding(2);
-            this.btConsultar.Name = "btConsultar";
-            this.btConsultar.Size = new System.Drawing.Size(67, 29);
-            this.btConsultar.TabIndex = 6;
-            this.btConsultar.Text = "Consultar";
-            this.btConsultar.UseVisualStyleBackColor = true;
-            this.btConsultar.Click += new System.EventHandler(this.btConsultar_Click);
+            this.btnConsultar.Location = new System.Drawing.Point(496, 196);
+            this.btnConsultar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(67, 29);
+            this.btnConsultar.TabIndex = 6;
+            this.btnConsultar.Text = "Consultar";
+            this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.btConsultar_Click);
             // 
             // lblNumero
             // 
@@ -341,7 +343,7 @@ namespace Hotel.Presentacion
             this.Controls.Add(this.lblPiso);
             this.Controls.Add(this.lblTipo);
             this.Controls.Add(this.lblNumero);
-            this.Controls.Add(this.btConsultar);
+            this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnEliminar);
@@ -366,7 +368,7 @@ namespace Hotel.Presentacion
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnNuevo;
-        private System.Windows.Forms.Button btConsultar;
+        private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.Label lblNumero;
         private System.Windows.Forms.Label lblTipo;
         private System.Windows.Forms.Label lblPiso;

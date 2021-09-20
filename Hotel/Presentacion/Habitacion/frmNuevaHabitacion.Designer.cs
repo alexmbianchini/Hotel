@@ -32,80 +32,81 @@ namespace Hotel.Presentacion
             this.lblPisoHabitacion = new System.Windows.Forms.Label();
             this.lblTipoHabitacion = new System.Windows.Forms.Label();
             this.lblDescripcionHabitacion = new System.Windows.Forms.Label();
-            this.cboPisoHabitacion = new System.Windows.Forms.ComboBox();
             this.cboTipoHabitacion = new System.Windows.Forms.ComboBox();
             this.txtDescripcionHabitacion = new System.Windows.Forms.TextBox();
             this.btnAceptarHabitacion = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.lblPrecioHabitacion = new System.Windows.Forms.Label();
             this.txtPrecioHabitacion = new System.Windows.Forms.TextBox();
+            this.lblTipoH = new System.Windows.Forms.Label();
+            this.cboTipoH = new System.Windows.Forms.ComboBox();
+            this.txtPiso = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblPisoHabitacion
             // 
             this.lblPisoHabitacion.AutoSize = true;
-            this.lblPisoHabitacion.Location = new System.Drawing.Point(74, 73);
+            this.lblPisoHabitacion.Location = new System.Drawing.Point(66, 59);
+            this.lblPisoHabitacion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPisoHabitacion.Name = "lblPisoHabitacion";
-            this.lblPisoHabitacion.Size = new System.Drawing.Size(48, 17);
+            this.lblPisoHabitacion.Size = new System.Drawing.Size(27, 13);
             this.lblPisoHabitacion.TabIndex = 0;
-            this.lblPisoHabitacion.Text = "Piso  *";
+            this.lblPisoHabitacion.Text = "Piso";
             // 
             // lblTipoHabitacion
             // 
             this.lblTipoHabitacion.AutoSize = true;
-            this.lblTipoHabitacion.Location = new System.Drawing.Point(73, 131);
+            this.lblTipoHabitacion.Location = new System.Drawing.Point(65, 104);
+            this.lblTipoHabitacion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTipoHabitacion.Name = "lblTipoHabitacion";
-            this.lblTipoHabitacion.Size = new System.Drawing.Size(49, 17);
+            this.lblTipoHabitacion.Size = new System.Drawing.Size(28, 13);
             this.lblTipoHabitacion.TabIndex = 1;
-            this.lblTipoHabitacion.Text = "Tipo  *";
+            this.lblTipoHabitacion.Text = "Tipo";
             // 
             // lblDescripcionHabitacion
             // 
             this.lblDescripcionHabitacion.AutoSize = true;
-            this.lblDescripcionHabitacion.Location = new System.Drawing.Point(74, 250);
+            this.lblDescripcionHabitacion.Location = new System.Drawing.Point(30, 255);
+            this.lblDescripcionHabitacion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDescripcionHabitacion.Name = "lblDescripcionHabitacion";
-            this.lblDescripcionHabitacion.Size = new System.Drawing.Size(82, 17);
+            this.lblDescripcionHabitacion.Size = new System.Drawing.Size(63, 13);
             this.lblDescripcionHabitacion.TabIndex = 2;
             this.lblDescripcionHabitacion.Text = "Descripción";
-            // 
-            // cboPisoHabitacion
-            // 
-            this.cboPisoHabitacion.FormattingEnabled = true;
-            this.cboPisoHabitacion.Location = new System.Drawing.Point(167, 73);
-            this.cboPisoHabitacion.Name = "cboPisoHabitacion";
-            this.cboPisoHabitacion.Size = new System.Drawing.Size(121, 24);
-            this.cboPisoHabitacion.TabIndex = 3;
             // 
             // cboTipoHabitacion
             // 
             this.cboTipoHabitacion.FormattingEnabled = true;
-            this.cboTipoHabitacion.Location = new System.Drawing.Point(167, 128);
+            this.cboTipoHabitacion.Location = new System.Drawing.Point(125, 104);
+            this.cboTipoHabitacion.Margin = new System.Windows.Forms.Padding(2);
             this.cboTipoHabitacion.Name = "cboTipoHabitacion";
-            this.cboTipoHabitacion.Size = new System.Drawing.Size(121, 24);
+            this.cboTipoHabitacion.Size = new System.Drawing.Size(92, 21);
             this.cboTipoHabitacion.TabIndex = 4;
             // 
             // txtDescripcionHabitacion
             // 
-            this.txtDescripcionHabitacion.Location = new System.Drawing.Point(76, 270);
+            this.txtDescripcionHabitacion.Location = new System.Drawing.Point(33, 270);
+            this.txtDescripcionHabitacion.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescripcionHabitacion.Multiline = true;
             this.txtDescripcionHabitacion.Name = "txtDescripcionHabitacion";
-            this.txtDescripcionHabitacion.Size = new System.Drawing.Size(260, 74);
+            this.txtDescripcionHabitacion.Size = new System.Drawing.Size(230, 61);
             this.txtDescripcionHabitacion.TabIndex = 5;
             // 
             // btnAceptarHabitacion
             // 
-            this.btnAceptarHabitacion.Location = new System.Drawing.Point(89, 367);
+            this.btnAceptarHabitacion.Location = new System.Drawing.Point(51, 376);
+            this.btnAceptarHabitacion.Margin = new System.Windows.Forms.Padding(2);
             this.btnAceptarHabitacion.Name = "btnAceptarHabitacion";
-            this.btnAceptarHabitacion.Size = new System.Drawing.Size(90, 45);
+            this.btnAceptarHabitacion.Size = new System.Drawing.Size(68, 37);
             this.btnAceptarHabitacion.TabIndex = 6;
             this.btnAceptarHabitacion.Text = "Aceptar";
             this.btnAceptarHabitacion.UseVisualStyleBackColor = true;
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(223, 367);
+            this.btnCancelar.Location = new System.Drawing.Point(151, 376);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(90, 45);
+            this.btnCancelar.Size = new System.Drawing.Size(68, 37);
             this.btnCancelar.TabIndex = 7;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -113,34 +114,66 @@ namespace Hotel.Presentacion
             // lblPrecioHabitacion
             // 
             this.lblPrecioHabitacion.AutoSize = true;
-            this.lblPrecioHabitacion.Location = new System.Drawing.Point(74, 185);
+            this.lblPrecioHabitacion.Location = new System.Drawing.Point(56, 147);
+            this.lblPrecioHabitacion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPrecioHabitacion.Name = "lblPrecioHabitacion";
-            this.lblPrecioHabitacion.Size = new System.Drawing.Size(61, 17);
+            this.lblPrecioHabitacion.Size = new System.Drawing.Size(37, 13);
             this.lblPrecioHabitacion.TabIndex = 8;
-            this.lblPrecioHabitacion.Text = "Precio  *";
+            this.lblPrecioHabitacion.Text = "Precio";
             // 
             // txtPrecioHabitacion
             // 
-            this.txtPrecioHabitacion.Location = new System.Drawing.Point(167, 182);
+            this.txtPrecioHabitacion.Location = new System.Drawing.Point(125, 147);
+            this.txtPrecioHabitacion.Margin = new System.Windows.Forms.Padding(2);
             this.txtPrecioHabitacion.Name = "txtPrecioHabitacion";
-            this.txtPrecioHabitacion.Size = new System.Drawing.Size(121, 22);
+            this.txtPrecioHabitacion.Size = new System.Drawing.Size(92, 20);
             this.txtPrecioHabitacion.TabIndex = 9;
+            // 
+            // lblTipoH
+            // 
+            this.lblTipoH.AutoSize = true;
+            this.lblTipoH.Location = new System.Drawing.Point(11, 195);
+            this.lblTipoH.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTipoH.Name = "lblTipoH";
+            this.lblTipoH.Size = new System.Drawing.Size(82, 13);
+            this.lblTipoH.TabIndex = 10;
+            this.lblTipoH.Text = "Tipo Habitación";
+            // 
+            // cboTipoH
+            // 
+            this.cboTipoH.FormattingEnabled = true;
+            this.cboTipoH.Location = new System.Drawing.Point(125, 192);
+            this.cboTipoH.Margin = new System.Windows.Forms.Padding(2);
+            this.cboTipoH.Name = "cboTipoH";
+            this.cboTipoH.Size = new System.Drawing.Size(92, 21);
+            this.cboTipoH.TabIndex = 11;
+            // 
+            // txtPiso
+            // 
+            this.txtPiso.Location = new System.Drawing.Point(125, 56);
+            this.txtPiso.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPiso.Name = "txtPiso";
+            this.txtPiso.Size = new System.Drawing.Size(92, 20);
+            this.txtPiso.TabIndex = 14;
             // 
             // frmNuevaHabitacion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(401, 462);
+            this.ClientSize = new System.Drawing.Size(301, 438);
+            this.Controls.Add(this.txtPiso);
+            this.Controls.Add(this.cboTipoH);
+            this.Controls.Add(this.lblTipoH);
             this.Controls.Add(this.txtPrecioHabitacion);
             this.Controls.Add(this.lblPrecioHabitacion);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptarHabitacion);
             this.Controls.Add(this.txtDescripcionHabitacion);
             this.Controls.Add(this.cboTipoHabitacion);
-            this.Controls.Add(this.cboPisoHabitacion);
             this.Controls.Add(this.lblDescripcionHabitacion);
             this.Controls.Add(this.lblTipoHabitacion);
             this.Controls.Add(this.lblPisoHabitacion);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmNuevaHabitacion";
             this.Text = "Gestión Habitación";
             this.Load += new System.EventHandler(this.frmNuevaHabitacion_Load);
@@ -154,12 +187,14 @@ namespace Hotel.Presentacion
         private System.Windows.Forms.Label lblPisoHabitacion;
         private System.Windows.Forms.Label lblTipoHabitacion;
         private System.Windows.Forms.Label lblDescripcionHabitacion;
-        private System.Windows.Forms.ComboBox cboPisoHabitacion;
         private System.Windows.Forms.ComboBox cboTipoHabitacion;
         private System.Windows.Forms.TextBox txtDescripcionHabitacion;
         private System.Windows.Forms.Button btnAceptarHabitacion;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label lblPrecioHabitacion;
         private System.Windows.Forms.TextBox txtPrecioHabitacion;
+        private System.Windows.Forms.Label lblTipoH;
+        private System.Windows.Forms.ComboBox cboTipoH;
+        private System.Windows.Forms.TextBox txtPiso;
     }
 }

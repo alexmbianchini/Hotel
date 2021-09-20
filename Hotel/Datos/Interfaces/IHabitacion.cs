@@ -12,6 +12,7 @@ namespace Hotel.Datos.Interfaces
         DataTable RecuperarTodos();
         DataTable RecuperarGrilla();
         DataTable RecuperarFiltrados(string numero, string piso, string tipo, string estado, string precioDesde, string precioHasta);
+        DataTable RecuperarPorNumero(int numero);
 
     }
 }
