@@ -75,6 +75,7 @@ namespace Hotel.Presentacion
             this.dgvHabitaciones.ReadOnly = true;
             this.dgvHabitaciones.RowHeadersWidth = 51;
             this.dgvHabitaciones.RowTemplate.Height = 24;
+            this.dgvHabitaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvHabitaciones.Size = new System.Drawing.Size(496, 201);
             this.dgvHabitaciones.TabIndex = 0;
             this.dgvHabitaciones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHabitaciones_CellClick);

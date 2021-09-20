@@ -38,8 +38,6 @@ namespace Hotel.Presentacion
             this.btnCancelar = new System.Windows.Forms.Button();
             this.lblPrecioHabitacion = new System.Windows.Forms.Label();
             this.txtPrecioHabitacion = new System.Windows.Forms.TextBox();
-            this.lblTipoH = new System.Windows.Forms.Label();
-            this.cboTipoH = new System.Windows.Forms.ComboBox();
             this.txtPiso = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
@@ -66,7 +64,7 @@ namespace Hotel.Presentacion
             // lblDescripcionHabitacion
             // 
             this.lblDescripcionHabitacion.AutoSize = true;
-            this.lblDescripcionHabitacion.Location = new System.Drawing.Point(30, 255);
+            this.lblDescripcionHabitacion.Location = new System.Drawing.Point(30, 201);
             this.lblDescripcionHabitacion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDescripcionHabitacion.Name = "lblDescripcionHabitacion";
             this.lblDescripcionHabitacion.Size = new System.Drawing.Size(63, 13);
@@ -76,7 +74,7 @@ namespace Hotel.Presentacion
             // cboTipoHabitacion
             // 
             this.cboTipoHabitacion.FormattingEnabled = true;
-            this.cboTipoHabitacion.Location = new System.Drawing.Point(125, 104);
+            this.cboTipoHabitacion.Location = new System.Drawing.Point(125, 101);
             this.cboTipoHabitacion.Margin = new System.Windows.Forms.Padding(2);
             this.cboTipoHabitacion.Name = "cboTipoHabitacion";
             this.cboTipoHabitacion.Size = new System.Drawing.Size(92, 21);
@@ -84,7 +82,7 @@ namespace Hotel.Presentacion
             // 
             // txtDescripcionHabitacion
             // 
-            this.txtDescripcionHabitacion.Location = new System.Drawing.Point(33, 270);
+            this.txtDescripcionHabitacion.Location = new System.Drawing.Point(33, 216);
             this.txtDescripcionHabitacion.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescripcionHabitacion.Multiline = true;
             this.txtDescripcionHabitacion.Name = "txtDescripcionHabitacion";
@@ -93,7 +91,7 @@ namespace Hotel.Presentacion
             // 
             // btnAceptarHabitacion
             // 
-            this.btnAceptarHabitacion.Location = new System.Drawing.Point(51, 376);
+            this.btnAceptarHabitacion.Location = new System.Drawing.Point(59, 310);
             this.btnAceptarHabitacion.Margin = new System.Windows.Forms.Padding(2);
             this.btnAceptarHabitacion.Name = "btnAceptarHabitacion";
             this.btnAceptarHabitacion.Size = new System.Drawing.Size(68, 37);
@@ -103,7 +101,7 @@ namespace Hotel.Presentacion
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(151, 376);
+            this.btnCancelar.Location = new System.Drawing.Point(159, 310);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(68, 37);
@@ -129,25 +127,6 @@ namespace Hotel.Presentacion
             this.txtPrecioHabitacion.Size = new System.Drawing.Size(92, 20);
             this.txtPrecioHabitacion.TabIndex = 9;
             // 
-            // lblTipoH
-            // 
-            this.lblTipoH.AutoSize = true;
-            this.lblTipoH.Location = new System.Drawing.Point(11, 195);
-            this.lblTipoH.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblTipoH.Name = "lblTipoH";
-            this.lblTipoH.Size = new System.Drawing.Size(82, 13);
-            this.lblTipoH.TabIndex = 10;
-            this.lblTipoH.Text = "Tipo Habitación";
-            // 
-            // cboTipoH
-            // 
-            this.cboTipoH.FormattingEnabled = true;
-            this.cboTipoH.Location = new System.Drawing.Point(125, 192);
-            this.cboTipoH.Margin = new System.Windows.Forms.Padding(2);
-            this.cboTipoH.Name = "cboTipoH";
-            this.cboTipoH.Size = new System.Drawing.Size(92, 21);
-            this.cboTipoH.TabIndex = 11;
-            // 
             // txtPiso
             // 
             this.txtPiso.Location = new System.Drawing.Point(125, 56);
@@ -160,10 +139,8 @@ namespace Hotel.Presentacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(301, 438);
+            this.ClientSize = new System.Drawing.Size(301, 394);
             this.Controls.Add(this.txtPiso);
-            this.Controls.Add(this.cboTipoH);
-            this.Controls.Add(this.lblTipoH);
             this.Controls.Add(this.txtPrecioHabitacion);
             this.Controls.Add(this.lblPrecioHabitacion);
             this.Controls.Add(this.btnCancelar);
@@ -193,8 +170,6 @@ namespace Hotel.Presentacion
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label lblPrecioHabitacion;
         private System.Windows.Forms.TextBox txtPrecioHabitacion;
-        private System.Windows.Forms.Label lblTipoH;
-        private System.Windows.Forms.ComboBox cboTipoH;
         private System.Windows.Forms.TextBox txtPiso;
     }
 }

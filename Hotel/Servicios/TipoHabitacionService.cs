@@ -22,5 +22,9 @@ namespace Hotel.Servicios
         {
             return dao.RecuperarTodos();
         }
+        public DataTable RecuperarPorCodigo(int codigo)
+        {
+            return dao.RecuperarPorCodigo(codigo);
+        }
     }
 }

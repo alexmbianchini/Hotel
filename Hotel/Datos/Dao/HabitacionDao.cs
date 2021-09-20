@@ -57,7 +57,8 @@ namespace Hotel.Datos.Dao
 
         public DataTable RecuperarPorNumero(int numero)
         {
-            string consulta = "SELECT h.piso, h.precio, h.descripcion FROM HABITACIONES h WHERE h.numero = " + numero;
+            string consulta = "SELECT piso, precio, descripcion, tipo_habitacion FROM HABITACIONES WHERE numero = " + numero +
+                " AND borrado_logico = 0";
             return DBHelper.ObtenerInstancia().Ejecutar(consulta);
                         
         }

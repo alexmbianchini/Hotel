@@ -10,5 +10,6 @@ namespace Hotel.Datos.Interfaces
     interface ITipoHabitacion
     {
         DataTable RecuperarTodos();
+        DataTable RecuperarPorCodigo(int codigo);
     }
 }

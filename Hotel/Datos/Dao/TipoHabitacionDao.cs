@@ -16,5 +16,14 @@ namespace Hotel.Datos.Dao
 
             return DBHelper.ObtenerInstancia().Ejecutar(consulta);
         }
+
+        public DataTable RecuperarPorCodigo(int codigo)
+        {
+            string consulta = "SELECT descripcion FROM TIPO_HABITACION WHERE borrado_logico = 0" +
+                " AND cod_tipo = " + codigo +
+                " ORDER BY descripcion";
+
+            return DBHelper.ObtenerInstancia().Ejecutar(consulta);
+        }
     }
 }

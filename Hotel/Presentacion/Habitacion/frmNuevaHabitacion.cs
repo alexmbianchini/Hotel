@@ -22,8 +22,8 @@ namespace Hotel.Presentacion
         HabitacionService oHabitacion;
         TipoHabitacionService oTipoHabitacion;
 
-        //Variables a Utilizar
-        int numHabitacion;
+        //Atributos a utilizar
+        private int numHabitacion;
        
         public frmNuevaHabitacion()
         {
@@ -37,7 +37,6 @@ namespace Hotel.Presentacion
             oHabitacion = new HabitacionService();
             oTipoHabitacion = new TipoHabitacionService();
             this.numHabitacion = numHabitacion;
-
         }
 
         public enum FormMode
@@ -50,17 +49,18 @@ namespace Hotel.Presentacion
         private void frmNuevaHabitacion_Load(object sender, EventArgs e)
         {
             // Cargar combo
-            this.CargarCombo(cboTipoHabitacion, oTipoHabitacion.RecuperarTodos(), "descripcion", "cod_tipo");
             switch (formMode)
             {
                 case FormMode.insert:
                     {
+                        this.CargarCombo(cboTipoHabitacion, oTipoHabitacion.RecuperarTodos(), "descripcion", "cod_tipo");
                         this.Text = "Nueva Habitación";
                         break;
                     }
 
                 case FormMode.update:
                     {
+                        this.CargarCampos();
                         this.Text = "Edición Habitación";
                         break;
                     }
@@ -70,12 +70,20 @@ namespace Hotel.Presentacion
         }
 
         // Funcion para cargar combo
+        private void CargarCombo(ComboBox combo, DataTable tabla, string campoMostrar, string campoValor, int campoIndice)
+        {
+            combo.DataSource = tabla;
+            combo.DisplayMember = campoMostrar;
+            combo.ValueMember = campoValor;
+            combo.SelectedIndex = campoIndice - 1;
+            combo.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
         private void CargarCombo(ComboBox combo, DataTable tabla, string campoMostrar, string campoValor)
         {
             combo.DataSource = tabla;
             combo.DisplayMember = campoMostrar;
             combo.ValueMember = campoValor;
-            combo.SelectedIndex = -1;
+            combo.SelectedIndex = - 1;
             combo.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
@@ -87,24 +95,14 @@ namespace Hotel.Presentacion
         private void CargarCampos()
         {
             DataTable tablaHabitacion = new DataTable();
-            DataTable tablaTipoH = new DataTable();
-            DataTable tablaEstadoH = new DataTable();
 
             tablaHabitacion = oHabitacion.RecuperarPorNumero(numHabitacion);
             
             txtPiso.Text = tablaHabitacion.Rows[0]["piso"].ToString();
             txtPrecioHabitacion.Text = tablaHabitacion.Rows[0]["precio"].ToString();
             txtDescripcionHabitacion.Text = tablaHabitacion.Rows[0]["descripcion"].ToString();
+            this.CargarCombo(cboTipoHabitacion, oTipoHabitacion.RecuperarTodos(), "descripcion", "cod_tipo", (int)tablaHabitacion.Rows[0]["tipo_habitacion"]);
 
-            /*
-            txtNombre.Text = tablaEmpleado.Rows[0]["nombre"].ToString();
-            txtApellido.Text = tablaEmpleado.Rows[0]["apellido"].ToString();
-            this.CargarCombo(cboTipoDocumento, oTipoDoc.RecuperarTodos(), "descripcion", "tipo_doc", (int)tablaEmpleado.Rows[0]["tipo_doc"]);
-            this.CargarCombo(cboPuesto, oPuesto.RecuperarTodos(), "descripcion", "cod_puesto", (int)tablaEmpleado.Rows[0]["puesto"]);
-            txtNumeroDocumento.Text = tablaEmpleado.Rows[0]["nro_doc"].ToString();
-
-            txtUsuario.Text = tablaUsuario.Rows[0]["nombre"].ToString();
-            */
         }
 
     }
