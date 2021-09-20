@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hotel.Negocio;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -13,6 +14,8 @@ namespace Hotel.Datos.Interfaces
         DataTable RecuperarGrilla();
         DataTable RecuperarFiltrados(string numero, string piso, string tipo, string estado, string precioDesde, string precioHasta);
         DataTable RecuperarPorNumero(int numero);
+        string ValidarHabitacionExistente(string numero);
+        bool Modificar(Habitacion oHabitacion);
 
     }
 }

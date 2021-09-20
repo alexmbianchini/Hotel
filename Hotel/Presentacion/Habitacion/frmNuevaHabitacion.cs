@@ -21,6 +21,7 @@ namespace Hotel.Presentacion
         // Instanciar objetos 
         HabitacionService oHabitacion;
         TipoHabitacionService oTipoHabitacion;
+        Habitacion oHabitacionSelected;
 
         //Atributos a utilizar
         private int numHabitacion;
@@ -36,7 +37,8 @@ namespace Hotel.Presentacion
             InitializeComponent();
             oHabitacion = new HabitacionService();
             oTipoHabitacion = new TipoHabitacionService();
-            this.numHabitacion = numHabitacion;
+            oHabitacionSelected = new Habitacion();
+            this.numHabitacion = Convert.ToInt32(numHabitacion);
         }
 
         public enum FormMode
@@ -105,6 +107,103 @@ namespace Hotel.Presentacion
 
         }
 
+        private void btnAceptarHabitacion_Click(object sender, EventArgs e)
+        {
+            switch (formMode)
+            {
+                case FormMode.insert:
+                    //if(this.ValidarCompletitudCampos())
+                    break;
+                case FormMode.update:
+                    if(this.ValidarCompletitudCampos())
+                    {
+                        //Validación de que los campos tengan valores válidos al dominio
+                        if(Convert.ToInt32(txtPiso.Text) > 5 || Convert.ToInt32(txtPiso.Text) < 1)
+                        {
+                            MessageBox.Show("Ingrese un piso entre 1 y 5, piso no válido!");
+                            this.txtPiso.Clear();
+                            this.txtPiso.Focus();
+                            return;
+                        }
+                        else
+                        {
+                            if (Convert.ToDouble(txtPrecioHabitacion.Text) < 0)
+                            {
+                                MessageBox.Show("Ingrese un precio válido!");
+                                this.txtPrecioHabitacion.Clear();
+                                this.txtPrecioHabitacion.Focus();
+                                return;
+                            }
+                            else
+                            {
+                                //Se pasan las validaciones y asignamos los valores para insertar el usuario en la BD
+                                this.oHabitacionSelected.Numero = numHabitacion;
+                                this.oHabitacionSelected.Piso = Convert.ToInt32(txtPiso.Text);
+                                this.oHabitacionSelected.TipoHabitacion = Convert.ToInt32(cboTipoHabitacion.SelectedValue);
+                                this.oHabitacionSelected.Precio = (float) Convert.ToDouble(txtPrecioHabitacion.Text);
+                                this.oHabitacionSelected.Descripcion = txtDescripcionHabitacion.Text;
+
+                                //Modificacion en la BD
+                                if(oHabitacion.Modificar(oHabitacionSelected))
+                                {
+                                    MessageBox.Show("Se ha editado la Habitación con Éxito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    this.Close();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Ha ocurrido un error al insertar los datos", "Error", MessageBoxButtons.OK ,MessageBoxIcon.Error);
+                                }
+
+                            }
+                        }
+                    }
+                    break;
+            }
+        }
+
+        private bool ValidarCompletitudCampos()
+        {
+            //Validar que los campos no esten vacíos
+            if(string.IsNullOrEmpty(this.txtPiso.Text))
+            {
+                MessageBox.Show("Debe ingresar un piso");
+                this.txtPiso.Focus();
+                this.lblPisoHabitacion.ForeColor = Color.Red;
+                return false;
+            }
+            if(this.cboTipoHabitacion.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe ingresar un tipo de habitación");
+                this.cboTipoHabitacion.Focus();
+                this.lblTipoHabitacion.ForeColor = Color.Red;
+                return false;
+            }
+            if(string.IsNullOrEmpty(this.txtPrecioHabitacion.Text))
+            {
+                MessageBox.Show("Debe ingresar un precio de habitación");
+                this.txtPrecioHabitacion.Focus();
+                this.lblPrecioHabitacion.ForeColor = Color.Red;
+                return false;
+            }
+            if (string.IsNullOrEmpty(this.txtDescripcionHabitacion.Text))
+            {
+                MessageBox.Show("Debe ingresar una descripción de la habitación");
+                this.txtDescripcionHabitacion.Focus();
+                this.lblDescripcionHabitacion.ForeColor = Color.Red;
+                return false;
+            }
+            
+            return true;
+
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Seguro que desea Cancelar la Acción?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                this.Close();
+            }
+        }
     }
 
 }

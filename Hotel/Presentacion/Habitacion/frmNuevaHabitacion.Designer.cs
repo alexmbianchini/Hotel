@@ -98,6 +98,7 @@ namespace Hotel.Presentacion
             this.btnAceptarHabitacion.TabIndex = 6;
             this.btnAceptarHabitacion.Text = "Aceptar";
             this.btnAceptarHabitacion.UseVisualStyleBackColor = true;
+            this.btnAceptarHabitacion.Click += new System.EventHandler(this.btnAceptarHabitacion_Click);
             // 
             // btnCancelar
             // 
@@ -108,6 +109,7 @@ namespace Hotel.Presentacion
             this.btnCancelar.TabIndex = 7;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // lblPrecioHabitacion
             // 

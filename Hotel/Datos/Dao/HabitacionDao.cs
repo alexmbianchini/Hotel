@@ -1,4 +1,5 @@
 ﻿using Hotel.Datos.Interfaces;
+using Hotel.Negocio;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -61,6 +62,29 @@ namespace Hotel.Datos.Dao
                 " AND borrado_logico = 0";
             return DBHelper.ObtenerInstancia().Ejecutar(consulta);
                         
+        }
+
+        public string ValidarHabitacionExistente(string numero)
+        {
+            string consulta = "SELECT * FROM HABITACIONES WHERE numero = " + numero + " AND borrado_logico = 0";
+            DataTable tabla = DBHelper.ObtenerInstancia().Ejecutar(consulta);
+            if (tabla.Rows.Count > 0)
+                return string.Empty;
+            else
+                return numero;
+        }
+
+        public bool Modificar(Habitacion oHabitacion)
+        {
+            string consulta = "UPDATE HABITACIONES SET " +
+                " piso = " + oHabitacion.Piso + "," +
+                " tipo_habitacion = " + oHabitacion.TipoHabitacion + "," +
+                " precio = " + oHabitacion.Precio + "," +
+                " descripcion = '" + oHabitacion.Descripcion + "'" +
+                " WHERE numero = " + oHabitacion.Numero;
+
+            DBHelper.ObtenerInstancia().Ejecutar(consulta);
+            return true;
         }
     }
 
