@@ -1,4 +1,5 @@
 ﻿using Hotel.Datos.Interfaces;
+using Hotel.Negocio;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -24,6 +25,31 @@ namespace Hotel.Datos.Dao
                 " ORDER BY descripcion";
 
             return DBHelper.ObtenerInstancia().Ejecutar(consulta);
+        }
+
+        public bool Crear(TipoHabitacion oTipo)
+        {
+            string consulta = "INSERT INTO TIPO_HABITACION (cod_tipo, nombre, descripcion, borrado_logico)" +
+                " VALUES (" +
+                 " '" + oTipo.CodTipo + "'," +
+                 " '" + oTipo.Nombre + "'," +
+                 " '" + oTipo.Descripcion + "'," +
+                 " 0);";
+
+
+            DBHelper.ObtenerInstancia().Ejecutar(consulta);
+            return true;
+        }
+
+
+        public bool Modificar(TipoHabitacion oTipo)
+        {
+            string consulta = "UPDATE TIPO_HABITACION SET " +
+                " descripcion = '" + oTipo.Descripcion + "'" +
+                " WHERE cod_tipo = " + oTipo.CodTipo;
+
+            DBHelper.ObtenerInstancia().Ejecutar(consulta);
+            return true;
         }
     }
 }

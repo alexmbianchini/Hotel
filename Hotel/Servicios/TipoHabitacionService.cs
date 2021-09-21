@@ -1,5 +1,6 @@
 ﻿using Hotel.Datos.Dao;
 using Hotel.Datos.Interfaces;
+using Hotel.Negocio;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -25,6 +26,16 @@ namespace Hotel.Servicios
         public DataTable RecuperarPorCodigo(int codigo)
         {
             return dao.RecuperarPorCodigo(codigo);
+        }
+
+        public bool Crear(TipoHabitacion oTipo)
+        {
+            return dao.Crear(oTipo);
+        }
+
+        public bool Modificar(TipoHabitacion oTipo)
+        {
+            return dao.Modificar(oTipo);
         }
     }
 }

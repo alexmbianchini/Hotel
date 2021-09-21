@@ -58,6 +58,7 @@
     <Compile Include="Custom\RJTextBox.Designer.cs">
       <DependentUpon>RJTextBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Datos\Dao\PisoDao.cs" />
     <Compile Include="Datos\DBHelper.cs" />
     <Compile Include="Datos\Dao\EmpleadoDao.cs" />
     <Compile Include="Datos\Dao\EstadoHabitacionDao.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="Datos\Interfaces\IEmpleado.cs" />
     <Compile Include="Datos\Interfaces\IEstadoHabitacion.cs" />
     <Compile Include="Datos\Interfaces\IHabitacion.cs" />
+    <Compile Include="Datos\Interfaces\IPiso.cs" />
     <Compile Include="Datos\Interfaces\IPuesto.cs" />
     <Compile Include="Datos\Interfaces\ITipoDocumento.cs" />
     <Compile Include="Datos\Interfaces\ITipoHabitacion.cs" />
@@ -83,6 +85,7 @@
     <Compile Include="Negocio\Habitacion.cs" />
     <Compile Include="Negocio\Huesped.cs" />
     <Compile Include="Negocio\Menu.cs" />
+    <Compile Include="Negocio\Piso.cs" />
     <Compile Include="Negocio\Puesto.cs" />
     <Compile Include="Negocio\Reserva.cs" />
     <Compile Include="Negocio\Sesion.cs" />
@@ -146,6 +149,7 @@
     <Compile Include="Servicios\EmpleadoService.cs" />
     <Compile Include="Servicios\EstadoHabitacionService.cs" />
     <Compile Include="Servicios\HabitacionService.cs" />
+    <Compile Include="Servicios\PisoService.cs" />
     <Compile Include="Servicios\PuestoService.cs" />
     <Compile Include="Servicios\TipoDocumentoService.cs" />
     <Compile Include="Servicios\TipoHabitacionService.cs" />

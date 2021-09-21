@@ -52,5 +52,10 @@ namespace Hotel.Servicios
         {
             return dao.Crear(oHabitacion);
         }
+
+        public bool Eliminar(Habitacion oHabitacion)
+        {
+            return dao.Eliminar(oHabitacion);
+        }
     }
 }

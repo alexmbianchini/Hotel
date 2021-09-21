@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hotel.Negocio;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -11,5 +12,9 @@ namespace Hotel.Datos.Interfaces
     {
         DataTable RecuperarTodos();
         DataTable RecuperarPorCodigo(int codigo);
+
+        bool Crear(TipoHabitacion oTipo);
+
+        bool Modificar(TipoHabitacion oTipo);
     }
 }

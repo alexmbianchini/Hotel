@@ -19,5 +19,7 @@ namespace Hotel.Datos.Interfaces
         DataTable RecuperarNumeros();
         bool Crear(Habitacion oHabitacion);
 
+        bool Eliminar(Habitacion oHabitacion);
+
     }
 }

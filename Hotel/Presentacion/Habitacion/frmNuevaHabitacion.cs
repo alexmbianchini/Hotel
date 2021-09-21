@@ -22,6 +22,8 @@ namespace Hotel.Presentacion
         HabitacionService oHabitacion;
         TipoHabitacionService oTipoHabitacion;
         Habitacion oHabitacionSelected;
+        TipoHabitacion oTipoHSelected;
+        PisoService oPiso;
 
         //Atributos a utilizar
         private int numHabitacion;
@@ -32,6 +34,8 @@ namespace Hotel.Presentacion
             oHabitacion = new HabitacionService();
             oTipoHabitacion = new TipoHabitacionService();
             oHabitacionSelected = new Habitacion();
+            oTipoHSelected = new TipoHabitacion();
+            oPiso = new PisoService();
         }
         public frmNuevaHabitacion(int numHabitacion)
         {
@@ -39,6 +43,8 @@ namespace Hotel.Presentacion
             oHabitacion = new HabitacionService();
             oTipoHabitacion = new TipoHabitacionService();
             oHabitacionSelected = new Habitacion();
+            oTipoHSelected = new TipoHabitacion();
+            oPiso = new PisoService();
             this.numHabitacion = Convert.ToInt32(numHabitacion);
         }
 
@@ -56,8 +62,9 @@ namespace Hotel.Presentacion
             {
                 case FormMode.insert:
                     {
-                        this.CargarCombo(cboTipoHabitacion, oTipoHabitacion.RecuperarTodos(), "descripcion", "cod_tipo");
+                        this.CargarCombo(cboTipoHabitacion, oTipoHabitacion.RecuperarTodos(), "nombre", "cod_tipo");
                         this.Text = "Nueva Habitación";
+                        this.txtDescripcionHabitacion.Enabled = false;
                         break;
                     }
 
@@ -104,7 +111,7 @@ namespace Hotel.Presentacion
             txtPiso.Text = tablaHabitacion.Rows[0]["piso"].ToString();
             txtPrecioHabitacion.Text = tablaHabitacion.Rows[0]["precio"].ToString();
             txtDescripcionHabitacion.Text = tablaHabitacion.Rows[0]["descripcion"].ToString();
-            this.CargarCombo(cboTipoHabitacion, oTipoHabitacion.RecuperarTodos(), "descripcion", "cod_tipo", (int)tablaHabitacion.Rows[0]["tipo_habitacion"]);
+            this.CargarCombo(cboTipoHabitacion, oTipoHabitacion.RecuperarTodos(), "nombre", "cod_tipo", (int)tablaHabitacion.Rows[0]["tipo_habitacion"]);
 
         }
 
@@ -166,7 +173,7 @@ namespace Hotel.Presentacion
                                 this.AsignarValores();
 
                                 //Modificacion en la BD
-                                if(oHabitacion.Modificar(oHabitacionSelected))
+                                if(oHabitacion.Modificar(oHabitacionSelected) && oTipoHabitacion.Modificar(oTipoHSelected))
                                 {
                                     MessageBox.Show("Se ha editado la Habitación con Éxito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     this.Close();
@@ -207,13 +214,13 @@ namespace Hotel.Presentacion
                 this.lblPrecioHabitacion.ForeColor = Color.Red;
                 return false;
             }
-            if (string.IsNullOrEmpty(this.txtDescripcionHabitacion.Text))
+            /*if (string.IsNullOrEmpty(this.txtDescripcionHabitacion.Text))
             {
                 MessageBox.Show("Debe ingresar una descripción de la habitación");
                 this.txtDescripcionHabitacion.Focus();
                 this.lblDescripcionHabitacion.ForeColor = Color.Red;
                 return false;
-            }
+            }*/
             
             return true;
 
@@ -229,7 +236,10 @@ namespace Hotel.Presentacion
 
         private bool ValidarPiso()
         {
-            if (Convert.ToInt32(txtPiso.Text) > 5 || Convert.ToInt32(txtPiso.Text) < 1)
+
+            int _cantidad = oPiso.RecuperarNumeros().Rows.Count;
+
+            if (Convert.ToInt32(txtPiso.Text) > _cantidad || Convert.ToInt32(txtPiso.Text) < 1)
             {
                 MessageBox.Show("Ingrese un piso entre 1 y 5, piso no válido!");
                 this.txtPiso.Clear();
@@ -257,7 +267,8 @@ namespace Hotel.Presentacion
             this.oHabitacionSelected.Piso = Convert.ToInt32(txtPiso.Text);
             this.oHabitacionSelected.TipoHabitacion = Convert.ToInt32(cboTipoHabitacion.SelectedValue);
             this.oHabitacionSelected.Precio = (float)Convert.ToDouble(txtPrecioHabitacion.Text);
-            this.oHabitacionSelected.Descripcion = txtDescripcionHabitacion.Text;
+            this.oTipoHSelected.Descripcion = txtDescripcionHabitacion.Text;
+            this.oTipoHSelected.CodTipo = Convert.ToInt32(cboTipoHabitacion.SelectedValue);
         }
         private int GenerarNumero(DataTable tabla)
         {

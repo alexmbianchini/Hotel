@@ -18,6 +18,7 @@ namespace Hotel.Presentacion
         HabitacionService oHabitacion = new HabitacionService();
         TipoHabitacionService oTipoH = new TipoHabitacionService();
         EstadoHabitacionService oEstadoH = new EstadoHabitacionService();
+        Habitacion oHabitacionSelected = new Habitacion();
 
         public frmHabitacion()
         {
@@ -102,7 +103,7 @@ namespace Hotel.Presentacion
             //Carga de Combos
             //this.CargarCombo(cboNumero, oHabitacion.RecuperarTodos(), "numero", "numero");
             //this.CargarCombo(cboPiso, oHabitacion.RecuperarTodos(), "piso", "piso");
-            this.CargarCombo(cboTipo, oTipoH.RecuperarTodos(), "descripcion", "cod_tipo");
+            this.CargarCombo(cboTipo, oTipoH.RecuperarTodos(), "nombre", "cod_tipo");
             this.CargarCombo(cboEstado, oEstadoH.RecuperarTodos(), "descripcion", "idEstado");
 
             //Carga Grilla
@@ -131,6 +132,25 @@ namespace Hotel.Presentacion
             frmEditar.ShowDialog();
             this.CargarTodos();
             
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Seguro que desea Eliminar la Habitación seleccionada?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                this.oHabitacionSelected.Numero = (int)dgvHabitaciones.CurrentRow.Cells["clmNumero"].Value;
+                
+
+                if (oHabitacion.Eliminar(oHabitacionSelected))
+                {
+                    MessageBox.Show("Habitación Eliminada con Éxito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Error al eliminar la Habitación", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            this.CargarTodos();
         }
     }
 }

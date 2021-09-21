@@ -20,7 +20,7 @@ namespace Hotel.Datos.Dao
 
         public DataTable RecuperarGrilla()
         {
-            string consulta = "SELECT h.numero, h.piso, h.descripcion as descripcion, h.precio, t.cod_tipo, t.descripcion as tipo, e.descripcion as estado, e.idEstado" +
+            string consulta = "SELECT h.numero, h.piso, t.descripcion as descripcion, h.precio, t.cod_tipo, t.nombre as tipo, e.descripcion as estado, e.idEstado" +
                 " FROM HABITACIONES h JOIN TIPO_HABITACION t ON(h.tipo_habitacion = t.cod_tipo)" +
                 " JOIN ESTADO_HABITACION e ON(h.estado = e.idEstado)" +
                 " WHERE h.borrado_logico = 0" +
@@ -31,7 +31,7 @@ namespace Hotel.Datos.Dao
         }
         public DataTable RecuperarFiltrados(string numero, string piso, string tipo, string estado, string precioDesde, string precioHasta)
         {
-            string consulta = "SELECT h.numero, h.piso, h.descripcion as descripcion, h.precio, t.cod_tipo, t.descripcion as tipo, e.descripcion as estado, e.idEstado" +
+            string consulta = "SELECT h.numero, h.piso, t.descripcion as descripcion, h.precio, t.cod_tipo, t.nombre as tipo, e.descripcion as estado, e.idEstado" +
                 " FROM HABITACIONES h JOIN TIPO_HABITACION t ON(h.tipo_habitacion = t.cod_tipo)" +
                 " JOIN ESTADO_HABITACION e ON(h.estado = e.idEstado)" +
                 " WHERE h.borrado_logico = 0";
@@ -58,8 +58,10 @@ namespace Hotel.Datos.Dao
 
         public DataTable RecuperarPorNumero(int numero)
         {
-            string consulta = "SELECT piso, precio, descripcion, tipo_habitacion FROM HABITACIONES WHERE numero = " + numero +
-                " AND borrado_logico = 0";
+            string consulta = "SELECT h.piso, h.precio, t.descripcion, h.tipo_habitacion FROM HABITACIONES h" +
+                " JOIN TIPO_HABITACION t ON(h.tipo_habitacion = t.cod_tipo)" +
+                " WHERE numero = " + numero +
+                " AND h.borrado_logico = 0";
             return DBHelper.ObtenerInstancia().Ejecutar(consulta);
                         
         }
@@ -79,8 +81,7 @@ namespace Hotel.Datos.Dao
             string consulta = "UPDATE HABITACIONES SET " +
                 " piso = " + oHabitacion.Piso + "," +
                 " tipo_habitacion = " + oHabitacion.TipoHabitacion + "," +
-                " precio = " + oHabitacion.Precio + "," +
-                " descripcion = '" + oHabitacion.Descripcion + "'" +
+                " precio = " + oHabitacion.Precio +
                 " WHERE numero = " + oHabitacion.Numero;
 
             DBHelper.ObtenerInstancia().Ejecutar(consulta);
@@ -94,14 +95,24 @@ namespace Hotel.Datos.Dao
         }
         public bool Crear(Habitacion oHabitacion)
         {
-            string consulta = "INSERT INTO HABITACIONES (numero, piso, tipo_habitacion, precio, borrado_logico, descripcion, estado)" +
+            string consulta = "INSERT INTO HABITACIONES (numero, piso, tipo_habitacion, precio, borrado_logico, estado)" +
                 " VALUES (" +
                 oHabitacion.Numero + "," +
                 oHabitacion.Piso + "," +
                 oHabitacion.TipoHabitacion + "," +
                 oHabitacion.Precio + "," + " 0," +
-                " '" + oHabitacion.Descripcion + "'," +
                 "1)";
+
+            DBHelper.ObtenerInstancia().Ejecutar(consulta);
+            return true;
+        }
+
+
+        public bool Eliminar(Habitacion oHabitacion)
+        {
+            string consulta = "UPDATE HABITACIONES SET borrado_logico = 1" +
+                " WHERE numero =" + oHabitacion.Numero;
+
 
             DBHelper.ObtenerInstancia().Ejecutar(consulta);
             return true;

@@ -11,6 +11,7 @@ namespace Hotel.Negocio
     class TipoHabitacion
     {
         public int CodTipo { get; set; }
+        public string Nombre { get; set; }
         public string Descripcion { get; set; }
         public bool BorradoLogico { get; set; }
 
