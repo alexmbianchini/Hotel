@@ -115,80 +115,6 @@ namespace Hotel.Presentacion
 
         }
 
-        private void btnAceptarHabitacion_Click(object sender, EventArgs e)
-        {
-            switch (formMode)
-            {
-                case FormMode.insert:
-                    if(this.ValidarCompletitudCampos())
-                    {
-                        if (ValidarPiso())
-                        {
-                            
-                        }
-                        else
-                        {
-                            if (ValidarPrecio())
-                            {
-
-                            }
-                            else
-                            {
-                                //Se pasan las validaciones, generamos numero y asignamos los valores para insertar el usuario en la BD
-                                oHabitacionSelected.Numero = this.GenerarNumero(this.oHabitacion.RecuperarNumeros());
-                                this.AsignarValores();
-
-                                //Agregar a la BD
-                                if (oHabitacion.Crear(oHabitacionSelected))
-                                {
-                                    MessageBox.Show("Nueva Habitación Ingresada con Éxito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    this.Close();
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Ha ocurrido un Error al crear la Habitación", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                }
-                            }
-                        }
-                    }
-                    break;
-                case FormMode.update:
-                    if(this.ValidarCompletitudCampos())
-                    {
-                        //Validación de que los campos tengan valores válidos al dominio
-                        if(ValidarPiso())
-                        {
-                           
-                        }
-                        else
-                        {
-                            if (ValidarPrecio())
-                            {
-                                
-                            }
-                            else
-                            {
-                                //Se pasan las validaciones y asignamos los valores para insertar el usuario en la BD
-                                this.oHabitacionSelected.Numero = numHabitacion;
-                                this.AsignarValores();
-
-                                //Modificacion en la BD
-                                if(oHabitacion.Modificar(oHabitacionSelected) && oTipoHabitacion.Modificar(oTipoHSelected))
-                                {
-                                    MessageBox.Show("Se ha editado la Habitación con Éxito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    this.Close();
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Ha ocurrido un error al insertar los datos", "Error", MessageBoxButtons.OK ,MessageBoxIcon.Error);
-                                }
-
-                            }
-                        }
-                    }
-                    break;
-            }
-        }
 
         private bool ValidarCompletitudCampos()
         {
@@ -226,13 +152,6 @@ namespace Hotel.Presentacion
 
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Seguro que desea Cancelar la Acción?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
-            {
-                this.Close();
-            }
-        }
 
         private bool ValidarPiso()
         {
@@ -277,6 +196,88 @@ namespace Hotel.Presentacion
             return numero;
         }
 
+        private void btnAceptarHabitacion_Click_1(object sender, EventArgs e)
+        {
+            switch (formMode)
+            {
+                case FormMode.insert:
+                    if (this.ValidarCompletitudCampos())
+                    {
+                        if (ValidarPiso())
+                        {
+
+                        }
+                        else
+                        {
+                            if (ValidarPrecio())
+                            {
+
+                            }
+                            else
+                            {
+                                //Se pasan las validaciones, generamos numero y asignamos los valores para insertar el usuario en la BD
+                                oHabitacionSelected.Numero = this.GenerarNumero(this.oHabitacion.RecuperarNumeros());
+                                this.AsignarValores();
+
+                                //Agregar a la BD
+                                if (oHabitacion.Crear(oHabitacionSelected))
+                                {
+                                    MessageBox.Show("Nueva Habitación Ingresada con Éxito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    this.Close();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Ha ocurrido un Error al crear la Habitación", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                            }
+                        }
+                    }
+                    break;
+                case FormMode.update:
+                    if (this.ValidarCompletitudCampos())
+                    {
+                        //Validación de que los campos tengan valores válidos al dominio
+                        if (ValidarPiso())
+                        {
+
+                        }
+                        else
+                        {
+                            if (ValidarPrecio())
+                            {
+
+                            }
+                            else
+                            {
+                                //Se pasan las validaciones y asignamos los valores para insertar el usuario en la BD
+                                this.oHabitacionSelected.Numero = numHabitacion;
+                                this.AsignarValores();
+
+                                //Modificacion en la BD
+                                if (oHabitacion.Modificar(oHabitacionSelected) && oTipoHabitacion.Modificar(oTipoHSelected))
+                                {
+                                    MessageBox.Show("Se ha editado la Habitación con Éxito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    this.Close();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Ha ocurrido un error al insertar los datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+
+                            }
+                        }
+                    }
+                    break;
+            }
+        }
+
+        private void btnCancelar_Click_1(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Seguro que desea Cancelar la Acción?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                this.Close();
+            }
+        }
     }
 
 }

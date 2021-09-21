@@ -44,25 +44,29 @@ namespace Hotel.Presentacion.UsuarioEmpleado
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(61, 60);
+            this.lblUsuario.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.Location = new System.Drawing.Point(59, 37);
+            this.lblUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(65, 17);
+            this.lblUsuario.Size = new System.Drawing.Size(63, 19);
             this.lblUsuario.TabIndex = 0;
             this.lblUsuario.Text = "Usuario: ";
             // 
             // btnCancelar
             // 
-            this.btnCancelar.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnCancelar.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
+            this.btnCancelar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
             this.btnCancelar.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnCancelar.BorderRadius = 20;
             this.btnCancelar.BorderSize = 0;
             this.btnCancelar.FlatAppearance.BorderSize = 0;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(277, 419);
+            this.btnCancelar.Location = new System.Drawing.Point(184, 299);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(150, 40);
+            this.btnCancelar.Size = new System.Drawing.Size(112, 42);
             this.btnCancelar.TabIndex = 2;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextColor = System.Drawing.Color.White;
@@ -71,17 +75,19 @@ namespace Hotel.Presentacion.UsuarioEmpleado
             // 
             // btnAceptar
             // 
-            this.btnAceptar.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnAceptar.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnAceptar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
+            this.btnAceptar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
             this.btnAceptar.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnAceptar.BorderRadius = 20;
             this.btnAceptar.BorderSize = 0;
             this.btnAceptar.FlatAppearance.BorderSize = 0;
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAceptar.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.ForeColor = System.Drawing.Color.White;
-            this.btnAceptar.Location = new System.Drawing.Point(50, 419);
+            this.btnAceptar.Location = new System.Drawing.Point(35, 299);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(150, 40);
+            this.btnAceptar.Size = new System.Drawing.Size(112, 42);
             this.btnAceptar.TabIndex = 3;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.TextColor = System.Drawing.Color.White;
@@ -91,68 +97,83 @@ namespace Hotel.Presentacion.UsuarioEmpleado
             // lblPasswordActual
             // 
             this.lblPasswordActual.AutoSize = true;
-            this.lblPasswordActual.Location = new System.Drawing.Point(63, 128);
+            this.lblPasswordActual.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPasswordActual.Location = new System.Drawing.Point(59, 81);
+            this.lblPasswordActual.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPasswordActual.Name = "lblPasswordActual";
-            this.lblPasswordActual.Size = new System.Drawing.Size(137, 17);
+            this.lblPasswordActual.Size = new System.Drawing.Size(136, 19);
             this.lblPasswordActual.TabIndex = 4;
             this.lblPasswordActual.Text = "Contraseña Actual  *";
             // 
             // lblPasswordNueva
             // 
             this.lblPasswordNueva.AutoSize = true;
-            this.lblPasswordNueva.Location = new System.Drawing.Point(61, 212);
+            this.lblPasswordNueva.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPasswordNueva.Location = new System.Drawing.Point(59, 149);
+            this.lblPasswordNueva.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPasswordNueva.Name = "lblPasswordNueva";
-            this.lblPasswordNueva.Size = new System.Drawing.Size(139, 17);
+            this.lblPasswordNueva.Size = new System.Drawing.Size(137, 19);
             this.lblPasswordNueva.TabIndex = 5;
             this.lblPasswordNueva.Text = "Contraseña Nueva  *";
             // 
             // lblPasswordConfirmacion
             // 
             this.lblPasswordConfirmacion.AutoSize = true;
-            this.lblPasswordConfirmacion.Location = new System.Drawing.Point(63, 312);
+            this.lblPasswordConfirmacion.Location = new System.Drawing.Point(60, 236);
+            this.lblPasswordConfirmacion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPasswordConfirmacion.Name = "lblPasswordConfirmacion";
-            this.lblPasswordConfirmacion.Size = new System.Drawing.Size(204, 17);
+            this.lblPasswordConfirmacion.Size = new System.Drawing.Size(153, 13);
             this.lblPasswordConfirmacion.TabIndex = 6;
             this.lblPasswordConfirmacion.Text = "Confirmar Contraseña Nueva  *";
             // 
             // txtPasswordActual
             // 
-            this.txtPasswordActual.Location = new System.Drawing.Point(66, 148);
+            this.txtPasswordActual.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPasswordActual.Location = new System.Drawing.Point(63, 102);
+            this.txtPasswordActual.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPasswordActual.Name = "txtPasswordActual";
             this.txtPasswordActual.PasswordChar = '*';
-            this.txtPasswordActual.Size = new System.Drawing.Size(199, 22);
+            this.txtPasswordActual.Size = new System.Drawing.Size(150, 25);
             this.txtPasswordActual.TabIndex = 7;
             // 
             // txtPasswordNueva
             // 
-            this.txtPasswordNueva.Location = new System.Drawing.Point(64, 232);
+            this.txtPasswordNueva.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPasswordNueva.Location = new System.Drawing.Point(61, 170);
+            this.txtPasswordNueva.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPasswordNueva.Name = "txtPasswordNueva";
             this.txtPasswordNueva.PasswordChar = '*';
-            this.txtPasswordNueva.Size = new System.Drawing.Size(201, 22);
+            this.txtPasswordNueva.Size = new System.Drawing.Size(152, 25);
             this.txtPasswordNueva.TabIndex = 8;
             // 
             // txtPasswordConfirmar
             // 
-            this.txtPasswordConfirmar.Location = new System.Drawing.Point(64, 312);
+            this.txtPasswordConfirmar.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPasswordConfirmar.Location = new System.Drawing.Point(61, 236);
+            this.txtPasswordConfirmar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPasswordConfirmar.Name = "txtPasswordConfirmar";
             this.txtPasswordConfirmar.PasswordChar = '*';
-            this.txtPasswordConfirmar.Size = new System.Drawing.Size(201, 22);
+            this.txtPasswordConfirmar.Size = new System.Drawing.Size(152, 25);
             this.txtPasswordConfirmar.TabIndex = 9;
             // 
             // lblPasswordConfirmar
             // 
             this.lblPasswordConfirmar.AutoSize = true;
-            this.lblPasswordConfirmar.Location = new System.Drawing.Point(61, 292);
+            this.lblPasswordConfirmar.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPasswordConfirmar.Location = new System.Drawing.Point(59, 215);
+            this.lblPasswordConfirmar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPasswordConfirmar.Name = "lblPasswordConfirmar";
-            this.lblPasswordConfirmar.Size = new System.Drawing.Size(204, 17);
+            this.lblPasswordConfirmar.Size = new System.Drawing.Size(203, 19);
             this.lblPasswordConfirmar.TabIndex = 10;
             this.lblPasswordConfirmar.Text = "Confirmar Contraseña Nueva  *";
             // 
             // frmPassword
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(478, 497);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(209)))), ((int)(((byte)(217)))));
+            this.ClientSize = new System.Drawing.Size(334, 376);
+            this.ControlBox = false;
             this.Controls.Add(this.lblPasswordConfirmar);
             this.Controls.Add(this.txtPasswordConfirmar);
             this.Controls.Add(this.txtPasswordNueva);
@@ -163,7 +184,9 @@ namespace Hotel.Presentacion.UsuarioEmpleado
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.lblUsuario);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmPassword";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Cambio de Contraseña";
             this.Load += new System.EventHandler(this.frmPassword_Load);
             this.ResumeLayout(false);

@@ -56,47 +56,6 @@ namespace Hotel.Presentacion
 
         }
 
-        private void btConsultar_Click(object sender, EventArgs e)
-        {
-            string _numero, _piso, _tipo, _estado, _precioDesde, _precioHasta;
-            _numero = _piso = _tipo = _estado = _precioDesde = _precioHasta = string.Empty;
-
-
-            _numero = txtNumero.Text;
-            _piso = txtPiso.Text;
-            if (cboTipo.SelectedIndex != -1)
-                _tipo = cboTipo.SelectedValue.ToString();
-            if (cboEstado.SelectedIndex != -1)
-                _estado = cboEstado.SelectedValue.ToString();
-            _precioDesde = txtPrecioMin.Text;
-            _precioHasta = txtPrecioMax.Text;
-
-
-            this.CargarGrilla(dgvHabitaciones, oHabitacion.RecuperarFiltrados(_numero, _piso, _tipo, _estado, _precioDesde, _precioHasta));
-        }
-
-        private void btnLimpiar_Click(object sender, EventArgs e)
-        {
-            this.txtNumero.Text = string.Empty;
-            this.txtPiso.Text = string.Empty;
-            this.cboTipo.SelectedIndex = -1;
-            this.cboEstado.SelectedIndex = -1;
-            this.txtPrecioMin.Text = string.Empty;
-            this.txtPrecioMax.Text = string.Empty;
-        }
-
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            frmNuevaHabitacion frmNueva = new frmNuevaHabitacion();
-            frmNueva.SeleccionarModo(frmNuevaHabitacion.FormMode.insert);
-            frmNueva.ShowDialog();
-            this.CargarTodos();
-        }
-
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
         private void CargarTodos()
         {
@@ -124,22 +83,59 @@ namespace Hotel.Presentacion
             this.btnEliminar.Enabled = true;
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
+
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            string _numero, _piso, _tipo, _estado, _precioDesde, _precioHasta;
+            _numero = _piso = _tipo = _estado = _precioDesde = _precioHasta = string.Empty;
+
+
+            _numero = txtNumero.Text;
+            _piso = txtPiso.Text;
+            if (cboTipo.SelectedIndex != -1)
+                _tipo = cboTipo.SelectedValue.ToString();
+            if (cboEstado.SelectedIndex != -1)
+                _estado = cboEstado.SelectedValue.ToString();
+            _precioDesde = txtPrecioMin.Text;
+            _precioHasta = txtPrecioMax.Text;
+
+
+            this.CargarGrilla(dgvHabitaciones, oHabitacion.RecuperarFiltrados(_numero, _piso, _tipo, _estado, _precioDesde, _precioHasta));
+        }
+
+        private void btnLimpiar_Click_1(object sender, EventArgs e)
+        {
+            this.txtNumero.Text = string.Empty;
+            this.txtPiso.Text = string.Empty;
+            this.cboTipo.SelectedIndex = -1;
+            this.cboEstado.SelectedIndex = -1;
+            this.txtPrecioMin.Text = string.Empty;
+            this.txtPrecioMax.Text = string.Empty;
+        }
+
+        private void btnNuevo_Click_1(object sender, EventArgs e)
+        {
+            frmNuevaHabitacion frmNueva = new frmNuevaHabitacion();
+            frmNueva.SeleccionarModo(frmNuevaHabitacion.FormMode.insert);
+            frmNueva.ShowDialog();
+            this.CargarTodos();
+        }
+
+        private void btnEditar_Click_1(object sender, EventArgs e)
         {
             //Convert.ToInt32(dgvUsuarios.CurrentRow.Cells["clmIdUsuario"].Value), Convert.ToInt32(dgvUsuarios.CurrentRow.Cells["clmIdEmpleado"].Value)
             frmNuevaHabitacion frmEditar = new frmNuevaHabitacion(Convert.ToInt32(dgvHabitaciones.CurrentRow.Cells["clmNumero"].Value));
             frmEditar.SeleccionarModo(frmNuevaHabitacion.FormMode.update);
             frmEditar.ShowDialog();
             this.CargarTodos();
-            
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void btnEliminar_Click_1(object sender, EventArgs e)
         {
             if (MessageBox.Show("Seguro que desea Eliminar la Habitación seleccionada?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
                 this.oHabitacionSelected.Numero = (int)dgvHabitaciones.CurrentRow.Cells["clmNumero"].Value;
-                
+
 
                 if (oHabitacion.Eliminar(oHabitacionSelected))
                 {
@@ -151,6 +147,11 @@ namespace Hotel.Presentacion
                 }
             }
             this.CargarTodos();
+        }
+
+        private void btnSalir_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

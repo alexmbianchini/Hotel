@@ -173,5 +173,10 @@ namespace Hotel.Presentacion
             this.btnNuevo.Enabled = true;
             this.btnSalir.Enabled = true;
         }
+
+        private void lblPuesto_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

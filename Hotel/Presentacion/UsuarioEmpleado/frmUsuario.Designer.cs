@@ -175,7 +175,7 @@ namespace Hotel.Presentacion
             // 
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(101, 33);
+            this.lblUsuario.Location = new System.Drawing.Point(103, 33);
             this.lblUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(60, 19);
@@ -197,27 +197,29 @@ namespace Hotel.Presentacion
             // 
             this.lblPuesto.AutoSize = true;
             this.lblPuesto.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPuesto.Location = new System.Drawing.Point(409, 102);
+            this.lblPuesto.Location = new System.Drawing.Point(411, 110);
             this.lblPuesto.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPuesto.Name = "lblPuesto";
             this.lblPuesto.Size = new System.Drawing.Size(51, 19);
             this.lblPuesto.TabIndex = 11;
             this.lblPuesto.Text = "Puesto";
+            this.lblPuesto.Click += new System.EventHandler(this.lblPuesto_Click);
             // 
             // cboPuesto
             // 
+            this.cboPuesto.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboPuesto.FormattingEnabled = true;
-            this.cboPuesto.Location = new System.Drawing.Point(476, 101);
+            this.cboPuesto.Location = new System.Drawing.Point(478, 102);
             this.cboPuesto.Margin = new System.Windows.Forms.Padding(2);
             this.cboPuesto.Name = "cboPuesto";
-            this.cboPuesto.Size = new System.Drawing.Size(92, 21);
+            this.cboPuesto.Size = new System.Drawing.Size(92, 27);
             this.cboPuesto.TabIndex = 6;
             // 
             // lblNombreEmpleado
             // 
             this.lblNombreEmpleado.AutoSize = true;
             this.lblNombreEmpleado.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreEmpleado.Location = new System.Drawing.Point(336, 69);
+            this.lblNombreEmpleado.Location = new System.Drawing.Point(338, 71);
             this.lblNombreEmpleado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombreEmpleado.Name = "lblNombreEmpleado";
             this.lblNombreEmpleado.Size = new System.Drawing.Size(124, 19);
@@ -228,7 +230,7 @@ namespace Hotel.Presentacion
             // 
             this.lblNroDoc.AutoSize = true;
             this.lblNroDoc.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNroDoc.Location = new System.Drawing.Point(51, 112);
+            this.lblNroDoc.Location = new System.Drawing.Point(55, 108);
             this.lblNroDoc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNroDoc.Name = "lblNroDoc";
             this.lblNroDoc.Size = new System.Drawing.Size(110, 19);
@@ -237,18 +239,19 @@ namespace Hotel.Presentacion
             // 
             // cboTipoDoc
             // 
+            this.cboTipoDoc.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboTipoDoc.FormattingEnabled = true;
-            this.cboTipoDoc.Location = new System.Drawing.Point(185, 70);
+            this.cboTipoDoc.Location = new System.Drawing.Point(187, 63);
             this.cboTipoDoc.Margin = new System.Windows.Forms.Padding(2);
             this.cboTipoDoc.Name = "cboTipoDoc";
-            this.cboTipoDoc.Size = new System.Drawing.Size(92, 21);
+            this.cboTipoDoc.Size = new System.Drawing.Size(92, 27);
             this.cboTipoDoc.TabIndex = 2;
             // 
             // lblTipoDoc
             // 
             this.lblTipoDoc.AutoSize = true;
             this.lblTipoDoc.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipoDoc.Location = new System.Drawing.Point(51, 70);
+            this.lblTipoDoc.Location = new System.Drawing.Point(53, 68);
             this.lblTipoDoc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTipoDoc.Name = "lblTipoDoc";
             this.lblTipoDoc.Size = new System.Drawing.Size(112, 19);
@@ -258,10 +261,10 @@ namespace Hotel.Presentacion
             // txtApellidoEmpleado
             // 
             this.txtApellidoEmpleado.BackColor = System.Drawing.Color.White;
-            this.txtApellidoEmpleado.BorderColor = System.Drawing.SystemColors.WindowText;
+            this.txtApellidoEmpleado.BorderColor = System.Drawing.SystemColors.WindowFrame;
             this.txtApellidoEmpleado.BorderFocusColor = System.Drawing.SystemColors.WindowText;
-            this.txtApellidoEmpleado.BorderSize = 2;
-            this.txtApellidoEmpleado.Location = new System.Drawing.Point(476, 26);
+            this.txtApellidoEmpleado.BorderSize = 1;
+            this.txtApellidoEmpleado.Location = new System.Drawing.Point(478, 24);
             this.txtApellidoEmpleado.Multiline = false;
             this.txtApellidoEmpleado.Name = "txtApellidoEmpleado";
             this.txtApellidoEmpleado.Padding = new System.Windows.Forms.Padding(7);
@@ -273,10 +276,10 @@ namespace Hotel.Presentacion
             // txtNombreEmpleado
             // 
             this.txtNombreEmpleado.BackColor = System.Drawing.Color.White;
-            this.txtNombreEmpleado.BorderColor = System.Drawing.SystemColors.WindowText;
+            this.txtNombreEmpleado.BorderColor = System.Drawing.SystemColors.WindowFrame;
             this.txtNombreEmpleado.BorderFocusColor = System.Drawing.SystemColors.WindowText;
-            this.txtNombreEmpleado.BorderSize = 2;
-            this.txtNombreEmpleado.Location = new System.Drawing.Point(476, 63);
+            this.txtNombreEmpleado.BorderSize = 1;
+            this.txtNombreEmpleado.Location = new System.Drawing.Point(478, 62);
             this.txtNombreEmpleado.Multiline = false;
             this.txtNombreEmpleado.Name = "txtNombreEmpleado";
             this.txtNombreEmpleado.Padding = new System.Windows.Forms.Padding(7);
@@ -288,10 +291,10 @@ namespace Hotel.Presentacion
             // txtUsuario
             // 
             this.txtUsuario.BackColor = System.Drawing.Color.White;
-            this.txtUsuario.BorderColor = System.Drawing.SystemColors.WindowText;
+            this.txtUsuario.BorderColor = System.Drawing.SystemColors.WindowFrame;
             this.txtUsuario.BorderFocusColor = System.Drawing.SystemColors.WindowText;
-            this.txtUsuario.BorderSize = 2;
-            this.txtUsuario.Location = new System.Drawing.Point(185, 26);
+            this.txtUsuario.BorderSize = 1;
+            this.txtUsuario.Location = new System.Drawing.Point(187, 24);
             this.txtUsuario.Multiline = false;
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Padding = new System.Windows.Forms.Padding(7);
@@ -311,7 +314,7 @@ namespace Hotel.Presentacion
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(550, 360);
+            this.btnSalir.Location = new System.Drawing.Point(546, 360);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(93, 41);
             this.btnSalir.TabIndex = 12;
@@ -331,7 +334,7 @@ namespace Hotel.Presentacion
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(550, 313);
+            this.btnEliminar.Location = new System.Drawing.Point(546, 313);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(93, 41);
             this.btnEliminar.TabIndex = 11;
@@ -351,7 +354,7 @@ namespace Hotel.Presentacion
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(550, 266);
+            this.btnEditar.Location = new System.Drawing.Point(546, 266);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(93, 41);
             this.btnEditar.TabIndex = 10;
@@ -371,7 +374,7 @@ namespace Hotel.Presentacion
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevo.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.ForeColor = System.Drawing.Color.White;
-            this.btnNuevo.Location = new System.Drawing.Point(550, 219);
+            this.btnNuevo.Location = new System.Drawing.Point(546, 219);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(93, 41);
             this.btnNuevo.TabIndex = 9;
@@ -391,7 +394,7 @@ namespace Hotel.Presentacion
             this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConsultar.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsultar.ForeColor = System.Drawing.Color.White;
-            this.btnConsultar.Location = new System.Drawing.Point(377, 152);
+            this.btnConsultar.Location = new System.Drawing.Point(386, 151);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(126, 40);
             this.btnConsultar.TabIndex = 8;
@@ -411,7 +414,7 @@ namespace Hotel.Presentacion
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiar.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiar.ForeColor = System.Drawing.Color.White;
-            this.btnLimpiar.Location = new System.Drawing.Point(163, 152);
+            this.btnLimpiar.Location = new System.Drawing.Point(172, 151);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(126, 40);
             this.btnLimpiar.TabIndex = 7;
@@ -423,10 +426,10 @@ namespace Hotel.Presentacion
             // txtNroDoc
             // 
             this.txtNroDoc.BackColor = System.Drawing.Color.White;
-            this.txtNroDoc.BorderColor = System.Drawing.SystemColors.WindowText;
+            this.txtNroDoc.BorderColor = System.Drawing.SystemColors.WindowFrame;
             this.txtNroDoc.BorderFocusColor = System.Drawing.SystemColors.WindowText;
-            this.txtNroDoc.BorderSize = 2;
-            this.txtNroDoc.Location = new System.Drawing.Point(185, 103);
+            this.txtNroDoc.BorderSize = 1;
+            this.txtNroDoc.Location = new System.Drawing.Point(187, 101);
             this.txtNroDoc.Multiline = false;
             this.txtNroDoc.Name = "txtNroDoc";
             this.txtNroDoc.Padding = new System.Windows.Forms.Padding(7);
@@ -439,7 +442,7 @@ namespace Hotel.Presentacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(188)))), ((int)(((byte)(121)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(209)))), ((int)(((byte)(217)))));
             this.ClientSize = new System.Drawing.Size(667, 437);
             this.ControlBox = false;
             this.Controls.Add(this.txtNroDoc);

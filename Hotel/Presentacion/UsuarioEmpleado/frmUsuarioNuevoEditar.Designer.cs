@@ -109,7 +109,7 @@ namespace Hotel.Presentacion
             // 
             this.txtNombre.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.Location = new System.Drawing.Point(56, 58);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(138, 25);
             this.txtNombre.TabIndex = 1;
@@ -118,7 +118,7 @@ namespace Hotel.Presentacion
             // 
             this.txtUsuario.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.Location = new System.Drawing.Point(286, 58);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(138, 25);
             this.txtUsuario.TabIndex = 5;
@@ -127,7 +127,7 @@ namespace Hotel.Presentacion
             // 
             this.txtNumeroDoc.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNumeroDoc.Location = new System.Drawing.Point(56, 227);
-            this.txtNumeroDoc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNumeroDoc.Margin = new System.Windows.Forms.Padding(2);
             this.txtNumeroDoc.Name = "txtNumeroDoc";
             this.txtNumeroDoc.Size = new System.Drawing.Size(138, 25);
             this.txtNumeroDoc.TabIndex = 4;
@@ -136,7 +136,7 @@ namespace Hotel.Presentacion
             // 
             this.txtApellido.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtApellido.Location = new System.Drawing.Point(56, 114);
-            this.txtApellido.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtApellido.Margin = new System.Windows.Forms.Padding(2);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(138, 25);
             this.txtApellido.TabIndex = 2;
@@ -146,7 +146,7 @@ namespace Hotel.Presentacion
             this.cboTipoDoc.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboTipoDoc.FormattingEnabled = true;
             this.cboTipoDoc.Location = new System.Drawing.Point(56, 171);
-            this.cboTipoDoc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboTipoDoc.Margin = new System.Windows.Forms.Padding(2);
             this.cboTipoDoc.Name = "cboTipoDoc";
             this.cboTipoDoc.Size = new System.Drawing.Size(138, 27);
             this.cboTipoDoc.TabIndex = 3;
@@ -207,7 +207,7 @@ namespace Hotel.Presentacion
             this.cboPuesto.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboPuesto.FormattingEnabled = true;
             this.cboPuesto.Location = new System.Drawing.Point(286, 227);
-            this.cboPuesto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboPuesto.Margin = new System.Windows.Forms.Padding(2);
             this.cboPuesto.Name = "cboPuesto";
             this.cboPuesto.Size = new System.Drawing.Size(138, 27);
             this.cboPuesto.TabIndex = 8;
@@ -238,7 +238,7 @@ namespace Hotel.Presentacion
             // 
             this.txtConfirmarPassword.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConfirmarPassword.Location = new System.Drawing.Point(286, 171);
-            this.txtConfirmarPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtConfirmarPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtConfirmarPassword.Name = "txtConfirmarPassword";
             this.txtConfirmarPassword.PasswordChar = '*';
             this.txtConfirmarPassword.Size = new System.Drawing.Size(138, 25);
@@ -248,7 +248,7 @@ namespace Hotel.Presentacion
             // 
             this.txtPassword.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(286, 114);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(138, 25);
@@ -258,7 +258,7 @@ namespace Hotel.Presentacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(188)))), ((int)(((byte)(121)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(209)))), ((int)(((byte)(217)))));
             this.ClientSize = new System.Drawing.Size(483, 366);
             this.ControlBox = false;
             this.Controls.Add(this.btnCancelar);
@@ -280,7 +280,7 @@ namespace Hotel.Presentacion
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblUsuario);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmUsuarioNuevo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Nuevo Empleado";
