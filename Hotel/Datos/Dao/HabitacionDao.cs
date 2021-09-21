@@ -86,6 +86,26 @@ namespace Hotel.Datos.Dao
             DBHelper.ObtenerInstancia().Ejecutar(consulta);
             return true;
         }
+        public DataTable RecuperarNumeros()
+        {
+            string consulta = "SELECT numero FROM HABITACIONES ";
+            
+            return DBHelper.ObtenerInstancia().Ejecutar(consulta);
+        }
+        public bool Crear(Habitacion oHabitacion)
+        {
+            string consulta = "INSERT INTO HABITACIONES (numero, piso, tipo_habitacion, precio, borrado_logico, descripcion, estado)" +
+                " VALUES (" +
+                oHabitacion.Numero + "," +
+                oHabitacion.Piso + "," +
+                oHabitacion.TipoHabitacion + "," +
+                oHabitacion.Precio + "," + " 0," +
+                " '" + oHabitacion.Descripcion + "'," +
+                oHabitacion.Estado + ",";
+
+            DBHelper.ObtenerInstancia().Ejecutar(consulta);
+            return true;
+        }
     }
 
 }

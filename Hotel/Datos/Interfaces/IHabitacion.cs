@@ -16,6 +16,8 @@ namespace Hotel.Datos.Interfaces
         DataTable RecuperarPorNumero(int numero);
         string ValidarHabitacionExistente(string numero);
         bool Modificar(Habitacion oHabitacion);
+        DataTable RecuperarNumeros();
+        bool Crear(Habitacion oHabitacion);
 
     }
 }

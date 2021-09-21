@@ -44,5 +44,13 @@ namespace Hotel.Servicios
         {
             return dao.Modificar(oHabitacion);
         }
+        public DataTable RecuperarNumeros()
+        {
+            return dao.RecuperarNumeros();
+        }
+        public bool Crear(Habitacion oHabitacion)
+        {
+            return dao.Crear(oHabitacion);
+        }
     }
 }

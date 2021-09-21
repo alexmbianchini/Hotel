@@ -112,36 +112,57 @@ namespace Hotel.Presentacion
             switch (formMode)
             {
                 case FormMode.insert:
-                    //if(this.ValidarCompletitudCampos())
+                    if(this.ValidarCompletitudCampos())
+                    {
+                        if (ValidarPiso())
+                        {
+                            
+                        }
+                        else
+                        {
+                            if (ValidarPrecio())
+                            {
+
+                            }
+                            else
+                            {
+                                //Se pasan las validaciones, generamos numero y asignamos los valores para insertar el usuario en la BD
+                                this.GenerarNumero(this.oHabitacion.RecuperarNumeros());
+                                this.AsignarValores();
+
+                                //Agregar a la BD
+                                if (oHabitacion.Crear(oHabitacionSelected))
+                                {
+                                    MessageBox.Show("Nueva Habitación Ingresada con Éxito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    this.Close();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Ha ocurrido un Error al crear la Habitación", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                            }
+                        }
+                    }
                     break;
                 case FormMode.update:
                     if(this.ValidarCompletitudCampos())
                     {
                         //Validación de que los campos tengan valores válidos al dominio
-                        if(Convert.ToInt32(txtPiso.Text) > 5 || Convert.ToInt32(txtPiso.Text) < 1)
+                        if(ValidarPiso())
                         {
-                            MessageBox.Show("Ingrese un piso entre 1 y 5, piso no válido!");
-                            this.txtPiso.Clear();
-                            this.txtPiso.Focus();
-                            return;
+                           
                         }
                         else
                         {
-                            if (Convert.ToDouble(txtPrecioHabitacion.Text) < 0)
+                            if (ValidarPrecio())
                             {
-                                MessageBox.Show("Ingrese un precio válido!");
-                                this.txtPrecioHabitacion.Clear();
-                                this.txtPrecioHabitacion.Focus();
-                                return;
+                                
                             }
                             else
                             {
                                 //Se pasan las validaciones y asignamos los valores para insertar el usuario en la BD
                                 this.oHabitacionSelected.Numero = numHabitacion;
-                                this.oHabitacionSelected.Piso = Convert.ToInt32(txtPiso.Text);
-                                this.oHabitacionSelected.TipoHabitacion = Convert.ToInt32(cboTipoHabitacion.SelectedValue);
-                                this.oHabitacionSelected.Precio = (float) Convert.ToDouble(txtPrecioHabitacion.Text);
-                                this.oHabitacionSelected.Descripcion = txtDescripcionHabitacion.Text;
+                                this.AsignarValores();
 
                                 //Modificacion en la BD
                                 if(oHabitacion.Modificar(oHabitacionSelected))
@@ -204,6 +225,46 @@ namespace Hotel.Presentacion
                 this.Close();
             }
         }
+
+        private bool ValidarPiso()
+        {
+            if (Convert.ToInt32(txtPiso.Text) > 5 || Convert.ToInt32(txtPiso.Text) < 1)
+            {
+                MessageBox.Show("Ingrese un piso entre 1 y 5, piso no válido!");
+                this.txtPiso.Clear();
+                this.txtPiso.Focus();
+                return true;
+            }
+            return false;
+        }
+
+        private bool ValidarPrecio()
+        {
+            if (Convert.ToDouble(txtPrecioHabitacion.Text) < 0)
+            {
+                MessageBox.Show("Ingrese un precio válido!");
+                this.txtPrecioHabitacion.Clear();
+                this.txtPrecioHabitacion.Focus();
+                return true;
+            }
+            return false;
+        }
+
+        private void AsignarValores()
+        {
+            //Asigna los valores de los campos al Usuario, menos el número 
+            this.oHabitacionSelected.Piso = Convert.ToInt32(txtPiso.Text);
+            this.oHabitacionSelected.TipoHabitacion = Convert.ToInt32(cboTipoHabitacion.SelectedValue);
+            this.oHabitacionSelected.Precio = (float)Convert.ToDouble(txtPrecioHabitacion.Text);
+            this.oHabitacionSelected.Descripcion = txtDescripcionHabitacion.Text;
+        }
+        private int GenerarNumero(DataTable tabla)
+        {
+            int numero = tabla.Rows.Count + 1;
+
+            return numero;
+        }
+
     }
 
 }
