@@ -88,7 +88,7 @@ namespace Hotel.Datos.Dao
         }
         public DataTable RecuperarNumeros()
         {
-            string consulta = "SELECT numero FROM HABITACIONES ";
+            string consulta = "SELECT numero FROM HABITACIONES";
             
             return DBHelper.ObtenerInstancia().Ejecutar(consulta);
         }
@@ -101,7 +101,7 @@ namespace Hotel.Datos.Dao
                 oHabitacion.TipoHabitacion + "," +
                 oHabitacion.Precio + "," + " 0," +
                 " '" + oHabitacion.Descripcion + "'," +
-                oHabitacion.Estado + ",";
+                "1)";
 
             DBHelper.ObtenerInstancia().Ejecutar(consulta);
             return true;

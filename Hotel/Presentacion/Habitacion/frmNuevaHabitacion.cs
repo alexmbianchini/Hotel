@@ -31,6 +31,7 @@ namespace Hotel.Presentacion
             InitializeComponent();
             oHabitacion = new HabitacionService();
             oTipoHabitacion = new TipoHabitacionService();
+            oHabitacionSelected = new Habitacion();
         }
         public frmNuevaHabitacion(int numHabitacion)
         {
@@ -127,7 +128,7 @@ namespace Hotel.Presentacion
                             else
                             {
                                 //Se pasan las validaciones, generamos numero y asignamos los valores para insertar el usuario en la BD
-                                this.GenerarNumero(this.oHabitacion.RecuperarNumeros());
+                                oHabitacionSelected.Numero = this.GenerarNumero(this.oHabitacion.RecuperarNumeros());
                                 this.AsignarValores();
 
                                 //Agregar a la BD
