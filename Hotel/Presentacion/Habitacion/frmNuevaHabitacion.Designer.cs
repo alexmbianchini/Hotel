@@ -31,9 +31,7 @@ namespace Hotel.Presentacion
         {
             this.lblPisoHabitacion = new System.Windows.Forms.Label();
             this.lblTipoHabitacion = new System.Windows.Forms.Label();
-            this.lblDescripcionHabitacion = new System.Windows.Forms.Label();
             this.cboTipoHabitacion = new System.Windows.Forms.ComboBox();
-            this.txtDescripcionHabitacion = new System.Windows.Forms.TextBox();
             this.lblPrecioHabitacion = new System.Windows.Forms.Label();
             this.txtPrecioHabitacion = new System.Windows.Forms.TextBox();
             this.txtPiso = new System.Windows.Forms.TextBox();
@@ -63,17 +61,6 @@ namespace Hotel.Presentacion
             this.lblTipoHabitacion.TabIndex = 1;
             this.lblTipoHabitacion.Text = "Tipo  *";
             // 
-            // lblDescripcionHabitacion
-            // 
-            this.lblDescripcionHabitacion.AutoSize = true;
-            this.lblDescripcionHabitacion.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescripcionHabitacion.Location = new System.Drawing.Point(34, 189);
-            this.lblDescripcionHabitacion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblDescripcionHabitacion.Name = "lblDescripcionHabitacion";
-            this.lblDescripcionHabitacion.Size = new System.Drawing.Size(95, 19);
-            this.lblDescripcionHabitacion.TabIndex = 2;
-            this.lblDescripcionHabitacion.Text = "Descripción  *";
-            // 
             // cboTipoHabitacion
             // 
             this.cboTipoHabitacion.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -83,16 +70,6 @@ namespace Hotel.Presentacion
             this.cboTipoHabitacion.Name = "cboTipoHabitacion";
             this.cboTipoHabitacion.Size = new System.Drawing.Size(92, 27);
             this.cboTipoHabitacion.TabIndex = 4;
-            // 
-            // txtDescripcionHabitacion
-            // 
-            this.txtDescripcionHabitacion.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescripcionHabitacion.Location = new System.Drawing.Point(35, 210);
-            this.txtDescripcionHabitacion.Margin = new System.Windows.Forms.Padding(2);
-            this.txtDescripcionHabitacion.Multiline = true;
-            this.txtDescripcionHabitacion.Name = "txtDescripcionHabitacion";
-            this.txtDescripcionHabitacion.Size = new System.Drawing.Size(230, 77);
-            this.txtDescripcionHabitacion.TabIndex = 5;
             // 
             // lblPrecioHabitacion
             // 
@@ -134,7 +111,7 @@ namespace Hotel.Presentacion
             this.btnAceptarHabitacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptarHabitacion.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptarHabitacion.ForeColor = System.Drawing.Color.White;
-            this.btnAceptarHabitacion.Location = new System.Drawing.Point(35, 317);
+            this.btnAceptarHabitacion.Location = new System.Drawing.Point(25, 201);
             this.btnAceptarHabitacion.Name = "btnAceptarHabitacion";
             this.btnAceptarHabitacion.Size = new System.Drawing.Size(110, 40);
             this.btnAceptarHabitacion.TabIndex = 15;
@@ -154,7 +131,7 @@ namespace Hotel.Presentacion
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(164, 317);
+            this.btnCancelar.Location = new System.Drawing.Point(154, 201);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(110, 40);
             this.btnCancelar.TabIndex = 16;
@@ -168,16 +145,14 @@ namespace Hotel.Presentacion
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(209)))), ((int)(((byte)(217)))));
-            this.ClientSize = new System.Drawing.Size(301, 390);
+            this.ClientSize = new System.Drawing.Size(301, 268);
             this.ControlBox = false;
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptarHabitacion);
             this.Controls.Add(this.txtPiso);
             this.Controls.Add(this.txtPrecioHabitacion);
             this.Controls.Add(this.lblPrecioHabitacion);
-            this.Controls.Add(this.txtDescripcionHabitacion);
             this.Controls.Add(this.cboTipoHabitacion);
-            this.Controls.Add(this.lblDescripcionHabitacion);
             this.Controls.Add(this.lblTipoHabitacion);
             this.Controls.Add(this.lblPisoHabitacion);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -194,9 +169,7 @@ namespace Hotel.Presentacion
 
         private System.Windows.Forms.Label lblPisoHabitacion;
         private System.Windows.Forms.Label lblTipoHabitacion;
-        private System.Windows.Forms.Label lblDescripcionHabitacion;
         private System.Windows.Forms.ComboBox cboTipoHabitacion;
-        private System.Windows.Forms.TextBox txtDescripcionHabitacion;
         private System.Windows.Forms.Label lblPrecioHabitacion;
         private System.Windows.Forms.TextBox txtPrecioHabitacion;
         private System.Windows.Forms.TextBox txtPiso;

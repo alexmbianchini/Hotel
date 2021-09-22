@@ -64,7 +64,7 @@ namespace Hotel.Presentacion
                     {
                         this.CargarCombo(cboTipoHabitacion, oTipoHabitacion.RecuperarTodos(), "nombre", "cod_tipo");
                         this.Text = "Nueva Habitación";
-                        this.txtDescripcionHabitacion.Enabled = false;
+                        //this.txtDescripcionHabitacion.Enabled = false;
                         break;
                     }
 
@@ -110,7 +110,7 @@ namespace Hotel.Presentacion
             
             txtPiso.Text = tablaHabitacion.Rows[0]["piso"].ToString();
             txtPrecioHabitacion.Text = tablaHabitacion.Rows[0]["precio"].ToString();
-            txtDescripcionHabitacion.Text = tablaHabitacion.Rows[0]["descripcion"].ToString();
+            //txtDescripcionHabitacion.Text = tablaHabitacion.Rows[0]["descripcion"].ToString();
             this.CargarCombo(cboTipoHabitacion, oTipoHabitacion.RecuperarTodos(), "nombre", "cod_tipo", (int)tablaHabitacion.Rows[0]["tipo_habitacion"]);
 
         }
@@ -186,7 +186,7 @@ namespace Hotel.Presentacion
             this.oHabitacionSelected.Piso = Convert.ToInt32(txtPiso.Text);
             this.oHabitacionSelected.TipoHabitacion = Convert.ToInt32(cboTipoHabitacion.SelectedValue);
             this.oHabitacionSelected.Precio = (float)Convert.ToDouble(txtPrecioHabitacion.Text);
-            this.oTipoHSelected.Descripcion = txtDescripcionHabitacion.Text;
+            //this.oTipoHSelected.Descripcion = txtDescripcionHabitacion.Text;
             this.oTipoHSelected.CodTipo = Convert.ToInt32(cboTipoHabitacion.SelectedValue);
         }
         private int GenerarNumero(DataTable tabla)
@@ -222,7 +222,7 @@ namespace Hotel.Presentacion
                                 //Agregar a la BD
                                 if (oHabitacion.Crear(oHabitacionSelected))
                                 {
-                                    MessageBox.Show("Nueva Habitación Ingresada con Éxito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    MessageBox.Show("Nueva Habitación Ingresada", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     this.Close();
                                 }
                                 else
@@ -256,7 +256,7 @@ namespace Hotel.Presentacion
                                 //Modificacion en la BD
                                 if (oHabitacion.Modificar(oHabitacionSelected) && oTipoHabitacion.Modificar(oTipoHSelected))
                                 {
-                                    MessageBox.Show("Se ha editado la Habitación con Éxito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    MessageBox.Show("Se ha editado la Habitación", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     this.Close();
                                 }
                                 else

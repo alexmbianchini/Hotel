@@ -106,5 +106,24 @@ namespace Hotel.Presentacion
         {
             this.EsEnter(e);
         }
+
+        private void btnPassword_Click(object sender, EventArgs e)
+        {
+            if (this.txtPassword.PasswordChar == '*')
+            {
+                btnPasswordCon.BringToFront();
+                this.txtPassword.PasswordChar = '\0';
+            }
+        }
+
+        private void btnPasswordCon_Click(object sender, EventArgs e)
+        {
+            if (this.txtPassword.PasswordChar == '\0')
+            {
+                btnPasswordSin.BringToFront();
+                this.txtPassword.PasswordChar = '*';
+            }
+
+        }
     }
 }

@@ -210,6 +210,7 @@
     <Content Include="Imagenes\logohotel2.jpg" />
     <Content Include="Imagenes\palmerasss.png" />
     <Content Include="Imagenes\palmtree_palm_3728.ico" />
+    <Content Include="Imagenes\ver.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
