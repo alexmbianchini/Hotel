@@ -121,7 +121,7 @@ namespace Hotel.Datos.Dao
                  " '" + oUsuario.IdEmpleado + "', 0);";
 
             
-            DBHelper.ObtenerInstancia().Ejecutar(consulta);
+            DBHelper.ObtenerInstancia().Actualizar(consulta);
             return true;
         }
 
@@ -131,7 +131,7 @@ namespace Hotel.Datos.Dao
                 " WHERE id =" + oUsuario.Id;
 
             
-            DBHelper.ObtenerInstancia().Ejecutar(consulta);
+            DBHelper.ObtenerInstancia().Actualizar(consulta);
             return true;
         }
 
@@ -142,7 +142,7 @@ namespace Hotel.Datos.Dao
                 " nombre = '" + oUsuario.Nombre + "'" +
                 " WHERE id = " + oUsuario.Id;
 
-            DBHelper.ObtenerInstancia().Ejecutar(consulta);
+            DBHelper.ObtenerInstancia().Actualizar(consulta);
             return true;
         }
 
@@ -164,7 +164,7 @@ namespace Hotel.Datos.Dao
             }
         }
 
-        public string traerPuestoEmpleado(int id)
+        public string TraerPuestoEmpleado(int id)
         {
             string consulta = "Select p.descripcion" +
                 " FROM PUESTOS p JOIN EMPLEADOS e ON p.cod_puesto = e.puesto" +

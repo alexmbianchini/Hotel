@@ -37,7 +37,7 @@ namespace Hotel.Datos.Dao
                  " 0);";
 
 
-            DBHelper.ObtenerInstancia().Ejecutar(consulta);
+            DBHelper.ObtenerInstancia().Actualizar(consulta);
             return true;
         }
 
@@ -49,7 +49,7 @@ namespace Hotel.Datos.Dao
                 " descripcion = '" + oTipo.Descripcion + "'" +
                 " WHERE cod_tipo = " + oTipo.CodTipo;
 
-            DBHelper.ObtenerInstancia().Ejecutar(consulta);
+            DBHelper.ObtenerInstancia().Actualizar(consulta);
             return true;
         }
 

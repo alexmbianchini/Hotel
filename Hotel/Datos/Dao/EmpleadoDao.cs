@@ -75,7 +75,7 @@ namespace Hotel.Datos.Dao
                 " Null," +
                 " '" + oEmpleado.Puesto + "', 0)";
 
-            DBHelper.ObtenerInstancia().Ejecutar(consulta);
+            DBHelper.ObtenerInstancia().Actualizar(consulta);
             return true;
         }
 
@@ -85,7 +85,7 @@ namespace Hotel.Datos.Dao
                 " fecha_salida_trabajo = CONVERT(DATETIME,'" + oEmpleado.FechaSalidaTrabajo + "', 103)" +
                 " WHERE id_empleado =" + oEmpleado.IdEmpleado;
 
-            DBHelper.ObtenerInstancia().Ejecutar(consulta);
+            DBHelper.ObtenerInstancia().Actualizar(consulta);
             return true;
         }
 
@@ -99,7 +99,7 @@ namespace Hotel.Datos.Dao
                 " puesto = '" + oEmpleado.Puesto + "'" +
                 " WHERE id_empleado = " + oEmpleado.IdEmpleado;
 
-            DBHelper.ObtenerInstancia().Ejecutar(consulta);
+            DBHelper.ObtenerInstancia().Actualizar(consulta);
             return true;
         }
     }
