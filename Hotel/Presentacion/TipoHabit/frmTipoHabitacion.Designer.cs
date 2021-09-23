@@ -1,5 +1,5 @@
 ﻿
-namespace Hotel.Presentacion.TipoHabitacion
+namespace Hotel.Presentacion
 {
     partial class frmTipoHabitacion
     {
@@ -31,21 +31,21 @@ namespace Hotel.Presentacion.TipoHabitacion
         {
             this.lblCodTipo = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
             this.cboNombre = new System.Windows.Forms.ComboBox();
             this.lblDescripcion = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.btnConsultar = new Hotel.Custom.RJButton();
             this.btnLimpiar = new Hotel.Custom.RJButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvTipoHabit = new System.Windows.Forms.DataGridView();
+            this.clmCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnNuevo = new Hotel.Custom.RJButton();
             this.btnEditar = new Hotel.Custom.RJButton();
             this.btnEliminar = new Hotel.Custom.RJButton();
             this.btnSalir = new Hotel.Custom.RJButton();
-            this.clmCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTipoHabit)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCodTipo
@@ -68,12 +68,13 @@ namespace Hotel.Presentacion.TipoHabitacion
             this.lblNombre.TabIndex = 2;
             this.lblNombre.Text = "Nombre";
             // 
-            // textBox1
+            // txtCodigo
             // 
-            this.textBox1.Location = new System.Drawing.Point(111, 9);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(93, 20);
-            this.textBox1.TabIndex = 3;
+            this.txtCodigo.Location = new System.Drawing.Point(111, 9);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(93, 20);
+            this.txtCodigo.TabIndex = 3;
+            this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigo_KeyPress);
             // 
             // cboNombre
             // 
@@ -93,13 +94,13 @@ namespace Hotel.Presentacion.TipoHabitacion
             this.lblDescripcion.TabIndex = 4;
             this.lblDescripcion.Text = "Descripción";
             // 
-            // textBox2
+            // txtDescripcion
             // 
-            this.textBox2.Location = new System.Drawing.Point(343, 9);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(365, 82);
-            this.textBox2.TabIndex = 5;
+            this.txtDescripcion.Location = new System.Drawing.Point(343, 9);
+            this.txtDescripcion.Multiline = true;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(365, 82);
+            this.txtDescripcion.TabIndex = 5;
             // 
             // btnConsultar
             // 
@@ -118,6 +119,7 @@ namespace Hotel.Presentacion.TipoHabitacion
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.TextColor = System.Drawing.Color.White;
             this.btnConsultar.UseVisualStyleBackColor = false;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // btnLimpiar
             // 
@@ -136,21 +138,44 @@ namespace Hotel.Presentacion.TipoHabitacion
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.TextColor = System.Drawing.Color.White;
             this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
-            // dataGridView1
+            // dgvTipoHabit
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvTipoHabit.AllowUserToAddRows = false;
+            this.dgvTipoHabit.AllowUserToDeleteRows = false;
+            this.dgvTipoHabit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTipoHabit.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmCodigo,
             this.clmNombre,
             this.clmDescripcion});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 168);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(551, 217);
-            this.dataGridView1.TabIndex = 8;
+            this.dgvTipoHabit.Location = new System.Drawing.Point(12, 168);
+            this.dgvTipoHabit.Name = "dgvTipoHabit";
+            this.dgvTipoHabit.ReadOnly = true;
+            this.dgvTipoHabit.Size = new System.Drawing.Size(551, 217);
+            this.dgvTipoHabit.TabIndex = 8;
+            this.dgvTipoHabit.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTipoHabit_CellClick);
+            // 
+            // clmCodigo
+            // 
+            this.clmCodigo.HeaderText = "Código";
+            this.clmCodigo.Name = "clmCodigo";
+            this.clmCodigo.ReadOnly = true;
+            this.clmCodigo.Width = 50;
+            // 
+            // clmNombre
+            // 
+            this.clmNombre.HeaderText = "Nombre";
+            this.clmNombre.Name = "clmNombre";
+            this.clmNombre.ReadOnly = true;
+            this.clmNombre.Width = 115;
+            // 
+            // clmDescripcion
+            // 
+            this.clmDescripcion.HeaderText = "Descripción";
+            this.clmDescripcion.Name = "clmDescripcion";
+            this.clmDescripcion.ReadOnly = true;
+            this.clmDescripcion.Width = 343;
             // 
             // btnNuevo
             // 
@@ -223,27 +248,7 @@ namespace Hotel.Presentacion.TipoHabitacion
             this.btnSalir.Text = "Salir";
             this.btnSalir.TextColor = System.Drawing.Color.White;
             this.btnSalir.UseVisualStyleBackColor = false;
-            // 
-            // clmCodigo
-            // 
-            this.clmCodigo.HeaderText = "Código";
-            this.clmCodigo.Name = "clmCodigo";
-            this.clmCodigo.ReadOnly = true;
-            this.clmCodigo.Width = 50;
-            // 
-            // clmNombre
-            // 
-            this.clmNombre.HeaderText = "Nombre";
-            this.clmNombre.Name = "clmNombre";
-            this.clmNombre.ReadOnly = true;
-            this.clmNombre.Width = 115;
-            // 
-            // clmDescripcion
-            // 
-            this.clmDescripcion.HeaderText = "Descripción";
-            this.clmDescripcion.Name = "clmDescripcion";
-            this.clmDescripcion.ReadOnly = true;
-            this.clmDescripcion.Width = 343;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // frmTipoHabitacion
             // 
@@ -251,23 +256,24 @@ namespace Hotel.Presentacion.TipoHabitacion
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MintCream;
             this.ClientSize = new System.Drawing.Size(720, 397);
+            this.ControlBox = false;
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnNuevo);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvTipoHabit);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnConsultar);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.lblDescripcion);
             this.Controls.Add(this.cboNombre);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblCodTipo);
             this.Name = "frmTipoHabitacion";
             this.Text = "frmTipoHabitacion";
             this.Load += new System.EventHandler(this.frmTipoHabitacion_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTipoHabit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -276,13 +282,13 @@ namespace Hotel.Presentacion.TipoHabitacion
         #endregion
         private System.Windows.Forms.Label lblCodTipo;
         private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.ComboBox cboNombre;
         private System.Windows.Forms.Label lblDescripcion;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtDescripcion;
         private Custom.RJButton btnConsultar;
         private Custom.RJButton btnLimpiar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvTipoHabit;
         private Custom.RJButton btnNuevo;
         private Custom.RJButton btnEditar;
         private Custom.RJButton btnEliminar;

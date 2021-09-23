@@ -51,5 +51,23 @@ namespace Hotel.Datos.Dao
             DBHelper.ObtenerInstancia().Ejecutar(consulta);
             return true;
         }
+
+        public DataTable RecuperarFiltrados(string codigo, string nombre, string descripcion) 
+        {
+            string consulta = "SELECT * FROM TIPO_HABITACION WHERE borrado_logico = 0";
+
+            if (!string.IsNullOrEmpty(codigo))
+                consulta += " AND cod_tipo = " + codigo;
+            if (!string.IsNullOrEmpty(nombre))
+                consulta += " AND nombre = '" + nombre + "'";
+            if (!string.IsNullOrEmpty(descripcion))
+                consulta += " AND descripcion LIKE '%" + descripcion + "%'";
+
+            consulta += " ORDER BY 1";
+
+            return DBHelper.ObtenerInstancia().Ejecutar(consulta);
+
+
+        }
     }
 }

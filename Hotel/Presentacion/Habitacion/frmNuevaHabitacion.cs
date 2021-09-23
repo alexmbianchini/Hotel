@@ -22,7 +22,7 @@ namespace Hotel.Presentacion
         HabitacionService oHabitacion;
         TipoHabitacionService oTipoHabitacion;
         Habitacion oHabitacionSelected;
-        TipoHabitacion oTipoHSelected;
+        //TipoHabitacion oTipoHSelected;
         PisoService oPiso;
 
         //Atributos a utilizar
@@ -34,7 +34,7 @@ namespace Hotel.Presentacion
             oHabitacion = new HabitacionService();
             oTipoHabitacion = new TipoHabitacionService();
             oHabitacionSelected = new Habitacion();
-            oTipoHSelected = new TipoHabitacion();
+            //oTipoHSelected = new TipoHabitacion();
             oPiso = new PisoService();
         }
         public frmNuevaHabitacion(int numHabitacion)
@@ -43,7 +43,7 @@ namespace Hotel.Presentacion
             oHabitacion = new HabitacionService();
             oTipoHabitacion = new TipoHabitacionService();
             oHabitacionSelected = new Habitacion();
-            oTipoHSelected = new TipoHabitacion();
+            //oTipoHSelected = new TipoHabitacion();
             oPiso = new PisoService();
             this.numHabitacion = Convert.ToInt32(numHabitacion);
         }
@@ -187,7 +187,7 @@ namespace Hotel.Presentacion
             this.oHabitacionSelected.TipoHabitacion = Convert.ToInt32(cboTipoHabitacion.SelectedValue);
             this.oHabitacionSelected.Precio = (float)Convert.ToDouble(txtPrecioHabitacion.Text);
             //this.oTipoHSelected.Descripcion = txtDescripcionHabitacion.Text;
-            this.oTipoHSelected.CodTipo = Convert.ToInt32(cboTipoHabitacion.SelectedValue);
+            //this.oTipoHSelected.CodTipo = Convert.ToInt32(cboTipoHabitacion.SelectedValue);
         }
         private int GenerarNumero(DataTable tabla)
         {
@@ -254,7 +254,7 @@ namespace Hotel.Presentacion
                                 this.AsignarValores();
 
                                 //Modificacion en la BD
-                                if (oHabitacion.Modificar(oHabitacionSelected) && oTipoHabitacion.Modificar(oTipoHSelected))
+                                if (oHabitacion.Modificar(oHabitacionSelected)) //&& oTipoHabitacion.Modificar(oTipoHSelected)
                                 {
                                     MessageBox.Show("Se ha editado la Habitación", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     this.Close();

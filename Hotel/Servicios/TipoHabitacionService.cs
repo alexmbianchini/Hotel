@@ -37,5 +37,10 @@ namespace Hotel.Servicios
         {
             return dao.Modificar(oTipo);
         }
+
+        public DataTable RecuperarFiltrados(string codigo, string nombre, string descripcion)
+        {
+            return dao.RecuperarFiltrados(codigo, nombre, descripcion);
+        }
     }
 }

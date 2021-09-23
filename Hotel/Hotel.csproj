@@ -119,10 +119,10 @@
     <Compile Include="Presentacion\Principal\frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\TipoHabitacion\frmTipoHabitacion.cs">
+    <Compile Include="Presentacion\TipoHabit\frmTipoHabitacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\TipoHabitacion\frmTipoHabitacion.Designer.cs">
+    <Compile Include="Presentacion\TipoHabit\frmTipoHabitacion.Designer.cs">
       <DependentUpon>frmTipoHabitacion.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\UsuarioEmpleado\frmPassword.cs">
@@ -175,7 +175,7 @@
     <EmbeddedResource Include="Presentacion\Principal\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\TipoHabitacion\frmTipoHabitacion.resx">
+    <EmbeddedResource Include="Presentacion\TipoHabit\frmTipoHabitacion.resx">
       <DependentUpon>frmTipoHabitacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\UsuarioEmpleado\frmPassword.resx">
