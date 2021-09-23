@@ -18,5 +18,7 @@ namespace Hotel.Datos.Interfaces
         bool Modificar(TipoHabitacion oTipo);
 
         DataTable RecuperarFiltrados(string codigo, string nombre, string descripcion);
+
+        string ValidarNombreExistente(string nombre);
     }
 }

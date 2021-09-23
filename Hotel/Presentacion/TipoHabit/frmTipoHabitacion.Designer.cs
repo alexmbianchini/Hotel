@@ -194,6 +194,7 @@ namespace Hotel.Presentacion
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.TextColor = System.Drawing.Color.White;
             this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnEditar
             // 
@@ -212,6 +213,7 @@ namespace Hotel.Presentacion
             this.btnEditar.Text = "Editar";
             this.btnEditar.TextColor = System.Drawing.Color.White;
             this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnEliminar
             // 

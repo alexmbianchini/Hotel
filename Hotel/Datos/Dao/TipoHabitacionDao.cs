@@ -20,7 +20,7 @@ namespace Hotel.Datos.Dao
 
         public DataTable RecuperarPorCodigo(int codigo)
         {
-            string consulta = "SELECT descripcion FROM TIPO_HABITACION WHERE borrado_logico = 0" +
+            string consulta = "SELECT * FROM TIPO_HABITACION WHERE borrado_logico = 0" +
                 " AND cod_tipo = " + codigo +
                 " ORDER BY descripcion";
 
@@ -45,6 +45,7 @@ namespace Hotel.Datos.Dao
         public bool Modificar(TipoHabitacion oTipo)
         {
             string consulta = "UPDATE TIPO_HABITACION SET " +
+                " nombre = '" + oTipo.Nombre + "'" +
                 " descripcion = '" + oTipo.Descripcion + "'" +
                 " WHERE cod_tipo = " + oTipo.CodTipo;
 
@@ -68,6 +69,23 @@ namespace Hotel.Datos.Dao
             return DBHelper.ObtenerInstancia().Ejecutar(consulta);
 
 
+        }
+
+        public string ValidarNombreExistente(string nombre)
+        {
+            string consulta = "SELECT * FROM TIPO_HABITACION WHERE nombre ='" + nombre + "'" +
+                " AND borrado_logico = 0";
+
+
+            DataTable tabla = DBHelper.ObtenerInstancia().Ejecutar(consulta);
+            if (tabla.Rows.Count > 0)
+            {
+                return string.Empty;
+            }
+            else
+            {
+                return nombre;
+            }
         }
     }
 }

@@ -100,5 +100,22 @@ namespace Hotel.Presentacion
 
             this.CargarGrilla(dgvTipoHabit, oTipoHabitacion.RecuperarFiltrados(_codigo, _nombre, _descripcion));
         }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            frmAMTipoHabitacion frmNuevo = new frmAMTipoHabitacion();
+            frmNuevo.SeleccionarModo(frmAMTipoHabitacion.FormMode.insert);
+            frmNuevo.ShowDialog();
+            this.CargarTodo();
+
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            frmAMTipoHabitacion frmEditar = new frmAMTipoHabitacion(Convert.ToInt32(dgvTipoHabit.CurrentRow.Cells["clmCodigo"].Value));
+            frmEditar.SeleccionarModo(frmAMTipoHabitacion.FormMode.update);
+            frmEditar.ShowDialog();
+            this.CargarTodo();
+        }
     }
 }

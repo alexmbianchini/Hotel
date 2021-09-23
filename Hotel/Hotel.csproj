@@ -95,6 +95,12 @@
     <Compile Include="Negocio\TipoTarjeta.cs" />
     <Compile Include="Negocio\Usuario.cs" />
     <Compile Include="Negocio\Vehiculo.cs" />
+    <Compile Include="Presentacion\TipoHabit\frmAMTipoHabitacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\TipoHabit\frmAMTipoHabitacion.Designer.cs">
+      <DependentUpon>frmAMTipoHabitacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Habitacion\frmHabitacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +168,9 @@
     <Compile Include="Servicios\UsuarioService.cs" />
     <EmbeddedResource Include="Custom\RJTextBox.resx">
       <DependentUpon>RJTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\TipoHabit\frmAMTipoHabitacion.resx">
+      <DependentUpon>frmAMTipoHabitacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Habitacion\frmHabitacion.resx">
       <DependentUpon>frmHabitacion.cs</DependentUpon>

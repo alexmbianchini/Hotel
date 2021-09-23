@@ -123,7 +123,6 @@ namespace Hotel.Presentacion
 
         private void btnEditar_Click_1(object sender, EventArgs e)
         {
-            //Convert.ToInt32(dgvUsuarios.CurrentRow.Cells["clmIdUsuario"].Value), Convert.ToInt32(dgvUsuarios.CurrentRow.Cells["clmIdEmpleado"].Value)
             frmNuevaHabitacion frmEditar = new frmNuevaHabitacion(Convert.ToInt32(dgvHabitaciones.CurrentRow.Cells["clmNumero"].Value));
             frmEditar.SeleccionarModo(frmNuevaHabitacion.FormMode.update);
             frmEditar.ShowDialog();

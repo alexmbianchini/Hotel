@@ -42,5 +42,10 @@ namespace Hotel.Servicios
         {
             return dao.RecuperarFiltrados(codigo, nombre, descripcion);
         }
+
+        public string ValidarNombreExistente(string nombre)
+        {
+            return dao.ValidarNombreExistente(nombre);
+        }
     }
 }
