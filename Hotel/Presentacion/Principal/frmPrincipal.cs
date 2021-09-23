@@ -34,12 +34,14 @@ namespace Hotel.Presentacion
             if (fLog.MiUsuarioSelected.Id == 0)
             {
                 this.Close();
+                return;
             }
             else
             {
                 this.Text += " - Usuario: " + fLog.MiUsuarioSelected.Nombre;
  
             }
+            fLog.Dispose();
 
 
             // Validar que solo el Gerente pueda ingresar a las funciones de modificación de datos. 
