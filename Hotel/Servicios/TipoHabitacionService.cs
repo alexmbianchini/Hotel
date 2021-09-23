@@ -47,5 +47,10 @@ namespace Hotel.Servicios
         {
             return dao.ValidarNombreExistente(nombre);
         }
+
+        public bool Eliminar(TipoHabitacion oTipo)
+        {
+            return dao.Eliminar(oTipo);
+        }
     }
 }

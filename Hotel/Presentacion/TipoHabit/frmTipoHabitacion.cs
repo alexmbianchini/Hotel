@@ -15,11 +15,13 @@ namespace Hotel.Presentacion
     public partial class frmTipoHabitacion : Form
     {
         TipoHabitacionService oTipoHabitacion;
+        TipoHabitacion oTipoHabitacionSelected;
 
         public frmTipoHabitacion()
         {
             InitializeComponent();
-            oTipoHabitacion = new TipoHabitacionService(); 
+            oTipoHabitacion = new TipoHabitacionService();
+            oTipoHabitacionSelected = new TipoHabitacion();
         }
 
         private void frmTipoHabitacion_Load(object sender, EventArgs e)
@@ -115,6 +117,25 @@ namespace Hotel.Presentacion
             frmAMTipoHabitacion frmEditar = new frmAMTipoHabitacion(Convert.ToInt32(dgvTipoHabit.CurrentRow.Cells["clmCodigo"].Value));
             frmEditar.SeleccionarModo(frmAMTipoHabitacion.FormMode.update);
             frmEditar.ShowDialog();
+            this.CargarTodo();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Seguro que desea Eliminar el Tipo Habitacion seleccionada?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                this.oTipoHabitacionSelected.CodTipo = (int)dgvTipoHabit.CurrentRow.Cells["clmCodigo"].Value;
+
+
+                if (oTipoHabitacion.Eliminar(oTipoHabitacionSelected))
+                {
+                    MessageBox.Show("Tipo Habitación Eliminada", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Error al eliminar el Tipo Habitación", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
             this.CargarTodo();
         }
     }

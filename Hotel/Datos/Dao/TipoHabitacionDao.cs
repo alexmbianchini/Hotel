@@ -87,5 +87,15 @@ namespace Hotel.Datos.Dao
                 return nombre;
             }
         }
+
+        public bool Eliminar(TipoHabitacion oTipo)
+        {
+            string consulta = "UPDATE TIPO_HABITACION SET borrado_logico = 1" +
+                " WHERE cod_tipo =" + oTipo.CodTipo;
+
+
+            DBHelper.ObtenerInstancia().Actualizar(consulta);
+            return true;
+        }
     }
 }

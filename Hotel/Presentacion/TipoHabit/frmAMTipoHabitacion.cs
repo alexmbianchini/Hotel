@@ -115,7 +115,18 @@ namespace Hotel.Presentacion
                     {
                         if(ValidarNombre())
                         {
-                            //oTipoHSelected.CodTipo = 
+                            oTipoHSelected.CodTipo = this.GenerarCodigo(oTipoH.RecuperarTodos());
+                            this.AsignarTodos();
+
+                            if(oTipoH.Crear(oTipoHSelected))
+                            {
+                                MessageBox.Show("Se ha agregado el Tipo Habitación", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                this.Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Ha ocurrido un error al insertar los datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
 
                     }
@@ -163,6 +174,13 @@ namespace Hotel.Presentacion
         {
             oTipoHSelected.Nombre = this.txtNombre.Text;
             oTipoHSelected.Descripcion = this.txtDescripcion.Text;
+        }
+
+        private int GenerarCodigo(DataTable tabla)
+        {
+            int codigo = tabla.Rows.Count + 1;
+
+            return codigo;
         }
     }
 }
