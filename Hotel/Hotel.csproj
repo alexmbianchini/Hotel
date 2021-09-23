@@ -95,6 +95,12 @@
     <Compile Include="Negocio\TipoTarjeta.cs" />
     <Compile Include="Negocio\Usuario.cs" />
     <Compile Include="Negocio\Vehiculo.cs" />
+    <Compile Include="Presentacion\TipoHabit\frmAMTipoHabitacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\TipoHabit\frmAMTipoHabitacion.Designer.cs">
+      <DependentUpon>frmAMTipoHabitacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Habitacion\frmHabitacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +124,12 @@
     </Compile>
     <Compile Include="Presentacion\Principal\frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\TipoHabit\frmTipoHabitacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\TipoHabit\frmTipoHabitacion.Designer.cs">
+      <DependentUpon>frmTipoHabitacion.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\UsuarioEmpleado\frmPassword.cs">
       <SubType>Form</SubType>
@@ -157,6 +169,9 @@
     <EmbeddedResource Include="Custom\RJTextBox.resx">
       <DependentUpon>RJTextBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\TipoHabit\frmAMTipoHabitacion.resx">
+      <DependentUpon>frmAMTipoHabitacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Habitacion\frmHabitacion.resx">
       <DependentUpon>frmHabitacion.cs</DependentUpon>
     </EmbeddedResource>
@@ -168,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Principal\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\TipoHabit\frmTipoHabitacion.resx">
+      <DependentUpon>frmTipoHabitacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\UsuarioEmpleado\frmPassword.resx">
       <DependentUpon>frmPassword.cs</DependentUpon>
@@ -210,6 +228,7 @@
     <Content Include="Imagenes\logohotel2.jpg" />
     <Content Include="Imagenes\palmerasss.png" />
     <Content Include="Imagenes\palmtree_palm_3728.ico" />
+    <Content Include="Imagenes\ver.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

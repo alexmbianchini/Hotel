@@ -125,7 +125,7 @@ namespace Hotel.Presentacion
 
                 if (oEmpleado.Eliminar(oEmpleadoSelected) && oUsuario.Eliminar(oUsuarioSelected))
                 {
-                    MessageBox.Show("Empleado Eliminado con Éxito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Empleado Eliminado", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {

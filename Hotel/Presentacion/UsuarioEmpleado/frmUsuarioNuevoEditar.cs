@@ -111,7 +111,7 @@ namespace Hotel.Presentacion
                                 // Insertar datos en la base de datos y verificar que se inserten con éxito
                                 if (oEmpleado.Crear(oEmpleadoSelected) && oUsuario.Crear(oUsuarioSelected))
                                 {
-                                    MessageBox.Show("Datos Agregados Con Éxito!");
+                                    MessageBox.Show("Nuevo Usuario Agregado");
                                     this.Close();
                                 }
                                 else

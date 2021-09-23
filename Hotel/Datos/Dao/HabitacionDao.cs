@@ -84,7 +84,7 @@ namespace Hotel.Datos.Dao
                 " precio = " + oHabitacion.Precio +
                 " WHERE numero = " + oHabitacion.Numero;
 
-            DBHelper.ObtenerInstancia().Ejecutar(consulta);
+            DBHelper.ObtenerInstancia().Actualizar(consulta);
             return true;
         }
         public DataTable RecuperarNumeros()
@@ -103,7 +103,7 @@ namespace Hotel.Datos.Dao
                 oHabitacion.Precio + "," + " 0," +
                 "1)";
 
-            DBHelper.ObtenerInstancia().Ejecutar(consulta);
+            DBHelper.ObtenerInstancia().Actualizar(consulta);
             return true;
         }
 
@@ -114,7 +114,7 @@ namespace Hotel.Datos.Dao
                 " WHERE numero =" + oHabitacion.Numero;
 
 
-            DBHelper.ObtenerInstancia().Ejecutar(consulta);
+            DBHelper.ObtenerInstancia().Actualizar(consulta);
             return true;
         }
     }

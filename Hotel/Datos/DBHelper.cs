@@ -45,5 +45,17 @@ namespace Hotel.Datos
             conexion.Close();
             return tabla;
         }
+
+        public void Actualizar(string consultaSQL)
+        {
+            DataTable tabla = new DataTable();
+            conexion.ConnectionString = cadenaConexion;
+            conexion.Open();
+            comando.Connection = conexion;
+            comando.CommandType = CommandType.Text;
+            comando.CommandText = consultaSQL;
+            tabla.Load(comando.ExecuteReader());
+            conexion.Close();
+        }
     }
  }

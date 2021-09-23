@@ -15,7 +15,6 @@ namespace Hotel.Negocio
         public string Descripcion { get; set; }
         public bool BorradoLogico { get; set; }
 
-
     }
 
 }

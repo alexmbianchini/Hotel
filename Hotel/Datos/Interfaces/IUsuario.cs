@@ -21,7 +21,7 @@ namespace Hotel.Datos.Interfaces
         bool Eliminar(Usuario oUsuario);
         bool Modificar(Usuario oUsuario);
         int ValidarPassword(int id, string clave);
-        string traerPuestoEmpleado(int id);
+        string TraerPuestoEmpleado(int id);
 
     }
 }

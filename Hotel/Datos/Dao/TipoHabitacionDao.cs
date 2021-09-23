@@ -20,7 +20,7 @@ namespace Hotel.Datos.Dao
 
         public DataTable RecuperarPorCodigo(int codigo)
         {
-            string consulta = "SELECT descripcion FROM TIPO_HABITACION WHERE borrado_logico = 0" +
+            string consulta = "SELECT * FROM TIPO_HABITACION WHERE borrado_logico = 0" +
                 " AND cod_tipo = " + codigo +
                 " ORDER BY descripcion";
 
@@ -37,7 +37,7 @@ namespace Hotel.Datos.Dao
                  " 0);";
 
 
-            DBHelper.ObtenerInstancia().Ejecutar(consulta);
+            DBHelper.ObtenerInstancia().Actualizar(consulta);
             return true;
         }
 
@@ -45,10 +45,56 @@ namespace Hotel.Datos.Dao
         public bool Modificar(TipoHabitacion oTipo)
         {
             string consulta = "UPDATE TIPO_HABITACION SET " +
+                " nombre = '" + oTipo.Nombre + "'" +
                 " descripcion = '" + oTipo.Descripcion + "'" +
                 " WHERE cod_tipo = " + oTipo.CodTipo;
 
-            DBHelper.ObtenerInstancia().Ejecutar(consulta);
+            DBHelper.ObtenerInstancia().Actualizar(consulta);
+            return true;
+        }
+
+        public DataTable RecuperarFiltrados(string codigo, string nombre, string descripcion) 
+        {
+            string consulta = "SELECT * FROM TIPO_HABITACION WHERE borrado_logico = 0";
+
+            if (!string.IsNullOrEmpty(codigo))
+                consulta += " AND cod_tipo = " + codigo;
+            if (!string.IsNullOrEmpty(nombre))
+                consulta += " AND nombre = '" + nombre + "'";
+            if (!string.IsNullOrEmpty(descripcion))
+                consulta += " AND descripcion LIKE '%" + descripcion + "%'";
+
+            consulta += " ORDER BY 1";
+
+            return DBHelper.ObtenerInstancia().Ejecutar(consulta);
+
+
+        }
+
+        public string ValidarNombreExistente(string nombre)
+        {
+            string consulta = "SELECT * FROM TIPO_HABITACION WHERE nombre ='" + nombre + "'" +
+                " AND borrado_logico = 0";
+
+
+            DataTable tabla = DBHelper.ObtenerInstancia().Ejecutar(consulta);
+            if (tabla.Rows.Count > 0)
+            {
+                return string.Empty;
+            }
+            else
+            {
+                return nombre;
+            }
+        }
+
+        public bool Eliminar(TipoHabitacion oTipo)
+        {
+            string consulta = "UPDATE TIPO_HABITACION SET borrado_logico = 1" +
+                " WHERE cod_tipo =" + oTipo.CodTipo;
+
+
+            DBHelper.ObtenerInstancia().Actualizar(consulta);
             return true;
         }
     }

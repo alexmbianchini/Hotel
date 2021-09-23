@@ -25,22 +25,6 @@ namespace Hotel.Presentacion
             InitializeComponent();
         }
 
-
-        private void txtUsuario_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void txtPassword_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void frmLogin_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnIngresar_Click_1(object sender, EventArgs e)
         {
             this.Verificar();
@@ -49,6 +33,7 @@ namespace Hotel.Presentacion
         private void btnSalir_Click_1(object sender, EventArgs e)
         {
             this.Close();
+            
         }
 
         private void frmLogin_KeyPress(object sender, KeyPressEventArgs e)
@@ -105,6 +90,25 @@ namespace Hotel.Presentacion
         private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
         {
             this.EsEnter(e);
+        }
+
+        private void btnPassword_Click(object sender, EventArgs e)
+        {
+            if (this.txtPassword.PasswordChar == '*')
+            {
+                btnPasswordCon.BringToFront();
+                this.txtPassword.PasswordChar = '\0';
+            }
+        }
+
+        private void btnPasswordCon_Click(object sender, EventArgs e)
+        {
+            if (this.txtPassword.PasswordChar == '\0')
+            {
+                btnPasswordSin.BringToFront();
+                this.txtPassword.PasswordChar = '*';
+            }
+
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using Hotel.Datos.Dao;
+﻿using Hotel.Servicios;
 using Hotel.Negocio;
 using Hotel.Presentacion.UsuarioEmpleado;
 using System;
@@ -16,7 +16,7 @@ namespace Hotel.Presentacion
     public partial class frmPrincipal : Form
     {
         Empleado oEmpleadoSelected = new Empleado();
-        UsuarioDao oUsuario = new UsuarioDao();
+        UsuarioService oUsuario = new UsuarioService();
 
         
         frmLogin fLog = new frmLogin();
@@ -27,23 +27,25 @@ namespace Hotel.Presentacion
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
-            
+
             fLog.ShowDialog();
 
 
             if (fLog.MiUsuarioSelected.Id == 0)
             {
                 this.Close();
+                return;
             }
             else
             {
                 this.Text += " - Usuario: " + fLog.MiUsuarioSelected.Nombre;
- 
+
             }
+            fLog.Dispose();
 
 
             // Validar que solo el Gerente pueda ingresar a las funciones de modificación de datos. 
-            string puesto = oUsuario.traerPuestoEmpleado(fLog.MiUsuarioSelected.Id);
+            string puesto = oUsuario.TraerPuestoEmpleado(fLog.MiUsuarioSelected.Id);
 
             if (puesto != "Gerente")
             {

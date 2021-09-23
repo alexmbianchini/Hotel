@@ -15,7 +15,6 @@ namespace Hotel.Negocio
         public int TipoHabitacion { get; set; }
         public float Precio { get; set; }
         public bool BorradoLogico { get; set; }
-        public string Descripcion { get; set; }
         public bool Estado { get; set; }
 
 
