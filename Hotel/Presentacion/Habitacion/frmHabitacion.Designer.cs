@@ -252,6 +252,7 @@ namespace Hotel.Presentacion
             this.txtPrecioMax.Size = new System.Drawing.Size(92, 31);
             this.txtPrecioMax.TabIndex = 21;
             this.txtPrecioMax.UnderlinedStyle = false;
+            this.txtPrecioMax.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecioMax_KeyPress);
             // 
             // txtPrecioMin
             // 
@@ -269,6 +270,7 @@ namespace Hotel.Presentacion
             this.txtPrecioMin.Size = new System.Drawing.Size(92, 31);
             this.txtPrecioMin.TabIndex = 20;
             this.txtPrecioMin.UnderlinedStyle = false;
+            this.txtPrecioMin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecioMin_KeyPress);
             // 
             // txtPiso
             // 
@@ -303,6 +305,7 @@ namespace Hotel.Presentacion
             this.txtNumero.Size = new System.Drawing.Size(92, 31);
             this.txtNumero.TabIndex = 16;
             this.txtNumero.UnderlinedStyle = false;
+            this.txtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumero_KeyPress);
             // 
             // btnConsultar
             // 
