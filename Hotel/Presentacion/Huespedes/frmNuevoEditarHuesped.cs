@@ -17,12 +17,15 @@ namespace Hotel.Presentacion.Huesped
     public partial class frmNuevoEditarHuesped : Form
     {
 
+        // Instanciar FormMode para utilizar en sentencia CASE
         private FormMode formMode = new FormMode();
 
+        // Instanciar objetos que vamos a utilizar
         HuespedService oHuesped = new HuespedService();
         PaisService oPais = new PaisService();
         Hotel.Negocio.Huesped oHuespedSelected = new Hotel.Negocio.Huesped();
 
+        // Stirng para almacenar pasaporte recuperado de la grilla.
         private string numeroPasaporte;
 
         public frmNuevoEditarHuesped()
@@ -30,6 +33,7 @@ namespace Hotel.Presentacion.Huesped
             InitializeComponent();
         }
 
+        // constructor que se utiliza para traer el pasaporte desde la grilla
         public frmNuevoEditarHuesped(string numeroPasaporte)
         {
             InitializeComponent();
@@ -37,7 +41,7 @@ namespace Hotel.Presentacion.Huesped
         }
 
 
-
+        // Los diferentes modos que acepta el FormMode
         public enum FormMode
         {
             insert,
@@ -48,6 +52,7 @@ namespace Hotel.Presentacion.Huesped
         {
             switch (formMode)
             {
+                // EN caso de que se quiera crear un Huesped...
                 case FormMode.insert:
                     {
                         this.CargarCombo(cboPais, oPais.RecuperarTodos(), "nombre", "id");
@@ -55,11 +60,12 @@ namespace Hotel.Presentacion.Huesped
 
                         break;
                     }
-
+                // En caso de que se quiera modificar un Huesped...
                 case FormMode.update:
                     {
                         this.CargarCampos();
                         this.Text = "Edición Huesped";
+                        // Se deshabilita el TextBox de Pasaporte ya que el número de pasaporte es PK y no se debe poder modificar.
                         this.txtPasaporte.Enabled = false;
                         break;
                     }
@@ -75,15 +81,19 @@ namespace Hotel.Presentacion.Huesped
             switch (formMode)
             {
                 case FormMode.insert:
+                    // Validar que los campos estén cargados
                     if (this.ValidarCampos())
                     {
+                        // Validar que el pasaporte tenga el formato correcto
                         if (PasaporteCorrecto(this.txtPasaporte.Text))
                         {
-
+                            // Validar que no exista otro huesped con el mismo pasaporte
                             if (oHuesped.ValidarPasaporte(this.txtPasaporte.Text))
                             {
+                                // Asignar los valores ingresados al objeto Huesped
                                 this.AsignarValores();
 
+                                // Creación del Huesped, retorna true si se agregó exitosamente, retorna false si no se logró crear.
                                 if (oHuesped.Crear(oHuespedSelected))
                                 {
                                     MessageBox.Show("Nuevo Huesped Agregado");
@@ -113,11 +123,13 @@ namespace Hotel.Presentacion.Huesped
                     break;
 
                 case FormMode.update:
+                    // Validar que los campos estén cargados
                     if (this.ValidarCampos())
                     {
-                        
+                        // Asigna los valores ingresados al objeto Huesped
                         this.AsignarValores();
 
+                        // Modificacion del Huesped, retorna true si se modificó exitosamente, retorna false si no se logró modificar.
                         if (oHuesped.Modificar(oHuespedSelected))
                         {
                             MessageBox.Show("Datos modificados");
@@ -137,11 +149,7 @@ namespace Hotel.Presentacion.Huesped
             }
         }
 
-
-
-
-        
-
+        // Carga los campos con el objeto recuepeardo de la Grilla.
         private void CargarCampos()
         { 
                 DataTable tablaHuesped = new DataTable();
@@ -155,7 +163,7 @@ namespace Hotel.Presentacion.Huesped
                 this.CargarCombo(cboPais, oPais.RecuperarTodos(), "nombre", "id", (int)tablaHuesped.Rows[0]["pais"]);
 
         }
-
+        // Cargar combos genéricos
         private void CargarCombo(ComboBox combo, DataTable tabla, string campoMostrar, string campoValor)
         {
                 combo.DataSource = tabla;
@@ -165,6 +173,7 @@ namespace Hotel.Presentacion.Huesped
                 combo.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
+        // Cargar combos genéericos, con valor inicial ya seleccionado.
         private void CargarCombo(ComboBox combo, DataTable tabla, string campoMostrar, string campoValor, int campoIndice)
         {
                 combo.DataSource = tabla;
@@ -174,7 +183,7 @@ namespace Hotel.Presentacion.Huesped
                 combo.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
-
+        // Valida que los campos no estén vacíos.
         private bool ValidarCampos()
         {
             if (string.IsNullOrEmpty(this.txtNombre.Text))
@@ -229,7 +238,8 @@ namespace Hotel.Presentacion.Huesped
             this.oHuespedSelected.PaisResidencia = Convert.ToInt32(cboPais.SelectedValue);
             this.oHuespedSelected.Mail = txtMail.Text;
         }
-
+        
+        // Selecciona unos de los dos opciones disponibles para el CASE
         public void SeleccionarModo(FormMode op)
         {
             this.formMode = op;
@@ -243,42 +253,30 @@ namespace Hotel.Presentacion.Huesped
             }
         }
 
+        
+        // Valida que el pasaporte tenga el formato correcto, 3 letras y 6 números (AAA000000)
         private bool PasaporteCorrecto(string pasaporte)
         {
-            //char[] caracteres = pasaporte.ToCharArray();
-
-            Regex numeros = new Regex(@"[0-9]");
-            Regex letras = new Regex(@"[A-Z]");
+            
+            Regex formato = new Regex(@"[A-Z]{3}[0-9]{6}");
 
             if (pasaporte.Length == 9)
             {
-                foreach (char c in pasaporte)
+                if (formato.IsMatch(pasaporte))
                 {
-                    int contador = 0;
-
-                    if (!letras.IsMatch(c.ToString()) && contador < 4)
-                    {
-                        contador += 1;
-                        continue;
-                    }
-                   
-                    else if(!numeros.IsMatch(c.ToString()) && contador > 3 && contador < 10)
-                    {
-                        contador += 1;
-                        continue;
-                    }
-                    else
-                    {
-                        return false;
-                    }
+                    return true;
                 }
-                return true;
+                else
+                {
+                    return false;
+                }
+                
             }
             else
             {
                 return false;
             }
-            
+
         }
     }
 }
