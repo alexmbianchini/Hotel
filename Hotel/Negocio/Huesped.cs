@@ -10,8 +10,10 @@ namespace Hotel.Negocio
     {
         public string Nombre { get; set; }
         public string Apellido { get; set; }
-        public string PaisResidencia { get; set; }
+        public int PaisResidencia { get; set; }
         public string NumeroPasaporte { get; set; }
         public bool BorradoLogico { get; set; }
+
+        public string Mail { get; set; }
     }
 }

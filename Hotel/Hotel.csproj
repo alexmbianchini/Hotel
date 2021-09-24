@@ -58,6 +58,8 @@
     <Compile Include="Custom\RJTextBox.Designer.cs">
       <DependentUpon>RJTextBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Datos\Dao\HuespedDao.cs" />
+    <Compile Include="Datos\Dao\PaisDao.cs" />
     <Compile Include="Datos\Dao\PisoDao.cs" />
     <Compile Include="Datos\DBHelper.cs" />
     <Compile Include="Datos\Dao\EmpleadoDao.cs" />
@@ -70,6 +72,8 @@
     <Compile Include="Datos\Interfaces\IEmpleado.cs" />
     <Compile Include="Datos\Interfaces\IEstadoHabitacion.cs" />
     <Compile Include="Datos\Interfaces\IHabitacion.cs" />
+    <Compile Include="Datos\Interfaces\IHuesped.cs" />
+    <Compile Include="Datos\Interfaces\IPais.cs" />
     <Compile Include="Datos\Interfaces\IPiso.cs" />
     <Compile Include="Datos\Interfaces\IPuesto.cs" />
     <Compile Include="Datos\Interfaces\ITipoDocumento.cs" />
@@ -85,6 +89,7 @@
     <Compile Include="Negocio\Habitacion.cs" />
     <Compile Include="Negocio\Huesped.cs" />
     <Compile Include="Negocio\Menu.cs" />
+    <Compile Include="Negocio\Pais.cs" />
     <Compile Include="Negocio\Piso.cs" />
     <Compile Include="Negocio\Puesto.cs" />
     <Compile Include="Negocio\Reserva.cs" />
@@ -95,6 +100,18 @@
     <Compile Include="Negocio\TipoTarjeta.cs" />
     <Compile Include="Negocio\Usuario.cs" />
     <Compile Include="Negocio\Vehiculo.cs" />
+    <Compile Include="Presentacion\Huespedes\frmHuesped.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Huespedes\frmHuesped.Designer.cs">
+      <DependentUpon>frmHuesped.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Huespedes\frmNuevoEditarHuesped.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Huespedes\frmNuevoEditarHuesped.Designer.cs">
+      <DependentUpon>frmNuevoEditarHuesped.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\TipoHabit\frmAMTipoHabitacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +178,8 @@
     <Compile Include="Servicios\EmpleadoService.cs" />
     <Compile Include="Servicios\EstadoHabitacionService.cs" />
     <Compile Include="Servicios\HabitacionService.cs" />
+    <Compile Include="Servicios\HuespedService.cs" />
+    <Compile Include="Servicios\PaisService.cs" />
     <Compile Include="Servicios\PisoService.cs" />
     <Compile Include="Servicios\PuestoService.cs" />
     <Compile Include="Servicios\TipoDocumentoService.cs" />
@@ -168,6 +187,12 @@
     <Compile Include="Servicios\UsuarioService.cs" />
     <EmbeddedResource Include="Custom\RJTextBox.resx">
       <DependentUpon>RJTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Huespedes\frmHuesped.resx">
+      <DependentUpon>frmHuesped.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Huespedes\frmNuevoEditarHuesped.resx">
+      <DependentUpon>frmNuevoEditarHuesped.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\TipoHabit\frmAMTipoHabitacion.resx">
       <DependentUpon>frmAMTipoHabitacion.cs</DependentUpon>

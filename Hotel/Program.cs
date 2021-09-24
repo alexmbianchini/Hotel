@@ -20,7 +20,8 @@ namespace Hotel
             //Application.Run(new Presentacion.frmUsuario());
             //Application.Run(new Presentacion.frmHabitacion());
             //Application.Run(new Presentacion.UsuarioEmpleado.frmPassword());
-            Application.Run(new Presentacion.frmTipoHabitacion());
+            //Application.Run(new Presentacion.frmTipoHabitacion());
+            Application.Run(new Hotel.Presentacion.Huespedes.frmHuesped());
         }
     }
 }
