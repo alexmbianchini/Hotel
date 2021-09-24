@@ -248,6 +248,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Imagenes\corte-de-ojos.png" />
     <Content Include="Imagenes\hotelfondo.jpg" />
     <Content Include="Imagenes\logohotel.jpg" />
     <Content Include="Imagenes\logohotel2.jpg" />

@@ -63,6 +63,16 @@ namespace Hotel.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap corte_de_ojos {
+            get {
+                object obj = ResourceManager.GetObject("corte-de-ojos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap hotelfondo {
             get {
                 object obj = ResourceManager.GetObject("hotelfondo", resourceCulture);

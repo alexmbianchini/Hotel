@@ -195,5 +195,61 @@ namespace Hotel.Presentacion.UsuarioEmpleado
                 return false;
             }
         }
+
+        private void btnActualSacar_Click(object sender, EventArgs e)
+        {
+            if (txtPasswordActual.PasswordChar == '*')
+            {
+                btnActualPoner.BringToFront();
+                txtPasswordActual.PasswordChar = '\0';
+            }
+        }
+
+        private void btnActualPoner_Click(object sender, EventArgs e)
+        {
+            if (txtPasswordActual.PasswordChar == '\0')
+            {
+                btnActualSacar.BringToFront();
+                txtPasswordActual.PasswordChar = '*';
+            }
+
+        }
+
+        private void btnNuevaSacar_Click(object sender, EventArgs e)
+        {
+            if (txtPasswordNueva.PasswordChar == '*')
+            {
+                btnNuevaPoner.BringToFront();
+                txtPasswordNueva.PasswordChar = '\0';
+            }
+
+        }
+
+        private void btnNuevaPoner_Click(object sender, EventArgs e)
+        {
+            if (txtPasswordNueva.PasswordChar == '\0')
+            {
+                btnNuevaSacar.BringToFront();
+                txtPasswordNueva.PasswordChar = '*';
+            }
+        }
+
+        private void btnConfirmarSacar_Click(object sender, EventArgs e)
+        {
+            if(txtPasswordConfirmar.PasswordChar == '*')
+            {
+                btnConfirmarPoner.BringToFront();
+                txtPasswordConfirmar.PasswordChar = '\0';
+            }
+        }
+
+        private void btnConfirmarPoner_Click(object sender, EventArgs e)
+        {
+            if (txtPasswordConfirmar.PasswordChar == '\0')
+            {
+                btnConfirmarSacar.BringToFront();
+                txtPasswordConfirmar.PasswordChar = '*';
+            }
+        }
     }
 }

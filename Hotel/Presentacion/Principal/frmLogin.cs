@@ -93,22 +93,28 @@ namespace Hotel.Presentacion
         }
 
         private void btnPassword_Click(object sender, EventArgs e)
-        {
-            if (this.txtPassword.PasswordChar == '*')
+        { 
+            if (txtPassword.PasswordChar == '\0')
             {
                 btnPasswordCon.BringToFront();
-                this.txtPassword.PasswordChar = '\0';
+                txtPassword.PasswordChar = '*';
             }
         }
 
         private void btnPasswordCon_Click(object sender, EventArgs e)
         {
-            if (this.txtPassword.PasswordChar == '\0')
+            if (txtPassword.PasswordChar == '*')
             {
                 btnPasswordSin.BringToFront();
-                this.txtPassword.PasswordChar = '*';
+                txtPassword.PasswordChar = '\0';
             }
 
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            this.btnPasswordSin.Enabled = true;
+            this.btnPasswordCon.Enabled = true;
         }
     }
 }

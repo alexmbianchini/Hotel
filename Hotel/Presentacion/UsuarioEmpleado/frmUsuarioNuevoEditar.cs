@@ -283,6 +283,42 @@ namespace Hotel.Presentacion
             //si cumple con todo, regresa true
             return true;
         }
+
+        private void btnPasswordSacar_Click(object sender, EventArgs e)
+        {
+            if(txtPassword.PasswordChar == '*')
+            {
+                btnPasswordPoner.BringToFront();
+                txtPassword.PasswordChar = '\0';
+            }
+        }
+
+        private void btnConfirmarSacar_Click(object sender, EventArgs e)
+        {
+            if (txtConfirmarPassword.PasswordChar == '*')
+            {
+                btnConfirmarPoner.BringToFront();
+                txtConfirmarPassword.PasswordChar = '\0';
+            }
+        }
+
+        private void btnConfirmarPoner_Click(object sender, EventArgs e)
+        {
+            if (txtConfirmarPassword.PasswordChar == '\0')
+            {
+                btnConfirmarSacar.BringToFront();
+                txtConfirmarPassword.PasswordChar = '*';
+            }
+        }
+
+        private void btnPasswordPoner_Click(object sender, EventArgs e)
+        {
+            if (txtPassword.PasswordChar == '\0')
+            {
+                btnPasswordSacar.BringToFront();
+                txtPassword.PasswordChar = '*';
+            }
+        }
     }
     
 }
