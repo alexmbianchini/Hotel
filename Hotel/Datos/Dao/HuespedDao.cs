@@ -20,6 +20,32 @@ namespace Hotel.Datos.Dao
             return DBHelper.ObtenerInstancia().Ejecutar(consulta);
         }
 
+        public DataTable RecuperarFiltrados(string nombre, string apellido, string pasaporte , string pais)
+        {
+            string consulta = "SELECT h.nombre, h.apellido, h.numero_pasaporte, h.mail, p.nombre as pais" +
+                " FROM HUESPEDES h JOIN PAISES p ON (h.pais_residencia = p.id)" +
+                " WHERE h.borrado_logico = 0";
+
+            if (!string.IsNullOrEmpty(nombre))
+            {
+                consulta += " AND h.nombre LIKE '%" + nombre + "%'";
+            }
+            if (!string.IsNullOrEmpty(apellido))
+            {
+                consulta += " AND h.apellido LIKE '%" + apellido + "%'";
+            }
+            if (!string.IsNullOrEmpty(pasaporte))
+            {
+                consulta += " AND h.numero_pasaporte LIKE '" + pasaporte +  "%'";
+            }
+            if (!string.IsNullOrEmpty(pais))
+            {
+                consulta += " AND h.pais_residencia = " + pais;
+            }
+
+            return DBHelper.ObtenerInstancia().Ejecutar(consulta);
+        }
+
         public DataTable RecuperarPorNumero(string id)
         {
             string consulta = "SELECT h.nombre, h.apellido, h.numero_pasaporte, h.mail, h.pais_residencia as pais" +

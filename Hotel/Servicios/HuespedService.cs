@@ -24,6 +24,11 @@ namespace Hotel.Servicios
             return dao.RecuperarTodos();
         }
 
+        public DataTable RecuperarFiltrados(string nombre, string apellido, string pasaporte, string pais)
+        {
+            return dao.RecuperarFiltrados(nombre, apellido, pasaporte, pais);
+        }
+
         public DataTable RecuperarPorNumero(string id)
         {
             return dao.RecuperarPorNumero(id);

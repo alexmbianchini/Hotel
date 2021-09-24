@@ -12,6 +12,8 @@ namespace Hotel.Datos.Interfaces
     {
         DataTable RecuperarTodos();
 
+        DataTable RecuperarFiltrados(string nombre, string apellido, string pasaporte, string pais);
+
         DataTable RecuperarPorNumero(string id);
 
         bool ValidarPasaporte(string pasaporte);

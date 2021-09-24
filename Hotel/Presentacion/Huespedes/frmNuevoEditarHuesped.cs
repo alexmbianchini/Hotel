@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Hotel.Presentacion.frmAMTipoHabitacion;
+using System.Text.RegularExpressions;
 
 namespace Hotel.Presentacion.Huesped
 {
@@ -76,24 +77,34 @@ namespace Hotel.Presentacion.Huesped
                 case FormMode.insert:
                     if (this.ValidarCampos())
                     {
-                        if (oHuesped.ValidarPasaporte(this.txtPasaporte.Text))
+                        if (PasaporteCorrecto(this.txtPasaporte.Text))
                         {
-                            this.AsignarValores();
 
-                             if (oHuesped.Crear(oHuespedSelected))
-                             {
-                                MessageBox.Show("Nuevo Huesped Agregado");
-                                this.Close();
-                             }
-                             else
-                             {
-                                MessageBox.Show("Ha ocurrido al agregar un Huesped");
-                             }
-                        
+                            if (oHuesped.ValidarPasaporte(this.txtPasaporte.Text))
+                            {
+                                this.AsignarValores();
+
+                                if (oHuesped.Crear(oHuespedSelected))
+                                {
+                                    MessageBox.Show("Nuevo Huesped Agregado");
+                                    this.Close();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Ha ocurrido al agregar un Huesped");
+                                }
+
+                            }
+                            else
+                            {
+                                MessageBox.Show("Ya existe un Huesped con este Pasaporte!");
+                                this.txtPasaporte.Focus();
+                                this.lblPasaporte.ForeColor = Color.Red;
+                            }
                         }
                         else
                         {
-                            MessageBox.Show("Ya existe un Huesped con este Pasaporte!");
+                            MessageBox.Show("El Formato de pasaporte debe ser 'AAA000000', 3 letras y 6 números");
                             this.txtPasaporte.Focus();
                             this.lblPasaporte.ForeColor = Color.Red;
                         }
@@ -230,6 +241,44 @@ namespace Hotel.Presentacion.Huesped
             {
                 this.Close();
             }
+        }
+
+        private bool PasaporteCorrecto(string pasaporte)
+        {
+            //char[] caracteres = pasaporte.ToCharArray();
+
+            Regex numeros = new Regex(@"[0-9]");
+            Regex letras = new Regex(@"[A-Z]");
+
+            if (pasaporte.Length == 9)
+            {
+                foreach (char c in pasaporte)
+                {
+                    int contador = 0;
+
+                    if (!letras.IsMatch(c.ToString()) && contador < 4)
+                    {
+                        contador += 1;
+                        continue;
+                    }
+                   
+                    else if(!numeros.IsMatch(c.ToString()) && contador > 3 && contador < 10)
+                    {
+                        contador += 1;
+                        continue;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
         }
     }
 }

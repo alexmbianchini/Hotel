@@ -97,5 +97,29 @@ namespace Hotel.Presentacion.Huespedes
         {
             this.Close();
         }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            this.txtNombre.Text = string.Empty;
+            this.txtApellido.Text = string.Empty;
+            this.txtPsaporte.Text = string.Empty;
+            this.cboPais.SelectedIndex = -1;
+        }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            string _nombre, _apellido, _pasaporte, _pais;
+            _nombre = _apellido = _pasaporte = _pais = string.Empty;
+
+            _nombre = this.txtNombre.Text;
+            _apellido = this.txtApellido.Text;
+            _pasaporte = this.txtPsaporte.Text;
+            if (this.cboPais.SelectedIndex != -1)
+            {
+                _pais = this.cboPais.SelectedValue.ToString();
+            }
+
+            this.CargarGrilla(dvgHuespedes, oHuesped.RecuperarFiltrados(_nombre, _apellido, _pasaporte, _pais));
+        }
     }
 }
