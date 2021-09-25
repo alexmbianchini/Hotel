@@ -83,6 +83,16 @@ namespace Hotel.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_eye_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-eye-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logohotel {
             get {
                 object obj = ResourceManager.GetObject("logohotel", resourceCulture);

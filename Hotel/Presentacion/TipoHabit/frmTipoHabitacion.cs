@@ -29,6 +29,7 @@ namespace Hotel.Presentacion
             this.CargarTodo();
 
         }
+
         private void CargarCombo(ComboBox combo, DataTable tabla, string campoMostrar, string campoValor)
         {
             combo.DataSource = tabla;
@@ -37,6 +38,7 @@ namespace Hotel.Presentacion
             combo.SelectedIndex = -1;
             combo.DropDownStyle = ComboBoxStyle.DropDownList;
         }
+
         private void CargarGrilla(DataGridView grilla, DataTable tabla)
         {
             grilla.Rows.Clear();

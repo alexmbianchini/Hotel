@@ -250,6 +250,7 @@
   <ItemGroup>
     <Content Include="Imagenes\corte-de-ojos.png" />
     <Content Include="Imagenes\hotelfondo.jpg" />
+    <Content Include="Imagenes\icons8-eye-48.png" />
     <Content Include="Imagenes\logohotel.jpg" />
     <Content Include="Imagenes\logohotel2.jpg" />
     <Content Include="Imagenes\palmerasss.png" />
