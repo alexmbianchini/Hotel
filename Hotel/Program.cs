@@ -16,12 +16,13 @@ namespace Hotel
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Hotel.Presentacion.frmPrincipal());
+            Application.Run(new Hotel.Presentacion.frmPrincipal());
             //Application.Run(new Presentacion.frmUsuario());
             //Application.Run(new Presentacion.frmHabitacion());
             //Application.Run(new Presentacion.UsuarioEmpleado.frmPassword());
             //Application.Run(new Presentacion.frmTipoHabitacion());
-            Application.Run(new Hotel.Presentacion.Huespedes.frmHuesped());
+            //Application.Run(new Hotel.Presentacion.Huespedes.frmHuesped());
+            //Application.Run(new Presentacion.frmVehiculo());
         }
     }
 }

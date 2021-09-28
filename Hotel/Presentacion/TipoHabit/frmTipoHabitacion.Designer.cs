@@ -29,6 +29,8 @@ namespace Hotel.Presentacion
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblCodTipo = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
@@ -51,68 +53,75 @@ namespace Hotel.Presentacion
             // lblCodTipo
             // 
             this.lblCodTipo.AutoSize = true;
-            this.lblCodTipo.BackColor = System.Drawing.Color.MintCream;
-            this.lblCodTipo.Location = new System.Drawing.Point(51, 12);
+            this.lblCodTipo.BackColor = System.Drawing.Color.Transparent;
+            this.lblCodTipo.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodTipo.Location = new System.Drawing.Point(47, 18);
             this.lblCodTipo.Name = "lblCodTipo";
-            this.lblCodTipo.Size = new System.Drawing.Size(40, 13);
+            this.lblCodTipo.Size = new System.Drawing.Size(53, 19);
             this.lblCodTipo.TabIndex = 1;
             this.lblCodTipo.Text = "Código";
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.BackColor = System.Drawing.Color.MintCream;
-            this.lblNombre.Location = new System.Drawing.Point(47, 63);
+            this.lblNombre.BackColor = System.Drawing.Color.Transparent;
+            this.lblNombre.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.Location = new System.Drawing.Point(40, 71);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(44, 13);
+            this.lblNombre.Size = new System.Drawing.Size(60, 19);
             this.lblNombre.TabIndex = 2;
             this.lblNombre.Text = "Nombre";
             // 
             // txtCodigo
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(111, 9);
+            this.txtCodigo.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigo.Location = new System.Drawing.Point(125, 12);
             this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(93, 20);
+            this.txtCodigo.Size = new System.Drawing.Size(93, 25);
             this.txtCodigo.TabIndex = 3;
             this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigo_KeyPress);
             // 
             // cboNombre
             // 
+            this.cboNombre.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboNombre.FormattingEnabled = true;
-            this.cboNombre.Location = new System.Drawing.Point(111, 58);
+            this.cboNombre.Location = new System.Drawing.Point(125, 63);
             this.cboNombre.Name = "cboNombre";
-            this.cboNombre.Size = new System.Drawing.Size(93, 21);
+            this.cboNombre.Size = new System.Drawing.Size(93, 27);
             this.cboNombre.TabIndex = 2;
             // 
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.BackColor = System.Drawing.Color.MintCream;
-            this.lblDescripcion.Location = new System.Drawing.Point(265, 12);
+            this.lblDescripcion.BackColor = System.Drawing.Color.Transparent;
+            this.lblDescripcion.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescripcion.Location = new System.Drawing.Point(296, 18);
             this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(63, 13);
+            this.lblDescripcion.Size = new System.Drawing.Size(81, 19);
             this.lblDescripcion.TabIndex = 4;
             this.lblDescripcion.Text = "Descripción";
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(343, 9);
+            this.txtDescripcion.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescripcion.Location = new System.Drawing.Point(398, 15);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(365, 82);
+            this.txtDescripcion.Size = new System.Drawing.Size(270, 75);
             this.txtDescripcion.TabIndex = 5;
             // 
             // btnConsultar
             // 
-            this.btnConsultar.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnConsultar.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnConsultar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
+            this.btnConsultar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
             this.btnConsultar.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnConsultar.BorderRadius = 20;
             this.btnConsultar.BorderSize = 0;
             this.btnConsultar.FlatAppearance.BorderSize = 0;
             this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultar.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsultar.ForeColor = System.Drawing.Color.White;
-            this.btnConsultar.Location = new System.Drawing.Point(571, 109);
+            this.btnConsultar.Location = new System.Drawing.Point(380, 120);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(115, 39);
             this.btnConsultar.TabIndex = 6;
@@ -123,15 +132,16 @@ namespace Hotel.Presentacion
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnLimpiar.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
+            this.btnLimpiar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
             this.btnLimpiar.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnLimpiar.BorderRadius = 20;
             this.btnLimpiar.BorderSize = 0;
             this.btnLimpiar.FlatAppearance.BorderSize = 0;
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiar.ForeColor = System.Drawing.Color.White;
-            this.btnLimpiar.Location = new System.Drawing.Point(418, 109);
+            this.btnLimpiar.Location = new System.Drawing.Point(189, 120);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(115, 39);
             this.btnLimpiar.TabIndex = 7;
@@ -144,12 +154,29 @@ namespace Hotel.Presentacion
             // 
             this.dgvTipoHabit.AllowUserToAddRows = false;
             this.dgvTipoHabit.AllowUserToDeleteRows = false;
+            this.dgvTipoHabit.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(180)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTipoHabit.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvTipoHabit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTipoHabit.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmCodigo,
             this.clmNombre,
             this.clmDescripcion});
-            this.dgvTipoHabit.Location = new System.Drawing.Point(12, 168);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTipoHabit.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvTipoHabit.Location = new System.Drawing.Point(12, 186);
             this.dgvTipoHabit.Name = "dgvTipoHabit";
             this.dgvTipoHabit.ReadOnly = true;
             this.dgvTipoHabit.Size = new System.Drawing.Size(551, 217);
@@ -179,15 +206,16 @@ namespace Hotel.Presentacion
             // 
             // btnNuevo
             // 
-            this.btnNuevo.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnNuevo.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
+            this.btnNuevo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
             this.btnNuevo.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnNuevo.BorderRadius = 20;
             this.btnNuevo.BorderSize = 0;
             this.btnNuevo.FlatAppearance.BorderSize = 0;
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevo.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.ForeColor = System.Drawing.Color.White;
-            this.btnNuevo.Location = new System.Drawing.Point(593, 182);
+            this.btnNuevo.Location = new System.Drawing.Point(593, 191);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(115, 39);
             this.btnNuevo.TabIndex = 9;
@@ -198,15 +226,16 @@ namespace Hotel.Presentacion
             // 
             // btnEditar
             // 
-            this.btnEditar.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnEditar.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
+            this.btnEditar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
             this.btnEditar.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnEditar.BorderRadius = 20;
             this.btnEditar.BorderSize = 0;
             this.btnEditar.FlatAppearance.BorderSize = 0;
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditar.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(593, 238);
+            this.btnEditar.Location = new System.Drawing.Point(593, 245);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(115, 39);
             this.btnEditar.TabIndex = 10;
@@ -217,15 +246,16 @@ namespace Hotel.Presentacion
             // 
             // btnEliminar
             // 
-            this.btnEliminar.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnEliminar.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
+            this.btnEliminar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
             this.btnEliminar.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnEliminar.BorderRadius = 20;
             this.btnEliminar.BorderSize = 0;
             this.btnEliminar.FlatAppearance.BorderSize = 0;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(593, 292);
+            this.btnEliminar.Location = new System.Drawing.Point(593, 299);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(115, 39);
             this.btnEliminar.TabIndex = 11;
@@ -236,15 +266,16 @@ namespace Hotel.Presentacion
             // 
             // btnSalir
             // 
-            this.btnSalir.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnSalir.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
+            this.btnSalir.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
             this.btnSalir.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnSalir.BorderRadius = 20;
             this.btnSalir.BorderSize = 0;
             this.btnSalir.FlatAppearance.BorderSize = 0;
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(593, 346);
+            this.btnSalir.Location = new System.Drawing.Point(593, 353);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(115, 39);
             this.btnSalir.TabIndex = 12;
@@ -257,8 +288,8 @@ namespace Hotel.Presentacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.MintCream;
-            this.ClientSize = new System.Drawing.Size(720, 397);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(209)))), ((int)(((byte)(217)))));
+            this.ClientSize = new System.Drawing.Size(720, 425);
             this.ControlBox = false;
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnEliminar);
@@ -274,6 +305,7 @@ namespace Hotel.Presentacion
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblCodTipo);
             this.Name = "frmTipoHabitacion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmTipoHabitacion";
             this.Load += new System.EventHandler(this.frmTipoHabitacion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTipoHabit)).EndInit();

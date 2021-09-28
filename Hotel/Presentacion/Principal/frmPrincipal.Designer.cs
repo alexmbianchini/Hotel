@@ -32,9 +32,9 @@ namespace Hotel.Presentacion
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.rjButton9 = new Hotel.Custom.RJButton();
             this.rjButton8 = new Hotel.Custom.RJButton();
-            this.rjButton7 = new Hotel.Custom.RJButton();
-            this.rjButton6 = new Hotel.Custom.RJButton();
-            this.rjButton5 = new Hotel.Custom.RJButton();
+            this.btnVehiculo = new Hotel.Custom.RJButton();
+            this.btnHuesped = new Hotel.Custom.RJButton();
+            this.btnTipoHabitacion = new Hotel.Custom.RJButton();
             this.btnContra = new Hotel.Custom.RJButton();
             this.btnHabitaciones = new Hotel.Custom.RJButton();
             this.btnUsuarios = new Hotel.Custom.RJButton();
@@ -79,64 +79,65 @@ namespace Hotel.Presentacion
             this.rjButton8.TextColor = System.Drawing.Color.White;
             this.rjButton8.UseVisualStyleBackColor = false;
             // 
-            // rjButton7
+            // btnVehiculo
             // 
-            this.rjButton7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
-            this.rjButton7.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
-            this.rjButton7.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton7.BorderRadius = 0;
-            this.rjButton7.BorderSize = 0;
-            this.rjButton7.Enabled = false;
-            this.rjButton7.FlatAppearance.BorderSize = 0;
-            this.rjButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton7.ForeColor = System.Drawing.Color.White;
-            this.rjButton7.Location = new System.Drawing.Point(0, 377);
-            this.rjButton7.Name = "rjButton7";
-            this.rjButton7.Size = new System.Drawing.Size(201, 55);
-            this.rjButton7.TabIndex = 6;
-            this.rjButton7.Text = " ";
-            this.rjButton7.TextColor = System.Drawing.Color.White;
-            this.rjButton7.UseVisualStyleBackColor = false;
+            this.btnVehiculo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
+            this.btnVehiculo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
+            this.btnVehiculo.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnVehiculo.BorderRadius = 0;
+            this.btnVehiculo.BorderSize = 0;
+            this.btnVehiculo.FlatAppearance.BorderSize = 0;
+            this.btnVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVehiculo.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVehiculo.ForeColor = System.Drawing.Color.White;
+            this.btnVehiculo.Location = new System.Drawing.Point(0, 377);
+            this.btnVehiculo.Name = "btnVehiculo";
+            this.btnVehiculo.Size = new System.Drawing.Size(201, 55);
+            this.btnVehiculo.TabIndex = 6;
+            this.btnVehiculo.Text = " Vehiculos";
+            this.btnVehiculo.TextColor = System.Drawing.Color.White;
+            this.btnVehiculo.UseVisualStyleBackColor = false;
+            this.btnVehiculo.Click += new System.EventHandler(this.btnVehiculo_Click);
             // 
-            // rjButton6
+            // btnHuesped
             // 
-            this.rjButton6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
-            this.rjButton6.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
-            this.rjButton6.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton6.BorderRadius = 0;
-            this.rjButton6.BorderSize = 0;
-            this.rjButton6.Enabled = false;
-            this.rjButton6.FlatAppearance.BorderSize = 0;
-            this.rjButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton6.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjButton6.ForeColor = System.Drawing.Color.White;
-            this.rjButton6.Location = new System.Drawing.Point(0, 330);
-            this.rjButton6.Name = "rjButton6";
-            this.rjButton6.Size = new System.Drawing.Size(201, 55);
-            this.rjButton6.TabIndex = 5;
-            this.rjButton6.Text = "---";
-            this.rjButton6.TextColor = System.Drawing.Color.White;
-            this.rjButton6.UseVisualStyleBackColor = false;
+            this.btnHuesped.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
+            this.btnHuesped.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
+            this.btnHuesped.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnHuesped.BorderRadius = 0;
+            this.btnHuesped.BorderSize = 0;
+            this.btnHuesped.FlatAppearance.BorderSize = 0;
+            this.btnHuesped.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHuesped.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuesped.ForeColor = System.Drawing.Color.White;
+            this.btnHuesped.Location = new System.Drawing.Point(0, 330);
+            this.btnHuesped.Name = "btnHuesped";
+            this.btnHuesped.Size = new System.Drawing.Size(201, 55);
+            this.btnHuesped.TabIndex = 5;
+            this.btnHuesped.Text = "Huespedes";
+            this.btnHuesped.TextColor = System.Drawing.Color.White;
+            this.btnHuesped.UseVisualStyleBackColor = false;
+            this.btnHuesped.Click += new System.EventHandler(this.btnHuesped_Click);
             // 
-            // rjButton5
+            // btnTipoHabitacion
             // 
-            this.rjButton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
-            this.rjButton5.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
-            this.rjButton5.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton5.BorderRadius = 0;
-            this.rjButton5.BorderSize = 0;
-            this.rjButton5.Enabled = false;
-            this.rjButton5.FlatAppearance.BorderSize = 0;
-            this.rjButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton5.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjButton5.ForeColor = System.Drawing.Color.White;
-            this.rjButton5.Location = new System.Drawing.Point(0, 278);
-            this.rjButton5.Name = "rjButton5";
-            this.rjButton5.Size = new System.Drawing.Size(201, 55);
-            this.rjButton5.TabIndex = 4;
-            this.rjButton5.Text = "---";
-            this.rjButton5.TextColor = System.Drawing.Color.White;
-            this.rjButton5.UseVisualStyleBackColor = false;
+            this.btnTipoHabitacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
+            this.btnTipoHabitacion.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
+            this.btnTipoHabitacion.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnTipoHabitacion.BorderRadius = 0;
+            this.btnTipoHabitacion.BorderSize = 0;
+            this.btnTipoHabitacion.FlatAppearance.BorderSize = 0;
+            this.btnTipoHabitacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTipoHabitacion.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTipoHabitacion.ForeColor = System.Drawing.Color.White;
+            this.btnTipoHabitacion.Location = new System.Drawing.Point(0, 278);
+            this.btnTipoHabitacion.Name = "btnTipoHabitacion";
+            this.btnTipoHabitacion.Size = new System.Drawing.Size(201, 55);
+            this.btnTipoHabitacion.TabIndex = 4;
+            this.btnTipoHabitacion.Text = "Tipo Habitacion";
+            this.btnTipoHabitacion.TextColor = System.Drawing.Color.White;
+            this.btnTipoHabitacion.UseVisualStyleBackColor = false;
+            this.btnTipoHabitacion.Click += new System.EventHandler(this.btnTipoHabitacion_Click);
             // 
             // btnContra
             // 
@@ -226,9 +227,9 @@ namespace Hotel.Presentacion
             this.ClientSize = new System.Drawing.Size(766, 463);
             this.Controls.Add(this.rjButton9);
             this.Controls.Add(this.rjButton8);
-            this.Controls.Add(this.rjButton7);
-            this.Controls.Add(this.rjButton6);
-            this.Controls.Add(this.rjButton5);
+            this.Controls.Add(this.btnVehiculo);
+            this.Controls.Add(this.btnHuesped);
+            this.Controls.Add(this.btnTipoHabitacion);
             this.Controls.Add(this.btnContra);
             this.Controls.Add(this.btnHabitaciones);
             this.Controls.Add(this.btnUsuarios);
@@ -253,9 +254,9 @@ namespace Hotel.Presentacion
         private Custom.RJButton btnUsuarios;
         private Custom.RJButton btnHabitaciones;
         private Custom.RJButton btnContra;
-        private Custom.RJButton rjButton5;
-        private Custom.RJButton rjButton6;
-        private Custom.RJButton rjButton7;
+        private Custom.RJButton btnTipoHabitacion;
+        private Custom.RJButton btnHuesped;
+        private Custom.RJButton btnVehiculo;
         private Custom.RJButton rjButton8;
         private Custom.RJButton rjButton9;
     }

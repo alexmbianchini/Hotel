@@ -27,6 +27,8 @@ namespace Hotel.Presentacion.Huespedes
         private void frmHuesped_Load(object sender, EventArgs e)
         {
             this.CargarTodo();
+            this.btnEditar.Enabled = false;
+            this.btnEliminar.Enabled = false;
         }
 
         // Cargar todos los datos de la grilla y el ComBox
@@ -128,6 +130,12 @@ namespace Hotel.Presentacion.Huespedes
             }
 
             this.CargarGrilla(dvgHuespedes, oHuesped.RecuperarFiltrados(_nombre, _apellido, _pasaporte, _pais));
+        }
+
+        private void dvgHuespedes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.btnEditar.Enabled = true;
+            this.btnEliminar.Enabled = true;
         }
     }
 }

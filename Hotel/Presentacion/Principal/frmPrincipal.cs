@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Hotel.Presentacion.Huespedes;
 
 namespace Hotel.Presentacion
 {
@@ -85,6 +86,24 @@ namespace Hotel.Presentacion
         {
             frmPassword frmP = new frmPassword(fLog.MiUsuarioSelected.Id);
             frmP.ShowDialog();
+        }
+
+        private void btnTipoHabitacion_Click(object sender, EventArgs e)
+        {
+            frmTipoHabitacion frth = new frmTipoHabitacion();
+            frth.ShowDialog();
+        }
+
+        private void btnHuesped_Click(object sender, EventArgs e)
+        {
+            frmHuesped frh = new frmHuesped();
+            frh.ShowDialog();
+        }
+
+        private void btnVehiculo_Click(object sender, EventArgs e)
+        {
+            frmVehiculo frv = new frmVehiculo();
+            frv.ShowDialog();
         }
     }
 }

@@ -61,6 +61,7 @@
     <Compile Include="Datos\Dao\HuespedDao.cs" />
     <Compile Include="Datos\Dao\PaisDao.cs" />
     <Compile Include="Datos\Dao\PisoDao.cs" />
+    <Compile Include="Datos\Dao\VehiculoDao.cs" />
     <Compile Include="Datos\DBHelper.cs" />
     <Compile Include="Datos\Dao\EmpleadoDao.cs" />
     <Compile Include="Datos\Dao\EstadoHabitacionDao.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="Datos\Interfaces\ITipoDocumento.cs" />
     <Compile Include="Datos\Interfaces\ITipoHabitacion.cs" />
     <Compile Include="Datos\Interfaces\IUsuario.cs" />
+    <Compile Include="Datos\Interfaces\IVehiculo.cs" />
     <Compile Include="Negocio\Cochera.cs" />
     <Compile Include="Negocio\Cuenta.cs" />
     <Compile Include="Negocio\DetalleServicioCuenta.cs" />
@@ -100,6 +102,18 @@
     <Compile Include="Negocio\TipoTarjeta.cs" />
     <Compile Include="Negocio\Usuario.cs" />
     <Compile Include="Negocio\Vehiculo.cs" />
+    <Compile Include="Presentacion\Vehiculo\frmNuevoEditarVehiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Vehiculo\frmNuevoEditarVehiculo.Designer.cs">
+      <DependentUpon>frmNuevoEditarVehiculo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Vehiculo\frmVehiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Vehiculo\frmVehiculo.Designer.cs">
+      <DependentUpon>frmVehiculo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Huespedes\frmHuesped.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +199,7 @@
     <Compile Include="Servicios\TipoDocumentoService.cs" />
     <Compile Include="Servicios\TipoHabitacionService.cs" />
     <Compile Include="Servicios\UsuarioService.cs" />
+    <Compile Include="Servicios\VehiculoService.cs" />
     <EmbeddedResource Include="Custom\RJTextBox.resx">
       <DependentUpon>RJTextBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -224,6 +239,12 @@
     <EmbeddedResource Include="Presentacion\UsuarioEmpleado\frmUsuarioNuevoEditar.resx">
       <DependentUpon>frmUsuarioNuevoEditar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Vehiculo\frmNuevoEditarVehiculo.resx">
+      <DependentUpon>frmNuevoEditarVehiculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Vehiculo\frmVehiculo.resx">
+      <DependentUpon>frmVehiculo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -250,7 +271,11 @@
   <ItemGroup>
     <Content Include="Imagenes\corte-de-ojos.png" />
     <Content Include="Imagenes\hotelfondo.jpg" />
+    <Content Include="Imagenes\icons8-closed-eye-24 %281%29.png" />
+    <Content Include="Imagenes\icons8-closed-eye-24.png" />
+    <Content Include="Imagenes\icons8-eye-48 %281%29.png" />
     <Content Include="Imagenes\icons8-eye-48.png" />
+    <Content Include="Imagenes\icons8-magnifying-glass-64.png" />
     <Content Include="Imagenes\logohotel.jpg" />
     <Content Include="Imagenes\logohotel2.jpg" />
     <Content Include="Imagenes\palmerasss.png" />

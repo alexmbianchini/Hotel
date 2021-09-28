@@ -29,6 +29,7 @@ namespace Hotel.Presentacion.UsuarioEmpleado
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPassword));
             this.lblUsuario = new System.Windows.Forms.Label();
             this.btnCancelar = new Hotel.Custom.RJButton();
             this.btnAceptar = new Hotel.Custom.RJButton();
@@ -39,11 +40,11 @@ namespace Hotel.Presentacion.UsuarioEmpleado
             this.txtPasswordNueva = new System.Windows.Forms.TextBox();
             this.txtPasswordConfirmar = new System.Windows.Forms.TextBox();
             this.lblPasswordConfirmar = new System.Windows.Forms.Label();
-            this.btnActualSacar = new Hotel.Custom.RJButton();
-            this.btnNuevaSacar = new Hotel.Custom.RJButton();
-            this.btnActualPoner = new Hotel.Custom.RJButton();
-            this.btnNuevaPoner = new Hotel.Custom.RJButton();
             this.btnConfirmarSacar = new Hotel.Custom.RJButton();
+            this.btnActualSacar = new Hotel.Custom.RJButton();
+            this.btnActualPoner = new Hotel.Custom.RJButton();
+            this.btnNuevaSacar = new Hotel.Custom.RJButton();
+            this.btnNuevaPoner = new Hotel.Custom.RJButton();
             this.btnConfirmarPoner = new Hotel.Custom.RJButton();
             this.SuspendLayout();
             // 
@@ -173,18 +174,39 @@ namespace Hotel.Presentacion.UsuarioEmpleado
             this.lblPasswordConfirmar.TabIndex = 10;
             this.lblPasswordConfirmar.Text = "Confirmar Contraseña Nueva  *";
             // 
+            // btnConfirmarSacar
+            // 
+            this.btnConfirmarSacar.BackColor = System.Drawing.Color.Transparent;
+            this.btnConfirmarSacar.BackgroundColor = System.Drawing.Color.Transparent;
+            this.btnConfirmarSacar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConfirmarSacar.BackgroundImage")));
+            this.btnConfirmarSacar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnConfirmarSacar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnConfirmarSacar.BorderRadius = 19;
+            this.btnConfirmarSacar.BorderSize = 0;
+            this.btnConfirmarSacar.FlatAppearance.BorderSize = 0;
+            this.btnConfirmarSacar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfirmarSacar.ForeColor = System.Drawing.Color.White;
+            this.btnConfirmarSacar.Location = new System.Drawing.Point(218, 239);
+            this.btnConfirmarSacar.Name = "btnConfirmarSacar";
+            this.btnConfirmarSacar.Size = new System.Drawing.Size(31, 19);
+            this.btnConfirmarSacar.TabIndex = 15;
+            this.btnConfirmarSacar.TextColor = System.Drawing.Color.White;
+            this.btnConfirmarSacar.UseVisualStyleBackColor = false;
+            this.btnConfirmarSacar.Click += new System.EventHandler(this.btnConfirmarSacar_Click);
+            // 
             // btnActualSacar
             // 
-            this.btnActualSacar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
-            this.btnActualSacar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
+            this.btnActualSacar.BackColor = System.Drawing.Color.Transparent;
+            this.btnActualSacar.BackgroundColor = System.Drawing.Color.Transparent;
+            this.btnActualSacar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnActualSacar.BackgroundImage")));
+            this.btnActualSacar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnActualSacar.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnActualSacar.BorderRadius = 19;
             this.btnActualSacar.BorderSize = 0;
             this.btnActualSacar.FlatAppearance.BorderSize = 0;
             this.btnActualSacar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualSacar.ForeColor = System.Drawing.Color.White;
-            this.btnActualSacar.Image = global::Hotel.Properties.Resources.ver;
-            this.btnActualSacar.Location = new System.Drawing.Point(218, 107);
+            this.btnActualSacar.Location = new System.Drawing.Point(218, 106);
             this.btnActualSacar.Name = "btnActualSacar";
             this.btnActualSacar.Size = new System.Drawing.Size(31, 19);
             this.btnActualSacar.TabIndex = 11;
@@ -192,36 +214,18 @@ namespace Hotel.Presentacion.UsuarioEmpleado
             this.btnActualSacar.UseVisualStyleBackColor = false;
             this.btnActualSacar.Click += new System.EventHandler(this.btnActualSacar_Click);
             // 
-            // btnNuevaSacar
-            // 
-            this.btnNuevaSacar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
-            this.btnNuevaSacar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
-            this.btnNuevaSacar.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnNuevaSacar.BorderRadius = 19;
-            this.btnNuevaSacar.BorderSize = 0;
-            this.btnNuevaSacar.FlatAppearance.BorderSize = 0;
-            this.btnNuevaSacar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevaSacar.ForeColor = System.Drawing.Color.White;
-            this.btnNuevaSacar.Image = global::Hotel.Properties.Resources.ver;
-            this.btnNuevaSacar.Location = new System.Drawing.Point(218, 174);
-            this.btnNuevaSacar.Name = "btnNuevaSacar";
-            this.btnNuevaSacar.Size = new System.Drawing.Size(31, 19);
-            this.btnNuevaSacar.TabIndex = 12;
-            this.btnNuevaSacar.TextColor = System.Drawing.Color.White;
-            this.btnNuevaSacar.UseVisualStyleBackColor = false;
-            this.btnNuevaSacar.Click += new System.EventHandler(this.btnNuevaSacar_Click);
-            // 
             // btnActualPoner
             // 
-            this.btnActualPoner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
-            this.btnActualPoner.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
+            this.btnActualPoner.BackColor = System.Drawing.Color.Transparent;
+            this.btnActualPoner.BackgroundColor = System.Drawing.Color.Transparent;
+            this.btnActualPoner.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnActualPoner.BackgroundImage")));
+            this.btnActualPoner.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnActualPoner.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnActualPoner.BorderRadius = 19;
             this.btnActualPoner.BorderSize = 0;
             this.btnActualPoner.FlatAppearance.BorderSize = 0;
             this.btnActualPoner.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualPoner.ForeColor = System.Drawing.Color.White;
-            this.btnActualPoner.Image = global::Hotel.Properties.Resources.corte_de_ojos;
             this.btnActualPoner.Location = new System.Drawing.Point(218, 106);
             this.btnActualPoner.Name = "btnActualPoner";
             this.btnActualPoner.Size = new System.Drawing.Size(31, 19);
@@ -230,17 +234,38 @@ namespace Hotel.Presentacion.UsuarioEmpleado
             this.btnActualPoner.UseVisualStyleBackColor = false;
             this.btnActualPoner.Click += new System.EventHandler(this.btnActualPoner_Click);
             // 
+            // btnNuevaSacar
+            // 
+            this.btnNuevaSacar.BackColor = System.Drawing.Color.Transparent;
+            this.btnNuevaSacar.BackgroundColor = System.Drawing.Color.Transparent;
+            this.btnNuevaSacar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNuevaSacar.BackgroundImage")));
+            this.btnNuevaSacar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnNuevaSacar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnNuevaSacar.BorderRadius = 19;
+            this.btnNuevaSacar.BorderSize = 0;
+            this.btnNuevaSacar.FlatAppearance.BorderSize = 0;
+            this.btnNuevaSacar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevaSacar.ForeColor = System.Drawing.Color.White;
+            this.btnNuevaSacar.Location = new System.Drawing.Point(218, 173);
+            this.btnNuevaSacar.Name = "btnNuevaSacar";
+            this.btnNuevaSacar.Size = new System.Drawing.Size(31, 19);
+            this.btnNuevaSacar.TabIndex = 12;
+            this.btnNuevaSacar.TextColor = System.Drawing.Color.White;
+            this.btnNuevaSacar.UseVisualStyleBackColor = false;
+            this.btnNuevaSacar.Click += new System.EventHandler(this.btnNuevaSacar_Click);
+            // 
             // btnNuevaPoner
             // 
-            this.btnNuevaPoner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
-            this.btnNuevaPoner.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
+            this.btnNuevaPoner.BackColor = System.Drawing.Color.Transparent;
+            this.btnNuevaPoner.BackgroundColor = System.Drawing.Color.Transparent;
+            this.btnNuevaPoner.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNuevaPoner.BackgroundImage")));
+            this.btnNuevaPoner.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnNuevaPoner.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnNuevaPoner.BorderRadius = 19;
             this.btnNuevaPoner.BorderSize = 0;
             this.btnNuevaPoner.FlatAppearance.BorderSize = 0;
             this.btnNuevaPoner.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevaPoner.ForeColor = System.Drawing.Color.White;
-            this.btnNuevaPoner.Image = global::Hotel.Properties.Resources.corte_de_ojos;
             this.btnNuevaPoner.Location = new System.Drawing.Point(218, 174);
             this.btnNuevaPoner.Name = "btnNuevaPoner";
             this.btnNuevaPoner.Size = new System.Drawing.Size(31, 19);
@@ -249,36 +274,18 @@ namespace Hotel.Presentacion.UsuarioEmpleado
             this.btnNuevaPoner.UseVisualStyleBackColor = false;
             this.btnNuevaPoner.Click += new System.EventHandler(this.btnNuevaPoner_Click);
             // 
-            // btnConfirmarSacar
-            // 
-            this.btnConfirmarSacar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
-            this.btnConfirmarSacar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
-            this.btnConfirmarSacar.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnConfirmarSacar.BorderRadius = 19;
-            this.btnConfirmarSacar.BorderSize = 0;
-            this.btnConfirmarSacar.FlatAppearance.BorderSize = 0;
-            this.btnConfirmarSacar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfirmarSacar.ForeColor = System.Drawing.Color.White;
-            this.btnConfirmarSacar.Image = global::Hotel.Properties.Resources.ver;
-            this.btnConfirmarSacar.Location = new System.Drawing.Point(218, 240);
-            this.btnConfirmarSacar.Name = "btnConfirmarSacar";
-            this.btnConfirmarSacar.Size = new System.Drawing.Size(31, 19);
-            this.btnConfirmarSacar.TabIndex = 15;
-            this.btnConfirmarSacar.TextColor = System.Drawing.Color.White;
-            this.btnConfirmarSacar.UseVisualStyleBackColor = false;
-            this.btnConfirmarSacar.Click += new System.EventHandler(this.btnConfirmarSacar_Click);
-            // 
             // btnConfirmarPoner
             // 
-            this.btnConfirmarPoner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
-            this.btnConfirmarPoner.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
+            this.btnConfirmarPoner.BackColor = System.Drawing.Color.Transparent;
+            this.btnConfirmarPoner.BackgroundColor = System.Drawing.Color.Transparent;
+            this.btnConfirmarPoner.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConfirmarPoner.BackgroundImage")));
+            this.btnConfirmarPoner.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnConfirmarPoner.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnConfirmarPoner.BorderRadius = 19;
             this.btnConfirmarPoner.BorderSize = 0;
             this.btnConfirmarPoner.FlatAppearance.BorderSize = 0;
             this.btnConfirmarPoner.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirmarPoner.ForeColor = System.Drawing.Color.White;
-            this.btnConfirmarPoner.Image = global::Hotel.Properties.Resources.corte_de_ojos;
             this.btnConfirmarPoner.Location = new System.Drawing.Point(218, 240);
             this.btnConfirmarPoner.Name = "btnConfirmarPoner";
             this.btnConfirmarPoner.Size = new System.Drawing.Size(31, 19);

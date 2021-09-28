@@ -101,7 +101,7 @@ namespace Hotel.Presentacion.Huesped
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Ha ocurrido al agregar un Huesped");
+                                    MessageBox.Show("Ha ocurrido un error al agregar un Huesped");
                                 }
 
                             }

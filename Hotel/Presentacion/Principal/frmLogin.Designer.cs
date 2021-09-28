@@ -99,7 +99,7 @@ namespace Hotel.Presentacion
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.Black;
-            this.btnSalir.Location = new System.Drawing.Point(149, 268);
+            this.btnSalir.Location = new System.Drawing.Point(161, 268);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(101, 41);
             this.btnSalir.TabIndex = 7;
@@ -119,7 +119,7 @@ namespace Hotel.Presentacion
             this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIngresar.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIngresar.ForeColor = System.Drawing.Color.Black;
-            this.btnIngresar.Location = new System.Drawing.Point(26, 267);
+            this.btnIngresar.Location = new System.Drawing.Point(38, 267);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(101, 42);
             this.btnIngresar.TabIndex = 6;
@@ -135,14 +135,14 @@ namespace Hotel.Presentacion
             this.btnPasswordCon.BackgroundImage = global::Hotel.Properties.Resources.icons8_eye_48;
             this.btnPasswordCon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnPasswordCon.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnPasswordCon.BorderRadius = 19;
+            this.btnPasswordCon.BorderRadius = 16;
             this.btnPasswordCon.BorderSize = 0;
             this.btnPasswordCon.FlatAppearance.BorderSize = 0;
             this.btnPasswordCon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPasswordCon.ForeColor = System.Drawing.Color.White;
             this.btnPasswordCon.Location = new System.Drawing.Point(246, 203);
             this.btnPasswordCon.Name = "btnPasswordCon";
-            this.btnPasswordCon.Size = new System.Drawing.Size(31, 19);
+            this.btnPasswordCon.Size = new System.Drawing.Size(31, 25);
             this.btnPasswordCon.TabIndex = 10;
             this.btnPasswordCon.TextColor = System.Drawing.Color.White;
             this.btnPasswordCon.UseVisualStyleBackColor = false;
@@ -152,16 +152,17 @@ namespace Hotel.Presentacion
             // 
             this.btnPasswordSin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
             this.btnPasswordSin.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
+            this.btnPasswordSin.BackgroundImage = global::Hotel.Properties.Resources.icons8_closed_eye_24;
+            this.btnPasswordSin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnPasswordSin.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnPasswordSin.BorderRadius = 19;
             this.btnPasswordSin.BorderSize = 0;
             this.btnPasswordSin.FlatAppearance.BorderSize = 0;
             this.btnPasswordSin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPasswordSin.ForeColor = System.Drawing.Color.White;
-            this.btnPasswordSin.Image = global::Hotel.Properties.Resources.corte_de_ojos;
-            this.btnPasswordSin.Location = new System.Drawing.Point(246, 203);
+            this.btnPasswordSin.Location = new System.Drawing.Point(246, 202);
             this.btnPasswordSin.Name = "btnPasswordSin";
-            this.btnPasswordSin.Size = new System.Drawing.Size(31, 19);
+            this.btnPasswordSin.Size = new System.Drawing.Size(31, 23);
             this.btnPasswordSin.TabIndex = 9;
             this.btnPasswordSin.TextColor = System.Drawing.Color.White;
             this.btnPasswordSin.UseVisualStyleBackColor = false;
@@ -174,9 +175,9 @@ namespace Hotel.Presentacion
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox1.Image = global::Hotel.Properties.Resources.palmerasss;
-            this.pictureBox1.Location = new System.Drawing.Point(91, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(87, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(114, 116);
+            this.pictureBox1.Size = new System.Drawing.Size(135, 116);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
@@ -186,7 +187,7 @@ namespace Hotel.Presentacion
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
-            this.ClientSize = new System.Drawing.Size(281, 352);
+            this.ClientSize = new System.Drawing.Size(302, 352);
             this.ControlBox = false;
             this.Controls.Add(this.btnPasswordCon);
             this.Controls.Add(this.btnPasswordSin);
