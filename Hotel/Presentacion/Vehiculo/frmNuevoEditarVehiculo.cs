@@ -54,7 +54,7 @@ namespace Hotel.Presentacion
                             // Validar que el pasaporte tenga el formato correcto
                             if (PasaporteCorrecto(this.txtPasaporte.Text))
                             {
-                                // Validar que no exista otro huesped con el mismo pasaporte
+                                // Validar que exista el pasaporte
                                 if (!oHuesped.ValidarPasaporte(this.txtPasaporte.Text))
                                 {
                                     // Asignar los valores ingresados al objeto Huesped
@@ -175,7 +175,7 @@ namespace Hotel.Presentacion
         {
             if (string.IsNullOrEmpty(this.txtPasaporte.Text))
             {
-                MessageBox.Show("Debe seleccionar un Número de Pasaporte");
+                MessageBox.Show("Debe ingresar un Número de Pasaporte");
                 this.txtPasaporte.Focus();
                 this.lblPasaporte.ForeColor = Color.Red;
                 return false;
@@ -202,6 +202,14 @@ namespace Hotel.Presentacion
                 MessageBox.Show("Debe ingresar una Patente");
                 this.txtModelo.Focus();
                 this.lblModelo.ForeColor = Color.Red;
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(this.txtNombre.Text))
+            {
+                MessageBox.Show("Debe verificar que exista un Huesped");
+                this.lblNombre.ForeColor = Color.Red;
+                this.lblApellido.ForeColor = Color.Red;
                 return false;
             }
 
@@ -317,8 +325,29 @@ namespace Hotel.Presentacion
         {
             DataTable huesped = oHuesped.RecuperarPorNumero(txtPasaporte.Text);
 
-            txtNombre.Text = huesped.Rows[0]["nombre"].ToString();
-            txtApellido.Text = huesped.Rows[0]["apellido"].ToString();
+            if (PasaporteCorrecto(txtPasaporte.Text))
+            {
+                if (huesped.Rows.Count > 0)
+                {
+                    txtNombre.Text = huesped.Rows[0]["nombre"].ToString();
+                    txtApellido.Text = huesped.Rows[0]["apellido"].ToString();
+                }
+                else
+                {
+                    MessageBox.Show("No existe un Huesped con este Pasaporte!");
+                    this.txtPasaporte.Focus();
+                    this.txtPasaporte.Text = string.Empty;
+                    this.lblPasaporte.ForeColor = Color.Red;
+                }
+                
+            }
+            else
+            {
+                MessageBox.Show("El Formato de pasaporte debe ser 'AAA000000', 3 letras y 6 números");
+                this.txtPasaporte.Focus();
+                this.txtPasaporte.Text = string.Empty;
+                this.lblPasaporte.ForeColor = Color.Red;
+            }
         }
     }
 }
