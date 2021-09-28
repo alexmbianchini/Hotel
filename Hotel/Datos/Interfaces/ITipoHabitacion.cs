@@ -22,5 +22,6 @@ namespace Hotel.Datos.Interfaces
         string ValidarNombreExistente(string nombre);
 
         bool Eliminar(TipoHabitacion oTipo);
+        DataTable RecuperarParaNuevoTH();
     }
 }

@@ -54,7 +54,7 @@ namespace Hotel.Presentacion
         private void CargarTodo()
         {
             //Carga de Combos y Grilla
-            this.CargarCombo(cboNombre, oTipoHabitacion.RecuperarTodos(), "nombre", "cod_tipo");
+            this.CargarCombo(cboNombre, oTipoHabitacion.RecuperarTodos(), "nombre", "nombre");
             this.CargarGrilla(dgvTipoHabit, oTipoHabitacion.RecuperarTodos());
 
             //Botones
@@ -77,6 +77,7 @@ namespace Hotel.Presentacion
             this.txtCodigo.Text = string.Empty;
             this.cboNombre.SelectedIndex = -1;
             this.txtDescripcion.Text = string.Empty;
+            this.CargarGrilla(dgvTipoHabit, oTipoHabitacion.RecuperarTodos());
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

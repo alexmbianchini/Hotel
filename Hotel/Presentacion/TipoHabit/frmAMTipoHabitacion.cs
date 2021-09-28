@@ -97,7 +97,7 @@ namespace Hotel.Presentacion
             }
             if (string.IsNullOrEmpty(this.txtDescripcion.Text))
             {
-                MessageBox.Show("Debe ingresar un tipo de habitación");
+                MessageBox.Show("Debe ingresar una descripción");
                 this.txtDescripcion.Focus();
                 this.lblDescripcion.ForeColor = Color.Red;
                 return false;
@@ -115,7 +115,7 @@ namespace Hotel.Presentacion
                     {
                         if(ValidarNombre())
                         {
-                            oTipoHSelected.CodTipo = this.GenerarCodigo(oTipoH.RecuperarTodos());
+                            oTipoHSelected.CodTipo = this.GenerarCodigo(oTipoH.RecuperarParaNuevoTH());
                             this.AsignarTodos();
 
                             if(oTipoH.Crear(oTipoHSelected))
@@ -162,7 +162,7 @@ namespace Hotel.Presentacion
 
             if (_nombre == string.Empty && nombreTipo != this.txtNombre.Text)
             {
-                MessageBox.Show("El nombre de usuario ya existe, por favor ingrese otro");
+                MessageBox.Show("El nombre de habitacion ya existe, por favor ingrese otro");
                 this.txtNombre.Clear();
                 this.txtNombre.Focus();
                 return false;

@@ -52,5 +52,10 @@ namespace Hotel.Servicios
         {
             return dao.Eliminar(oTipo);
         }
+
+        public DataTable RecuperarParaNuevoTH()
+        {
+            return dao.RecuperarParaNuevoTH();
+        }
     }
 }

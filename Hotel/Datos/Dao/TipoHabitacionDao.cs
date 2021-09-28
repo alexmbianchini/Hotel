@@ -44,8 +44,8 @@ namespace Hotel.Datos.Dao
 
         public bool Modificar(TipoHabitacion oTipo)
         {
-            string consulta = "UPDATE TIPO_HABITACION SET " +
-                " nombre = '" + oTipo.Nombre + "'" +
+            string consulta = "UPDATE TIPO_HABITACION SET" +
+                " nombre = '" + oTipo.Nombre + "'," +
                 " descripcion = '" + oTipo.Descripcion + "'" +
                 " WHERE cod_tipo = " + oTipo.CodTipo;
 
@@ -96,6 +96,13 @@ namespace Hotel.Datos.Dao
 
             DBHelper.ObtenerInstancia().Actualizar(consulta);
             return true;
+        }
+
+        public DataTable RecuperarParaNuevoTH()
+        {
+            string consulta = "SELECT * FROM TIPO_HABITACION ORDER BY 1";
+
+            return DBHelper.ObtenerInstancia().Ejecutar(consulta);
         }
     }
 }
