@@ -141,5 +141,10 @@ namespace Hotel.Presentacion
             }
             this.CargarTodo();
         }
+
+        private void dgvTipoHabit_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

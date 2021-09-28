@@ -95,7 +95,8 @@ namespace Hotel.Datos.Dao
             string consulta = "UPDATE HUESPEDES SET " +
                 " nombre = '" + oHuesped.Nombre + "'," +
                 " apellido = '" + oHuesped.Apellido + "'," +
-                " pais_residencia = " + oHuesped.PaisResidencia + "" +
+                " pais_residencia = " + oHuesped.PaisResidencia + "," +
+                " mail = '" + oHuesped.Mail + "'" +
                 " WHERE numero_pasaporte = '" + oHuesped.NumeroPasaporte + "'";
 
             DBHelper.ObtenerInstancia().Actualizar(consulta);

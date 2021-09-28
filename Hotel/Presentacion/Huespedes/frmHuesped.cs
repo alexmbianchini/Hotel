@@ -113,6 +113,7 @@ namespace Hotel.Presentacion.Huespedes
             this.txtApellido.Text = string.Empty;
             this.txtPsaporte.Text = string.Empty;
             this.cboPais.SelectedIndex = -1;
+            this.CargarTodo();
         }
 
         // Realiza una consulta con datos filtrados 
