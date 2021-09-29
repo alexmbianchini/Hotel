@@ -162,7 +162,7 @@ namespace Hotel.Presentacion
 
             if (_nombre == string.Empty && nombreTipo != this.txtNombre.Text)
             {
-                MessageBox.Show("El nombre de habitacion ya existe, por favor ingrese otro");
+                MessageBox.Show("El nombre de tipo de habitacion ya existe, por favor ingrese otro");
                 this.txtNombre.Clear();
                 this.txtNombre.Focus();
                 return false;
