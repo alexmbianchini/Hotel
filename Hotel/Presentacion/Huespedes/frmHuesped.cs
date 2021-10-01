@@ -49,7 +49,8 @@ namespace Hotel.Presentacion.Huespedes
                                 tabla.Rows[i]["apellido"],
                                 tabla.Rows[i]["numero_pasaporte"],
                                 tabla.Rows[i]["mail"],
-                                tabla.Rows[i]["pais"]);
+                                tabla.Rows[i]["pais"],
+                                tabla.Rows[i]["id"]);
             }
         }
 
@@ -74,7 +75,7 @@ namespace Hotel.Presentacion.Huespedes
         private void btnEditar_Click(object sender, EventArgs e)
         {
             // Instanciar un formulario para editar un huesped
-            frmNuevoEditarHuesped frmEditar = new frmNuevoEditarHuesped((dvgHuespedes.CurrentRow.Cells["clmNumeroPasaporte"].Value).ToString());
+            frmNuevoEditarHuesped frmEditar = new frmNuevoEditarHuesped(Convert.ToInt32(dvgHuespedes.CurrentRow.Cells["clmIdHuesped"].Value));
             frmEditar.SeleccionarModo(frmNuevoEditarHuesped.FormMode.update);
             frmEditar.ShowDialog();
             this.CargarTodo();
@@ -85,7 +86,7 @@ namespace Hotel.Presentacion.Huespedes
         {
             if (MessageBox.Show("Seguro que desea Eliminar el Empleado seleccionado?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
-                this.oHuespedSelected.NumeroPasaporte = dvgHuespedes.CurrentRow.Cells["clmNumeroPasaporte"].Value.ToString();
+                this.oHuespedSelected.Id = (int)dvgHuespedes.CurrentRow.Cells["clmIdHuesped"].Value;
                 
                 // Retorna true si el huesped es eliminado o retorna false si no se puedo eliminar
                 if (oHuesped.Eliminar(oHuespedSelected))
@@ -137,6 +138,11 @@ namespace Hotel.Presentacion.Huespedes
         {
             this.btnEditar.Enabled = true;
             this.btnEliminar.Enabled = true;
+        }
+
+        private void dvgHuespedes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

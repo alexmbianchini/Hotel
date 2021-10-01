@@ -32,11 +32,6 @@ namespace Hotel.Presentacion.Huespedes
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dvgHuespedes = new System.Windows.Forms.DataGridView();
-            this.clmNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmNumeroPasaporte = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmMail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmPais = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblApellido = new System.Windows.Forms.Label();
             this.lblPais = new System.Windows.Forms.Label();
@@ -51,6 +46,12 @@ namespace Hotel.Presentacion.Huespedes
             this.btnSalir = new Hotel.Custom.RJButton();
             this.btnLimpiar = new Hotel.Custom.RJButton();
             this.btnConsultar = new Hotel.Custom.RJButton();
+            this.clmNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmNumeroPasaporte = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmMail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmPais = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmIdHuesped = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dvgHuespedes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,7 +74,8 @@ namespace Hotel.Presentacion.Huespedes
             this.clmApellido,
             this.clmNumeroPasaporte,
             this.clmMail,
-            this.clmPais});
+            this.clmPais,
+            this.clmIdHuesped});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -92,46 +94,7 @@ namespace Hotel.Presentacion.Huespedes
             this.dvgHuespedes.Size = new System.Drawing.Size(679, 282);
             this.dvgHuespedes.TabIndex = 0;
             this.dvgHuespedes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgHuespedes_CellClick);
-            // 
-            // clmNombre
-            // 
-            this.clmNombre.HeaderText = "Nombre";
-            this.clmNombre.MinimumWidth = 6;
-            this.clmNombre.Name = "clmNombre";
-            this.clmNombre.ReadOnly = true;
-            this.clmNombre.Width = 125;
-            // 
-            // clmApellido
-            // 
-            this.clmApellido.HeaderText = "Apellido";
-            this.clmApellido.MinimumWidth = 6;
-            this.clmApellido.Name = "clmApellido";
-            this.clmApellido.ReadOnly = true;
-            this.clmApellido.Width = 125;
-            // 
-            // clmNumeroPasaporte
-            // 
-            this.clmNumeroPasaporte.HeaderText = "Pasaporte";
-            this.clmNumeroPasaporte.MinimumWidth = 6;
-            this.clmNumeroPasaporte.Name = "clmNumeroPasaporte";
-            this.clmNumeroPasaporte.ReadOnly = true;
-            this.clmNumeroPasaporte.Width = 125;
-            // 
-            // clmMail
-            // 
-            this.clmMail.HeaderText = "Mail";
-            this.clmMail.MinimumWidth = 6;
-            this.clmMail.Name = "clmMail";
-            this.clmMail.ReadOnly = true;
-            this.clmMail.Width = 125;
-            // 
-            // clmPais
-            // 
-            this.clmPais.HeaderText = "Pais";
-            this.clmPais.MinimumWidth = 6;
-            this.clmPais.Name = "clmPais";
-            this.clmPais.ReadOnly = true;
-            this.clmPais.Width = 125;
+            this.dvgHuespedes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgHuespedes_CellContentClick);
             // 
             // lblNombre
             // 
@@ -360,6 +323,55 @@ namespace Hotel.Presentacion.Huespedes
             this.btnConsultar.UseVisualStyleBackColor = false;
             this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
+            // clmNombre
+            // 
+            this.clmNombre.HeaderText = "Nombre";
+            this.clmNombre.MinimumWidth = 6;
+            this.clmNombre.Name = "clmNombre";
+            this.clmNombre.ReadOnly = true;
+            this.clmNombre.Width = 125;
+            // 
+            // clmApellido
+            // 
+            this.clmApellido.HeaderText = "Apellido";
+            this.clmApellido.MinimumWidth = 6;
+            this.clmApellido.Name = "clmApellido";
+            this.clmApellido.ReadOnly = true;
+            this.clmApellido.Width = 125;
+            // 
+            // clmNumeroPasaporte
+            // 
+            this.clmNumeroPasaporte.HeaderText = "Pasaporte";
+            this.clmNumeroPasaporte.MinimumWidth = 6;
+            this.clmNumeroPasaporte.Name = "clmNumeroPasaporte";
+            this.clmNumeroPasaporte.ReadOnly = true;
+            this.clmNumeroPasaporte.Width = 125;
+            // 
+            // clmMail
+            // 
+            this.clmMail.HeaderText = "Mail";
+            this.clmMail.MinimumWidth = 6;
+            this.clmMail.Name = "clmMail";
+            this.clmMail.ReadOnly = true;
+            this.clmMail.Width = 125;
+            // 
+            // clmPais
+            // 
+            this.clmPais.HeaderText = "Pais";
+            this.clmPais.MinimumWidth = 6;
+            this.clmPais.Name = "clmPais";
+            this.clmPais.ReadOnly = true;
+            this.clmPais.Width = 125;
+            // 
+            // clmIdHuesped
+            // 
+            this.clmIdHuesped.HeaderText = "Id";
+            this.clmIdHuesped.MinimumWidth = 6;
+            this.clmIdHuesped.Name = "clmIdHuesped";
+            this.clmIdHuesped.ReadOnly = true;
+            this.clmIdHuesped.Visible = false;
+            this.clmIdHuesped.Width = 125;
+            // 
             // frmHuesped
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -408,12 +420,13 @@ namespace Hotel.Presentacion.Huespedes
         private Custom.RJTextBox txtNombre;
         private System.Windows.Forms.ComboBox cboPais;
         private Custom.RJTextBox txtApellido;
+        private System.Windows.Forms.Label lblPasaporte;
+        private Custom.RJTextBox txtPsaporte;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmApellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmNumeroPasaporte;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmMail;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmPais;
-        private System.Windows.Forms.Label lblPasaporte;
-        private Custom.RJTextBox txtPsaporte;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmIdHuesped;
     }
 }

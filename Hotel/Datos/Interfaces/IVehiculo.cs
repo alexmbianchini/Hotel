@@ -14,7 +14,7 @@ namespace Hotel.Datos.Interfaces
         bool Crear(Vehiculo oVehiculo);
         bool Modificar(Vehiculo oVehiculo);
         bool Eliminar(Vehiculo oVehiculo);
-        DataTable RecuperarPorPatente(string patente);
+        DataTable RecuperarPorId(int id);
         DataTable RecuperarFiltrados(string patente, string marca, string pasaporte);
     }
 }

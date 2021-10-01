@@ -39,9 +39,9 @@ namespace Hotel.Servicios
             return dao.Eliminar(oVehiculo);
         }
 
-        public DataTable RecuperarPorPatente(string patente)
+        public DataTable RecuperarPorId(int id)
         {
-            return dao.RecuperarPorPatente(patente);
+            return dao.RecuperarPorId(id);
         }
 
         public DataTable RecuperarFiltrados(string patente, string marca, string pasaporte)

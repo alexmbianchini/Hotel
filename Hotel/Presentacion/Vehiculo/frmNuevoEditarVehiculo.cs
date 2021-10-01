@@ -29,16 +29,18 @@ namespace Hotel.Presentacion
         VehiculoService oVehiculo = new VehiculoService();
         HuespedService oHuesped = new HuespedService();
         Vehiculo oVehiculoSelected = new Vehiculo();
-        private string _patente; 
+        private int _id;
+
+        DataTable tabla_huesped;
 
         public frmNuevoEditarVehiculo()
         {
             InitializeComponent();
         }
-        public frmNuevoEditarVehiculo(string patente)
+        public frmNuevoEditarVehiculo(int id)
         {
             InitializeComponent();
-            _patente = patente;
+            _id = id;
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -141,7 +143,10 @@ namespace Hotel.Presentacion
                 // En caso de que se quiera modificar un Huesped...
                 case FormMode.update:
                     {
+
                         this.CargarCampos();
+
+                        tabla_huesped = oHuesped.RecuperarPorPasaporte(txtPasaporte.Text);
                         this.Text = "Edición Vehiculo";
                         // Se deshabilita el TextBox de Pasaporte ya que el número de pasaporte es PK y no se debe poder modificar.
                         this.txtPasaporte.Enabled = false;
@@ -158,7 +163,7 @@ namespace Hotel.Presentacion
         {
             DataTable tablaVehiculo = new DataTable();
 
-            tablaVehiculo = oVehiculo.RecuperarPorPatente(_patente);
+            tablaVehiculo = oVehiculo.RecuperarPorId(_id);
 
             txtPatente.Text = tablaVehiculo.Rows[0]["patente"].ToString();
             txtMarca.Text = tablaVehiculo.Rows[0]["marca"].ToString();
@@ -222,7 +227,9 @@ namespace Hotel.Presentacion
             this.oVehiculoSelected.Patente = txtPatente.Text;
             this.oVehiculoSelected.Marca = txtMarca.Text;
             this.oVehiculoSelected.Modelo = txtModelo.Text;
-            this.oVehiculoSelected.PasaporteHuesped = txtPasaporte.Text;
+            this.oVehiculoSelected.IdHuesped = Convert.ToInt32(tabla_huesped.Rows[0]["id"]);
+            this.oVehiculoSelected.Id = _id;
+
         }
 
         // Selecciona unos de los dos opciones disponibles para el CASE
@@ -323,14 +330,15 @@ namespace Hotel.Presentacion
 
         private void btnBuscarHuesped_Click(object sender, EventArgs e)
         {
-            DataTable huesped = oHuesped.RecuperarPorNumero(txtPasaporte.Text);
+             tabla_huesped = oHuesped.RecuperarPorPasaporte(txtPasaporte.Text);
 
             if (PasaporteCorrecto(txtPasaporte.Text))
             {
-                if (huesped.Rows.Count > 0)
+                if (tabla_huesped.Rows.Count > 0)
                 {
-                    txtNombre.Text = huesped.Rows[0]["nombre"].ToString();
-                    txtApellido.Text = huesped.Rows[0]["apellido"].ToString();
+                    txtNombre.Text = tabla_huesped.Rows[0]["nombre"].ToString();
+                    txtApellido.Text = tabla_huesped.Rows[0]["apellido"].ToString();
+
                 }
                 else
                 {

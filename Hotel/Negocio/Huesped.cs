@@ -15,5 +15,6 @@ namespace Hotel.Negocio
         public bool BorradoLogico { get; set; }
 
         public string Mail { get; set; }
+        public int Id { get; set; }
     }
 }

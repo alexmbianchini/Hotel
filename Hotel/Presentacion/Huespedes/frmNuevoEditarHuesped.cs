@@ -26,7 +26,7 @@ namespace Hotel.Presentacion.Huesped
         Hotel.Negocio.Huesped oHuespedSelected = new Hotel.Negocio.Huesped();
 
         // Stirng para almacenar pasaporte recuperado de la grilla.
-        private string numeroPasaporte;
+        private int idHuesped;
 
         public frmNuevoEditarHuesped()
         {
@@ -34,10 +34,10 @@ namespace Hotel.Presentacion.Huesped
         }
 
         // constructor que se utiliza para traer el pasaporte desde la grilla
-        public frmNuevoEditarHuesped(string numeroPasaporte)
+        public frmNuevoEditarHuesped(int idHuesped)
         {
             InitializeComponent();
-            this.numeroPasaporte = numeroPasaporte;
+            this.idHuesped = idHuesped;
         }
 
 
@@ -154,7 +154,7 @@ namespace Hotel.Presentacion.Huesped
         { 
                 DataTable tablaHuesped = new DataTable();
 
-                tablaHuesped = oHuesped.RecuperarPorNumero(numeroPasaporte);
+                tablaHuesped = oHuesped.RecuperarPorNumero(idHuesped);
 
                 txtNombre.Text = tablaHuesped.Rows[0]["nombre"].ToString();
                 txtApellido.Text = tablaHuesped.Rows[0]["apellido"].ToString();
@@ -237,6 +237,7 @@ namespace Hotel.Presentacion.Huesped
             this.oHuespedSelected.NumeroPasaporte = txtPasaporte.Text;
             this.oHuespedSelected.PaisResidencia = Convert.ToInt32(cboPais.SelectedValue);
             this.oHuespedSelected.Mail = txtMail.Text;
+            this.oHuespedSelected.Id = idHuesped;
         }
         
         // Selecciona unos de los dos opciones disponibles para el CASE

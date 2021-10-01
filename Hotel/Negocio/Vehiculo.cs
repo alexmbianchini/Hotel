@@ -11,8 +11,9 @@ namespace Hotel.Negocio
         public string Patente { get; set; }
         public string Marca { get; set; }
         public string Modelo { get; set; }
-        public string PasaporteHuesped { get; set; }
+        public int IdHuesped { get; set; }
         public bool BorradoLogico { get; set; }
+        public int Id { get; set; }
 
     }
 }
