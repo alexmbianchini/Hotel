@@ -167,6 +167,8 @@ namespace Hotel.Presentacion.UsuarioEmpleado
         }
 
 
+
+
         // Valida que los campos tengan datos ingresados/seleccionados
 
         private bool ValidarCampos()

@@ -72,6 +72,7 @@ namespace Hotel.Presentacion
             this.txtNombreEmpleado.Text = string.Empty;
             this.cboTipoDoc.SelectedIndex = -1;
             this.txtNroDoc.Text = string.Empty;
+            this.CargarTodo();
         }
 
         private void btnConsultar_Click_1(object sender, EventArgs e)
