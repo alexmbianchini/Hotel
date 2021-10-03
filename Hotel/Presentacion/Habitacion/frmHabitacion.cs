@@ -111,6 +111,7 @@ namespace Hotel.Presentacion
             this.cboEstado.SelectedIndex = -1;
             this.txtPrecioMin.Text = string.Empty;
             this.txtPrecioMax.Text = string.Empty;
+            this.CargarTodos();
         }
 
         private void btnNuevo_Click_1(object sender, EventArgs e)
