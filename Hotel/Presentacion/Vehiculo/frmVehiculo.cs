@@ -35,7 +35,8 @@ namespace Hotel.Presentacion
                                 tabla.Rows[i]["modelo"],
                                 tabla.Rows[i]["pasaporte"],
                                 tabla.Rows[i]["nombre"],
-                                tabla.Rows[i]["apellido"]);
+                                tabla.Rows[i]["apellido"],
+                                tabla.Rows[i]["id"]);
             }
 
         }
@@ -60,7 +61,7 @@ namespace Hotel.Presentacion
         private void btnEditar_Click(object sender, EventArgs e)
         {
             // Instanciar un formulario para editar un huesped
-            frmNuevoEditarVehiculo frmEditar = new frmNuevoEditarVehiculo((dgvVehiculo.CurrentRow.Cells["clmPatente"].Value).ToString());
+            frmNuevoEditarVehiculo frmEditar = new frmNuevoEditarVehiculo(Convert.ToInt32(dgvVehiculo.CurrentRow.Cells["clmIdVehiculo"].Value));
             frmEditar.SeleccionarModo(frmNuevoEditarVehiculo.FormMode.update);
             frmEditar.ShowDialog();
             this.CargarGrilla(dgvVehiculo, oVehiculo.RecuperarTodos());
@@ -77,7 +78,7 @@ namespace Hotel.Presentacion
         {
             if (MessageBox.Show("Seguro que desea Eliminar el vehiculo seleccionado?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
-                this.oVehiculoSelected.Patente = dgvVehiculo.CurrentRow.Cells["clmPatente"].Value.ToString();
+                this.oVehiculoSelected.Id = Convert.ToInt32(dgvVehiculo.CurrentRow.Cells["clmIdVehiculo"].Value);
 
                 // Retorna true si el huesped es eliminado o retorna false si no se puedo eliminar
                 if (oVehiculo.Eliminar(oVehiculoSelected))
@@ -116,6 +117,11 @@ namespace Hotel.Presentacion
         {
             this.btnEditar.Enabled = true;
             this.btnEliminar.Enabled = true;
+        }
+
+        private void dgvVehiculo_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
     

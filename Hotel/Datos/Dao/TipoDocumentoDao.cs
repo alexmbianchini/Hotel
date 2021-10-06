@@ -12,7 +12,7 @@ namespace Hotel.Datos.Dao
     {
         public DataTable RecuperarTodos()
         {
-            string consulta = "SELECT * FROM TIPO_DOCUMENTO WHERE borrado_logico = 0 ORDER BY 2";
+            string consulta = "SELECT * FROM TIPO_DOCUMENTO WHERE borrado_logico = 0 ORDER BY 1";
 
             return DBHelper.ObtenerInstancia().Ejecutar(consulta);
 

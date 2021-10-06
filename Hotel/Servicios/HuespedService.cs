@@ -29,7 +29,7 @@ namespace Hotel.Servicios
             return dao.RecuperarFiltrados(nombre, apellido, pasaporte, pais);
         }
 
-        public DataTable RecuperarPorNumero(string id)
+        public DataTable RecuperarPorNumero(int id)
         {
             return dao.RecuperarPorNumero(id);
         }
@@ -53,6 +53,11 @@ namespace Hotel.Servicios
         public bool Eliminar(Huesped oHuesped)
         {
             return dao.Eliminar(oHuesped);
+        }
+
+        public DataTable RecuperarPorPasaporte(string pasaporte)
+        {
+            return dao.RecuperarPorPasaporte(pasaporte);
         }
     }
 }
