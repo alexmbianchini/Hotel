@@ -15,13 +15,33 @@ namespace Hotel.Presentacion
 {
     public partial class frmNuevaReserva : Form
     {
-        HuespedService oHuesped = new HuespedService();
+        // Patrón Singleton
+        private static frmNuevaReserva instancia;
 
-        public frmNuevaReserva()
+        private frmNuevaReserva()
         {
             InitializeComponent();
         }
 
+        public static frmNuevaReserva ObtenerInstancia()
+        {
+            if (instancia == null)
+            {
+                instancia = new frmNuevaReserva();
+            }
+            return instancia;
+        }
+
+
+        HuespedService oHuesped = new HuespedService();
+        CocheraService oCochera = new CocheraService();
+        ReservaService oReserva = new ReservaService();
+
+        DataTable tablaHuesped;
+        public static string _patenteVehiculo, _marcaVehiculo, _modeloVehiculo;
+        public static int _idVehiculo;
+        DataTable tablaCocheras;
+        
 
         private void frmNuevaReserva_Load(object sender, EventArgs e)
         {
@@ -41,8 +61,8 @@ namespace Hotel.Presentacion
             this.btnConsultar.Enabled = true;
             this.btnAgregarHusped.Enabled = true;
             this.btnAgregarVehiculo.Enabled = false;
-            this.dtpFechaIngreso.Enabled = false;
-            this.dtpFechaSalida.Enabled = false;
+            this.dtpFechaIngreso.Enabled = true;
+            this.dtpFechaSalida.Enabled = true;
             this.btnConsultarHabitaciones.Enabled = false;
             this.txtCantidadPersonas.Enabled = false;
             this.txtSubtotal.Enabled = false;
@@ -62,8 +82,14 @@ namespace Hotel.Presentacion
             {
                 if (PasaporteCorrecto(txtPasaporte.Text))
                 {
-                    if(!oHuesped.ValidarPasaporte(txtPasaporte.Text))
+                    if (!oHuesped.ValidarPasaporte(txtPasaporte.Text))
                     {
+                        tablaHuesped = oHuesped.RecuperarPorPasaporte(txtPasaporte.Text);
+
+                        txtNombre.Text = tablaHuesped.Rows[0]["nombre"].ToString();
+                        txtApellido.Text = tablaHuesped.Rows[0]["apellido"].ToString();
+
+                        btnAgregarVehiculo.Enabled = true;
 
                     }
                     else
@@ -125,6 +151,62 @@ namespace Hotel.Presentacion
                 return false;
             }
 
+        }
+
+        private void btnConsultarHabitaciones_Click(object sender, EventArgs e)
+        {
+            if (txtPatente.Text != string.Empty)
+            {
+
+
+                if (AsignarCochera())
+                {
+                    txtNumeroCochera.Text = tablaCocheras.Rows[0]["numero"].ToString();
+                    txtPrecioCochera.Text = tablaCocheras.Rows[0]["precio"].ToString();
+
+                }
+                else
+                {
+                    MessageBox.Show("No hay Cocheras Disponibles", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtPatente.Clear();
+                    txtMarca.Clear();
+                    txtModelo.Clear();
+
+                }
+            }
+
+
+
+        }
+
+        private void btnAgregarVehiculo_Click(object sender, EventArgs e)
+        {
+            frmVehiculo frmVehiculo = new frmVehiculo(txtPasaporte.Text);
+            frmVehiculo.SeleccionarModo(frmVehiculo.FormMode.reserva);
+            frmVehiculo.ShowDialog();
+
+            txtPatente.Text = _patenteVehiculo;
+            txtMarca.Text = _marcaVehiculo;
+            txtModelo.Text = _modeloVehiculo;
+
+            
+
+        }
+
+
+        public bool AsignarCochera()
+        {
+            tablaCocheras = oReserva.RecuperarCocherasLibres(dtpFechaIngreso.Value.ToString(), dtpFechaSalida.Value.ToString());
+
+            if (tablaCocheras.Rows.Count > 0)
+            { 
+
+                return true;
+            }
+            else
+            {
+                return false; 
+            }
         }
     }
 

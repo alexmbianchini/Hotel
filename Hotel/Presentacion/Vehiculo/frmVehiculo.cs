@@ -18,9 +18,28 @@ namespace Hotel.Presentacion
         VehiculoService oVehiculo = new VehiculoService();
         Vehiculo oVehiculoSelected = new Vehiculo();
 
+        string _pasaporte; 
+
+        // Instanciar FormMode para utilizar en sentencia CASE
+        private FormMode formMode = new FormMode();
+
+        // Los diferentes modos que acepta el FormMode
+        public enum FormMode
+        {
+            reserva,
+            principal
+        }
+
         public frmVehiculo()
         {
             InitializeComponent();
+        }
+
+        public frmVehiculo(string pasaporte)
+        {
+            InitializeComponent();
+            _pasaporte = pasaporte;
+
         }
 
 
@@ -43,9 +62,32 @@ namespace Hotel.Presentacion
 
         private void frmVehiculo_Load(object sender, EventArgs e)
         {
-            CargarGrilla(dgvVehiculo, oVehiculo.RecuperarTodos());
+            switch (formMode)
+            {
+                case FormMode.principal:
+                    CargarGrilla(dgvVehiculo, oVehiculo.RecuperarTodos());
+                    btnAgregar.Visible = false;
+                    btnAgregar.Enabled = false;
+
+                    break;
+
+                case FormMode.reserva:
+                    CargarGrilla(dgvVehiculo, oVehiculo.RecuperarFiltrados(string.Empty, string.Empty, _pasaporte));
+                    btnAgregar.Visible = true;
+                    btnAgregar.Enabled = true;
+
+                    txtMarca.Enabled = false;
+                    txtPasaporte.Enabled = false;
+                    txtPatente.Enabled = false;
+                    btnConsultar.Enabled = false;
+                    btnLimpiar.Enabled = false; 
+
+                    break;
+            }
+
             this.btnEditar.Enabled = false;
             this.btnEliminar.Enabled = false;
+
         }
 
 
@@ -55,7 +97,7 @@ namespace Hotel.Presentacion
             frmNuevoEditarVehiculo frmNueva = new frmNuevoEditarVehiculo();
             frmNueva.SeleccionarModo(frmNuevoEditarVehiculo.FormMode.insert);
             frmNueva.ShowDialog();
-            this.CargarGrilla(dgvVehiculo, oVehiculo.RecuperarTodos());
+            this.ActualizarGrilla();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -64,7 +106,7 @@ namespace Hotel.Presentacion
             frmNuevoEditarVehiculo frmEditar = new frmNuevoEditarVehiculo(Convert.ToInt32(dgvVehiculo.CurrentRow.Cells["clmIdVehiculo"].Value));
             frmEditar.SeleccionarModo(frmNuevoEditarVehiculo.FormMode.update);
             frmEditar.ShowDialog();
-            this.CargarGrilla(dgvVehiculo, oVehiculo.RecuperarTodos());
+            this.ActualizarGrilla();
         }
 
 
@@ -90,7 +132,8 @@ namespace Hotel.Presentacion
                     MessageBox.Show("Error al eliminar el Vehiculo", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            this.CargarGrilla(dgvVehiculo, oVehiculo.RecuperarTodos());
+            this.ActualizarGrilla();
+            
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -98,7 +141,7 @@ namespace Hotel.Presentacion
             txtPatente.Text = string.Empty;
             txtMarca.Text = string.Empty;
             txtPasaporte.Text = string.Empty;
-            this.CargarGrilla(dgvVehiculo, oVehiculo.RecuperarTodos());
+            this.ActualizarGrilla();
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)
@@ -110,7 +153,7 @@ namespace Hotel.Presentacion
             _marca = this.txtMarca.Text;
             _pasaporte = this.txtPasaporte.Text;
 
-            this.CargarGrilla(dgvVehiculo, oVehiculo.RecuperarFiltrados(_patente, _marca, _pasaporte));
+            this.ActualizarGrilla();
         }
 
         private void dgvVehiculo_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -123,6 +166,38 @@ namespace Hotel.Presentacion
         {
 
         }
+
+        // Selecciona unos de los dos opciones disponibles para el CASE
+        public void SeleccionarModo(FormMode op)
+        {
+            this.formMode = op;
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            frmNuevaReserva.ObtenerInstancia();
+
+            frmNuevaReserva._patenteVehiculo = dgvVehiculo.CurrentRow.Cells["clmPatente"].Value.ToString();
+            frmNuevaReserva._marcaVehiculo = dgvVehiculo.CurrentRow.Cells["clmMarca"].Value.ToString();
+            frmNuevaReserva._modeloVehiculo = dgvVehiculo.CurrentRow.Cells["clmModelo"].Value.ToString();
+            frmNuevaReserva._idVehiculo = Convert.ToInt32(dgvVehiculo.CurrentRow.Cells["clmIdVehiculo"].Value);
+
+            this.Close();
+        }
+
+        private void ActualizarGrilla()
+        {
+            switch (formMode)
+            {
+                case FormMode.principal:
+                    this.CargarGrilla(dgvVehiculo, oVehiculo.RecuperarTodos());
+                    break;
+                case FormMode.reserva:
+                    CargarGrilla(dgvVehiculo, oVehiculo.RecuperarFiltrados(string.Empty, string.Empty, _pasaporte));
+                    break;
+            }
+        }
     }
+
     
 }

@@ -38,7 +38,7 @@ namespace Hotel.Datos.Dao
             }
             if (!string.IsNullOrEmpty(pasaporte))
             {
-                consulta += " AND v.pasaporte_huesped LIKE '" + pasaporte + "%'";
+                consulta += " AND h.numero_pasaporte LIKE '" + pasaporte + "%'";
             }
 
             return DBHelper.ObtenerInstancia().Ejecutar(consulta);

@@ -41,6 +41,8 @@ namespace Hotel.Presentacion
             this.clmPasaporte = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmIdVehiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAgregar = new Hotel.Custom.RJButton();
             this.btnSalir = new Hotel.Custom.RJButton();
             this.btnEliminar = new Hotel.Custom.RJButton();
             this.btnEditar = new Hotel.Custom.RJButton();
@@ -50,7 +52,6 @@ namespace Hotel.Presentacion
             this.txtPasaporte = new Hotel.Custom.RJTextBox();
             this.txtMarca = new Hotel.Custom.RJTextBox();
             this.txtPatente = new Hotel.Custom.RJTextBox();
-            this.clmIdVehiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVehiculo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -175,6 +176,34 @@ namespace Hotel.Presentacion
             this.clmApellido.Name = "clmApellido";
             this.clmApellido.ReadOnly = true;
             this.clmApellido.Width = 125;
+            // 
+            // clmIdVehiculo
+            // 
+            this.clmIdVehiculo.HeaderText = "Id";
+            this.clmIdVehiculo.MinimumWidth = 6;
+            this.clmIdVehiculo.Name = "clmIdVehiculo";
+            this.clmIdVehiculo.ReadOnly = true;
+            this.clmIdVehiculo.Visible = false;
+            this.clmIdVehiculo.Width = 125;
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnAgregar.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnAgregar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnAgregar.BorderRadius = 20;
+            this.btnAgregar.BorderSize = 0;
+            this.btnAgregar.FlatAppearance.BorderSize = 0;
+            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregar.ForeColor = System.Drawing.Color.White;
+            this.btnAgregar.Location = new System.Drawing.Point(719, 185);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(150, 40);
+            this.btnAgregar.TabIndex = 13;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.TextColor = System.Drawing.Color.White;
+            this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnSalir
             // 
@@ -350,15 +379,6 @@ namespace Hotel.Presentacion
             this.txtPatente.TabIndex = 0;
             this.txtPatente.UnderlinedStyle = false;
             // 
-            // clmIdVehiculo
-            // 
-            this.clmIdVehiculo.HeaderText = "Id";
-            this.clmIdVehiculo.MinimumWidth = 6;
-            this.clmIdVehiculo.Name = "clmIdVehiculo";
-            this.clmIdVehiculo.ReadOnly = true;
-            this.clmIdVehiculo.Visible = false;
-            this.clmIdVehiculo.Width = 125;
-            // 
             // frmVehiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -366,6 +386,7 @@ namespace Hotel.Presentacion
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(209)))), ((int)(((byte)(217)))));
             this.ClientSize = new System.Drawing.Size(903, 526);
             this.ControlBox = false;
+            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
@@ -412,5 +433,6 @@ namespace Hotel.Presentacion
         private System.Windows.Forms.DataGridViewTextBoxColumn clmNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmApellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmIdVehiculo;
+        private Custom.RJButton btnAgregar;
     }
 }

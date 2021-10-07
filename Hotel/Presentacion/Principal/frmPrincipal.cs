@@ -102,8 +102,9 @@ namespace Hotel.Presentacion
 
         private void btnVehiculo_Click(object sender, EventArgs e)
         {
-            frmVehiculo frv = new frmVehiculo();
-            frv.ShowDialog();
+            frmVehiculo frmVehiculo = new frmVehiculo();
+            frmVehiculo.SeleccionarModo(frmVehiculo.FormMode.principal);
+            frmVehiculo.ShowDialog();
         }
     }
 }

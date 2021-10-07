@@ -12,6 +12,7 @@ namespace Hotel.Negocio
         public float Precio { get; set; }
         public string Descripcion { get; set; }
         public bool BorradoLogico { get; set; }
+        public int Estado { get; set; }
 
     }
 }

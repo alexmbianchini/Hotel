@@ -23,7 +23,7 @@ namespace Hotel
             //Application.Run(new Presentacion.frmTipoHabitacion());
             //Application.Run(new Hotel.Presentacion.Huespedes.frmHuesped());
             //Application.Run(new Presentacion.frmVehiculo());
-            Application.Run(new Hotel.Presentacion.frmNuevaReserva());
+            Application.Run(Hotel.Presentacion.frmNuevaReserva.ObtenerInstancia());
         }
     }
 }
