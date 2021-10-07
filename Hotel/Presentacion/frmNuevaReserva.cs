@@ -73,6 +73,7 @@ namespace Hotel.Presentacion
             this.txtTotal.Enabled = false;
             this.btnAceptar.Enabled = false;
             this.btnCancelar.Enabled = true;
+            this.btnQuitarVehiculo.Enabled = false;
 
 
 
@@ -93,6 +94,7 @@ namespace Hotel.Presentacion
                         txtPasaporte.Enabled = false;
 
                         btnAgregarVehiculo.Enabled = true;
+                        btnConsultarHabitaciones.Enabled = true;
 
                     }
                     else
@@ -164,25 +166,30 @@ namespace Hotel.Presentacion
 
         private void btnConsultarHabitaciones_Click(object sender, EventArgs e)
         {
-            if (txtPatente.Text != string.Empty)
+            if(ValidarFechas())
             {
-
-
-                if (AsignarCochera())
+                this.CargarGrilla(dgvHabitaciones, oReserva.RecuperarHabitacionesLibres(dtpFechaIngreso.Value.ToString(), dtpFechaSalida.Value.ToString()));
+                if (txtPatente.Text != string.Empty)
                 {
-                    txtNumeroCochera.Text = tablaCocheras.Rows[0]["numero"].ToString();
-                    txtPrecioCochera.Text = tablaCocheras.Rows[0]["precio"].ToString();
+                        if (AsignarCochera())
+                        {
+                            txtNumeroCochera.Text = tablaCocheras.Rows[0]["numero"].ToString();
+                            txtPrecioCochera.Text = tablaCocheras.Rows[0]["precio"].ToString();
 
-                }
-                else
-                {
-                    MessageBox.Show("No hay Cocheras Disponibles", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txtPatente.Clear();
-                    txtMarca.Clear();
-                    txtModelo.Clear();
+                        }
+                        else
+                        {
+                            MessageBox.Show("No hay Cocheras Disponibles", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            txtPatente.Clear();
+                            txtMarca.Clear();
+                            txtModelo.Clear();
 
+                        }
+                   
                 }
+
             }
+
 
 
 
@@ -211,7 +218,7 @@ namespace Hotel.Presentacion
             txtPatente.Text = _patenteVehiculo;
             txtMarca.Text = _marcaVehiculo;
             txtModelo.Text = _modeloVehiculo;
-
+            this.btnQuitarVehiculo.Enabled = true;
             
 
         }
@@ -246,6 +253,23 @@ namespace Hotel.Presentacion
             }
             return false;
         }
+       
+        
+        private void CargarGrilla(DataGridView grilla, DataTable tabla)
+        {
+            grilla.Rows.Clear();
+            for (int i = 0; i < tabla.Rows.Count; i++)
+            {
+                grilla.Rows.Add(tabla.Rows[i]["numero"],
+                                tabla.Rows[i]["piso"],
+                                tabla.Rows[i]["tipo"],
+                                tabla.Rows[i]["precio"],
+                                tabla.Rows[i]["descripcion"]);
+            }
+
+        }
+
     }
+
 
 }

@@ -21,5 +21,9 @@ namespace Hotel.Servicios
         {
             return dao.RecuperarCocherasLibres(fechaIngreso, fechaSalida);
         }
+        public DataTable RecuperarHabitacionesLibres(string fechaIngreso, string fechaSalida)
+        {
+            return dao.RecuperarHabitacionesLibres(fechaIngreso, fechaSalida);
+        }
     }
 }

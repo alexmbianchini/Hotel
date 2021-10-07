@@ -61,11 +61,6 @@ namespace Hotel.Presentacion
             this.txtCantidadPersonas = new System.Windows.Forms.TextBox();
             this.lblCantidadPersonas = new System.Windows.Forms.Label();
             this.dgvReservas = new System.Windows.Forms.DataGridView();
-            this.clmNumeroSeleccionado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmPisoSeleccionado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmTipoSeleccionado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmPrecioSeleccionado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmDescripcionSeleccionada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnConsultarHabitaciones = new Hotel.Custom.RJButton();
             this.dtpFechaSalida = new System.Windows.Forms.DateTimePicker();
             this.dtpFechaIngreso = new System.Windows.Forms.DateTimePicker();
@@ -81,6 +76,11 @@ namespace Hotel.Presentacion
             this.btnQuitarHabitacion = new Hotel.Custom.RJButton();
             this.btnAgregarHabitacion = new Hotel.Custom.RJButton();
             this.btnQuitarVehiculo = new Hotel.Custom.RJButton();
+            this.clmNumeroSeleccionado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmPisoSeleccionado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmTipoSeleccionado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmPrecioSeleccionado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmDescripcionSeleccionada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpHuesped.SuspendLayout();
             this.grpVehiculo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHabitaciones)).BeginInit();
@@ -94,7 +94,7 @@ namespace Hotel.Presentacion
             // 
             this.txtPasaporte.BackColor = System.Drawing.SystemColors.Window;
             this.txtPasaporte.Location = new System.Drawing.Point(94, 42);
-            this.txtPasaporte.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPasaporte.Margin = new System.Windows.Forms.Padding(2);
             this.txtPasaporte.Name = "txtPasaporte";
             this.txtPasaporte.Size = new System.Drawing.Size(76, 20);
             this.txtPasaporte.TabIndex = 0;
@@ -120,9 +120,9 @@ namespace Hotel.Presentacion
             this.grpHuesped.Controls.Add(this.txtPasaporte);
             this.grpHuesped.Controls.Add(this.lblPasaporte);
             this.grpHuesped.Location = new System.Drawing.Point(9, 21);
-            this.grpHuesped.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpHuesped.Margin = new System.Windows.Forms.Padding(2);
             this.grpHuesped.Name = "grpHuesped";
-            this.grpHuesped.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpHuesped.Padding = new System.Windows.Forms.Padding(2);
             this.grpHuesped.Size = new System.Drawing.Size(354, 177);
             this.grpHuesped.TabIndex = 2;
             this.grpHuesped.TabStop = false;
@@ -139,7 +139,7 @@ namespace Hotel.Presentacion
             this.btnAgregarHusped.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarHusped.ForeColor = System.Drawing.Color.White;
             this.btnAgregarHusped.Location = new System.Drawing.Point(210, 115);
-            this.btnAgregarHusped.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAgregarHusped.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregarHusped.Name = "btnAgregarHusped";
             this.btnAgregarHusped.Size = new System.Drawing.Size(112, 32);
             this.btnAgregarHusped.TabIndex = 7;
@@ -159,7 +159,7 @@ namespace Hotel.Presentacion
             this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConsultar.ForeColor = System.Drawing.Color.White;
             this.btnConsultar.Location = new System.Drawing.Point(210, 50);
-            this.btnConsultar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnConsultar.Margin = new System.Windows.Forms.Padding(2);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(112, 32);
             this.btnConsultar.TabIndex = 6;
@@ -191,7 +191,7 @@ namespace Hotel.Presentacion
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(94, 82);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(76, 20);
             this.txtNombre.TabIndex = 3;
@@ -199,7 +199,7 @@ namespace Hotel.Presentacion
             // txtApellido
             // 
             this.txtApellido.Location = new System.Drawing.Point(94, 132);
-            this.txtApellido.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtApellido.Margin = new System.Windows.Forms.Padding(2);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(76, 20);
             this.txtApellido.TabIndex = 2;
@@ -214,9 +214,9 @@ namespace Hotel.Presentacion
             this.grpVehiculo.Controls.Add(this.lblPatente);
             this.grpVehiculo.Controls.Add(this.btnAgregarVehiculo);
             this.grpVehiculo.Location = new System.Drawing.Point(428, 21);
-            this.grpVehiculo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpVehiculo.Margin = new System.Windows.Forms.Padding(2);
             this.grpVehiculo.Name = "grpVehiculo";
-            this.grpVehiculo.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpVehiculo.Padding = new System.Windows.Forms.Padding(2);
             this.grpVehiculo.Size = new System.Drawing.Size(348, 177);
             this.grpVehiculo.TabIndex = 3;
             this.grpVehiculo.TabStop = false;
@@ -225,7 +225,7 @@ namespace Hotel.Presentacion
             // txtMarca
             // 
             this.txtMarca.Location = new System.Drawing.Point(78, 112);
-            this.txtMarca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMarca.Margin = new System.Windows.Forms.Padding(2);
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.Size = new System.Drawing.Size(76, 20);
             this.txtMarca.TabIndex = 6;
@@ -233,7 +233,7 @@ namespace Hotel.Presentacion
             // txtModelo
             // 
             this.txtModelo.Location = new System.Drawing.Point(244, 111);
-            this.txtModelo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtModelo.Margin = new System.Windows.Forms.Padding(2);
             this.txtModelo.Name = "txtModelo";
             this.txtModelo.Size = new System.Drawing.Size(76, 20);
             this.txtModelo.TabIndex = 5;
@@ -241,7 +241,7 @@ namespace Hotel.Presentacion
             // txtPatente
             // 
             this.txtPatente.Location = new System.Drawing.Point(244, 39);
-            this.txtPatente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPatente.Margin = new System.Windows.Forms.Padding(2);
             this.txtPatente.Name = "txtPatente";
             this.txtPatente.Size = new System.Drawing.Size(76, 20);
             this.txtPatente.TabIndex = 4;
@@ -287,7 +287,7 @@ namespace Hotel.Presentacion
             this.btnAgregarVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarVehiculo.ForeColor = System.Drawing.Color.White;
             this.btnAgregarVehiculo.Location = new System.Drawing.Point(31, 35);
-            this.btnAgregarVehiculo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAgregarVehiculo.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregarVehiculo.Name = "btnAgregarVehiculo";
             this.btnAgregarVehiculo.Size = new System.Drawing.Size(112, 32);
             this.btnAgregarVehiculo.TabIndex = 0;
@@ -308,7 +308,7 @@ namespace Hotel.Presentacion
             this.clmPrecio,
             this.clmDescripcion});
             this.dgvHabitaciones.Location = new System.Drawing.Point(17, 52);
-            this.dgvHabitaciones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvHabitaciones.Margin = new System.Windows.Forms.Padding(2);
             this.dgvHabitaciones.Name = "dgvHabitaciones";
             this.dgvHabitaciones.ReadOnly = true;
             this.dgvHabitaciones.RowHeadersWidth = 51;
@@ -360,9 +360,9 @@ namespace Hotel.Presentacion
             // 
             this.grpHabitaciones.Controls.Add(this.dgvHabitaciones);
             this.grpHabitaciones.Location = new System.Drawing.Point(9, 217);
-            this.grpHabitaciones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpHabitaciones.Margin = new System.Windows.Forms.Padding(2);
             this.grpHabitaciones.Name = "grpHabitaciones";
-            this.grpHabitaciones.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpHabitaciones.Padding = new System.Windows.Forms.Padding(2);
             this.grpHabitaciones.Size = new System.Drawing.Size(535, 437);
             this.grpHabitaciones.TabIndex = 5;
             this.grpHabitaciones.TabStop = false;
@@ -381,9 +381,9 @@ namespace Hotel.Presentacion
             this.grpReserva.Controls.Add(this.dtpFechaSalida);
             this.grpReserva.Controls.Add(this.dtpFechaIngreso);
             this.grpReserva.Location = new System.Drawing.Point(692, 217);
-            this.grpReserva.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpReserva.Margin = new System.Windows.Forms.Padding(2);
             this.grpReserva.Name = "grpReserva";
-            this.grpReserva.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpReserva.Padding = new System.Windows.Forms.Padding(2);
             this.grpReserva.Size = new System.Drawing.Size(535, 396);
             this.grpReserva.TabIndex = 6;
             this.grpReserva.TabStop = false;
@@ -422,7 +422,7 @@ namespace Hotel.Presentacion
             // txtSubtotal
             // 
             this.txtSubtotal.Location = new System.Drawing.Point(436, 376);
-            this.txtSubtotal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSubtotal.Margin = new System.Windows.Forms.Padding(2);
             this.txtSubtotal.Name = "txtSubtotal";
             this.txtSubtotal.Size = new System.Drawing.Size(76, 20);
             this.txtSubtotal.TabIndex = 8;
@@ -430,7 +430,7 @@ namespace Hotel.Presentacion
             // txtCantidadPersonas
             // 
             this.txtCantidadPersonas.Location = new System.Drawing.Point(176, 184);
-            this.txtCantidadPersonas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCantidadPersonas.Margin = new System.Windows.Forms.Padding(2);
             this.txtCantidadPersonas.Name = "txtCantidadPersonas";
             this.txtCantidadPersonas.Size = new System.Drawing.Size(76, 20);
             this.txtCantidadPersonas.TabIndex = 7;
@@ -457,13 +457,214 @@ namespace Hotel.Presentacion
             this.clmPrecioSeleccionado,
             this.clmDescripcionSeleccionada});
             this.dgvReservas.Location = new System.Drawing.Point(4, 246);
-            this.dgvReservas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvReservas.Margin = new System.Windows.Forms.Padding(2);
             this.dgvReservas.Name = "dgvReservas";
             this.dgvReservas.ReadOnly = true;
             this.dgvReservas.RowHeadersWidth = 51;
             this.dgvReservas.RowTemplate.Height = 24;
             this.dgvReservas.Size = new System.Drawing.Size(506, 89);
             this.dgvReservas.TabIndex = 3;
+            // 
+            // btnConsultarHabitaciones
+            // 
+            this.btnConsultarHabitaciones.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnConsultarHabitaciones.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnConsultarHabitaciones.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnConsultarHabitaciones.BorderRadius = 20;
+            this.btnConsultarHabitaciones.BorderSize = 0;
+            this.btnConsultarHabitaciones.FlatAppearance.BorderSize = 0;
+            this.btnConsultarHabitaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultarHabitaciones.ForeColor = System.Drawing.Color.White;
+            this.btnConsultarHabitaciones.Location = new System.Drawing.Point(224, 90);
+            this.btnConsultarHabitaciones.Margin = new System.Windows.Forms.Padding(2);
+            this.btnConsultarHabitaciones.Name = "btnConsultarHabitaciones";
+            this.btnConsultarHabitaciones.Size = new System.Drawing.Size(112, 32);
+            this.btnConsultarHabitaciones.TabIndex = 2;
+            this.btnConsultarHabitaciones.Text = "Consultar";
+            this.btnConsultarHabitaciones.TextColor = System.Drawing.Color.White;
+            this.btnConsultarHabitaciones.UseVisualStyleBackColor = false;
+            this.btnConsultarHabitaciones.Click += new System.EventHandler(this.btnConsultarHabitaciones_Click);
+            // 
+            // dtpFechaSalida
+            // 
+            this.dtpFechaSalida.Location = new System.Drawing.Point(360, 48);
+            this.dtpFechaSalida.Margin = new System.Windows.Forms.Padding(2);
+            this.dtpFechaSalida.Name = "dtpFechaSalida";
+            this.dtpFechaSalida.Size = new System.Drawing.Size(151, 20);
+            this.dtpFechaSalida.TabIndex = 1;
+            // 
+            // dtpFechaIngreso
+            // 
+            this.dtpFechaIngreso.Location = new System.Drawing.Point(114, 48);
+            this.dtpFechaIngreso.Margin = new System.Windows.Forms.Padding(2);
+            this.dtpFechaIngreso.Name = "dtpFechaIngreso";
+            this.dtpFechaIngreso.Size = new System.Drawing.Size(151, 20);
+            this.dtpFechaIngreso.TabIndex = 0;
+            // 
+            // grpCochera
+            // 
+            this.grpCochera.Controls.Add(this.txtPrecioCochera);
+            this.grpCochera.Controls.Add(this.lblPrecioCochera);
+            this.grpCochera.Controls.Add(this.txtNumeroCochera);
+            this.grpCochera.Controls.Add(this.lblNumeroCochera);
+            this.grpCochera.Location = new System.Drawing.Point(916, 21);
+            this.grpCochera.Margin = new System.Windows.Forms.Padding(2);
+            this.grpCochera.Name = "grpCochera";
+            this.grpCochera.Padding = new System.Windows.Forms.Padding(2);
+            this.grpCochera.Size = new System.Drawing.Size(269, 139);
+            this.grpCochera.TabIndex = 9;
+            this.grpCochera.TabStop = false;
+            this.grpCochera.Text = "Cochera Asignada";
+            // 
+            // txtPrecioCochera
+            // 
+            this.txtPrecioCochera.Location = new System.Drawing.Point(104, 97);
+            this.txtPrecioCochera.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPrecioCochera.Name = "txtPrecioCochera";
+            this.txtPrecioCochera.Size = new System.Drawing.Size(76, 20);
+            this.txtPrecioCochera.TabIndex = 3;
+            // 
+            // lblPrecioCochera
+            // 
+            this.lblPrecioCochera.AutoSize = true;
+            this.lblPrecioCochera.Location = new System.Drawing.Point(38, 101);
+            this.lblPrecioCochera.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPrecioCochera.Name = "lblPrecioCochera";
+            this.lblPrecioCochera.Size = new System.Drawing.Size(37, 13);
+            this.lblPrecioCochera.TabIndex = 2;
+            this.lblPrecioCochera.Text = "Precio";
+            // 
+            // txtNumeroCochera
+            // 
+            this.txtNumeroCochera.Location = new System.Drawing.Point(104, 40);
+            this.txtNumeroCochera.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNumeroCochera.Name = "txtNumeroCochera";
+            this.txtNumeroCochera.Size = new System.Drawing.Size(76, 20);
+            this.txtNumeroCochera.TabIndex = 1;
+            // 
+            // lblNumeroCochera
+            // 
+            this.lblNumeroCochera.AutoSize = true;
+            this.lblNumeroCochera.Location = new System.Drawing.Point(30, 40);
+            this.lblNumeroCochera.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNumeroCochera.Name = "lblNumeroCochera";
+            this.lblNumeroCochera.Size = new System.Drawing.Size(44, 13);
+            this.lblNumeroCochera.TabIndex = 0;
+            this.lblNumeroCochera.Text = "Número";
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Location = new System.Drawing.Point(1081, 656);
+            this.lblTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(37, 13);
+            this.lblTotal.TabIndex = 10;
+            this.lblTotal.Text = "Total: ";
+            // 
+            // txtTotal
+            // 
+            this.txtTotal.Location = new System.Drawing.Point(1121, 653);
+            this.txtTotal.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(76, 20);
+            this.txtTotal.TabIndex = 12;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnCancelar.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnCancelar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnCancelar.BorderRadius = 20;
+            this.btnCancelar.BorderSize = 0;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.Location = new System.Drawing.Point(877, 653);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(112, 32);
+            this.btnCancelar.TabIndex = 14;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextColor = System.Drawing.Color.White;
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnAceptar.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnAceptar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnAceptar.BorderRadius = 20;
+            this.btnAceptar.BorderSize = 0;
+            this.btnAceptar.FlatAppearance.BorderSize = 0;
+            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAceptar.ForeColor = System.Drawing.Color.White;
+            this.btnAceptar.Location = new System.Drawing.Point(709, 653);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(112, 32);
+            this.btnAceptar.TabIndex = 13;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.TextColor = System.Drawing.Color.White;
+            this.btnAceptar.UseVisualStyleBackColor = false;
+            // 
+            // btnQuitarHabitacion
+            // 
+            this.btnQuitarHabitacion.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnQuitarHabitacion.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnQuitarHabitacion.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnQuitarHabitacion.BorderRadius = 20;
+            this.btnQuitarHabitacion.BorderSize = 0;
+            this.btnQuitarHabitacion.FlatAppearance.BorderSize = 0;
+            this.btnQuitarHabitacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuitarHabitacion.ForeColor = System.Drawing.Color.White;
+            this.btnQuitarHabitacion.Location = new System.Drawing.Point(559, 502);
+            this.btnQuitarHabitacion.Margin = new System.Windows.Forms.Padding(2);
+            this.btnQuitarHabitacion.Name = "btnQuitarHabitacion";
+            this.btnQuitarHabitacion.Size = new System.Drawing.Size(112, 32);
+            this.btnQuitarHabitacion.TabIndex = 8;
+            this.btnQuitarHabitacion.Text = "<<<<<";
+            this.btnQuitarHabitacion.TextColor = System.Drawing.Color.White;
+            this.btnQuitarHabitacion.UseVisualStyleBackColor = false;
+            // 
+            // btnAgregarHabitacion
+            // 
+            this.btnAgregarHabitacion.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnAgregarHabitacion.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnAgregarHabitacion.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnAgregarHabitacion.BorderRadius = 20;
+            this.btnAgregarHabitacion.BorderSize = 0;
+            this.btnAgregarHabitacion.FlatAppearance.BorderSize = 0;
+            this.btnAgregarHabitacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarHabitacion.ForeColor = System.Drawing.Color.White;
+            this.btnAgregarHabitacion.Location = new System.Drawing.Point(559, 379);
+            this.btnAgregarHabitacion.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAgregarHabitacion.Name = "btnAgregarHabitacion";
+            this.btnAgregarHabitacion.Size = new System.Drawing.Size(112, 32);
+            this.btnAgregarHabitacion.TabIndex = 7;
+            this.btnAgregarHabitacion.Text = ">>>>>";
+            this.btnAgregarHabitacion.TextColor = System.Drawing.Color.White;
+            this.btnAgregarHabitacion.UseVisualStyleBackColor = false;
+            // 
+            // btnQuitarVehiculo
+            // 
+            this.btnQuitarVehiculo.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnQuitarVehiculo.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnQuitarVehiculo.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnQuitarVehiculo.BorderRadius = 20;
+            this.btnQuitarVehiculo.BorderSize = 0;
+            this.btnQuitarVehiculo.FlatAppearance.BorderSize = 0;
+            this.btnQuitarVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuitarVehiculo.ForeColor = System.Drawing.Color.White;
+            this.btnQuitarVehiculo.Location = new System.Drawing.Point(1004, 166);
+            this.btnQuitarVehiculo.Margin = new System.Windows.Forms.Padding(2);
+            this.btnQuitarVehiculo.Name = "btnQuitarVehiculo";
+            this.btnQuitarVehiculo.Size = new System.Drawing.Size(112, 32);
+            this.btnQuitarVehiculo.TabIndex = 15;
+            this.btnQuitarVehiculo.Text = "Quitar Vehículo";
+            this.btnQuitarVehiculo.TextColor = System.Drawing.Color.White;
+            this.btnQuitarVehiculo.UseVisualStyleBackColor = false;
             // 
             // clmNumeroSeleccionado
             // 
@@ -499,212 +700,11 @@ namespace Hotel.Presentacion
             // 
             // clmDescripcionSeleccionada
             // 
-            this.clmDescripcionSeleccionada.HeaderText = "Despcripción";
+            this.clmDescripcionSeleccionada.HeaderText = "Descripción";
             this.clmDescripcionSeleccionada.MinimumWidth = 6;
             this.clmDescripcionSeleccionada.Name = "clmDescripcionSeleccionada";
             this.clmDescripcionSeleccionada.ReadOnly = true;
             this.clmDescripcionSeleccionada.Width = 125;
-            // 
-            // btnConsultarHabitaciones
-            // 
-            this.btnConsultarHabitaciones.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnConsultarHabitaciones.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnConsultarHabitaciones.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnConsultarHabitaciones.BorderRadius = 20;
-            this.btnConsultarHabitaciones.BorderSize = 0;
-            this.btnConsultarHabitaciones.FlatAppearance.BorderSize = 0;
-            this.btnConsultarHabitaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsultarHabitaciones.ForeColor = System.Drawing.Color.White;
-            this.btnConsultarHabitaciones.Location = new System.Drawing.Point(224, 90);
-            this.btnConsultarHabitaciones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnConsultarHabitaciones.Name = "btnConsultarHabitaciones";
-            this.btnConsultarHabitaciones.Size = new System.Drawing.Size(112, 32);
-            this.btnConsultarHabitaciones.TabIndex = 2;
-            this.btnConsultarHabitaciones.Text = "Consultar";
-            this.btnConsultarHabitaciones.TextColor = System.Drawing.Color.White;
-            this.btnConsultarHabitaciones.UseVisualStyleBackColor = false;
-            this.btnConsultarHabitaciones.Click += new System.EventHandler(this.btnConsultarHabitaciones_Click);
-            // 
-            // dtpFechaSalida
-            // 
-            this.dtpFechaSalida.Location = new System.Drawing.Point(360, 48);
-            this.dtpFechaSalida.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dtpFechaSalida.Name = "dtpFechaSalida";
-            this.dtpFechaSalida.Size = new System.Drawing.Size(151, 20);
-            this.dtpFechaSalida.TabIndex = 1;
-            // 
-            // dtpFechaIngreso
-            // 
-            this.dtpFechaIngreso.Location = new System.Drawing.Point(114, 48);
-            this.dtpFechaIngreso.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dtpFechaIngreso.Name = "dtpFechaIngreso";
-            this.dtpFechaIngreso.Size = new System.Drawing.Size(151, 20);
-            this.dtpFechaIngreso.TabIndex = 0;
-            // 
-            // grpCochera
-            // 
-            this.grpCochera.Controls.Add(this.txtPrecioCochera);
-            this.grpCochera.Controls.Add(this.lblPrecioCochera);
-            this.grpCochera.Controls.Add(this.txtNumeroCochera);
-            this.grpCochera.Controls.Add(this.lblNumeroCochera);
-            this.grpCochera.Location = new System.Drawing.Point(916, 21);
-            this.grpCochera.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.grpCochera.Name = "grpCochera";
-            this.grpCochera.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.grpCochera.Size = new System.Drawing.Size(269, 139);
-            this.grpCochera.TabIndex = 9;
-            this.grpCochera.TabStop = false;
-            this.grpCochera.Text = "Cochera Asignada";
-            // 
-            // txtPrecioCochera
-            // 
-            this.txtPrecioCochera.Location = new System.Drawing.Point(104, 97);
-            this.txtPrecioCochera.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtPrecioCochera.Name = "txtPrecioCochera";
-            this.txtPrecioCochera.Size = new System.Drawing.Size(76, 20);
-            this.txtPrecioCochera.TabIndex = 3;
-            // 
-            // lblPrecioCochera
-            // 
-            this.lblPrecioCochera.AutoSize = true;
-            this.lblPrecioCochera.Location = new System.Drawing.Point(38, 101);
-            this.lblPrecioCochera.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblPrecioCochera.Name = "lblPrecioCochera";
-            this.lblPrecioCochera.Size = new System.Drawing.Size(37, 13);
-            this.lblPrecioCochera.TabIndex = 2;
-            this.lblPrecioCochera.Text = "Precio";
-            // 
-            // txtNumeroCochera
-            // 
-            this.txtNumeroCochera.Location = new System.Drawing.Point(104, 40);
-            this.txtNumeroCochera.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtNumeroCochera.Name = "txtNumeroCochera";
-            this.txtNumeroCochera.Size = new System.Drawing.Size(76, 20);
-            this.txtNumeroCochera.TabIndex = 1;
-            // 
-            // lblNumeroCochera
-            // 
-            this.lblNumeroCochera.AutoSize = true;
-            this.lblNumeroCochera.Location = new System.Drawing.Point(30, 40);
-            this.lblNumeroCochera.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblNumeroCochera.Name = "lblNumeroCochera";
-            this.lblNumeroCochera.Size = new System.Drawing.Size(44, 13);
-            this.lblNumeroCochera.TabIndex = 0;
-            this.lblNumeroCochera.Text = "Número";
-            // 
-            // lblTotal
-            // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(1081, 656);
-            this.lblTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(37, 13);
-            this.lblTotal.TabIndex = 10;
-            this.lblTotal.Text = "Total: ";
-            // 
-            // txtTotal
-            // 
-            this.txtTotal.Location = new System.Drawing.Point(1121, 653);
-            this.txtTotal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Size = new System.Drawing.Size(76, 20);
-            this.txtTotal.TabIndex = 12;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnCancelar.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnCancelar.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnCancelar.BorderRadius = 20;
-            this.btnCancelar.BorderSize = 0;
-            this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(877, 653);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(112, 32);
-            this.btnCancelar.TabIndex = 14;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.TextColor = System.Drawing.Color.White;
-            this.btnCancelar.UseVisualStyleBackColor = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // btnAceptar
-            // 
-            this.btnAceptar.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnAceptar.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnAceptar.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnAceptar.BorderRadius = 20;
-            this.btnAceptar.BorderSize = 0;
-            this.btnAceptar.FlatAppearance.BorderSize = 0;
-            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAceptar.ForeColor = System.Drawing.Color.White;
-            this.btnAceptar.Location = new System.Drawing.Point(709, 653);
-            this.btnAceptar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(112, 32);
-            this.btnAceptar.TabIndex = 13;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.TextColor = System.Drawing.Color.White;
-            this.btnAceptar.UseVisualStyleBackColor = false;
-            // 
-            // btnQuitarHabitacion
-            // 
-            this.btnQuitarHabitacion.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnQuitarHabitacion.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnQuitarHabitacion.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnQuitarHabitacion.BorderRadius = 20;
-            this.btnQuitarHabitacion.BorderSize = 0;
-            this.btnQuitarHabitacion.FlatAppearance.BorderSize = 0;
-            this.btnQuitarHabitacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQuitarHabitacion.ForeColor = System.Drawing.Color.White;
-            this.btnQuitarHabitacion.Location = new System.Drawing.Point(559, 502);
-            this.btnQuitarHabitacion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnQuitarHabitacion.Name = "btnQuitarHabitacion";
-            this.btnQuitarHabitacion.Size = new System.Drawing.Size(112, 32);
-            this.btnQuitarHabitacion.TabIndex = 8;
-            this.btnQuitarHabitacion.Text = "<<<<<";
-            this.btnQuitarHabitacion.TextColor = System.Drawing.Color.White;
-            this.btnQuitarHabitacion.UseVisualStyleBackColor = false;
-            // 
-            // btnAgregarHabitacion
-            // 
-            this.btnAgregarHabitacion.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnAgregarHabitacion.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnAgregarHabitacion.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnAgregarHabitacion.BorderRadius = 20;
-            this.btnAgregarHabitacion.BorderSize = 0;
-            this.btnAgregarHabitacion.FlatAppearance.BorderSize = 0;
-            this.btnAgregarHabitacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarHabitacion.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarHabitacion.Location = new System.Drawing.Point(559, 379);
-            this.btnAgregarHabitacion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnAgregarHabitacion.Name = "btnAgregarHabitacion";
-            this.btnAgregarHabitacion.Size = new System.Drawing.Size(112, 32);
-            this.btnAgregarHabitacion.TabIndex = 7;
-            this.btnAgregarHabitacion.Text = ">>>>>";
-            this.btnAgregarHabitacion.TextColor = System.Drawing.Color.White;
-            this.btnAgregarHabitacion.UseVisualStyleBackColor = false;
-            // 
-            // btnQuitarVehiculo
-            // 
-            this.btnQuitarVehiculo.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnQuitarVehiculo.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnQuitarVehiculo.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnQuitarVehiculo.BorderRadius = 20;
-            this.btnQuitarVehiculo.BorderSize = 0;
-            this.btnQuitarVehiculo.FlatAppearance.BorderSize = 0;
-            this.btnQuitarVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQuitarVehiculo.ForeColor = System.Drawing.Color.White;
-            this.btnQuitarVehiculo.Location = new System.Drawing.Point(1004, 166);
-            this.btnQuitarVehiculo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnQuitarVehiculo.Name = "btnQuitarVehiculo";
-            this.btnQuitarVehiculo.Size = new System.Drawing.Size(112, 32);
-            this.btnQuitarVehiculo.TabIndex = 15;
-            this.btnQuitarVehiculo.Text = "Quitar Vehículo";
-            this.btnQuitarVehiculo.TextColor = System.Drawing.Color.White;
-            this.btnQuitarVehiculo.UseVisualStyleBackColor = false;
             // 
             // frmNuevaReserva
             // 
@@ -724,7 +724,7 @@ namespace Hotel.Presentacion
             this.Controls.Add(this.grpHabitaciones);
             this.Controls.Add(this.grpVehiculo);
             this.Controls.Add(this.grpHuesped);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmNuevaReserva";
             this.Text = "Nueva Reserva";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -775,11 +775,6 @@ namespace Hotel.Presentacion
         private System.Windows.Forms.TextBox txtCantidadPersonas;
         private System.Windows.Forms.Label lblCantidadPersonas;
         private System.Windows.Forms.DataGridView dgvReservas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmNumeroSeleccionado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmPisoSeleccionado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmTipoSeleccionado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmPrecioSeleccionado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmDescripcionSeleccionada;
         private Custom.RJButton btnConsultarHabitaciones;
         private System.Windows.Forms.DateTimePicker dtpFechaSalida;
         private System.Windows.Forms.DateTimePicker dtpFechaIngreso;
@@ -799,5 +794,10 @@ namespace Hotel.Presentacion
         private System.Windows.Forms.Label lblFechaHasta;
         private System.Windows.Forms.Label lblFechaDesde;
         private Custom.RJButton btnQuitarVehiculo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmNumeroSeleccionado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmPisoSeleccionado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmTipoSeleccionado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmPrecioSeleccionado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmDescripcionSeleccionada;
     }
 }

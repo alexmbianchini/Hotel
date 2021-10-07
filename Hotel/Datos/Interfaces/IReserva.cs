@@ -10,6 +10,8 @@ namespace Hotel.Datos.Interfaces
     interface IReserva
     {
         DataTable RecuperarCocherasLibres(string fechaIngreso, string fechaSalida);
-        
+
+        DataTable RecuperarHabitacionesLibres(string fechaIngreso, string fechaSalida);
+
     }
 }
