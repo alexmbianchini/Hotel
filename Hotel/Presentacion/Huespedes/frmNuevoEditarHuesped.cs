@@ -27,6 +27,7 @@ namespace Hotel.Presentacion.Huesped
 
         // Stirng para almacenar pasaporte recuperado de la grilla.
         private int idHuesped;
+        private string pasaporte;
 
         public frmNuevoEditarHuesped()
         {
@@ -40,12 +41,19 @@ namespace Hotel.Presentacion.Huesped
             this.idHuesped = idHuesped;
         }
 
+        public frmNuevoEditarHuesped(string pasaporte)
+        {
+            InitializeComponent();
+            this.pasaporte = pasaporte;
+        }
+
 
         // Los diferentes modos que acepta el FormMode
         public enum FormMode
         {
             insert,
-            update
+            update,
+            reserva
         }
 
         private void frmNuevoEditarHuesped_Load(object sender, EventArgs e)
@@ -69,6 +77,13 @@ namespace Hotel.Presentacion.Huesped
                         this.txtPasaporte.Enabled = false;
                         break;
                     }
+                case FormMode.reserva:
+                    {
+                        this.CargarCombo(cboPais, oPais.RecuperarTodos(), "nombre", "id");
+                        this.Text = "Nuevo Huesped";
+                        this.txtPasaporte.Text = pasaporte;
+                        break;
+                    }
             }
 
 
@@ -77,50 +92,24 @@ namespace Hotel.Presentacion.Huesped
 
 
         private void btnAceptar_Click(object sender, EventArgs e)
-        { 
+        {
             switch (formMode)
             {
-                case FormMode.insert:
-                    // Validar que los campos estén cargados
-                    if (this.ValidarCampos())
+                case FormMode.reserva:
                     {
-                        // Validar que el pasaporte tenga el formato correcto
-                        if (PasaporteCorrecto(this.txtPasaporte.Text))
-                        {
-                            // Validar que no exista otro huesped con el mismo pasaporte
-                            if (oHuesped.ValidarPasaporte(this.txtPasaporte.Text))
-                            {
-                                // Asignar los valores ingresados al objeto Huesped
-                                this.AsignarValores();
-
-                                // Creación del Huesped, retorna true si se agregó exitosamente, retorna false si no se logró crear.
-                                if (oHuesped.Crear(oHuespedSelected))
-                                {
-                                    MessageBox.Show("Nuevo Huesped Agregado");
-                                    this.Close();
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Ha ocurrido un error al agregar un Huesped");
-                                }
-
-                            }
-                            else
-                            {
-                                MessageBox.Show("Ya existe un Huesped con este Pasaporte!");
-                                this.txtPasaporte.Focus();
-                                this.lblPasaporte.ForeColor = Color.Red;
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("El Formato de pasaporte debe ser 'AAA000000', 3 letras y 6 números");
-                            this.txtPasaporte.Focus();
-                            this.lblPasaporte.ForeColor = Color.Red;
-                        }
+                        this.InsertarHuesped();
+                        frmNuevaReserva.ObtenerInstancia();
+                        frmNuevaReserva._pasaporte = this.txtPasaporte.Text;
+                        frmNuevaReserva._nombre = this.txtNombre.Text;
+                        frmNuevaReserva._apellido = this.txtApellido.Text;
+                        this.Close();
+                        break;
                     }
-
-                    break;
+                case FormMode.insert:
+                    {
+                        this.InsertarHuesped();
+                        break;
+                    }
 
                 case FormMode.update:
                     // Validar que los campos estén cargados
@@ -140,7 +129,7 @@ namespace Hotel.Presentacion.Huesped
                             MessageBox.Show("Ha ocurrido al modificar los datos");
                         }
 
-                        
+
                     }
 
 
@@ -151,36 +140,36 @@ namespace Hotel.Presentacion.Huesped
 
         // Carga los campos con el objeto recuepeardo de la Grilla.
         private void CargarCampos()
-        { 
-                DataTable tablaHuesped = new DataTable();
+        {
+            DataTable tablaHuesped = new DataTable();
 
-                tablaHuesped = oHuesped.RecuperarPorNumero(idHuesped);
+            tablaHuesped = oHuesped.RecuperarPorNumero(idHuesped);
 
-                txtNombre.Text = tablaHuesped.Rows[0]["nombre"].ToString();
-                txtApellido.Text = tablaHuesped.Rows[0]["apellido"].ToString();
-                txtPasaporte.Text = tablaHuesped.Rows[0]["numero_pasaporte"].ToString();
-                txtMail.Text = tablaHuesped.Rows[0]["mail"].ToString();
-                this.CargarCombo(cboPais, oPais.RecuperarTodos(), "nombre", "id", (int)tablaHuesped.Rows[0]["pais"]);
+            txtNombre.Text = tablaHuesped.Rows[0]["nombre"].ToString();
+            txtApellido.Text = tablaHuesped.Rows[0]["apellido"].ToString();
+            txtPasaporte.Text = tablaHuesped.Rows[0]["numero_pasaporte"].ToString();
+            txtMail.Text = tablaHuesped.Rows[0]["mail"].ToString();
+            this.CargarCombo(cboPais, oPais.RecuperarTodos(), "nombre", "id", (int)tablaHuesped.Rows[0]["pais"]);
 
         }
         // Cargar combos genéricos
         private void CargarCombo(ComboBox combo, DataTable tabla, string campoMostrar, string campoValor)
         {
-                combo.DataSource = tabla;
-                combo.DisplayMember = campoMostrar;
-                combo.ValueMember = campoValor;
-                combo.SelectedIndex = -1;
-                combo.DropDownStyle = ComboBoxStyle.DropDownList;
+            combo.DataSource = tabla;
+            combo.DisplayMember = campoMostrar;
+            combo.ValueMember = campoValor;
+            combo.SelectedIndex = -1;
+            combo.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         // Cargar combos genéericos, con valor inicial ya seleccionado.
         private void CargarCombo(ComboBox combo, DataTable tabla, string campoMostrar, string campoValor, int campoIndice)
         {
-                combo.DataSource = tabla;
-                combo.DisplayMember = campoMostrar;
-                combo.ValueMember = campoValor;
-                combo.SelectedIndex = campoIndice - 1;
-                combo.DropDownStyle = ComboBoxStyle.DropDownList;
+            combo.DataSource = tabla;
+            combo.DisplayMember = campoMostrar;
+            combo.ValueMember = campoValor;
+            combo.SelectedIndex = campoIndice - 1;
+            combo.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         // Valida que los campos no estén vacíos.
@@ -239,7 +228,7 @@ namespace Hotel.Presentacion.Huesped
             this.oHuespedSelected.Mail = txtMail.Text;
             this.oHuespedSelected.Id = idHuesped;
         }
-        
+
         // Selecciona unos de los dos opciones disponibles para el CASE
         public void SeleccionarModo(FormMode op)
         {
@@ -254,11 +243,11 @@ namespace Hotel.Presentacion.Huesped
             }
         }
 
-        
+
         // Valida que el pasaporte tenga el formato correcto, 3 letras y 6 números (AAA000000)
         private bool PasaporteCorrecto(string pasaporte)
         {
-            
+
             Regex formato = new Regex(@"[A-Z]{3}[0-9]{6}");
 
             if (pasaporte.Length == 9)
@@ -271,11 +260,54 @@ namespace Hotel.Presentacion.Huesped
                 {
                     return false;
                 }
-                
+
             }
             else
             {
                 return false;
+            }
+
+        }
+
+        public void InsertarHuesped()
+        {
+            // Validar que los campos estén cargados
+            if (this.ValidarCampos())
+            {
+                // Validar que el pasaporte tenga el formato correcto
+                if (PasaporteCorrecto(this.txtPasaporte.Text))
+                {
+                    // Validar que no exista otro huesped con el mismo pasaporte
+                    if (oHuesped.ValidarPasaporte(this.txtPasaporte.Text))
+                    {
+                        // Asignar los valores ingresados al objeto Huesped
+                        this.AsignarValores();
+
+                        // Creación del Huesped, retorna true si se agregó exitosamente, retorna false si no se logró crear.
+                        if (oHuesped.Crear(oHuespedSelected))
+                        {
+                            MessageBox.Show("Nuevo Huesped Agregado");
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ha ocurrido un error al agregar un Huesped");
+                        }
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ya existe un Huesped con este Pasaporte!");
+                        this.txtPasaporte.Focus();
+                        this.lblPasaporte.ForeColor = Color.Red;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("El Formato de pasaporte debe ser 'AAA000000', 3 letras y 6 números");
+                    this.txtPasaporte.Focus();
+                    this.lblPasaporte.ForeColor = Color.Red;
+                }
             }
 
         }

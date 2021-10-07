@@ -1,4 +1,5 @@
-﻿using Hotel.Presentacion.Huesped;
+﻿using Hotel.Negocio;
+using Hotel.Presentacion.Huesped;
 using Hotel.Servicios;
 using System;
 using System.Collections.Generic;
@@ -36,9 +37,10 @@ namespace Hotel.Presentacion
         HuespedService oHuesped = new HuespedService();
         CocheraService oCochera = new CocheraService();
         ReservaService oReserva = new ReservaService();
+        Reserva oReservaNew = new Reserva();
 
         DataTable tablaHuesped;
-        public static string _patenteVehiculo, _marcaVehiculo, _modeloVehiculo;
+        public static string _patenteVehiculo, _marcaVehiculo, _modeloVehiculo, _nombre, _apellido, _pasaporte;
         public static int _idVehiculo;
         DataTable tablaCocheras;
         
@@ -88,19 +90,17 @@ namespace Hotel.Presentacion
 
                         txtNombre.Text = tablaHuesped.Rows[0]["nombre"].ToString();
                         txtApellido.Text = tablaHuesped.Rows[0]["apellido"].ToString();
+                        txtPasaporte.Enabled = false;
 
                         btnAgregarVehiculo.Enabled = true;
 
                     }
                     else
                     {
-                        if(MessageBox.Show("El Huesped no está registrado en el sistema, desea registrarlo?", "Información", MessageBoxButtons.YesNo,
-                            MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
-                        {
-                            //Registrar Huesped
-                            frmNuevoEditarHuesped frmNuevoH = new frmNuevoEditarHuesped();
-                            frmNuevoH.SeleccionarModo(frmNuevoEditarHuesped.FormMode.insert);
-                        }
+                        MessageBox.Show("El Huesped no está registrado en el sistema, debe registrarlo", "Información", MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+                        this.btnAgregarHusped.Focus();
+
                     }
                 }                    
                 else
@@ -153,6 +153,15 @@ namespace Hotel.Presentacion
 
         }
 
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("Está seguro que desea cancelar la operación?", "Cancelar", MessageBoxButtons.YesNo, 
+                MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
+
         private void btnConsultarHabitaciones_Click(object sender, EventArgs e)
         {
             if (txtPatente.Text != string.Empty)
@@ -176,6 +185,20 @@ namespace Hotel.Presentacion
             }
 
 
+
+        }
+
+        private void btnAgregarHusped_Click(object sender, EventArgs e)
+        {
+            frmNuevoEditarHuesped frmNuevoH = new frmNuevoEditarHuesped(this.txtPasaporte.Text);
+            frmNuevoH.SeleccionarModo(frmNuevoEditarHuesped.FormMode.reserva);
+            frmNuevoH.ShowDialog();
+
+            this.txtPasaporte.Text = _pasaporte;
+            this.txtNombre.Text = _nombre;
+            this.txtApellido.Text = _apellido;
+            this.txtPasaporte.Enabled = false;
+                    
 
         }
 
@@ -207,6 +230,11 @@ namespace Hotel.Presentacion
             {
                 return false; 
             }
+        }
+
+        public void CargarReserva()
+        {
+            oReservaNew.IdHuesped = Convert.ToInt32(oHuesped.RecuperarPorPasaporte(this.txtPasaporte.Text).Rows[0]["id"]);
         }
     }
 
