@@ -217,7 +217,7 @@ namespace Hotel.Presentacion
         }
 
 
-        public bool AsignarCochera()
+        private bool AsignarCochera()
         {
             tablaCocheras = oReserva.RecuperarCocherasLibres(dtpFechaIngreso.Value.ToString(), dtpFechaSalida.Value.ToString());
 
@@ -232,9 +232,19 @@ namespace Hotel.Presentacion
             }
         }
 
-        public void CargarReserva()
+        private void CargarReserva()
         {
             oReservaNew.IdHuesped = Convert.ToInt32(oHuesped.RecuperarPorPasaporte(this.txtPasaporte.Text).Rows[0]["id"]);
+        }
+
+        private bool ValidarFechas()
+        {
+            if(this.dtpFechaIngreso.Value >= DateTime.Today 
+                && this.dtpFechaIngreso.Value < this.dtpFechaSalida.Value)
+            {
+                return true;
+            }
+            return false;
         }
     }
 
