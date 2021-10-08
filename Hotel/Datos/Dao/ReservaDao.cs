@@ -14,11 +14,14 @@ namespace Hotel.Datos.Dao
         {
 
             string consulta = "SELECT c.numero, c.precio" +
-                " FROM RESERVA r" +
-                " JOIN COCHERAS c ON (r.numero_cochera = c.numero)" +
+                " FROM COCHERAS c" +
                 " WHERE c.borrado_logico = 0" +
-                " AND (r.fecha_hora_ingreso_estimada <= CONVERT(DATETIME,'" + fechaIngreso + "', 103)" +
-                " OR r.fecha_hora_salida_estimada >= CONVERT(DATETIME, '" + fechaSalida + "', 103))";
+                " AND c.numero NOT IN(SELECT c.numero" +
+                                    " FROM RESERVA r" +
+                                    " JOIN COCHERAS c ON(r.numero_cochera = c.numero)" +
+                                    " WHERE r.borrado_logico = 0" +
+                                    " AND r.fecha_hora_ingreso_estimada >= CONVERT(DATETIME, '" + fechaIngreso + "', 103)" +
+                                    " AND r.fecha_hora_salida_estimada <= CONVERT(DATETIME, '" + fechaSalida + "', 103))";
 
             return DBHelper.ObtenerInstancia().Ejecutar(consulta);
         }
@@ -35,9 +38,9 @@ namespace Hotel.Datos.Dao
                                            " INNER JOIN RESERVA r ON(d.id_reserva = r.id_reserva)" +
                                            " WHERE r.borrado_logico = 0" +
                                            " AND r.fecha_hora_ingreso_estimada >= CONVERT(DATETIME, '" + fechaIngreso + "', 103)" +
-                                           " AND r.fecha_hora_salida_estimada <= CONVERT(DATETIME, '" + fechaSalida + "', 103)" +
-                                           " AND h.numero = h1.numero)";
-            consulta += " ORDER BY t.cod_tipo";
+                                           " AND r.fecha_hora_salida_estimada <= CONVERT(DATETIME, '" + fechaSalida + "', 103))";
+                                        
+                    consulta += " ORDER BY t.cod_tipo";
             
             return DBHelper.ObtenerInstancia().Ejecutar(consulta);
 
