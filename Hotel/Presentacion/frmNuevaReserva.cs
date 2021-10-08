@@ -22,6 +22,9 @@ namespace Hotel.Presentacion
         private frmNuevaReserva()
         {
             InitializeComponent();
+            dgvReservas.AutoGenerateColumns = false;
+
+
         }
 
         public static frmNuevaReserva ObtenerInstancia()
@@ -38,7 +41,11 @@ namespace Hotel.Presentacion
         CocheraService oCochera = new CocheraService();
         ReservaService oReserva = new ReservaService();
         Reserva oReservaNew = new Reserva();
-
+        BindingList<DetalleReserva>  listaDetalleReserva = new BindingList<DetalleReserva>();
+        int cantidadDias = 0;
+        float totalCochera = 0F;
+        
+ 
         DataTable tablaHuesped;
         public static string _patenteVehiculo, _marcaVehiculo, _modeloVehiculo, _nombre, _apellido, _pasaporte;
         public static int _idVehiculo;
@@ -60,6 +67,7 @@ namespace Hotel.Presentacion
             this.txtMarca.Enabled = false;
             this.txtNumeroCochera.Enabled = false;
             this.txtPrecioCochera.Enabled = false;
+            this.txtSubtotalCochera.Enabled = false;
             this.btnConsultar.Enabled = true;
             this.btnAgregarHusped.Enabled = true;
             this.btnAgregarVehiculo.Enabled = false;
@@ -74,6 +82,12 @@ namespace Hotel.Presentacion
             this.btnAceptar.Enabled = false;
             this.btnCancelar.Enabled = true;
             this.btnQuitarVehiculo.Enabled = false;
+            this.txtSubtotal.Text = (0).ToString();
+            this.txtSubtotalCochera.Text = (0).ToString();
+            this.txtTotal.Text = (0).ToString();
+
+
+
 
 
 
@@ -169,13 +183,19 @@ namespace Hotel.Presentacion
         {
             if(ValidarFechas())
             {
+                cantidadDias = CalcularCantidadDias(dtpFechaIngreso, dtpFechaSalida);
+
                 this.CargarGrilla(dgvHabitaciones, oReserva.RecuperarHabitacionesLibres(dtpFechaIngreso.Value.ToString(), dtpFechaSalida.Value.ToString()));
                 if (txtPatente.Text != string.Empty)
                 {
                         if (AsignarCochera())
                         {
+                            var precio = tablaCocheras.Rows[0]["precio"];
                             txtNumeroCochera.Text = tablaCocheras.Rows[0]["numero"].ToString();
-                            txtPrecioCochera.Text = tablaCocheras.Rows[0]["precio"].ToString();
+                            txtPrecioCochera.Text = precio.ToString();
+
+                            totalCochera = cantidadDias * Convert.ToInt32(precio);
+                            txtSubtotalCochera.Text = (totalCochera).ToString();
 
                         }
                         else
@@ -188,7 +208,7 @@ namespace Hotel.Presentacion
                         }
                    
                 }
-
+                 
             }
 
             btnAgregarHabitacion.Enabled = true;
@@ -220,9 +240,16 @@ namespace Hotel.Presentacion
 
         private void btnAgregarHabitacion_Click(object sender, EventArgs e)
         {
+            
+
             PasarFila(dgvHabitaciones, dgvReservas);
+
+            CalcularTotales(dgvReservas);
+
             btnQuitarHabitacion.Enabled = true;
             btnAceptar.Enabled = true;
+
+
         }
 
         private void btnAgregarVehiculo_Click(object sender, EventArgs e)
@@ -241,7 +268,16 @@ namespace Hotel.Presentacion
 
         private void btnQuitarHabitacion_Click(object sender, EventArgs e)
         {
+
+            
             PasarFila(dgvReservas, dgvHabitaciones);
+
+            CalcularTotales(dgvReservas);
+
+          
+
+            
+
         }
 
         private void txtSubtotal_TextChanged(object sender, EventArgs e)
@@ -269,17 +305,26 @@ namespace Hotel.Presentacion
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             // Validar Campos
-            // Calcular Cantidad de días ya está la funcion CalcularCantidadDias(DateTimePicker, DateTimePicker)
-            // Calcular Suma precio habitaciones función creada CalcularPrecioHabitaciones(DataGridView) 
-            // Calcular subtotal Habitaciones (cánt. días x suma precio habitaciones)
-            // Calcular Subtotal Cochera (cant. días x precio de la cochera)
-            // Calcular Total (subtotalHabitaciones + subtotalCochera)
+            foreach (DataGridViewRow fila in dgvReservas.Rows)
+            {
+                listaDetalleReserva.Add(new DetalleReserva()
+                {
+                    IdDetalle = listaDetalleReserva.Count + 1,
+                    NroHabitacion = Convert.ToInt32(fila.Cells[0].Value),
+                    PrecioUnitarioHabitacion = Convert.ToSingle(fila.Cells[3].Value)
+                });
+            }
+
             // Cargar datos a los objetos
+
             // Cargar datos a la base de datos
 
-            
 
-            
+
+
+
+
+
         }
 
         private void CargarReserva()
@@ -338,17 +383,27 @@ namespace Hotel.Presentacion
         }
 
 
-        private float CalcularPrecioHabitaciones(DataGridView dataGridView)
+        private void CalcularTotales(DataGridView dataGridView)
         {
-            float precio = 0F;
+            var subtotal = 0F;
 
             foreach (DataGridViewRow fila in dataGridView.Rows)
             {
-                precio += Convert.ToSingle(fila.Cells[3].Value);
+                subtotal += this.cantidadDias * Convert.ToSingle(fila.Cells[3].Value);
             }
 
-            return precio;
+            txtSubtotal.Text = subtotal.ToString();
+
+            var importeTotal = subtotal + this.totalCochera;
+
+            txtTotal.Text = importeTotal.ToString();
         }
+
+        
+
+        
+
+
     }
 
 
