@@ -48,7 +48,7 @@ namespace Hotel.Datos.Dao
 
         }*/
 
-        public DataTable RecuperarHabitacionesLibres(string fechaIngreso, string fechaSalida)
+        /*public DataTable RecuperarHabitacionesLibres(string fechaIngreso, string fechaSalida)
         {
 
             string consulta = "SELECT h1.numero, t.nombre as tipo, h1.piso, h1.precio, t.descripcion" +
@@ -61,7 +61,7 @@ namespace Hotel.Datos.Dao
                                            " WHERE r.borrado_logico = 0" +
                                            " AND ((r.fecha_hora_ingreso_estimada <= CONVERT(DATETIME, '" + fechaIngreso + "', 103)" +
                                            " AND r.fecha_hora_salida_estimada >= CONVERT(DATETIME, '" + fechaSalida + "', 103))" +
-                                           " OR (r.fecha_hora_ingreso_estimada <= CONVERT(DATETIME, '" + fechaIngreso + "', 103)" +
+                                           " OR(r.fecha_hora_ingreso_estimada <= CONVERT(DATETIME, '" + fechaIngreso + "', 103)" +
                                            " AND r.fecha_hora_salida_estimada <= CONVERT(DATETIME, '" + fechaSalida + "', 103))" +
                                            " OR (r.fecha_hora_ingreso_estimada >= CONVERT(DATETIME, '" + fechaIngreso + "', 103)" +
                                            " AND r.fecha_hora_salida_estimada >= CONVERT(DATETIME, '" + fechaSalida + "', 103))))"; 
@@ -69,6 +69,30 @@ namespace Hotel.Datos.Dao
 
             return DBHelper.ObtenerInstancia().Ejecutar(consulta);
 
+        }*/
+
+        public DataTable RecuperarHabitacionesLibres(string fechaIngreso, string fechaSalida)
+        {
+
+            string consulta = "SELECT h1.numero, t.nombre as tipo, h1.piso, h1.precio, t.descripcion" +
+                " FROM HABITACIONES h1" +
+                " INNER JOIN TIPO_HABITACION t ON(h1.tipo_habitacion = t.cod_tipo)" +
+                " WHERE h1.borrado_logico = 0" +
+                " AND h1.numero NOT IN (SELECT h.numero" +
+                                       " FROM HABITACIONES h" +
+                                       " INNER JOIN DETALLE_RESERVA d ON(h.numero = d.numero_habitacion)" +
+                                       " INNER JOIN RESERVA r ON(d.id_reserva = r.id_reserva)" +
+                                       " WHERE r.borrado_logico = 0" +
+                                       " AND (CONVERT(DATETIME, '" + fechaIngreso + "', 103)" +
+                                       " BETWEEN r.fecha_hora_ingreso_estimada AND r.fecha_hora_salida_estimada)" +
+                                       " OR (CONVERT(DATETIME, '" + fechaSalida + "', 103)" +
+                                       " BETWEEN r.fecha_hora_ingreso_estimada AND r.fecha_hora_salida_estimada))";
+                consulta += " ORDER BY t.cod_tipo";
+
+            return DBHelper.ObtenerInstancia().Ejecutar(consulta);
+
         }
+
+
     }
 }
