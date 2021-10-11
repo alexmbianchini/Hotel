@@ -348,7 +348,7 @@ namespace Hotel.Presentacion
                     {
                         int idReserva = oReserva.Crear(oReservaNew, listaDetalleReserva);
 
-                        MessageBox.Show(string.Concat("La factura nro: ", idReserva.ToString(), " se generó correctamente."), "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(string.Concat("La Reserva N°: ", idReserva.ToString(), " se efectuó correctamente."), "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
