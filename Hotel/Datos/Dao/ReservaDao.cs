@@ -2,6 +2,7 @@
 using Hotel.Negocio;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -106,13 +107,14 @@ namespace Hotel.Datos.Dao
             return DBHelper.ObtenerInstancia().Ejecutar(consulta);
         }
 
-        public int Crear(Reserva oReserva, List<DetalleReserva> oDetalle)
+        public int Crear(Reserva oReserva, BindingList<DetalleReserva> oDetalle)
         {
             int id = 0;
+            DBHelper db = new DBHelper();
             try
             {
-                DBHelper.ObtenerInstancia().Open();
-                DBHelper.ObtenerInstancia().BeginTransaction();
+                db.Open();
+                db.BeginTransaction();
                 oReserva.IdReserva = GenerarId();
                 string insercion = "INSERT INTO RESERVA (id_reserva, fecha_hora_reserva, id_huesped, fecha_hora_ingreso_estimada," +
                     " fecha_hora_salida_estimada, id_usuario, id_vehiculo, cantidad_personas, estado, numero_cochera, precio_unitario_cochera," +
@@ -129,7 +131,7 @@ namespace Hotel.Datos.Dao
                     "1, " +
                     oReserva.NumeroCochera + "," +
                     " '" + oReserva.PrecioUnitarioCochera + "', 0)";
-                DBHelper.ObtenerInstancia().Transaccion(insercion);
+                db.Transaccion(insercion);
 
                 foreach (var detalle in oDetalle)
                 {
@@ -140,21 +142,21 @@ namespace Hotel.Datos.Dao
                         detalle.IdReserva + ", " +
                         detalle.NroHabitacion + "," +
                         " '" + detalle.PrecioUnitarioHabitacion + "', 0)";
-                    DBHelper.ObtenerInstancia().Transaccion(insercionDet);
+                    db.Transaccion(insercionDet);
                 }
 
-                DBHelper.ObtenerInstancia().Commit();
+                db.Commit();
                 id = oReserva.IdReserva;
 
             }
             catch(Exception ex)
             {
-                DBHelper.ObtenerInstancia().Rollback();
+                db.Rollback();
                 throw ex;                
             }
             finally
             {
-                DBHelper.ObtenerInstancia().Close();
+                db.Close();
             }
             return id;
         }

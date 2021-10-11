@@ -3,6 +3,7 @@ using Hotel.Datos.Interfaces;
 using Hotel.Negocio;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -26,7 +27,7 @@ namespace Hotel.Servicios
         {
             return dao.RecuperarHabitacionesLibres(fechaIngreso, fechaSalida);
         }
-        public int Crear(Reserva oReserva, List<DetalleReserva> oDetalle)
+        public int Crear(Reserva oReserva, BindingList<DetalleReserva> oDetalle)
         {
             return dao.Crear(oReserva, oDetalle);
         }

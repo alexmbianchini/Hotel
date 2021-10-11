@@ -1,6 +1,7 @@
 ﻿using Hotel.Negocio;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,7 @@ namespace Hotel.Datos.Interfaces
         DataTable RecuperarCocherasLibres(string fechaIngreso, string fechaSalida);
 
         DataTable RecuperarHabitacionesLibres(string fechaIngreso, string fechaSalida);
-        int Crear(Reserva oReserva, List<DetalleReserva> oDetalle);
+        int Crear(Reserva oReserva, BindingList<DetalleReserva> oDetalle);
 
     }
 }

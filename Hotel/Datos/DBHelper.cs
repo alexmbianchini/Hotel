@@ -17,7 +17,7 @@ namespace Hotel.Datos
 
         //private string cadenaConexion = @"Data Source=sql5108.site4now.net;Initial Catalog = db_a78fa0_hotel; Persist Security Info=True;User ID = db_a78fa0_hotel_admin";
         private string cadenaConexion;
-        private DBHelper()
+        public DBHelper()
         {
             conexion = new SqlConnection();
             comando = new SqlCommand();
@@ -102,7 +102,7 @@ namespace Hotel.Datos
                 comando.CommandText = consultaSQL;
 
                 resultado = comando.ExecuteNonQuery();
-                
+
             }
             catch(Exception ex)
             {
