@@ -23,7 +23,7 @@ namespace Hotel.Datos.Dao
                                     " JOIN COCHERAS c ON(r.numero_cochera = c.numero)" +
                                     " WHERE r.borrado_logico = 0" +
                                     " AND r.fecha_hora_ingreso_estimada >= CONVERT(DATETIME, '" + fechaIngreso + "', 103)" +
-                                    " AND r.fecha_hora_salida_estimada <= CONVERT(DATETIME, '" + fechaSalida + "', 103))";
+                                    " OR r.fecha_hora_salida_estimada <= CONVERT(DATETIME, '" + fechaSalida + "', 103))";
 
             return DBHelper.ObtenerInstancia().Ejecutar(consulta);
         }
