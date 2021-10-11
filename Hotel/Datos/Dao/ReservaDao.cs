@@ -1,4 +1,5 @@
 ﻿using Hotel.Datos.Interfaces;
+using Hotel.Negocio;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -92,7 +93,70 @@ namespace Hotel.Datos.Dao
             return DBHelper.ObtenerInstancia().Ejecutar(consulta);
 
         }
+        private int GenerarId()
+        {
+            DataTable tabla = RecuperarIds();
 
+            return tabla.Rows.Count + 1;
+        }
 
+        private DataTable RecuperarIds()
+        {
+            string consulta = "SELECT id_reserva FROM RESERVA";
+            return DBHelper.ObtenerInstancia().Ejecutar(consulta);
+        }
+
+        public int Crear(Reserva oReserva, List<DetalleReserva> oDetalle)
+        {
+            int id = 0;
+            try
+            {
+                DBHelper.ObtenerInstancia().Open();
+                DBHelper.ObtenerInstancia().BeginTransaction();
+                oReserva.IdReserva = GenerarId();
+                string insercion = "INSERT INTO RESERVA (id_reserva, fecha_hora_reserva, id_huesped, fecha_hora_ingreso_estimada," +
+                    " fecha_hora_salida_estimada, id_usuario, id_vehiculo, cantidad_personas, estado, numero_cochera, precio_unitario_cochera," +
+                    " borrado_logico)" +
+                    " VALUES (" +
+                    oReserva.IdReserva + "," +
+                    " CONVERT(DATETIME, '" + oReserva.FechaHoraReserva + "', 103), " +
+                    oReserva.IdHuesped + "," +
+                    " CONVERT(DATETIME, '" + oReserva.FechaHoraIngresoEstimada + "', 103)," +
+                    " CONVERT(DATETIME, '" + oReserva.FechaHoraSalidaEstimada + "', 103), " +
+                    oReserva.IdUsuario + ", " +
+                    oReserva.IdVehiculo + ", " +
+                    oReserva.CantidadPersonas + ", " +
+                    "1, " +
+                    oReserva.NumeroCochera + "," +
+                    " '" + oReserva.PrecioUnitarioCochera + "', 0)";
+                DBHelper.ObtenerInstancia().Transaccion(insercion);
+
+                foreach (var detalle in oDetalle)
+                {
+                    detalle.IdReserva = oReserva.IdReserva;
+                    string insercionDet = "INSERT INTO DETALLE_RESERVA (id_detalle, id_reserva, numero_habitacion, precio_unitario_habitacion, borrado_logico)" +
+                        " VALUES (" +
+                        detalle.IdDetalle + ", " +
+                        detalle.IdReserva + ", " +
+                        detalle.NroHabitacion + "," +
+                        " '" + detalle.PrecioUnitarioHabitacion + "', 0)";
+                    DBHelper.ObtenerInstancia().Transaccion(insercionDet);
+                }
+
+                DBHelper.ObtenerInstancia().Commit();
+                id = oReserva.IdReserva;
+
+            }
+            catch(Exception ex)
+            {
+                DBHelper.ObtenerInstancia().Rollback();
+                throw ex;                
+            }
+            finally
+            {
+                DBHelper.ObtenerInstancia().Close();
+            }
+            return id;
+        }
     }
 }

@@ -13,6 +13,7 @@ namespace Hotel.Datos
         private static DBHelper instancia;
         private SqlConnection conexion;
         private SqlCommand comando;
+        private SqlTransaction dbTransaction;
 
         //private string cadenaConexion = @"Data Source=sql5108.site4now.net;Initial Catalog = db_a78fa0_hotel; Persist Security Info=True;User ID = db_a78fa0_hotel_admin";
         private string cadenaConexion;
@@ -23,6 +24,35 @@ namespace Hotel.Datos
             cadenaConexion = @"Data Source=sql5108.site4now.net;Initial Catalog=db_a78fa0_hotel;User ID=db_a78fa0_hotel_admin;Password=alexlufabri3k1";
 
         }
+        public void BeginTransaction()
+        {
+            if (conexion.State == ConnectionState.Open)
+                 dbTransaction = conexion.BeginTransaction();
+        }
+
+        public void Commit()
+        {
+            if (dbTransaction != null)
+                dbTransaction.Commit();
+        }
+
+        public void Rollback()
+        {
+            if (dbTransaction != null)
+                dbTransaction.Rollback();
+        }
+        public void Open()
+        {
+            if (conexion.State != ConnectionState.Open)
+                conexion.Open();
+        }
+
+        public void Close()
+        {
+            if (conexion.State != ConnectionState.Closed)
+                conexion.Close();
+        }
+
 
         public static DBHelper ObtenerInstancia()
         {
@@ -57,5 +87,29 @@ namespace Hotel.Datos
             tabla.Load(comando.ExecuteReader());
             conexion.Close();
         }
+
+        public int Transaccion(string consultaSQL)
+        {
+            int resultado = 0;
+
+            try
+            {
+                comando.Connection = conexion;
+                comando.Transaction = dbTransaction;
+                comando.CommandType = CommandType.Text;
+                
+                // Instrucción a Ejecutar
+                comando.CommandText = consultaSQL;
+
+                resultado = comando.ExecuteNonQuery();
+                
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+            return resultado;
+        }
+ 
     }
  }

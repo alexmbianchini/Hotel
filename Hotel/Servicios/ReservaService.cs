@@ -1,5 +1,6 @@
 ﻿using Hotel.Datos.Dao;
 using Hotel.Datos.Interfaces;
+using Hotel.Negocio;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -24,6 +25,10 @@ namespace Hotel.Servicios
         public DataTable RecuperarHabitacionesLibres(string fechaIngreso, string fechaSalida)
         {
             return dao.RecuperarHabitacionesLibres(fechaIngreso, fechaSalida);
+        }
+        public int Crear(Reserva oReserva, List<DetalleReserva> oDetalle)
+        {
+            return dao.Crear(oReserva, oDetalle);
         }
     }
 }
