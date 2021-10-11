@@ -20,12 +20,34 @@ namespace Hotel.Presentacion
         private static frmNuevaReserva instancia;
 
         // Variables
-        private static int idUsuario;
+        public static int idUsuario;
 
-        private frmNuevaReserva(int idUsuario)
+        HuespedService oHuesped = new HuespedService();
+        ReservaService oReserva = new ReservaService();
+        Reserva oReservaNew = new Reserva();
+        BindingList<DetalleReserva> listaDetalleReserva = new BindingList<DetalleReserva>();
+        int cantidadDias = 0;
+        float totalCochera = 0F;
+
+
+        DataTable tablaHuesped;
+        public static string _patenteVehiculo, _marcaVehiculo, _modeloVehiculo, _nombre, _apellido, _pasaporte;
+        public static int _idVehiculo;
+        DataTable tablaCocheras;
+
+        private frmNuevaReserva()
         {
             InitializeComponent();
             dgvReservas.AutoGenerateColumns = false;
+
+
+        }
+
+        private frmNuevaReserva(int id)
+        {
+            InitializeComponent();
+            dgvReservas.AutoGenerateColumns = false;
+            idUsuario = id;
 
         }
 
@@ -33,26 +55,21 @@ namespace Hotel.Presentacion
         {
             if (instancia == null)
             {
-                instancia = new frmNuevaReserva(idUsuario);
+                instancia = new frmNuevaReserva();
+            }
+            return instancia;
+        }
+
+        public static frmNuevaReserva ObtenerInstancia(int id)
+        {
+            if (instancia == null)
+            {
+                instancia = new frmNuevaReserva(id);
             }
             return instancia;
         }
 
 
-        HuespedService oHuesped = new HuespedService();
-        CocheraService oCochera = new CocheraService();
-        ReservaService oReserva = new ReservaService();
-        Reserva oReservaNew = new Reserva();
-        BindingList<DetalleReserva>  listaDetalleReserva = new BindingList<DetalleReserva>();
-        int cantidadDias = 0;
-        float totalCochera = 0F;
-        
- 
-        DataTable tablaHuesped;
-        public static string _patenteVehiculo, _marcaVehiculo, _modeloVehiculo, _nombre, _apellido, _pasaporte;
-        public static int _idVehiculo;
-        DataTable tablaCocheras;
-        
 
         private void frmNuevaReserva_Load(object sender, EventArgs e)
         {
@@ -177,6 +194,7 @@ namespace Hotel.Presentacion
             if(MessageBox.Show("Está seguro que desea cancelar la operación?", "Cancelar", MessageBoxButtons.YesNo, 
                 MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
+                instancia = null;
                 this.Close();
             }
         }
@@ -212,13 +230,13 @@ namespace Hotel.Presentacion
                 }
                  
             }
+            else
+            {
+                MessageBox.Show("Debe ingresar un rango de fechas válido", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
 
             btnAgregarHabitacion.Enabled = true;
             
-
-
-
-
         }
 
         private void btnAgregarHusped_Click(object sender, EventArgs e)
@@ -320,15 +338,35 @@ namespace Hotel.Presentacion
             
             try
             {
-                // Cargar datos a los objetos
-                CargarReserva();
+                if (ValidarCampos())
+                {
 
-                // Cargar datos a la base de datos
+                    CargarReserva();
 
+                    // Cargar datos a la base de datos
+                    if (listaDetalleReserva.Count != 0)
+                    {
+                        int idReserva = oReserva.Crear(oReservaNew, listaDetalleReserva);
+
+                        MessageBox.Show(string.Concat("La factura nro: ", idReserva.ToString(), " se generó correctamente."), "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        throw new Exception("Debe ingresar al menos una habitación para reservar.");
+                    }
+                }
+                
+
+                
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al registrar la reserva " + ex.Message + ex.StackTrace, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            finally
+            {
+                instancia = null;
+                this.Close();
             }
 
           
@@ -341,10 +379,18 @@ namespace Hotel.Presentacion
             oReservaNew.FechaHoraIngresoEstimada = dtpFechaIngreso.Value;
             oReservaNew.FechaHoraSalidaEstimada = dtpFechaSalida.Value;
             oReservaNew.IdUsuario = idUsuario;
-            oReservaNew.IdVehiculo = _idVehiculo;
             oReservaNew.CantidadPersonas = Convert.ToInt32(txtCantidadPersonas.Text);
-            oReservaNew.NumeroCochera = Convert.ToInt32(txtNumeroCochera.Text);
-            oReservaNew.PrecioUnitarioCochera = Convert.ToSingle(txtPrecioCochera.Text);
+
+            if (!string.IsNullOrEmpty(txtNumeroCochera.Text))
+            {
+                oReservaNew.NumeroCochera = Convert.ToInt32(txtNumeroCochera.Text);
+                oReservaNew.PrecioUnitarioCochera = Convert.ToSingle(txtPrecioCochera.Text);
+            }
+            if (!string.IsNullOrEmpty(txtPatente.Text))
+            {
+                oReservaNew.IdVehiculo = _idVehiculo;
+            }
+            
         }
 
         private bool ValidarFechas()
@@ -415,7 +461,26 @@ namespace Hotel.Presentacion
         }
 
         
+        private bool ValidarCampos()
+        {
+            if (string.IsNullOrEmpty(this.txtNombre.Text))
+            {
+                MessageBox.Show("Debe ingresar un Nombre");
+                this.txtNombre.Focus();
+                this.lblNombre.ForeColor = Color.Red;
+                return false;
+            }
 
+            if (string.IsNullOrEmpty(this.txtCantidadPersonas.Text))
+            {
+                MessageBox.Show("Debe ingresar la Cantidad de personas");
+                this.txtCantidadPersonas.Focus();
+                this.lblCantidadPersonas.ForeColor = Color.Red;
+                return false;
+            }
+
+            return true;
+        }
         
 
 
