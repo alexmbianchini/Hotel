@@ -19,11 +19,13 @@ namespace Hotel.Presentacion
         // Patrón Singleton
         private static frmNuevaReserva instancia;
 
-        private frmNuevaReserva()
+        // Variables
+        private static int idUsuario;
+
+        private frmNuevaReserva(int idUsuario)
         {
             InitializeComponent();
             dgvReservas.AutoGenerateColumns = false;
-
 
         }
 
@@ -31,7 +33,7 @@ namespace Hotel.Presentacion
         {
             if (instancia == null)
             {
-                instancia = new frmNuevaReserva();
+                instancia = new frmNuevaReserva(idUsuario);
             }
             return instancia;
         }
@@ -315,21 +317,34 @@ namespace Hotel.Presentacion
                 });
             }
 
-            // Cargar datos a los objetos
+            
+            try
+            {
+                // Cargar datos a los objetos
+                CargarReserva();
 
-            // Cargar datos a la base de datos
+                // Cargar datos a la base de datos
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al registrar la reserva " + ex.Message + ex.StackTrace, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
 
-
-
-
-
-
+          
         }
 
         private void CargarReserva()
         {
+            oReservaNew.FechaHoraReserva = DateTime.Today;
             oReservaNew.IdHuesped = Convert.ToInt32(oHuesped.RecuperarPorPasaporte(this.txtPasaporte.Text).Rows[0]["id"]);
+            oReservaNew.FechaHoraIngresoEstimada = dtpFechaIngreso.Value;
+            oReservaNew.FechaHoraSalidaEstimada = dtpFechaSalida.Value;
+            oReservaNew.IdUsuario = idUsuario;
+            oReservaNew.IdVehiculo = _idVehiculo;
+            oReservaNew.CantidadPersonas = Convert.ToInt32(txtCantidadPersonas.Text);
+            oReservaNew.NumeroCochera = Convert.ToInt32(txtNumeroCochera.Text);
+            oReservaNew.PrecioUnitarioCochera = Convert.ToSingle(txtPrecioCochera.Text);
         }
 
         private bool ValidarFechas()
