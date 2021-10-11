@@ -21,6 +21,8 @@ namespace Hotel.Presentacion
 
         
         frmLogin fLog = new frmLogin();
+
+        // S
         public frmPrincipal()
         {
             InitializeComponent();
@@ -105,6 +107,13 @@ namespace Hotel.Presentacion
             frmVehiculo frmVehiculo = new frmVehiculo();
             frmVehiculo.SeleccionarModo(frmVehiculo.FormMode.principal);
             frmVehiculo.ShowDialog();
+        }
+
+        private void btnReserva_Click(object sender, EventArgs e)
+        {
+            frmNuevaReserva.ObtenerInstancia(fLog.MiUsuarioSelected.Id).ShowDialog();
+            
+                        
         }
     }
 }

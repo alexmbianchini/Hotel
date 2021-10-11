@@ -111,13 +111,34 @@ namespace Hotel.Datos.Dao
         {
             int id = 0;
             DBHelper db = new DBHelper();
+            string insercion = "";
             try
             {
                 db.Open();
                 db.BeginTransaction();
                 oReserva.IdReserva = GenerarId();
-                string insercion = "INSERT INTO RESERVA (id_reserva, fecha_hora_reserva, id_huesped, fecha_hora_ingreso_estimada," +
-                    " fecha_hora_salida_estimada, id_usuario, id_vehiculo, cantidad_personas, estado, numero_cochera, precio_unitario_cochera," +
+                if (oReserva.IdVehiculo != 0)
+                {
+                    insercion = "INSERT INTO RESERVA (id_reserva, fecha_hora_reserva, id_huesped, fecha_hora_ingreso_estimada," +
+                        " fecha_hora_salida_estimada, id_usuario, id_vehiculo, cantidad_personas, estado, numero_cochera, precio_unitario_cochera," +
+                        " borrado_logico)" +
+                        " VALUES (" +
+                        oReserva.IdReserva + "," +
+                        " CONVERT(DATETIME, '" + oReserva.FechaHoraReserva + "', 103), " +
+                        oReserva.IdHuesped + "," +
+                        " CONVERT(DATETIME, '" + oReserva.FechaHoraIngresoEstimada + "', 103)," +
+                        " CONVERT(DATETIME, '" + oReserva.FechaHoraSalidaEstimada + "', 103), " +
+                        oReserva.IdUsuario + ", " +
+                        oReserva.IdVehiculo + ", " +
+                        oReserva.CantidadPersonas + ", " +
+                        "1, " +
+                        oReserva.NumeroCochera + "," +
+                        " '" + oReserva.PrecioUnitarioCochera + "', 0)";
+                }
+                else
+                {
+                    insercion = "INSERT INTO RESERVA (id_reserva, fecha_hora_reserva, id_huesped, fecha_hora_ingreso_estimada," +
+                    " fecha_hora_salida_estimada, id_usuario, cantidad_personas, estado," +
                     " borrado_logico)" +
                     " VALUES (" +
                     oReserva.IdReserva + "," +
@@ -126,11 +147,9 @@ namespace Hotel.Datos.Dao
                     " CONVERT(DATETIME, '" + oReserva.FechaHoraIngresoEstimada + "', 103)," +
                     " CONVERT(DATETIME, '" + oReserva.FechaHoraSalidaEstimada + "', 103), " +
                     oReserva.IdUsuario + ", " +
-                    oReserva.IdVehiculo + ", " +
                     oReserva.CantidadPersonas + ", " +
-                    "1, " +
-                    oReserva.NumeroCochera + "," +
-                    " '" + oReserva.PrecioUnitarioCochera + "', 0)";
+                    "1, 0)";
+                }
                 db.Transaccion(insercion);
 
                 foreach (var detalle in oDetalle)

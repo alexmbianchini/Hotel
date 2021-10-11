@@ -23,6 +23,8 @@ namespace Hotel.Datos
             comando = new SqlCommand();
             cadenaConexion = @"Data Source=sql5108.site4now.net;Initial Catalog=db_a78fa0_hotel;User ID=db_a78fa0_hotel_admin;Password=alexlufabri3k1";
 
+            conexion.ConnectionString = cadenaConexion;
+
         }
         public void BeginTransaction()
         {

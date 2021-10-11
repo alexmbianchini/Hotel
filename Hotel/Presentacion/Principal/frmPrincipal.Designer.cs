@@ -39,6 +39,7 @@ namespace Hotel.Presentacion
             this.btnHabitaciones = new Hotel.Custom.RJButton();
             this.btnUsuarios = new Hotel.Custom.RJButton();
             this.rjButton1 = new Hotel.Custom.RJButton();
+            this.btnReserva = new Hotel.Custom.RJButton();
             this.SuspendLayout();
             // 
             // rjButton9
@@ -52,7 +53,7 @@ namespace Hotel.Presentacion
             this.rjButton9.FlatAppearance.BorderSize = 0;
             this.rjButton9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjButton9.ForeColor = System.Drawing.Color.White;
-            this.rjButton9.Location = new System.Drawing.Point(0, 429);
+            this.rjButton9.Location = new System.Drawing.Point(0, 414);
             this.rjButton9.Name = "rjButton9";
             this.rjButton9.Size = new System.Drawing.Size(201, 55);
             this.rjButton9.TabIndex = 8;
@@ -217,6 +218,26 @@ namespace Hotel.Presentacion
             this.rjButton1.TextColor = System.Drawing.Color.White;
             this.rjButton1.UseVisualStyleBackColor = false;
             // 
+            // btnReserva
+            // 
+            this.btnReserva.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
+            this.btnReserva.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
+            this.btnReserva.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnReserva.BorderRadius = 0;
+            this.btnReserva.BorderSize = 0;
+            this.btnReserva.FlatAppearance.BorderSize = 0;
+            this.btnReserva.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReserva.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReserva.ForeColor = System.Drawing.Color.White;
+            this.btnReserva.Location = new System.Drawing.Point(0, 414);
+            this.btnReserva.Name = "btnReserva";
+            this.btnReserva.Size = new System.Drawing.Size(195, 48);
+            this.btnReserva.TabIndex = 9;
+            this.btnReserva.Text = "Reserva";
+            this.btnReserva.TextColor = System.Drawing.Color.White;
+            this.btnReserva.UseVisualStyleBackColor = false;
+            this.btnReserva.Click += new System.EventHandler(this.btnReserva_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -225,6 +246,7 @@ namespace Hotel.Presentacion
             this.BackgroundImage = global::Hotel.Properties.Resources.hotelfondo;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(766, 463);
+            this.Controls.Add(this.btnReserva);
             this.Controls.Add(this.rjButton9);
             this.Controls.Add(this.rjButton8);
             this.Controls.Add(this.btnVehiculo);
@@ -259,5 +281,6 @@ namespace Hotel.Presentacion
         private Custom.RJButton btnVehiculo;
         private Custom.RJButton rjButton8;
         private Custom.RJButton rjButton9;
+        private Custom.RJButton btnReserva;
     }
 }

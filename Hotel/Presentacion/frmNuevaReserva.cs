@@ -20,12 +20,34 @@ namespace Hotel.Presentacion
         private static frmNuevaReserva instancia;
 
         // Variables
-        private static int idUsuario;
+        public static int idUsuario;
 
-        private frmNuevaReserva(int idUsuario)
+        HuespedService oHuesped = new HuespedService();
+        ReservaService oReserva = new ReservaService();
+        Reserva oReservaNew = new Reserva();
+        BindingList<DetalleReserva> listaDetalleReserva = new BindingList<DetalleReserva>();
+        int cantidadDias = 0;
+        float totalCochera = 0F;
+
+
+        DataTable tablaHuesped;
+        public static string _patenteVehiculo, _marcaVehiculo, _modeloVehiculo, _nombre, _apellido, _pasaporte;
+        public static int _idVehiculo;
+        DataTable tablaCocheras;
+
+        private frmNuevaReserva()
         {
             InitializeComponent();
             dgvReservas.AutoGenerateColumns = false;
+
+
+        }
+
+        private frmNuevaReserva(int id)
+        {
+            InitializeComponent();
+            dgvReservas.AutoGenerateColumns = false;
+            idUsuario = id;
 
         }
 
@@ -33,25 +55,21 @@ namespace Hotel.Presentacion
         {
             if (instancia == null)
             {
-                instancia = new frmNuevaReserva(idUsuario);
+                instancia = new frmNuevaReserva();
+            }
+            return instancia;
+        }
+
+        public static frmNuevaReserva ObtenerInstancia(int id)
+        {
+            if (instancia == null)
+            {
+                instancia = new frmNuevaReserva(id);
             }
             return instancia;
         }
 
 
-        HuespedService oHuesped = new HuespedService();
-        ReservaService oReserva = new ReservaService();
-        Reserva oReservaNew = new Reserva();
-        BindingList<DetalleReserva>  listaDetalleReserva = new BindingList<DetalleReserva>();
-        int cantidadDias = 0;
-        float totalCochera = 0F;
-        
- 
-        DataTable tablaHuesped;
-        public static string _patenteVehiculo, _marcaVehiculo, _modeloVehiculo, _nombre, _apellido, _pasaporte;
-        public static int _idVehiculo;
-        DataTable tablaCocheras;
-        
 
         private void frmNuevaReserva_Load(object sender, EventArgs e)
         {
@@ -176,6 +194,7 @@ namespace Hotel.Presentacion
             if(MessageBox.Show("Está seguro que desea cancelar la operación?", "Cancelar", MessageBoxButtons.YesNo, 
                 MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
+                instancia = null;
                 this.Close();
             }
         }
@@ -343,6 +362,11 @@ namespace Hotel.Presentacion
             catch (Exception ex)
             {
                 MessageBox.Show("Error al registrar la reserva " + ex.Message + ex.StackTrace, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            finally
+            {
+                instancia = null;
+                this.Close();
             }
 
           
