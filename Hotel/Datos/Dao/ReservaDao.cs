@@ -88,7 +88,9 @@ namespace Hotel.Datos.Dao
                                        " AND (CONVERT(DATETIME, '" + fechaIngreso + "', 103)" +
                                        " BETWEEN r.fecha_hora_ingreso_estimada AND r.fecha_hora_salida_estimada)" +
                                        " OR (CONVERT(DATETIME, '" + fechaSalida + "', 103)" +
-                                       " BETWEEN r.fecha_hora_ingreso_estimada AND r.fecha_hora_salida_estimada))";
+                                       " BETWEEN r.fecha_hora_ingreso_estimada AND r.fecha_hora_salida_estimada)" +
+                                       " OR (r.fecha_hora_ingreso_estimada BETWEEN CONVERT(DATETIME,'"+ fechaIngreso +"', 103)" +
+                                       " AND CONVERT(DATETIME, '" + fechaSalida + "', 103))) ";
                 consulta += " ORDER BY t.cod_tipo";
 
             return DBHelper.ObtenerInstancia().Ejecutar(consulta);
