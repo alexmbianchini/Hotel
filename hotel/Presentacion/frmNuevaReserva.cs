@@ -90,17 +90,23 @@ namespace Hotel.Presentacion
             this.btnConsultar.Enabled = true;
             this.btnAgregarHusped.Enabled = true;
             this.btnAgregarVehiculo.Enabled = false;
+            this.btnAgregarVehiculo.Visible = false;
             this.dtpFechaIngreso.Enabled = true;
             this.dtpFechaSalida.Enabled = true;
             this.btnConsultarHabitaciones.Enabled = false;
+            this.btnConsultarHabitaciones.Visible = false;
             this.txtCantidadPersonas.Enabled = false;
             this.txtSubtotal.Enabled = false;
             this.btnAgregarHabitacion.Enabled = false;
+            this.btnAgregarHabitacion.Visible = false;
             this.btnQuitarHabitacion.Enabled = false;
+            this.btnQuitarHabitacion.Visible = false; 
             this.txtTotal.Enabled = false;
             this.btnAceptar.Enabled = false;
+            this.btnAceptar.Visible = false;
             this.btnCancelar.Enabled = true;
             this.btnQuitarVehiculo.Enabled = false;
+            this.btnQuitarVehiculo.Visible = false;
             this.txtSubtotal.Text = (0).ToString();
             this.txtSubtotalCochera.Text = (0).ToString();
             this.txtTotal.Text = (0).ToString();
@@ -127,7 +133,9 @@ namespace Hotel.Presentacion
                         txtPasaporte.Enabled = false;
 
                         btnAgregarVehiculo.Enabled = true;
+                        btnAgregarVehiculo.Visible = true;
                         btnConsultarHabitaciones.Enabled = true;
+                        btnConsultarHabitaciones.Visible = true;
                         txtCantidadPersonas.Enabled = true;
 
                     }
@@ -236,6 +244,7 @@ namespace Hotel.Presentacion
             }
 
             btnAgregarHabitacion.Enabled = true;
+            btnAgregarHabitacion.Visible = true;
             
         }
 
@@ -267,7 +276,9 @@ namespace Hotel.Presentacion
             CalcularTotales(dgvReservas);
 
             btnQuitarHabitacion.Enabled = true;
+            btnQuitarHabitacion.Visible = true;
             btnAceptar.Enabled = true;
+            btnAceptar.Visible = true;
 
 
         }
@@ -282,6 +293,7 @@ namespace Hotel.Presentacion
             txtMarca.Text = _marcaVehiculo;
             txtModelo.Text = _modeloVehiculo;
             this.btnQuitarVehiculo.Enabled = true;
+            this.btnQuitarVehiculo.Visible = true;
             
 
         }
@@ -402,8 +414,17 @@ namespace Hotel.Presentacion
             }
             return false;
         }
-       
-        
+
+
+        private void btnQuitarVehiculo_Click(object sender, EventArgs e)
+        {
+            txtPatente.Text = string.Empty;
+            txtModelo.Text = string.Empty;
+            txtMarca.Text = string.Empty;
+            txtNumeroCochera.Text = string.Empty;
+            txtPrecioCochera.Text = string.Empty;
+        }
+
         private void CargarGrilla(DataGridView grilla, DataTable tabla)
         {
             grilla.Rows.Clear();

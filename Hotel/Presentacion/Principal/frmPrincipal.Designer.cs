@@ -29,8 +29,14 @@ namespace Hotel.Presentacion
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
-            this.rjButton9 = new Hotel.Custom.RJButton();
+            this.rjButton5 = new Hotel.Custom.RJButton();
+            this.rjButton4 = new Hotel.Custom.RJButton();
+            this.btnAdministracion = new Hotel.Custom.RJButton();
+            this.btnMiUsuario = new Hotel.Custom.RJButton();
+            this.btnReserva = new Hotel.Custom.RJButton();
+            this.btnHuespedes = new Hotel.Custom.RJButton();
             this.rjButton8 = new Hotel.Custom.RJButton();
             this.btnVehiculo = new Hotel.Custom.RJButton();
             this.btnHuesped = new Hotel.Custom.RJButton();
@@ -39,26 +45,135 @@ namespace Hotel.Presentacion
             this.btnHabitaciones = new Hotel.Custom.RJButton();
             this.btnUsuarios = new Hotel.Custom.RJButton();
             this.rjButton1 = new Hotel.Custom.RJButton();
-            this.btnReserva = new Hotel.Custom.RJButton();
+            this.mstHuespedes = new Hotel.Custom.RJDropdownMenu(this.components);
+            this.huespedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vehiculosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.mstMiUsuario = new Hotel.Custom.RJDropdownMenu(this.components);
+            this.contraseñaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mstAdministracion = new Hotel.Custom.RJDropdownMenu(this.components);
+            this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.habitacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tipoHabitacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mstHuespedes.SuspendLayout();
+            this.mstMiUsuario.SuspendLayout();
+            this.mstAdministracion.SuspendLayout();
             this.SuspendLayout();
             // 
-            // rjButton9
+            // rjButton5
             // 
-            this.rjButton9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
-            this.rjButton9.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
-            this.rjButton9.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton9.BorderRadius = 0;
-            this.rjButton9.BorderSize = 0;
-            this.rjButton9.Enabled = false;
-            this.rjButton9.FlatAppearance.BorderSize = 0;
-            this.rjButton9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton9.ForeColor = System.Drawing.Color.White;
-            this.rjButton9.Location = new System.Drawing.Point(0, 414);
-            this.rjButton9.Name = "rjButton9";
-            this.rjButton9.Size = new System.Drawing.Size(201, 55);
-            this.rjButton9.TabIndex = 8;
-            this.rjButton9.TextColor = System.Drawing.Color.White;
-            this.rjButton9.UseVisualStyleBackColor = false;
+            this.rjButton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
+            this.rjButton5.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
+            this.rjButton5.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton5.BorderRadius = 0;
+            this.rjButton5.BorderSize = 0;
+            this.rjButton5.Enabled = false;
+            this.rjButton5.FlatAppearance.BorderSize = 0;
+            this.rjButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton5.ForeColor = System.Drawing.Color.White;
+            this.rjButton5.Location = new System.Drawing.Point(0, 433);
+            this.rjButton5.Name = "rjButton5";
+            this.rjButton5.Size = new System.Drawing.Size(201, 69);
+            this.rjButton5.TabIndex = 13;
+            this.rjButton5.TextColor = System.Drawing.Color.White;
+            this.rjButton5.UseVisualStyleBackColor = false;
+            // 
+            // rjButton4
+            // 
+            this.rjButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
+            this.rjButton4.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
+            this.rjButton4.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton4.BorderRadius = 0;
+            this.rjButton4.BorderSize = 0;
+            this.rjButton4.Enabled = false;
+            this.rjButton4.FlatAppearance.BorderSize = 0;
+            this.rjButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton4.ForeColor = System.Drawing.Color.White;
+            this.rjButton4.Location = new System.Drawing.Point(0, 369);
+            this.rjButton4.Name = "rjButton4";
+            this.rjButton4.Size = new System.Drawing.Size(201, 69);
+            this.rjButton4.TabIndex = 12;
+            this.rjButton4.TextColor = System.Drawing.Color.White;
+            this.rjButton4.UseVisualStyleBackColor = false;
+            // 
+            // btnAdministracion
+            // 
+            this.btnAdministracion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
+            this.btnAdministracion.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
+            this.btnAdministracion.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnAdministracion.BorderRadius = 0;
+            this.btnAdministracion.BorderSize = 0;
+            this.btnAdministracion.FlatAppearance.BorderSize = 0;
+            this.btnAdministracion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdministracion.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdministracion.ForeColor = System.Drawing.Color.White;
+            this.btnAdministracion.Location = new System.Drawing.Point(0, 303);
+            this.btnAdministracion.Name = "btnAdministracion";
+            this.btnAdministracion.Size = new System.Drawing.Size(201, 69);
+            this.btnAdministracion.TabIndex = 11;
+            this.btnAdministracion.Text = "Administracion";
+            this.btnAdministracion.TextColor = System.Drawing.Color.White;
+            this.btnAdministracion.UseVisualStyleBackColor = false;
+            this.btnAdministracion.Click += new System.EventHandler(this.btnAdministracion_Click);
+            // 
+            // btnMiUsuario
+            // 
+            this.btnMiUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
+            this.btnMiUsuario.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
+            this.btnMiUsuario.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnMiUsuario.BorderRadius = 0;
+            this.btnMiUsuario.BorderSize = 0;
+            this.btnMiUsuario.FlatAppearance.BorderSize = 0;
+            this.btnMiUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMiUsuario.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMiUsuario.ForeColor = System.Drawing.Color.White;
+            this.btnMiUsuario.Location = new System.Drawing.Point(0, 235);
+            this.btnMiUsuario.Name = "btnMiUsuario";
+            this.btnMiUsuario.Size = new System.Drawing.Size(201, 69);
+            this.btnMiUsuario.TabIndex = 10;
+            this.btnMiUsuario.Text = "Mi Usuario";
+            this.btnMiUsuario.TextColor = System.Drawing.Color.White;
+            this.btnMiUsuario.UseVisualStyleBackColor = false;
+            this.btnMiUsuario.Click += new System.EventHandler(this.btnMiUsuario_Click);
+            // 
+            // btnReserva
+            // 
+            this.btnReserva.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
+            this.btnReserva.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
+            this.btnReserva.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnReserva.BorderRadius = 0;
+            this.btnReserva.BorderSize = 0;
+            this.btnReserva.FlatAppearance.BorderSize = 0;
+            this.btnReserva.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReserva.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReserva.ForeColor = System.Drawing.Color.White;
+            this.btnReserva.Location = new System.Drawing.Point(0, 116);
+            this.btnReserva.Name = "btnReserva";
+            this.btnReserva.Size = new System.Drawing.Size(201, 62);
+            this.btnReserva.TabIndex = 9;
+            this.btnReserva.Text = "Reserva";
+            this.btnReserva.TextColor = System.Drawing.Color.White;
+            this.btnReserva.UseVisualStyleBackColor = false;
+            this.btnReserva.Click += new System.EventHandler(this.btnReserva_Click);
+            // 
+            // btnHuespedes
+            // 
+            this.btnHuespedes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
+            this.btnHuespedes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
+            this.btnHuespedes.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnHuespedes.BorderRadius = 0;
+            this.btnHuespedes.BorderSize = 0;
+            this.btnHuespedes.FlatAppearance.BorderSize = 0;
+            this.btnHuespedes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHuespedes.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuespedes.ForeColor = System.Drawing.Color.White;
+            this.btnHuespedes.Location = new System.Drawing.Point(0, 170);
+            this.btnHuespedes.Name = "btnHuespedes";
+            this.btnHuespedes.Size = new System.Drawing.Size(201, 69);
+            this.btnHuespedes.TabIndex = 8;
+            this.btnHuespedes.Text = "Huespedes";
+            this.btnHuespedes.TextColor = System.Drawing.Color.White;
+            this.btnHuespedes.UseVisualStyleBackColor = false;
+            this.btnHuespedes.Click += new System.EventHandler(this.btnHuespedes_Click);
             // 
             // rjButton8
             // 
@@ -80,126 +195,6 @@ namespace Hotel.Presentacion
             this.rjButton8.TextColor = System.Drawing.Color.White;
             this.rjButton8.UseVisualStyleBackColor = false;
             // 
-            // btnVehiculo
-            // 
-            this.btnVehiculo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
-            this.btnVehiculo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
-            this.btnVehiculo.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnVehiculo.BorderRadius = 0;
-            this.btnVehiculo.BorderSize = 0;
-            this.btnVehiculo.FlatAppearance.BorderSize = 0;
-            this.btnVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVehiculo.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVehiculo.ForeColor = System.Drawing.Color.White;
-            this.btnVehiculo.Location = new System.Drawing.Point(0, 377);
-            this.btnVehiculo.Name = "btnVehiculo";
-            this.btnVehiculo.Size = new System.Drawing.Size(201, 55);
-            this.btnVehiculo.TabIndex = 6;
-            this.btnVehiculo.Text = " Vehiculos";
-            this.btnVehiculo.TextColor = System.Drawing.Color.White;
-            this.btnVehiculo.UseVisualStyleBackColor = false;
-            this.btnVehiculo.Click += new System.EventHandler(this.btnVehiculo_Click);
-            // 
-            // btnHuesped
-            // 
-            this.btnHuesped.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
-            this.btnHuesped.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
-            this.btnHuesped.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnHuesped.BorderRadius = 0;
-            this.btnHuesped.BorderSize = 0;
-            this.btnHuesped.FlatAppearance.BorderSize = 0;
-            this.btnHuesped.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHuesped.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHuesped.ForeColor = System.Drawing.Color.White;
-            this.btnHuesped.Location = new System.Drawing.Point(0, 330);
-            this.btnHuesped.Name = "btnHuesped";
-            this.btnHuesped.Size = new System.Drawing.Size(201, 55);
-            this.btnHuesped.TabIndex = 5;
-            this.btnHuesped.Text = "Huespedes";
-            this.btnHuesped.TextColor = System.Drawing.Color.White;
-            this.btnHuesped.UseVisualStyleBackColor = false;
-            this.btnHuesped.Click += new System.EventHandler(this.btnHuesped_Click);
-            // 
-            // btnTipoHabitacion
-            // 
-            this.btnTipoHabitacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
-            this.btnTipoHabitacion.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
-            this.btnTipoHabitacion.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnTipoHabitacion.BorderRadius = 0;
-            this.btnTipoHabitacion.BorderSize = 0;
-            this.btnTipoHabitacion.FlatAppearance.BorderSize = 0;
-            this.btnTipoHabitacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTipoHabitacion.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTipoHabitacion.ForeColor = System.Drawing.Color.White;
-            this.btnTipoHabitacion.Location = new System.Drawing.Point(0, 278);
-            this.btnTipoHabitacion.Name = "btnTipoHabitacion";
-            this.btnTipoHabitacion.Size = new System.Drawing.Size(201, 55);
-            this.btnTipoHabitacion.TabIndex = 4;
-            this.btnTipoHabitacion.Text = "Tipo Habitacion";
-            this.btnTipoHabitacion.TextColor = System.Drawing.Color.White;
-            this.btnTipoHabitacion.UseVisualStyleBackColor = false;
-            this.btnTipoHabitacion.Click += new System.EventHandler(this.btnTipoHabitacion_Click);
-            // 
-            // btnContra
-            // 
-            this.btnContra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
-            this.btnContra.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
-            this.btnContra.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnContra.BorderRadius = 0;
-            this.btnContra.BorderSize = 0;
-            this.btnContra.FlatAppearance.BorderSize = 0;
-            this.btnContra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnContra.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnContra.ForeColor = System.Drawing.Color.White;
-            this.btnContra.Location = new System.Drawing.Point(0, 231);
-            this.btnContra.Name = "btnContra";
-            this.btnContra.Size = new System.Drawing.Size(201, 55);
-            this.btnContra.TabIndex = 3;
-            this.btnContra.Text = "Contraseña";
-            this.btnContra.TextColor = System.Drawing.Color.White;
-            this.btnContra.UseVisualStyleBackColor = false;
-            this.btnContra.Click += new System.EventHandler(this.btnContra_Click);
-            // 
-            // btnHabitaciones
-            // 
-            this.btnHabitaciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
-            this.btnHabitaciones.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
-            this.btnHabitaciones.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnHabitaciones.BorderRadius = 0;
-            this.btnHabitaciones.BorderSize = 0;
-            this.btnHabitaciones.FlatAppearance.BorderSize = 0;
-            this.btnHabitaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHabitaciones.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHabitaciones.ForeColor = System.Drawing.Color.White;
-            this.btnHabitaciones.Location = new System.Drawing.Point(0, 179);
-            this.btnHabitaciones.Name = "btnHabitaciones";
-            this.btnHabitaciones.Size = new System.Drawing.Size(201, 55);
-            this.btnHabitaciones.TabIndex = 2;
-            this.btnHabitaciones.Text = "Habitaciones";
-            this.btnHabitaciones.TextColor = System.Drawing.Color.White;
-            this.btnHabitaciones.UseVisualStyleBackColor = false;
-            this.btnHabitaciones.Click += new System.EventHandler(this.btnHabitaciones_Click);
-            // 
-            // btnUsuarios
-            // 
-            this.btnUsuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
-            this.btnUsuarios.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
-            this.btnUsuarios.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnUsuarios.BorderRadius = 0;
-            this.btnUsuarios.BorderSize = 0;
-            this.btnUsuarios.FlatAppearance.BorderSize = 0;
-            this.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUsuarios.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUsuarios.ForeColor = System.Drawing.Color.White;
-            this.btnUsuarios.Location = new System.Drawing.Point(0, 127);
-            this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(201, 55);
-            this.btnUsuarios.TabIndex = 1;
-            this.btnUsuarios.Text = "Usuarios";
-            this.btnUsuarios.TextColor = System.Drawing.Color.White;
-            this.btnUsuarios.UseVisualStyleBackColor = false;
-            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
-            // 
             // rjButton1
             // 
             this.rjButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
@@ -218,25 +213,83 @@ namespace Hotel.Presentacion
             this.rjButton1.TextColor = System.Drawing.Color.White;
             this.rjButton1.UseVisualStyleBackColor = false;
             // 
-            // btnReserva
+            // mstHuespedes
             // 
-            this.btnReserva.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
-            this.btnReserva.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
-            this.btnReserva.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnReserva.BorderRadius = 0;
-            this.btnReserva.BorderSize = 0;
-            this.btnReserva.FlatAppearance.BorderSize = 0;
-            this.btnReserva.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReserva.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReserva.ForeColor = System.Drawing.Color.White;
-            this.btnReserva.Location = new System.Drawing.Point(0, 414);
-            this.btnReserva.Name = "btnReserva";
-            this.btnReserva.Size = new System.Drawing.Size(195, 48);
-            this.btnReserva.TabIndex = 9;
-            this.btnReserva.Text = "Reserva";
-            this.btnReserva.TextColor = System.Drawing.Color.White;
-            this.btnReserva.UseVisualStyleBackColor = false;
-            this.btnReserva.Click += new System.EventHandler(this.btnReserva_Click);
+            this.mstHuespedes.IsMainMenu = false;
+            this.mstHuespedes.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.huespedToolStripMenuItem,
+            this.vehiculosToolStripMenuItem1});
+            this.mstHuespedes.MenuItemHeight = 25;
+            this.mstHuespedes.MenuItemTextColor = System.Drawing.Color.Empty;
+            this.mstHuespedes.Name = "mstHuespedes";
+            this.mstHuespedes.PrimaryColor = System.Drawing.Color.Empty;
+            this.mstHuespedes.Size = new System.Drawing.Size(125, 48);
+            // 
+            // huespedToolStripMenuItem
+            // 
+            this.huespedToolStripMenuItem.Name = "huespedToolStripMenuItem";
+            this.huespedToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.huespedToolStripMenuItem.Text = "Huesped";
+            this.huespedToolStripMenuItem.Click += new System.EventHandler(this.huespedToolStripMenuItem_Click);
+            // 
+            // vehiculosToolStripMenuItem1
+            // 
+            this.vehiculosToolStripMenuItem1.Name = "vehiculosToolStripMenuItem1";
+            this.vehiculosToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
+            this.vehiculosToolStripMenuItem1.Text = "Vehiculos";
+            this.vehiculosToolStripMenuItem1.Click += new System.EventHandler(this.vehiculosToolStripMenuItem1_Click);
+            // 
+            // mstMiUsuario
+            // 
+            this.mstMiUsuario.IsMainMenu = false;
+            this.mstMiUsuario.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.contraseñaToolStripMenuItem});
+            this.mstMiUsuario.MenuItemHeight = 25;
+            this.mstMiUsuario.MenuItemTextColor = System.Drawing.Color.Empty;
+            this.mstMiUsuario.Name = "mstMiUsuario";
+            this.mstMiUsuario.PrimaryColor = System.Drawing.Color.Empty;
+            this.mstMiUsuario.Size = new System.Drawing.Size(135, 26);
+            // 
+            // contraseñaToolStripMenuItem
+            // 
+            this.contraseñaToolStripMenuItem.Name = "contraseñaToolStripMenuItem";
+            this.contraseñaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.contraseñaToolStripMenuItem.Text = "Contraseña";
+            this.contraseñaToolStripMenuItem.Click += new System.EventHandler(this.contraseñaToolStripMenuItem_Click);
+            // 
+            // mstAdministracion
+            // 
+            this.mstAdministracion.IsMainMenu = false;
+            this.mstAdministracion.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.usuariosToolStripMenuItem,
+            this.habitacionesToolStripMenuItem,
+            this.tipoHabitacionToolStripMenuItem});
+            this.mstAdministracion.MenuItemHeight = 25;
+            this.mstAdministracion.MenuItemTextColor = System.Drawing.Color.Empty;
+            this.mstAdministracion.Name = "mstAdministracion";
+            this.mstAdministracion.PrimaryColor = System.Drawing.Color.Empty;
+            this.mstAdministracion.Size = new System.Drawing.Size(181, 92);
+            // 
+            // usuariosToolStripMenuItem
+            // 
+            this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.usuariosToolStripMenuItem.Text = "Usuarios";
+            this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
+            // 
+            // habitacionesToolStripMenuItem
+            // 
+            this.habitacionesToolStripMenuItem.Name = "habitacionesToolStripMenuItem";
+            this.habitacionesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.habitacionesToolStripMenuItem.Text = "Habitaciones";
+            this.habitacionesToolStripMenuItem.Click += new System.EventHandler(this.habitacionesToolStripMenuItem_Click);
+            // 
+            // tipoHabitacionToolStripMenuItem
+            // 
+            this.tipoHabitacionToolStripMenuItem.Name = "tipoHabitacionToolStripMenuItem";
+            this.tipoHabitacionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tipoHabitacionToolStripMenuItem.Text = "Tipo Habitacion";
+            this.tipoHabitacionToolStripMenuItem.Click += new System.EventHandler(this.tipoHabitacionToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
@@ -246,8 +299,12 @@ namespace Hotel.Presentacion
             this.BackgroundImage = global::Hotel.Properties.Resources.hotelfondo;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(766, 463);
+            this.Controls.Add(this.rjButton5);
+            this.Controls.Add(this.rjButton4);
+            this.Controls.Add(this.btnAdministracion);
+            this.Controls.Add(this.btnMiUsuario);
             this.Controls.Add(this.btnReserva);
-            this.Controls.Add(this.rjButton9);
+            this.Controls.Add(this.btnHuespedes);
             this.Controls.Add(this.rjButton8);
             this.Controls.Add(this.btnVehiculo);
             this.Controls.Add(this.btnHuesped);
@@ -266,6 +323,9 @@ namespace Hotel.Presentacion
             this.Text = "Menu";
             this.TransparencyKey = System.Drawing.SystemColors.Control;
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
+            this.mstHuespedes.ResumeLayout(false);
+            this.mstMiUsuario.ResumeLayout(false);
+            this.mstAdministracion.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -280,7 +340,20 @@ namespace Hotel.Presentacion
         private Custom.RJButton btnHuesped;
         private Custom.RJButton btnVehiculo;
         private Custom.RJButton rjButton8;
-        private Custom.RJButton rjButton9;
+        private Custom.RJButton btnHuespedes;
         private Custom.RJButton btnReserva;
+        private Custom.RJButton btnMiUsuario;
+        private Custom.RJButton btnAdministracion;
+        private Custom.RJButton rjButton4;
+        private Custom.RJButton rjButton5;
+        private Custom.RJDropdownMenu mstHuespedes;
+        private System.Windows.Forms.ToolStripMenuItem huespedToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem vehiculosToolStripMenuItem1;
+        private Custom.RJDropdownMenu mstMiUsuario;
+        private System.Windows.Forms.ToolStripMenuItem contraseñaToolStripMenuItem;
+        private Custom.RJDropdownMenu mstAdministracion;
+        private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem habitacionesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tipoHabitacionToolStripMenuItem;
     }
 }

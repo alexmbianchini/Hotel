@@ -282,7 +282,7 @@ namespace Hotel.Presentacion
             this.Controls.Add(this.txtPatente);
             this.Name = "frmNuevoEditarVehiculo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "frmNuevoEditarVehiculo";
+            this.Text = "Nuevo / Editar Vehiculo";
             this.Load += new System.EventHandler(this.frmNuevoEditarVehiculo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

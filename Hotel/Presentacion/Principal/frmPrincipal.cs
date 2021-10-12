@@ -72,48 +72,64 @@ namespace Hotel.Presentacion
             }
         }
          */
-        private void btnUsuarios_Click(object sender, EventArgs e)
-        {
-            frmUsuario fru = new frmUsuario();
-            fru.ShowDialog();
-        }
-
-        private void btnHabitaciones_Click(object sender, EventArgs e)
-        {
-            frmHabitacion frh = new frmHabitacion();
-            frh.ShowDialog();
-        }
-
-        private void btnContra_Click(object sender, EventArgs e)
-        {
-            frmPassword frmP = new frmPassword(fLog.MiUsuarioSelected.Id);
-            frmP.ShowDialog();
-        }
-
-        private void btnTipoHabitacion_Click(object sender, EventArgs e)
-        {
-            frmTipoHabitacion frth = new frmTipoHabitacion();
-            frth.ShowDialog();
-        }
-
-        private void btnHuesped_Click(object sender, EventArgs e)
-        {
-            frmHuesped frh = new frmHuesped();
-            frh.ShowDialog();
-        }
-
-        private void btnVehiculo_Click(object sender, EventArgs e)
-        {
-            frmVehiculo frmVehiculo = new frmVehiculo();
-            frmVehiculo.SeleccionarModo(frmVehiculo.FormMode.principal);
-            frmVehiculo.ShowDialog();
-        }
 
         private void btnReserva_Click(object sender, EventArgs e)
         {
             frmNuevaReserva.ObtenerInstancia(fLog.MiUsuarioSelected.Id).ShowDialog();
             
                         
+        }
+
+        private void btnHuespedes_Click(object sender, EventArgs e)
+        {
+            mstHuespedes.Show(btnHuespedes, btnHuespedes.Width, 0);
+        }
+
+        private void btnMiUsuario_Click(object sender, EventArgs e)
+        {
+            mstMiUsuario.Show(btnMiUsuario, btnMiUsuario.Width, 0);
+        }
+
+        private void btnAdministracion_Click(object sender, EventArgs e)
+        {
+            mstAdministracion.Show(btnAdministracion, btnAdministracion.Width, 0);
+        }
+
+        private void huespedToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmHuesped frh = new frmHuesped();
+            frh.ShowDialog();
+        }
+
+        private void vehiculosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmVehiculo frmVehiculo = new frmVehiculo();
+            frmVehiculo.SeleccionarModo(frmVehiculo.FormMode.principal);
+            frmVehiculo.ShowDialog();
+        }
+
+        private void contraseñaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPassword frmP = new frmPassword(fLog.MiUsuarioSelected.Id);
+            frmP.ShowDialog();
+        }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmUsuario fru = new frmUsuario();
+            fru.ShowDialog();
+        }
+
+        private void habitacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmHabitacion frh = new frmHabitacion();
+            frh.ShowDialog();
+        }
+
+        private void tipoHabitacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTipoHabitacion frth = new frmTipoHabitacion();
+            frth.ShowDialog();
         }
     }
 }
