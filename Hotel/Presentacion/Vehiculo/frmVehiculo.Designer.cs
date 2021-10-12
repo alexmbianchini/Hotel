@@ -59,10 +59,9 @@ namespace Hotel.Presentacion
             // 
             this.lblPatente.AutoSize = true;
             this.lblPatente.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPatente.Location = new System.Drawing.Point(73, 43);
-            this.lblPatente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPatente.Location = new System.Drawing.Point(55, 35);
             this.lblPatente.Name = "lblPatente";
-            this.lblPatente.Size = new System.Drawing.Size(71, 23);
+            this.lblPatente.Size = new System.Drawing.Size(56, 19);
             this.lblPatente.TabIndex = 3;
             this.lblPatente.Text = "Patente";
             // 
@@ -70,10 +69,9 @@ namespace Hotel.Presentacion
             // 
             this.lblMarca.AutoSize = true;
             this.lblMarca.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMarca.Location = new System.Drawing.Point(84, 100);
-            this.lblMarca.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMarca.Location = new System.Drawing.Point(63, 81);
             this.lblMarca.Name = "lblMarca";
-            this.lblMarca.Size = new System.Drawing.Size(60, 23);
+            this.lblMarca.Size = new System.Drawing.Size(48, 19);
             this.lblMarca.TabIndex = 4;
             this.lblMarca.Text = "Marca";
             // 
@@ -81,10 +79,9 @@ namespace Hotel.Presentacion
             // 
             this.lblPasaporte.AutoSize = true;
             this.lblPasaporte.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPasaporte.Location = new System.Drawing.Point(55, 159);
-            this.lblPasaporte.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPasaporte.Location = new System.Drawing.Point(41, 129);
             this.lblPasaporte.Name = "lblPasaporte";
-            this.lblPasaporte.Size = new System.Drawing.Size(90, 23);
+            this.lblPasaporte.Size = new System.Drawing.Size(70, 19);
             this.lblPasaporte.TabIndex = 5;
             this.lblPasaporte.Text = "Pasaporte";
             // 
@@ -118,13 +115,12 @@ namespace Hotel.Presentacion
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvVehiculo.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvVehiculo.Location = new System.Drawing.Point(16, 225);
-            this.dgvVehiculo.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvVehiculo.Location = new System.Drawing.Point(12, 183);
             this.dgvVehiculo.Name = "dgvVehiculo";
             this.dgvVehiculo.ReadOnly = true;
             this.dgvVehiculo.RowHeadersWidth = 51;
             this.dgvVehiculo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvVehiculo.Size = new System.Drawing.Size(665, 267);
+            this.dgvVehiculo.Size = new System.Drawing.Size(499, 217);
             this.dgvVehiculo.TabIndex = 6;
             this.dgvVehiculo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVehiculo_CellClick);
             this.dgvVehiculo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVehiculo_CellContentClick);
@@ -188,17 +184,19 @@ namespace Hotel.Presentacion
             // 
             // btnAgregar
             // 
-            this.btnAgregar.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnAgregar.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(150)))));
+            this.btnAgregar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(150)))));
             this.btnAgregar.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnAgregar.BorderRadius = 20;
             this.btnAgregar.BorderSize = 0;
             this.btnAgregar.FlatAppearance.BorderSize = 0;
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregar.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.White;
-            this.btnAgregar.Location = new System.Drawing.Point(719, 185);
+            this.btnAgregar.Location = new System.Drawing.Point(540, 168);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(150, 40);
+            this.btnAgregar.Size = new System.Drawing.Size(116, 40);
             this.btnAgregar.TabIndex = 13;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.TextColor = System.Drawing.Color.White;
@@ -216,10 +214,9 @@ namespace Hotel.Presentacion
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(719, 422);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSalir.Location = new System.Drawing.Point(540, 351);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(155, 49);
+            this.btnSalir.Size = new System.Drawing.Size(116, 40);
             this.btnSalir.TabIndex = 12;
             this.btnSalir.Text = "Salir";
             this.btnSalir.TextColor = System.Drawing.Color.White;
@@ -237,10 +234,9 @@ namespace Hotel.Presentacion
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(719, 366);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEliminar.Location = new System.Drawing.Point(540, 305);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(155, 49);
+            this.btnEliminar.Size = new System.Drawing.Size(116, 40);
             this.btnEliminar.TabIndex = 11;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.TextColor = System.Drawing.Color.White;
@@ -258,10 +254,9 @@ namespace Hotel.Presentacion
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(719, 309);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEditar.Location = new System.Drawing.Point(540, 259);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(155, 49);
+            this.btnEditar.Size = new System.Drawing.Size(116, 40);
             this.btnEditar.TabIndex = 10;
             this.btnEditar.Text = "Editar";
             this.btnEditar.TextColor = System.Drawing.Color.White;
@@ -279,10 +274,9 @@ namespace Hotel.Presentacion
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevo.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.ForeColor = System.Drawing.Color.White;
-            this.btnNuevo.Location = new System.Drawing.Point(719, 252);
-            this.btnNuevo.Margin = new System.Windows.Forms.Padding(4);
+            this.btnNuevo.Location = new System.Drawing.Point(540, 213);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(155, 49);
+            this.btnNuevo.Size = new System.Drawing.Size(116, 40);
             this.btnNuevo.TabIndex = 9;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.TextColor = System.Drawing.Color.White;
@@ -300,10 +294,9 @@ namespace Hotel.Presentacion
             this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConsultar.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsultar.ForeColor = System.Drawing.Color.White;
-            this.btnConsultar.Location = new System.Drawing.Point(507, 119);
-            this.btnConsultar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnConsultar.Location = new System.Drawing.Point(382, 97);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(155, 49);
+            this.btnConsultar.Size = new System.Drawing.Size(116, 40);
             this.btnConsultar.TabIndex = 8;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.TextColor = System.Drawing.Color.White;
@@ -321,10 +314,9 @@ namespace Hotel.Presentacion
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiar.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiar.ForeColor = System.Drawing.Color.White;
-            this.btnLimpiar.Location = new System.Drawing.Point(507, 43);
-            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLimpiar.Location = new System.Drawing.Point(382, 35);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(155, 49);
+            this.btnLimpiar.Size = new System.Drawing.Size(116, 40);
             this.btnLimpiar.TabIndex = 7;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.TextColor = System.Drawing.Color.White;
@@ -337,13 +329,12 @@ namespace Hotel.Presentacion
             this.txtPasaporte.BorderColor = System.Drawing.Color.Black;
             this.txtPasaporte.BorderFocusColor = System.Drawing.Color.HotPink;
             this.txtPasaporte.BorderSize = 1;
-            this.txtPasaporte.Location = new System.Drawing.Point(200, 148);
-            this.txtPasaporte.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPasaporte.Location = new System.Drawing.Point(150, 120);
             this.txtPasaporte.Multiline = false;
             this.txtPasaporte.Name = "txtPasaporte";
-            this.txtPasaporte.Padding = new System.Windows.Forms.Padding(9);
+            this.txtPasaporte.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.txtPasaporte.PasswordChar = false;
-            this.txtPasaporte.Size = new System.Drawing.Size(201, 36);
+            this.txtPasaporte.Size = new System.Drawing.Size(151, 28);
             this.txtPasaporte.TabIndex = 2;
             this.txtPasaporte.UnderlinedStyle = false;
             // 
@@ -353,13 +344,12 @@ namespace Hotel.Presentacion
             this.txtMarca.BorderColor = System.Drawing.Color.Black;
             this.txtMarca.BorderFocusColor = System.Drawing.Color.HotPink;
             this.txtMarca.BorderSize = 1;
-            this.txtMarca.Location = new System.Drawing.Point(200, 89);
-            this.txtMarca.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMarca.Location = new System.Drawing.Point(150, 72);
             this.txtMarca.Multiline = false;
             this.txtMarca.Name = "txtMarca";
-            this.txtMarca.Padding = new System.Windows.Forms.Padding(9);
+            this.txtMarca.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.txtMarca.PasswordChar = false;
-            this.txtMarca.Size = new System.Drawing.Size(201, 36);
+            this.txtMarca.Size = new System.Drawing.Size(151, 28);
             this.txtMarca.TabIndex = 1;
             this.txtMarca.UnderlinedStyle = false;
             // 
@@ -369,22 +359,21 @@ namespace Hotel.Presentacion
             this.txtPatente.BorderColor = System.Drawing.Color.Black;
             this.txtPatente.BorderFocusColor = System.Drawing.Color.HotPink;
             this.txtPatente.BorderSize = 1;
-            this.txtPatente.Location = new System.Drawing.Point(200, 32);
-            this.txtPatente.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPatente.Location = new System.Drawing.Point(150, 26);
             this.txtPatente.Multiline = false;
             this.txtPatente.Name = "txtPatente";
-            this.txtPatente.Padding = new System.Windows.Forms.Padding(9);
+            this.txtPatente.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.txtPatente.PasswordChar = false;
-            this.txtPatente.Size = new System.Drawing.Size(201, 36);
+            this.txtPatente.Size = new System.Drawing.Size(151, 28);
             this.txtPatente.TabIndex = 0;
             this.txtPatente.UnderlinedStyle = false;
             // 
             // frmVehiculo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(209)))), ((int)(((byte)(217)))));
-            this.ClientSize = new System.Drawing.Size(903, 526);
+            this.ClientSize = new System.Drawing.Size(677, 427);
             this.ControlBox = false;
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnSalir);
@@ -400,7 +389,6 @@ namespace Hotel.Presentacion
             this.Controls.Add(this.txtPasaporte);
             this.Controls.Add(this.txtMarca);
             this.Controls.Add(this.txtPatente);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmVehiculo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmVehiculo";

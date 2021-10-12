@@ -402,8 +402,17 @@ namespace Hotel.Presentacion
             }
             return false;
         }
-       
-        
+
+
+        private void btnQuitarVehiculo_Click(object sender, EventArgs e)
+        {
+            txtPatente.Text = string.Empty;
+            txtModelo.Text = string.Empty;
+            txtMarca.Text = string.Empty;
+            txtNumeroCochera.Text = string.Empty;
+            txtPrecioCochera.Text = string.Empty;
+        }
+
         private void CargarGrilla(DataGridView grilla, DataTable tabla)
         {
             grilla.Rows.Clear();
