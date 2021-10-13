@@ -194,7 +194,7 @@ namespace Hotel.Presentacion
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.White;
             this.btnAgregar.Location = new System.Drawing.Point(540, 168);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(116, 40);
             this.btnAgregar.TabIndex = 13;
@@ -332,7 +332,7 @@ namespace Hotel.Presentacion
             this.txtPasaporte.Location = new System.Drawing.Point(150, 120);
             this.txtPasaporte.Multiline = false;
             this.txtPasaporte.Name = "txtPasaporte";
-            this.txtPasaporte.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtPasaporte.Padding = new System.Windows.Forms.Padding(7);
             this.txtPasaporte.PasswordChar = false;
             this.txtPasaporte.Size = new System.Drawing.Size(151, 28);
             this.txtPasaporte.TabIndex = 2;
@@ -347,7 +347,7 @@ namespace Hotel.Presentacion
             this.txtMarca.Location = new System.Drawing.Point(150, 72);
             this.txtMarca.Multiline = false;
             this.txtMarca.Name = "txtMarca";
-            this.txtMarca.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtMarca.Padding = new System.Windows.Forms.Padding(7);
             this.txtMarca.PasswordChar = false;
             this.txtMarca.Size = new System.Drawing.Size(151, 28);
             this.txtMarca.TabIndex = 1;
@@ -362,7 +362,7 @@ namespace Hotel.Presentacion
             this.txtPatente.Location = new System.Drawing.Point(150, 26);
             this.txtPatente.Multiline = false;
             this.txtPatente.Name = "txtPatente";
-            this.txtPatente.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtPatente.Padding = new System.Windows.Forms.Padding(7);
             this.txtPatente.PasswordChar = false;
             this.txtPatente.Size = new System.Drawing.Size(151, 28);
             this.txtPatente.TabIndex = 0;
@@ -391,7 +391,7 @@ namespace Hotel.Presentacion
             this.Controls.Add(this.txtPatente);
             this.Name = "frmVehiculo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "frmVehiculo";
+            this.Text = "Vehiculo";
             this.Load += new System.EventHandler(this.frmVehiculo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVehiculo)).EndInit();
             this.ResumeLayout(false);

@@ -47,11 +47,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Componentes\Validaciones.cs" />
+    <Compile Include="Custom\MenuColorTable.cs" />
+    <Compile Include="Custom\MenuRenderer.cs" />
     <Compile Include="Custom\RJButton.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Custom\RJComboBox.cs">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Custom\RJDropdownMenu.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Custom\RJTextBox.cs">
       <SubType>UserControl</SubType>

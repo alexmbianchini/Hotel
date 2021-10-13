@@ -129,7 +129,7 @@ namespace Hotel.Presentacion
             this.Controls.Add(this.lblNombre);
             this.Name = "frmAMTipoHabitacion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "frmAMTipoHabitacion";
+            this.Text = "Nuevo / Editar Tipo Habitacion";
             this.Load += new System.EventHandler(this.frmAMTipoHabitacion_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
