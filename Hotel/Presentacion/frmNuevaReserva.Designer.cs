@@ -336,7 +336,7 @@ namespace Hotel.Presentacion
             this.txtSubtotal.Name = "txtSubtotal";
             this.txtSubtotal.Size = new System.Drawing.Size(76, 25);
             this.txtSubtotal.TabIndex = 8;
-            this.txtSubtotal.TextChanged += new System.EventHandler(this.txtSubtotal_TextChanged);
+            
             // 
             // txtCantidadPersonas
             // 
@@ -377,7 +377,7 @@ namespace Hotel.Presentacion
             this.dgvReservas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvReservas.Size = new System.Drawing.Size(506, 125);
             this.dgvReservas.TabIndex = 3;
-            this.dgvReservas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReservas_CellContentClick);
+            
             // 
             // dtpFechaSalida
             // 

@@ -80,7 +80,9 @@ namespace Hotel.Presentacion
                     txtPasaporte.Enabled = false;
                     txtPatente.Enabled = false;
                     btnConsultar.Enabled = false;
-                    btnLimpiar.Enabled = false; 
+                    btnConsultar.Visible = false;
+                    btnLimpiar.Enabled = false;
+                    btnLimpiar.Visible = false;
 
                     break;
             }
@@ -177,10 +179,18 @@ namespace Hotel.Presentacion
         {
             frmNuevaReserva.ObtenerInstancia();
 
-            frmNuevaReserva._patenteVehiculo = dgvVehiculo.CurrentRow.Cells["clmPatente"].Value.ToString();
-            frmNuevaReserva._marcaVehiculo = dgvVehiculo.CurrentRow.Cells["clmMarca"].Value.ToString();
-            frmNuevaReserva._modeloVehiculo = dgvVehiculo.CurrentRow.Cells["clmModelo"].Value.ToString();
-            frmNuevaReserva._idVehiculo = Convert.ToInt32(dgvVehiculo.CurrentRow.Cells["clmIdVehiculo"].Value);
+            if (dgvVehiculo.Rows.Count != 0)
+            {
+                frmNuevaReserva._patenteVehiculo = dgvVehiculo.CurrentRow.Cells["clmPatente"].Value.ToString();
+                frmNuevaReserva._marcaVehiculo = dgvVehiculo.CurrentRow.Cells["clmMarca"].Value.ToString();
+                frmNuevaReserva._modeloVehiculo = dgvVehiculo.CurrentRow.Cells["clmModelo"].Value.ToString();
+                frmNuevaReserva._idVehiculo = Convert.ToInt32(dgvVehiculo.CurrentRow.Cells["clmIdVehiculo"].Value);
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar un vehículo");
+            }
+            
 
             this.Close();
         }

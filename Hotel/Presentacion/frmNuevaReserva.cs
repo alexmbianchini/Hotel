@@ -19,27 +19,29 @@ namespace Hotel.Presentacion
         // Patrón Singleton
         private static frmNuevaReserva instancia;
 
-        // Variables
+        // Variables y necesarios
         public static int idUsuario;
-
-        HuespedService oHuesped = new HuespedService();
-        ReservaService oReserva = new ReservaService();
-        Reserva oReservaNew = new Reserva();
+        DataTable tablaHuesped;
+        public static string _patenteVehiculo, _marcaVehiculo, _modeloVehiculo, _nombre, _apellido, _pasaporte;
+        public static int _idVehiculo;
+        DataTable tablaCocheras;
         BindingList<DetalleReserva> listaDetalleReserva = new BindingList<DetalleReserva>();
         int cantidadDias = 0;
         float totalCochera = 0F;
 
 
-        DataTable tablaHuesped;
-        public static string _patenteVehiculo, _marcaVehiculo, _modeloVehiculo, _nombre, _apellido, _pasaporte;
-        public static int _idVehiculo;
-        DataTable tablaCocheras;
+        // Instancia de objetos
+        HuespedService oHuesped = new HuespedService();
+        ReservaService oReserva = new ReservaService();
+        Reserva oReservaNew = new Reserva();
+        
 
+
+        // Constructores necesarios
         private frmNuevaReserva()
         {
             InitializeComponent();
             dgvReservas.AutoGenerateColumns = false;
-
 
         }
 
@@ -51,6 +53,8 @@ namespace Hotel.Presentacion
 
         }
 
+
+        // Instancias de Singleton
         public static frmNuevaReserva ObtenerInstancia()
         {
             if (instancia == null)
@@ -71,67 +75,34 @@ namespace Hotel.Presentacion
 
 
 
+        // Carga del formulario
         private void frmNuevaReserva_Load(object sender, EventArgs e)
         {
             this.CargarForm();
         }
 
-        private void CargarForm()
-        {
-            this.txtPasaporte.Enabled = true;
-            this.txtNombre.Enabled = false;
-            this.txtApellido.Enabled = false;
-            this.txtPatente.Enabled = false;
-            this.txtModelo.Enabled = false;
-            this.txtMarca.Enabled = false;
-            this.txtNumeroCochera.Enabled = false;
-            this.txtPrecioCochera.Enabled = false;
-            this.txtSubtotalCochera.Enabled = false;
-            this.btnConsultar.Enabled = true;
-            this.btnAgregarHusped.Enabled = true;
-            this.btnAgregarVehiculo.Enabled = false;
-            this.btnAgregarVehiculo.Visible = false;
-            this.dtpFechaIngreso.Enabled = true;
-            this.dtpFechaSalida.Enabled = true;
-            this.btnConsultarHabitaciones.Enabled = false;
-            this.btnConsultarHabitaciones.Visible = false;
-            this.txtCantidadPersonas.Enabled = false;
-            this.txtSubtotal.Enabled = false;
-            this.btnAgregarHabitacion.Enabled = false;
-            this.btnAgregarHabitacion.Visible = false;
-            this.btnQuitarHabitacion.Enabled = false;
-            this.btnQuitarHabitacion.Visible = false; 
-            this.txtTotal.Enabled = false;
-            this.btnAceptar.Enabled = false;
-            this.btnAceptar.Visible = false;
-            this.btnCancelar.Enabled = true;
-            this.btnQuitarVehiculo.Enabled = false;
-            this.btnQuitarVehiculo.Visible = false;
-            this.txtSubtotal.Text = (0).ToString();
-            this.txtSubtotalCochera.Text = (0).ToString();
-            this.txtTotal.Text = (0).ToString();
 
-
-
-
-
-
-        }
-
+        // Botón consultar Huesped; Permite consultar si un huesped está registrado en el hotel y trae la información necesaria
         private void btnConsultar_Click(object sender, EventArgs e)
         {
+            // Validar que el txt del pasaporte no esté vacío, en caso de que está vacío envía un mensaje.
             if(this.ValidarPasaporte())
             {
+                // Validar que el formato del pasaporte sea correcto, en caso de que no es correcto, muestra un mensaje.
                 if (PasaporteCorrecto(txtPasaporte.Text))
                 {
-                    if (!oHuesped.ValidarPasaporte(txtPasaporte.Text))
-                    {
-                        tablaHuesped = oHuesped.RecuperarPorPasaporte(txtPasaporte.Text);
+
+                    // Recupera el huesped por el pasaporte, en caso de que no existe, la tabla no trae filas y envía un mensaje de que no existe.
+                    tablaHuesped = oHuesped.RecuperarPorPasaporte(txtPasaporte.Text);
+                    
+                    if (tablaHuesped.Rows.Count != 0)
+                    { 
 
                         txtNombre.Text = tablaHuesped.Rows[0]["nombre"].ToString();
                         txtApellido.Text = tablaHuesped.Rows[0]["apellido"].ToString();
                         txtPasaporte.Enabled = false;
 
+                        // Habilitar los botones correspondientes para que el usuario pueda continuar con la transacción.
                         btnAgregarVehiculo.Enabled = true;
                         btnAgregarVehiculo.Visible = true;
                         btnConsultarHabitaciones.Enabled = true;
@@ -165,6 +136,239 @@ namespace Hotel.Presentacion
 
         }
 
+
+        // Botón agregar huesped que permite que crear un nuevo huesped y registrarlo en el hotel.
+        private void btnAgregarHusped_Click(object sender, EventArgs e)
+        {
+            frmNuevoEditarHuesped frmNuevoH = new frmNuevoEditarHuesped(this.txtPasaporte.Text);
+            frmNuevoH.SeleccionarModo(frmNuevoEditarHuesped.FormMode.reserva);
+            frmNuevoH.ShowDialog();
+
+            this.txtPasaporte.Text = _pasaporte;
+            this.txtNombre.Text = _nombre;
+            this.txtApellido.Text = _apellido;
+            this.txtPasaporte.Enabled = false;
+
+            // Habilitar los botones correspondientes para que el usuario pueda continuar con la transacción.
+            btnAgregarVehiculo.Enabled = true;
+            btnAgregarVehiculo.Visible = true;
+            btnConsultarHabitaciones.Enabled = true;
+            btnConsultarHabitaciones.Visible = true;
+            txtCantidadPersonas.Enabled = true;
+        }
+
+
+        // Botón que permite agregar un vehículo del huesped registrado o agregar vehículos nuevos al huesped.
+        private void btnAgregarVehiculo_Click(object sender, EventArgs e)
+        {
+            frmVehiculo frmVehiculo = new frmVehiculo(txtPasaporte.Text);
+            frmVehiculo.SeleccionarModo(frmVehiculo.FormMode.reserva);
+            frmVehiculo.ShowDialog();
+
+            txtPatente.Text = _patenteVehiculo;
+            txtMarca.Text = _marcaVehiculo;
+            txtModelo.Text = _modeloVehiculo;
+            this.btnQuitarVehiculo.Enabled = true;
+            this.btnQuitarVehiculo.Visible = true;
+
+
+        }
+
+
+        // Botón que permite quitar el vehículo asignado para la reserva
+        private void btnQuitarVehiculo_Click(object sender, EventArgs e)
+        {
+            txtPatente.Text = string.Empty;
+            txtModelo.Text = string.Empty;
+            txtMarca.Text = string.Empty;
+            txtNumeroCochera.Text = string.Empty;
+            txtPrecioCochera.Text = string.Empty;
+        }
+
+
+        // Botón que consulta las habitaciones que están disponibles. 
+        private void btnConsultarHabitaciones_Click(object sender, EventArgs e)
+        {
+            // Valida que las fechas estén en un rango correcto y que permita fechas válidas.
+            if(ValidarFechas())
+            {
+                // Calcula la cantida de días para poder realizar los cálculos de subtotal.
+                cantidadDias = CalcularCantidadDias(dtpFechaIngreso, dtpFechaSalida);
+
+                // Carga la grilla con las habitaciones libres.
+                this.CargarGrilla(dgvHabitaciones, oReserva.RecuperarHabitacionesLibres(dtpFechaIngreso.Value.ToString(), dtpFechaSalida.Value.ToString()));
+                
+                // Valida que la pantente no esté vacía y en caso de que haya datos de un vehículo asigna una cochera.
+                if (txtPatente.Text != string.Empty)
+                {
+                        // Asigna una cochera secuencialmente que esté libre para el rango de fachas. En caso de que no haya cocheras disponibles no asigna e informa.
+                        if (AsignarCochera())
+                        {
+                            
+                            // carga los txt con la información de la cochera asignada.
+                            var precio = tablaCocheras.Rows[0]["precio"];
+                            txtNumeroCochera.Text = tablaCocheras.Rows[0]["numero"].ToString();
+                            txtPrecioCochera.Text = precio.ToString();
+
+                            totalCochera = cantidadDias * Convert.ToInt32(precio);
+                            txtSubtotalCochera.Text = (totalCochera).ToString();
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("No hay Cocheras Disponibles", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            txtPatente.Clear();
+                            txtMarca.Clear();
+                            txtModelo.Clear();
+
+                        }
+                   
+                }
+                 
+            }
+            else
+            {
+                MessageBox.Show("Debe ingresar un rango de fechas válido", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            // Habilita el botón que permite agregar cocheras al detalle de la reserva.
+            btnAgregarHabitacion.Enabled = true;
+            btnAgregarHabitacion.Visible = true;
+            
+        }
+
+               
+        // Botón que permita agregar habitaciones a el detalle de la reserva.
+        private void btnAgregarHabitacion_Click(object sender, EventArgs e)
+        {
+            
+
+            PasarFila(dgvHabitaciones, dgvReservas);
+
+            CalcularTotales(dgvReservas);
+
+            // Habilita los botenes q¿correspondientes para que el usuario pueda continuar con la transacción.
+            btnQuitarHabitacion.Enabled = true;
+            btnQuitarHabitacion.Visible = true;
+            btnAceptar.Enabled = true;
+            btnAceptar.Visible = true;
+
+
+        }
+
+
+        // Botón que permite quitar habitaciones del detalle de la reserva y las devuelve a la grilla de habitaciones disponibles.
+        private void btnQuitarHabitacion_Click(object sender, EventArgs e)
+        {
+
+            
+            PasarFila(dgvReservas, dgvHabitaciones);
+
+            CalcularTotales(dgvReservas);
+             
+        }
+
+
+        // Botón aceptar que realiza toda la carga de la transacción.
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+
+            // Carga la lista de detalles de reserva con todas las filas de la grilla del detalle de reserva.
+            foreach (DataGridViewRow fila in dgvReservas.Rows)
+            {
+                listaDetalleReserva.Add(new DetalleReserva()
+                {
+                    IdDetalle = listaDetalleReserva.Count + 1,
+                    NroHabitacion = Convert.ToInt32(fila.Cells[0].Value),
+                    PrecioUnitarioHabitacion = Convert.ToSingle(fila.Cells[3].Value)
+                });
+            }
+
+
+            try
+            {
+                // Validar que los campos necesarios estén vacíos.
+                if (ValidarCampos())
+                {
+                    // Carga los datos de la reserva y de todos los detalles de la reserva.
+                    CargarReserva();
+
+                    // Cargar datos de la transacción a la base de datos
+                    if (listaDetalleReserva.Count != 0)
+                    {
+                        int idReserva = oReserva.Crear(oReservaNew, listaDetalleReserva);
+
+                        MessageBox.Show(string.Concat("La Reserva N°: ", idReserva.ToString(), " se efectuó correctamente."), "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        throw new Exception("Debe ingresar al menos una habitación para reservar.");
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al registrar la reserva " + ex.Message + ex.StackTrace, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            finally
+            {
+                instancia = null;
+                this.Close();
+            }
+
+
+        }
+
+
+        // Botón que cancela toda la transacción.
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Está seguro que desea cancelar la operación?", "Cancelar", MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+            {
+                instancia = null;
+                this.Close();
+            }
+        }
+
+        private void CargarForm()
+        {
+            this.txtPasaporte.Enabled = true;
+            this.txtNombre.Enabled = false;
+            this.txtApellido.Enabled = false;
+            this.txtPatente.Enabled = false;
+            this.txtModelo.Enabled = false;
+            this.txtMarca.Enabled = false;
+            this.txtNumeroCochera.Enabled = false;
+            this.txtPrecioCochera.Enabled = false;
+            this.txtSubtotalCochera.Enabled = false;
+            this.btnConsultar.Enabled = true;
+            this.btnAgregarHusped.Enabled = true;
+            this.btnAgregarVehiculo.Enabled = false;
+            this.btnAgregarVehiculo.Visible = false;
+            this.dtpFechaIngreso.Enabled = true;
+            this.dtpFechaSalida.Enabled = true;
+            this.btnConsultarHabitaciones.Enabled = false;
+            this.btnConsultarHabitaciones.Visible = false;
+            this.txtCantidadPersonas.Enabled = false;
+            this.txtSubtotal.Enabled = false;
+            this.btnAgregarHabitacion.Enabled = false;
+            this.btnAgregarHabitacion.Visible = false;
+            this.btnQuitarHabitacion.Enabled = false;
+            this.btnQuitarHabitacion.Visible = false;
+            this.txtTotal.Enabled = false;
+            this.btnAceptar.Enabled = false;
+            this.btnAceptar.Visible = false;
+            this.btnCancelar.Enabled = true;
+            this.btnQuitarVehiculo.Enabled = false;
+            this.btnQuitarVehiculo.Visible = false;
+            this.txtSubtotal.Text = (0).ToString();
+            this.txtSubtotalCochera.Text = (0).ToString();
+            this.txtTotal.Text = (0).ToString();
+        }
+
+
         private bool ValidarPasaporte()
         {
             if (!string.IsNullOrEmpty(txtPasaporte.Text))
@@ -197,128 +401,6 @@ namespace Hotel.Presentacion
 
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            if(MessageBox.Show("Está seguro que desea cancelar la operación?", "Cancelar", MessageBoxButtons.YesNo, 
-                MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
-            {
-                instancia = null;
-                this.Close();
-            }
-        }
-
-        private void btnConsultarHabitaciones_Click(object sender, EventArgs e)
-        {
-            if(ValidarFechas())
-            {
-                cantidadDias = CalcularCantidadDias(dtpFechaIngreso, dtpFechaSalida);
-
-                this.CargarGrilla(dgvHabitaciones, oReserva.RecuperarHabitacionesLibres(dtpFechaIngreso.Value.ToString(), dtpFechaSalida.Value.ToString()));
-                if (txtPatente.Text != string.Empty)
-                {
-                        if (AsignarCochera())
-                        {
-                            var precio = tablaCocheras.Rows[0]["precio"];
-                            txtNumeroCochera.Text = tablaCocheras.Rows[0]["numero"].ToString();
-                            txtPrecioCochera.Text = precio.ToString();
-
-                            totalCochera = cantidadDias * Convert.ToInt32(precio);
-                            txtSubtotalCochera.Text = (totalCochera).ToString();
-
-                        }
-                        else
-                        {
-                            MessageBox.Show("No hay Cocheras Disponibles", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            txtPatente.Clear();
-                            txtMarca.Clear();
-                            txtModelo.Clear();
-
-                        }
-                   
-                }
-                 
-            }
-            else
-            {
-                MessageBox.Show("Debe ingresar un rango de fechas válido", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-
-            btnAgregarHabitacion.Enabled = true;
-            btnAgregarHabitacion.Visible = true;
-            
-        }
-
-        private void btnAgregarHusped_Click(object sender, EventArgs e)
-        {
-            frmNuevoEditarHuesped frmNuevoH = new frmNuevoEditarHuesped(this.txtPasaporte.Text);
-            frmNuevoH.SeleccionarModo(frmNuevoEditarHuesped.FormMode.reserva);
-            frmNuevoH.ShowDialog();
-
-            this.txtPasaporte.Text = _pasaporte;
-            this.txtNombre.Text = _nombre;
-            this.txtApellido.Text = _apellido;
-            this.txtPasaporte.Enabled = false;
-                    
-
-        }
-
-        private void dgvReservas_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void btnAgregarHabitacion_Click(object sender, EventArgs e)
-        {
-            
-
-            PasarFila(dgvHabitaciones, dgvReservas);
-
-            CalcularTotales(dgvReservas);
-
-            btnQuitarHabitacion.Enabled = true;
-            btnQuitarHabitacion.Visible = true;
-            btnAceptar.Enabled = true;
-            btnAceptar.Visible = true;
-
-
-        }
-
-        private void btnAgregarVehiculo_Click(object sender, EventArgs e)
-        {
-            frmVehiculo frmVehiculo = new frmVehiculo(txtPasaporte.Text);
-            frmVehiculo.SeleccionarModo(frmVehiculo.FormMode.reserva);
-            frmVehiculo.ShowDialog();
-
-            txtPatente.Text = _patenteVehiculo;
-            txtMarca.Text = _marcaVehiculo;
-            txtModelo.Text = _modeloVehiculo;
-            this.btnQuitarVehiculo.Enabled = true;
-            this.btnQuitarVehiculo.Visible = true;
-            
-
-        }
-
-        private void btnQuitarHabitacion_Click(object sender, EventArgs e)
-        {
-
-            
-            PasarFila(dgvReservas, dgvHabitaciones);
-
-            CalcularTotales(dgvReservas);
-
-          
-
-            
-
-        }
-
-        private void txtSubtotal_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        
-
         private bool AsignarCochera()
         {
             tablaCocheras = oReserva.RecuperarCocherasLibres(dtpFechaIngreso.Value.ToString(), dtpFechaSalida.Value.ToString());
@@ -334,55 +416,7 @@ namespace Hotel.Presentacion
             }
         }
 
-        private void btnAceptar_Click(object sender, EventArgs e)
-        {
-            // Validar Campos
-            foreach (DataGridViewRow fila in dgvReservas.Rows)
-            {
-                listaDetalleReserva.Add(new DetalleReserva()
-                {
-                    IdDetalle = listaDetalleReserva.Count + 1,
-                    NroHabitacion = Convert.ToInt32(fila.Cells[0].Value),
-                    PrecioUnitarioHabitacion = Convert.ToSingle(fila.Cells[3].Value)
-                });
-            }
-
-            
-            try
-            {
-                if (ValidarCampos())
-                {
-
-                    CargarReserva();
-
-                    // Cargar datos a la base de datos
-                    if (listaDetalleReserva.Count != 0)
-                    {
-                        int idReserva = oReserva.Crear(oReservaNew, listaDetalleReserva);
-
-                        MessageBox.Show(string.Concat("La Reserva N°: ", idReserva.ToString(), " se efectuó correctamente."), "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        throw new Exception("Debe ingresar al menos una habitación para reservar.");
-                    }
-                }
-                
-
-                
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al registrar la reserva " + ex.Message + ex.StackTrace, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            finally
-            {
-                instancia = null;
-                this.Close();
-            }
-
-          
-        }
+        
 
         private void CargarReserva()
         {
@@ -416,14 +450,7 @@ namespace Hotel.Presentacion
         }
 
 
-        private void btnQuitarVehiculo_Click(object sender, EventArgs e)
-        {
-            txtPatente.Text = string.Empty;
-            txtModelo.Text = string.Empty;
-            txtMarca.Text = string.Empty;
-            txtNumeroCochera.Text = string.Empty;
-            txtPrecioCochera.Text = string.Empty;
-        }
+        
 
         private void CargarGrilla(DataGridView grilla, DataTable tabla)
         {
