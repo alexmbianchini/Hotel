@@ -12,7 +12,7 @@ namespace Hotel.Datos.Dao
 {
     class ReservaDao : IReserva
     {
-        
+
 
         public DataTable RecuperarCocherasLibres(string fechaIngreso, string fechaSalida)
         {
@@ -24,6 +24,7 @@ namespace Hotel.Datos.Dao
                                     " FROM RESERVA r" +
                                     " JOIN COCHERAS c ON(r.numero_cochera = c.numero)" +
                                     " WHERE r.borrado_logico = 0" +
+                                    " AND r.estado = 1" +
                                     " AND (CONVERT(DATETIME, '" + fechaIngreso + "', 103)" +
                                     " BETWEEN r.fecha_hora_ingreso_estimada AND r.fecha_hora_salida_estimada)" +
                                     " OR (CONVERT(DATETIME, '" + fechaSalida + "', 103)" +
@@ -34,7 +35,7 @@ namespace Hotel.Datos.Dao
             return DBHelper.ObtenerInstancia().Ejecutar(consulta);
         }
 
-        
+
 
         public DataTable RecuperarHabitacionesLibres(string fechaIngreso, string fechaSalida)
         {
@@ -48,13 +49,14 @@ namespace Hotel.Datos.Dao
                                        " INNER JOIN DETALLE_RESERVA d ON(h.numero = d.numero_habitacion)" +
                                        " INNER JOIN RESERVA r ON(d.id_reserva = r.id_reserva)" +
                                        " WHERE r.borrado_logico = 0" +
+                                       " AND r.estado = 1" +
                                        " AND (CONVERT(DATETIME, '" + fechaIngreso + "', 103)" +
                                        " BETWEEN r.fecha_hora_ingreso_estimada AND r.fecha_hora_salida_estimada)" +
                                        " OR (CONVERT(DATETIME, '" + fechaSalida + "', 103)" +
                                        " BETWEEN r.fecha_hora_ingreso_estimada AND r.fecha_hora_salida_estimada)" +
-                                       " OR (r.fecha_hora_ingreso_estimada BETWEEN CONVERT(DATETIME,'"+ fechaIngreso +"', 103)" +
+                                       " OR (r.fecha_hora_ingreso_estimada BETWEEN CONVERT(DATETIME,'" + fechaIngreso + "', 103)" +
                                        " AND CONVERT(DATETIME, '" + fechaSalida + "', 103))) ";
-                consulta += " ORDER BY t.cod_tipo";
+            consulta += " ORDER BY t.cod_tipo";
 
             return DBHelper.ObtenerInstancia().Ejecutar(consulta);
 
@@ -133,10 +135,10 @@ namespace Hotel.Datos.Dao
                 id = oReserva.IdReserva;
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 db.Rollback();
-                throw ex;                
+                throw ex;
             }
             finally
             {
@@ -144,5 +146,43 @@ namespace Hotel.Datos.Dao
             }
             return id;
         }
+
+
+        public DataTable RecuperarReservadas()
+        {
+
+            string consulta = "SELECT r.id_reserva, h.numero_pasaporte as pasaporte, h.nombre, h.apellido, r.fecha_hora_ingreso_estimada, " +
+                " r.fecha_hora_salida_estimada, r.numero_cochera, r.cantidad_personas" +
+                " FROM RESERVA r" +
+                " INNER JOIN HUESPEDES h ON(r.id_huesped = h.id)" +
+                " INNER JOIN ESTADO_RESERVA e ON(r.estado = e.id_estado)" +
+                " WHERE e.descripcion = 'Reservado'";
+
+            return DBHelper.ObtenerInstancia().Ejecutar(consulta);
+        }
+
+        public DataTable RecueperarDetallesReservaEspecifica(int numeroReserva)
+        {
+
+            string consulta = "SELECT d.id_detalle, d.numero_habitacion, t.nombre as tipo, d.precio_unitario_habitacion" +
+                " FROM DETALLE_RESERVA d" +
+                " INNER JOIN HABITACIONES h ON(d.numero_habitacion = h.numero)" +
+                " INNER JOIN TIPO_HABITACION t ON(h.tipo_habitacion = t.cod_tipo)" +
+                " WHERE d.id_reserva = " + numeroReserva;
+
+            return DBHelper.ObtenerInstancia().Ejecutar(consulta);
+        }
+
+        public bool Cancelar(int numeroReserva)
+        {
+            string consulta = "UPDATE RESERVA SET estado = 4" +
+                " WHERE id_reserva =" + numeroReserva;
+
+
+            DBHelper.ObtenerInstancia().Actualizar(consulta);
+            return true;
+
+        }
     }
 }
+

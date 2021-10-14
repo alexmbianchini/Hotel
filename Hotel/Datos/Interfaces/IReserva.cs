@@ -16,5 +16,11 @@ namespace Hotel.Datos.Interfaces
         DataTable RecuperarHabitacionesLibres(string fechaIngreso, string fechaSalida);
         int Crear(Reserva oReserva, BindingList<DetalleReserva> oDetalle);
 
+        DataTable RecuperarReservadas();
+
+        DataTable RecueperarDetallesReservaEspecifica(int numeroReserva);
+
+        bool Cancelar(int numeroReserva);
+
     }
 }

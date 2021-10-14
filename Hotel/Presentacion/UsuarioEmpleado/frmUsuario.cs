@@ -179,5 +179,10 @@ namespace Hotel.Presentacion
         {
 
         }
+
+        private void dgvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

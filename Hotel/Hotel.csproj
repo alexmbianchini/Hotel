@@ -113,6 +113,12 @@
     <Compile Include="Negocio\TipoTarjeta.cs" />
     <Compile Include="Negocio\Usuario.cs" />
     <Compile Include="Negocio\Vehiculo.cs" />
+    <Compile Include="Presentacion\frmConsultaReservas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmConsultaReservas.Designer.cs">
+      <DependentUpon>frmConsultaReservas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\frmNuevaReserva.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -221,6 +227,9 @@
     <Compile Include="Servicios\VehiculoService.cs" />
     <EmbeddedResource Include="Custom\RJTextBox.resx">
       <DependentUpon>RJTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frmConsultaReservas.resx">
+      <DependentUpon>frmConsultaReservas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frmNuevaReserva.resx">
       <DependentUpon>frmNuevaReserva.cs</DependentUpon>

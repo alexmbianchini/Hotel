@@ -31,5 +31,20 @@ namespace Hotel.Servicios
         {
             return dao.Crear(oReserva, oDetalle);
         }
+
+        public DataTable RecuperarReservadas()
+        {
+            return dao.RecuperarReservadas();
+        }
+
+        public DataTable RecueperarDetallesReservaEspecifica(int numeroReserva)
+        {
+            return dao.RecueperarDetallesReservaEspecifica(numeroReserva);
+        }
+
+        public bool Cancelar(int numeroReserva)
+        {
+            return dao.Cancelar(numeroReserva);
+        }
     }
 }
