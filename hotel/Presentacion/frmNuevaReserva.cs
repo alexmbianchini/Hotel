@@ -89,7 +89,7 @@ namespace Hotel.Presentacion
             if(this.ValidarPasaporte())
             {
                 // Validar que el formato del pasaporte sea correcto, en caso de que no es correcto, muestra un mensaje.
-                if (PasaporteCorrecto(txtPasaporte.Text))
+                if (oHuesped.PasaporteCorrecto(txtPasaporte.Text))
                 {
 
                     // Recupera el huesped por el pasaporte, en caso de que no existe, la tabla no trae filas y envía un mensaje de que no existe.
@@ -377,29 +377,7 @@ namespace Hotel.Presentacion
                 return false;
         }
 
-        private bool PasaporteCorrecto(string pasaporte)
-        {
-
-            Regex formato = new Regex(@"[A-Z]{3}[0-9]{6}");
-
-            if (pasaporte.Length == 9)
-            {
-                if (formato.IsMatch(pasaporte))
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-
-            }
-            else
-            {
-                return false;
-            }
-
-        }
+        
 
         private bool AsignarCochera()
         {
