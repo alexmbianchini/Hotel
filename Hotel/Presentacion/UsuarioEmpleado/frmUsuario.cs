@@ -22,6 +22,7 @@ namespace Hotel.Presentacion
         TipoDocumentoService oTipoDoc = new TipoDocumentoService();
         Usuario oUsuarioSelected = new Usuario();
         Empleado oEmpleadoSelected = new Empleado();
+        ComboBoxService oComboBox = new ComboBoxService();
 
         public frmUsuario()
         {
@@ -33,16 +34,7 @@ namespace Hotel.Presentacion
             this.CargarTodo();
         }
 
-        private void CargarCombo(ComboBox combo, DataTable tabla, string campoMostrar, string campoValor)
-        {
-            combo.DataSource = tabla;
-            combo.DisplayMember = campoMostrar;
-            combo.ValueMember = campoValor;
-            combo.SelectedIndex = -1;
-            combo.DropDownStyle = ComboBoxStyle.DropDownList;
-        }
-
-      
+        
 
         private void CargarGrilla(DataGridView grilla, DataTable tabla)
         {
@@ -158,8 +150,8 @@ namespace Hotel.Presentacion
             //this.CargarCombo(cboApellidoEmpleado, oEmpleado.RecuperarTodos(), "apellido", "apellido");
             //this.CargarCombo(cboNombreEmpleado, oEmpleado.RecuperarTodos(), "nombre", "nombre");
             //this.CargarCombo(cboNroDoc, oEmpleado.RecuperarTodos(), "nro_doc", "nro_doc");
-            this.CargarCombo(cboPuesto, oPuesto.RecuperarTodos(), "descripcion", "cod_puesto");
-            this.CargarCombo(cboTipoDoc, oTipoDoc.RecuperarTodos(), "descripcion", "tipo_doc");
+            oComboBox.CargarCombo(cboPuesto, oPuesto.RecuperarTodos(), "descripcion", "cod_puesto");
+            oComboBox.CargarCombo(cboTipoDoc, oTipoDoc.RecuperarTodos(), "descripcion", "tipo_doc");
 
 
             //Carga de Grilla

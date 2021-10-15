@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Hotel.Servicios
@@ -48,5 +49,44 @@ namespace Hotel.Servicios
         {
             return dao.RecuperarFiltrados(patente, marca, pasaporte);
         }
+
+        public bool PatenteCorrecta(string patente)
+        {
+
+            Regex formato1 = new Regex(@"[A-Z]{2}[0-9]{3}[A-Z]{2}");
+            Regex formato2 = new Regex(@"[A-Z]{3}[0-9]{3}");
+
+            if (patente.Length == 7)
+            {
+                if (formato1.IsMatch(patente))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+
+            if (patente.Length == 6)
+            {
+                if (formato2.IsMatch(patente))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+
+            else
+            {
+                return false;
+            }
+
+        }
     }
+
+
 }

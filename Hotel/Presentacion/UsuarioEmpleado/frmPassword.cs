@@ -60,10 +60,10 @@ namespace Hotel.Presentacion.UsuarioEmpleado
                 else
                 {
                     // Validar seguirdad de la contraseña, chequeando de que contenga, números, letras, caracteres especiales y una longitud de 8 caracteres como mínimo
-                    if (PasswordSegura(this.txtPasswordNueva.Text))
+                    if (oUsuario.PasswordSegura(this.txtPasswordNueva.Text))
                     {
                         // Validar que las dos Contraseñas  nuevas sean iguales, si retorna false es porque no coinciden.
-                        bool _validacion = this.ValidarConfirmacionPassword(this.txtPasswordNueva.Text, this.txtPasswordConfirmar.Text);
+                        bool _validacion = oUsuario.ValidarConfirmacionPassword(this.txtPasswordNueva.Text, this.txtPasswordConfirmar.Text);
 
                         if (_validacion == false)
                         {
@@ -114,44 +114,6 @@ namespace Hotel.Presentacion.UsuarioEmpleado
         }
 
 
-        // Validación de complejidad de contraseña 
-        public Boolean PasswordSegura(String PasswordSinVerificar)
-        {
-            //letras de la A a la Z, mayusculas y minusculas
-            Regex letras = new Regex(@"[a-zA-z]");
-            //digitos del 0 al 9
-            Regex numeros = new Regex(@"[0-9]");
-            //cualquier caracter del conjunto
-            Regex caracEsp = new Regex("[!\"#\\$%&'()*+,-./:;=?@\\[\\]^_`{|}~]");
-
-
-            //si no contiene las letras, regresa false
-            if (!letras.IsMatch(PasswordSinVerificar))
-            {
-                return false;
-            }
-            //si no contiene los numeros, regresa false
-            if (!numeros.IsMatch(PasswordSinVerificar))
-            {
-                return false;
-            }
-
-            //si no contiene los caracteres especiales, regresa false
-            if (!caracEsp.IsMatch(PasswordSinVerificar))
-            {
-                return false;
-            }
-            // si la longitud es menor a 8 caracteres, retorna falso
-            if (PasswordSinVerificar.LongCount() < 8)
-            {
-                return false;
-            }
-
-            //si cumple con todo, regresa true
-            return true;
-        }
-
-
         // Validar campos no vacíos
         private bool ValidarCampos()
         {
@@ -183,18 +145,7 @@ namespace Hotel.Presentacion.UsuarioEmpleado
 
         }
 
-        // Valida coincidencia de contraseñas, si las contraseñas coinciden retorna true y si no retorna false
-        private bool ValidarConfirmacionPassword(string Password, string Confirmacion)
-        {
-            if (Password == Confirmacion)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+        
 
         private void btnActualSacar_Click(object sender, EventArgs e)
         {

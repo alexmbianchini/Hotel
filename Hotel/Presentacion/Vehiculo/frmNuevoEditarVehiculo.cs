@@ -29,6 +29,7 @@ namespace Hotel.Presentacion
         VehiculoService oVehiculo = new VehiculoService();
         HuespedService oHuesped = new HuespedService();
         Vehiculo oVehiculoSelected = new Vehiculo();
+        
         private int _id;
 
         DataTable tabla_huesped;
@@ -51,10 +52,10 @@ namespace Hotel.Presentacion
                     // Validar que los campos estén cargados
                     if (this.ValidarCampos())
                     {
-                        if (PatenteCorrecta(txtPatente.Text))
+                        if (oVehiculo.PatenteCorrecta(txtPatente.Text))
                         {
                             // Validar que el pasaporte tenga el formato correcto
-                            if (PasaporteCorrecto(this.txtPasaporte.Text))
+                            if (oHuesped.PasaporteCorrecto(this.txtPasaporte.Text))
                             {
                                 // Validar que exista el pasaporte
                                 if (!oHuesped.ValidarPasaporte(this.txtPasaporte.Text))
@@ -237,70 +238,7 @@ namespace Hotel.Presentacion
         {
             this.formMode = op;
         }
-
-
-        // Valida que el pasaporte tenga el formato correcto, 3 letras y 6 números (AAA000000)
-        private bool PasaporteCorrecto(string pasaporte)
-        {
-
-            Regex formato = new Regex(@"[A-Z]{3}[0-9]{6}");
-
-            if (pasaporte.Length == 9)
-            {
-                if (formato.IsMatch(pasaporte))
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-
-            }
-            else
-            {
-                return false;
-            }
-
-        }
-
-
-        private bool PatenteCorrecta(string patente)
-        {
-
-            Regex formato1 = new Regex(@"[A-Z]{2}[0-9]{3}[A-Z]{2}");
-            Regex formato2 = new Regex(@"[A-Z]{3}[0-9]{3}");
-
-            if (patente.Length == 7)
-            {
-                if (formato1.IsMatch(patente))
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-
-            if (patente.Length == 6)
-            {
-                if (formato2.IsMatch(patente))
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-
-            else
-            {
-                return false;
-            }
-
-        }
+                
 
        private void txtPasaporte_KeyUp(object sender, KeyEventArgs e)
         {
@@ -332,7 +270,7 @@ namespace Hotel.Presentacion
         {
              tabla_huesped = oHuesped.RecuperarPorPasaporte(txtPasaporte.Text);
 
-            if (PasaporteCorrecto(txtPasaporte.Text))
+            if (oHuesped.PasaporteCorrecto(txtPasaporte.Text))
             {
                 if (tabla_huesped.Rows.Count > 0)
                 {

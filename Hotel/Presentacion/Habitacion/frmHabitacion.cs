@@ -19,6 +19,7 @@ namespace Hotel.Presentacion
         TipoHabitacionService oTipoH = new TipoHabitacionService();
         EstadoHabitacionService oEstadoH = new EstadoHabitacionService();
         Habitacion oHabitacionSelected = new Habitacion();
+        ComboBoxService oComboBox = new ComboBoxService();
 
         public frmHabitacion()
         {
@@ -32,14 +33,7 @@ namespace Hotel.Presentacion
         }
 
 
-        private void CargarCombo(ComboBox combo, DataTable tabla, string campoMostrar, string campoValor)
-        {
-            combo.DataSource = tabla;
-            combo.DisplayMember = campoMostrar;
-            combo.ValueMember = campoValor;
-            combo.SelectedIndex = -1;
-            combo.DropDownStyle = ComboBoxStyle.DropDownList;
-        }
+        
 
         private void CargarGrilla(DataGridView grilla, DataTable tabla)
         {
@@ -62,8 +56,8 @@ namespace Hotel.Presentacion
             //Carga de Combos
             //this.CargarCombo(cboNumero, oHabitacion.RecuperarTodos(), "numero", "numero");
             //this.CargarCombo(cboPiso, oHabitacion.RecuperarTodos(), "piso", "piso");
-            this.CargarCombo(cboTipo, oTipoH.RecuperarTodos(), "nombre", "cod_tipo");
-            this.CargarCombo(cboEstado, oEstadoH.RecuperarTodos(), "descripcion", "idEstado");
+            oComboBox.CargarCombo(cboTipo, oTipoH.RecuperarTodos(), "nombre", "cod_tipo");
+            oComboBox.CargarCombo(cboEstado, oEstadoH.RecuperarTodos(), "descripcion", "idEstado");
 
             //Carga Grilla
             this.CargarGrilla(dgvHabitaciones, oHabitacion.RecuperarGrilla());

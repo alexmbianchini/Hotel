@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Hotel.Servicios
@@ -58,6 +59,31 @@ namespace Hotel.Servicios
         public DataTable RecuperarPorPasaporte(string pasaporte)
         {
             return dao.RecuperarPorPasaporte(pasaporte);
+        }
+
+        // Valida que el pasaporte tenga el formato correcto, 3 letras y 6 números (AAA000000)
+        public bool PasaporteCorrecto(string pasaporte)
+        {
+
+            Regex formato = new Regex(@"[A-Z]{3}[0-9]{6}");
+
+            if (pasaporte.Length == 9)
+            {
+                if (formato.IsMatch(pasaporte))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            }
+            else
+            {
+                return false;
+            }
+
         }
     }
 }

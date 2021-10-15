@@ -18,6 +18,7 @@ namespace Hotel.Presentacion.Huespedes
         HuespedService oHuesped = new HuespedService();
         PaisService oPais = new PaisService();
         Hotel.Negocio.Huesped oHuespedSelected = new Hotel.Negocio.Huesped();
+        ComboBoxService oComboBox = new ComboBoxService();
 
         public frmHuesped()
         {
@@ -34,7 +35,7 @@ namespace Hotel.Presentacion.Huespedes
         // Cargar todos los datos de la grilla y el ComBox
         private void CargarTodo()
         {
-            this.CargarCombo(cboPais, oPais.RecuperarTodos(), "nombre", "id");
+            oComboBox.CargarCombo(cboPais, oPais.RecuperarTodos(), "nombre", "id");
 
             this.CargarGrilla(dvgHuespedes, oHuesped.RecuperarTodos());
         }
@@ -54,14 +55,7 @@ namespace Hotel.Presentacion.Huespedes
             }
         }
 
-        private void CargarCombo(ComboBox combo, DataTable tabla, string campoMostrar, string campoValor)
-        {
-            combo.DataSource = tabla;
-            combo.DisplayMember = campoMostrar;
-            combo.ValueMember = campoValor;
-            combo.SelectedIndex = -1;
-            combo.DropDownStyle = ComboBoxStyle.DropDownList;
-        }
+        
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {

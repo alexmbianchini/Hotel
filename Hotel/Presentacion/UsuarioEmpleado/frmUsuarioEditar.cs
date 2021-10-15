@@ -23,6 +23,7 @@ namespace Hotel.Presentacion.UsuarioEmpleado
         EmpleadoService oEmpleado = new EmpleadoService();
         Usuario oUsuarioSelected = new Usuario();
         Empleado oEmpleadoSelected = new Empleado();
+        ComboBoxService oComboBox = new ComboBoxService();
 
 
         // Variables a utilizar
@@ -146,24 +147,13 @@ namespace Hotel.Presentacion.UsuarioEmpleado
 
             txtNombre.Text = tablaEmpleado.Rows[0]["nombre"].ToString();
             txtApellido.Text = tablaEmpleado.Rows[0]["apellido"].ToString();
-            this.CargarCombo(cboTipoDocumento, oTipoDoc.RecuperarTodos(), "descripcion", "tipo_doc", (int)tablaEmpleado.Rows[0]["tipo_doc"]);
-            this.CargarCombo(cboPuesto, oPuesto.RecuperarTodos(), "descripcion", "cod_puesto", (int)tablaEmpleado.Rows[0]["puesto"]);
+            oComboBox.CargarCombo(cboTipoDocumento, oTipoDoc.RecuperarTodos(), "descripcion", "tipo_doc", (int)tablaEmpleado.Rows[0]["tipo_doc"]);
+            oComboBox.CargarCombo(cboPuesto, oPuesto.RecuperarTodos(), "descripcion", "cod_puesto", (int)tablaEmpleado.Rows[0]["puesto"]);
             txtNumeroDocumento.Text = tablaEmpleado.Rows[0]["nro_doc"].ToString();
 
             txtUsuario.Text = tablaUsuario.Rows[0]["nombre"].ToString();
 
 
-        }
-
-
-        // Función que nos permite cargar los comboBox
-        private void CargarCombo(ComboBox combo, DataTable tabla, string campoMostrar, string campoValor, int campoIndice)
-        {
-            combo.DataSource = tabla;
-            combo.DisplayMember = campoMostrar;
-            combo.ValueMember = campoValor;
-            combo.SelectedIndex = campoIndice - 1;
-            combo.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
 

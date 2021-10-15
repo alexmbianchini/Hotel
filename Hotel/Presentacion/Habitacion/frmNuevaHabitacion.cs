@@ -22,6 +22,7 @@ namespace Hotel.Presentacion
         HabitacionService oHabitacion;
         TipoHabitacionService oTipoHabitacion;
         Habitacion oHabitacionSelected;
+        ComboBoxService oCombo = new ComboBoxService();
         //TipoHabitacion oTipoHSelected;
         PisoService oPiso;
 
@@ -62,7 +63,7 @@ namespace Hotel.Presentacion
             {
                 case FormMode.insert:
                     {
-                        this.CargarCombo(cboTipoHabitacion, oTipoHabitacion.RecuperarTodos(), "nombre", "cod_tipo");
+                        oCombo.CargarCombo(cboTipoHabitacion, oTipoHabitacion.RecuperarTodos(), "nombre", "cod_tipo");
                         this.Text = "Nueva Habitación";
                         //this.txtDescripcionHabitacion.Enabled = false;
                         break;
@@ -79,23 +80,7 @@ namespace Hotel.Presentacion
 
         }
 
-        // Funcion para cargar combo
-        private void CargarCombo(ComboBox combo, DataTable tabla, string campoMostrar, string campoValor, int campoIndice)
-        {
-            combo.DataSource = tabla;
-            combo.DisplayMember = campoMostrar;
-            combo.ValueMember = campoValor;
-            combo.SelectedIndex = campoIndice - 1;
-            combo.DropDownStyle = ComboBoxStyle.DropDownList;
-        }
-        private void CargarCombo(ComboBox combo, DataTable tabla, string campoMostrar, string campoValor)
-        {
-            combo.DataSource = tabla;
-            combo.DisplayMember = campoMostrar;
-            combo.ValueMember = campoValor;
-            combo.SelectedIndex = - 1;
-            combo.DropDownStyle = ComboBoxStyle.DropDownList;
-        }
+        
 
         public void SeleccionarModo(FormMode op)
         {
@@ -111,7 +96,7 @@ namespace Hotel.Presentacion
             txtPiso.Text = tablaHabitacion.Rows[0]["piso"].ToString();
             txtPrecioHabitacion.Text = tablaHabitacion.Rows[0]["precio"].ToString();
             //txtDescripcionHabitacion.Text = tablaHabitacion.Rows[0]["descripcion"].ToString();
-            this.CargarCombo(cboTipoHabitacion, oTipoHabitacion.RecuperarTodos(), "nombre", "cod_tipo", (int)tablaHabitacion.Rows[0]["tipo_habitacion"]);
+            oCombo.CargarCombo(cboTipoHabitacion, oTipoHabitacion.RecuperarTodos(), "nombre", "cod_tipo", (int)tablaHabitacion.Rows[0]["tipo_habitacion"]);
 
         }
 

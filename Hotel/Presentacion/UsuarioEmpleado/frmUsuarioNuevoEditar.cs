@@ -23,6 +23,7 @@ namespace Hotel.Presentacion
         PuestoService oPuesto = new PuestoService();
         Usuario oUsuarioSelected = new Usuario();
         Empleado oEmpleadoSelected = new Empleado();
+        ComboBoxService oComboBox = new ComboBoxService();
 
         public frmUsuarioNuevo()
         {
@@ -33,8 +34,8 @@ namespace Hotel.Presentacion
         private void frmUsuarioNuevoEditar_Load(object sender, EventArgs e)
         {
             //Cargar Combos del Fomrulario
-            this.CargarCombo(cboTipoDoc, oTipoDoc.RecuperarTodos(), "descripcion", "tipo_doc");
-            this.CargarCombo(cboPuesto, oPuesto.RecuperarTodos(), "descripcion", "cod_puesto");
+            oComboBox.CargarCombo(cboTipoDoc, oTipoDoc.RecuperarTodos(), "descripcion", "tipo_doc");
+            oComboBox.CargarCombo(cboPuesto, oPuesto.RecuperarTodos(), "descripcion", "cod_puesto");
 
 
         }
@@ -73,7 +74,7 @@ namespace Hotel.Presentacion
                     else
                     {
                         // Validar que las dos Contraseñas sean iguales
-                        bool _validacion = this.ValidarConfirmacionPassword(this.txtPassword.Text, this.txtConfirmarPassword.Text);
+                        bool _validacion = oUsuario.ValidarConfirmacionPassword(this.txtPassword.Text, this.txtConfirmarPassword.Text);
 
                         if (_validacion == false)
                         {
@@ -85,7 +86,7 @@ namespace Hotel.Presentacion
                         else
                         {
                             // Validar seguirdad de la contraseña, chequeando de que contenga, números, letras, caracteres especiales y una longitud de 8 caracteres como mínimo
-                            if (PasswordSegura(this.txtPassword.Text))
+                            if (oUsuario.PasswordSegura(this.txtPassword.Text))
                             {
 
                                 // Generar los id's de Usuario y Empleado
@@ -215,29 +216,6 @@ namespace Hotel.Presentacion
         }
 
 
-        // Función que nos permite cargar los comboBox
-        private void CargarCombo(ComboBox combo, DataTable tabla, string campoMostrar, string campoValor)
-        {
-            combo.DataSource = tabla;
-            combo.DisplayMember = campoMostrar;
-            combo.ValueMember = campoValor;
-            combo.SelectedIndex = -1;
-            combo.DropDownStyle = ComboBoxStyle.DropDownList;
-        }
-
-        // Valida coincidencia de contraseñas
-        private bool ValidarConfirmacionPassword(string Password, string Confirmacion)
-        {
-            if (Password == Confirmacion)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
         // Genera los ID de las tablas
         private int GenerarId(DataTable tabla)
         {
@@ -247,42 +225,6 @@ namespace Hotel.Presentacion
         }
 
 
-        // Validación de complejidad de contraseña 
-        public Boolean PasswordSegura(String PasswordSinVerificar)
-        {
-            //letras de la A a la Z, mayusculas y minusculas
-            Regex letras = new Regex(@"[a-zA-z]");
-            //digitos del 0 al 9
-            Regex numeros = new Regex(@"[0-9]");
-            //cualquier caracter del conjunto
-            Regex caracEsp = new Regex("[!\"#\\$%&'()*+,-./:;=?@\\[\\]^_`{|}~]");
-
-
-            //si no contiene las letras, regresa false
-            if (!letras.IsMatch(PasswordSinVerificar))
-            {
-                return false;
-            }
-            //si no contiene los numeros, regresa false
-            if (!numeros.IsMatch(PasswordSinVerificar))
-            {
-                return false;
-            }
-
-            //si no contiene los caracteres especiales, regresa false
-            if (!caracEsp.IsMatch(PasswordSinVerificar))
-            {
-                return false;
-            }
-            // si la longitud es menor a 8 caracteres, retorna falso
-            if (PasswordSinVerificar.LongCount() < 8)
-            {
-                return false;
-            }
-
-            //si cumple con todo, regresa true
-            return true;
-        }
 
         private void btnPasswordSacar_Click(object sender, EventArgs e)
         {

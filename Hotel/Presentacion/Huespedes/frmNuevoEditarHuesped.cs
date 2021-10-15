@@ -24,6 +24,7 @@ namespace Hotel.Presentacion.Huesped
         HuespedService oHuesped = new HuespedService();
         PaisService oPais = new PaisService();
         Hotel.Negocio.Huesped oHuespedSelected = new Hotel.Negocio.Huesped();
+        ComboBoxService oComboBox = new ComboBoxService();
 
         // Stirng para almacenar pasaporte recuperado de la grilla.
         private int idHuesped;
@@ -63,7 +64,7 @@ namespace Hotel.Presentacion.Huesped
                 // EN caso de que se quiera crear un Huesped...
                 case FormMode.insert:
                     {
-                        this.CargarCombo(cboPais, oPais.RecuperarTodos(), "nombre", "id");
+                        oComboBox.CargarCombo(cboPais, oPais.RecuperarTodos(), "nombre", "id");
                         this.Text = "Nuevo Huesped";
 
                         break;
@@ -79,7 +80,7 @@ namespace Hotel.Presentacion.Huesped
                     }
                 case FormMode.reserva:
                     {
-                        this.CargarCombo(cboPais, oPais.RecuperarTodos(), "nombre", "id");
+                        oComboBox.CargarCombo(cboPais, oPais.RecuperarTodos(), "nombre", "id");
                         this.Text = "Nuevo Huesped";
                         this.txtPasaporte.Text = pasaporte;
                         break;
@@ -149,28 +150,10 @@ namespace Hotel.Presentacion.Huesped
             txtApellido.Text = tablaHuesped.Rows[0]["apellido"].ToString();
             txtPasaporte.Text = tablaHuesped.Rows[0]["numero_pasaporte"].ToString();
             txtMail.Text = tablaHuesped.Rows[0]["mail"].ToString();
-            this.CargarCombo(cboPais, oPais.RecuperarTodos(), "nombre", "id", (int)tablaHuesped.Rows[0]["pais"]);
+            oComboBox.CargarCombo(cboPais, oPais.RecuperarTodos(), "nombre", "id", (int)tablaHuesped.Rows[0]["pais"]);
 
         }
-        // Cargar combos genéricos
-        private void CargarCombo(ComboBox combo, DataTable tabla, string campoMostrar, string campoValor)
-        {
-            combo.DataSource = tabla;
-            combo.DisplayMember = campoMostrar;
-            combo.ValueMember = campoValor;
-            combo.SelectedIndex = -1;
-            combo.DropDownStyle = ComboBoxStyle.DropDownList;
-        }
-
-        // Cargar combos genéericos, con valor inicial ya seleccionado.
-        private void CargarCombo(ComboBox combo, DataTable tabla, string campoMostrar, string campoValor, int campoIndice)
-        {
-            combo.DataSource = tabla;
-            combo.DisplayMember = campoMostrar;
-            combo.ValueMember = campoValor;
-            combo.SelectedIndex = campoIndice - 1;
-            combo.DropDownStyle = ComboBoxStyle.DropDownList;
-        }
+        
 
         // Valida que los campos no estén vacíos.
         private bool ValidarCampos()
@@ -244,38 +227,13 @@ namespace Hotel.Presentacion.Huesped
         }
 
 
-        // Valida que el pasaporte tenga el formato correcto, 3 letras y 6 números (AAA000000)
-        private bool PasaporteCorrecto(string pasaporte)
-        {
-
-            Regex formato = new Regex(@"[A-Z]{3}[0-9]{6}");
-
-            if (pasaporte.Length == 9)
-            {
-                if (formato.IsMatch(pasaporte))
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-
-            }
-            else
-            {
-                return false;
-            }
-
-        }
-
         public void InsertarHuesped()
         {
             // Validar que los campos estén cargados
             if (this.ValidarCampos())
             {
                 // Validar que el pasaporte tenga el formato correcto
-                if (PasaporteCorrecto(this.txtPasaporte.Text))
+                if (oHuesped.PasaporteCorrecto(this.txtPasaporte.Text))
                 {
                     // Validar que no exista otro huesped con el mismo pasaporte
                     if (oHuesped.ValidarPasaporte(this.txtPasaporte.Text))
