@@ -46,5 +46,19 @@ namespace Hotel.Servicios
         {
             return dao.Cancelar(numeroReserva);
         }
+
+        public DataTable RecuperarReservasParaCancelarFiltradas(string pasaporte, string fechaDesde, string fechaHasta)
+        {
+            return dao.RecuperarReservasParaCancelarFiltradas(pasaporte, fechaDesde, fechaHasta);
+        }
+        public bool ValidarFechas(DateTime fechaIngreso, DateTime fechaSalida)
+        {
+            if (fechaIngreso >= DateTime.Today
+                && fechaIngreso < fechaSalida)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

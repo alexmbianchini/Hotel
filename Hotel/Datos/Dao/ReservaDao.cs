@@ -183,6 +183,22 @@ namespace Hotel.Datos.Dao
             return true;
 
         }
+
+        public DataTable RecuperarReservasParaCancelarFiltradas(string pasaporte, string fechaDesde, string fechaHasta)
+        {
+            string consulta = "SELECT r.id_reserva, h.numero_pasaporte as pasaporte, h.nombre, h.apellido, r.fecha_hora_ingreso_estimada, " +
+                " r.fecha_hora_salida_estimada, r.numero_cochera, r.cantidad_personas" +
+                " FROM RESERVA r" +
+                " INNER JOIN HUESPEDES h ON(r.id_huesped = h.id)" +
+                " INNER JOIN ESTADO_RESERVA e ON(r.estado = e.id_estado)" +
+                " WHERE e.descripcion = 'Reservado'";
+            consulta += " AND (r.fecha_hora_ingreso_estimada BETWEEN CONVERT(DATETIME, '" + fechaDesde + "', 103) AND CONVERT(DATETIME, '" + fechaHasta + "', 103))";
+            consulta += " AND (r.fecha_hora_salida_estimada BETWEEN CONVERT(DATETIME, '" + fechaDesde + "', 103) AND CONVERT(DATETIME, '" + fechaHasta + "', 103))";
+            if (!string.IsNullOrEmpty(pasaporte))
+                consulta += " AND h.numero_pasaporte = '" + pasaporte + "'";
+            
+            return DBHelper.ObtenerInstancia().Ejecutar(consulta);
+        }
     }
 }
 

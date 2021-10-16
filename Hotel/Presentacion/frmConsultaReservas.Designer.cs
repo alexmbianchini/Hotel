@@ -32,9 +32,7 @@ namespace Hotel.Presentacion
             this.txtPasaporte = new System.Windows.Forms.TextBox();
             this.dtpFechaIngreso = new System.Windows.Forms.DateTimePicker();
             this.dtpFechaSalida = new System.Windows.Forms.DateTimePicker();
-            this.cboEstado = new System.Windows.Forms.ComboBox();
             this.lblPasaporte = new System.Windows.Forms.Label();
-            this.lblEstado = new System.Windows.Forms.Label();
             this.lblFechaSalida = new System.Windows.Forms.Label();
             this.lblFechaIngreso = new System.Windows.Forms.Label();
             this.dgvReserva = new System.Windows.Forms.DataGridView();
@@ -63,66 +61,55 @@ namespace Hotel.Presentacion
             // 
             // txtPasaporte
             // 
-            this.txtPasaporte.Location = new System.Drawing.Point(154, 57);
+            this.txtPasaporte.Location = new System.Drawing.Point(116, 46);
+            this.txtPasaporte.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPasaporte.Name = "txtPasaporte";
-            this.txtPasaporte.Size = new System.Drawing.Size(130, 22);
+            this.txtPasaporte.Size = new System.Drawing.Size(98, 20);
             this.txtPasaporte.TabIndex = 0;
             // 
             // dtpFechaIngreso
             // 
-            this.dtpFechaIngreso.Location = new System.Drawing.Point(527, 55);
+            this.dtpFechaIngreso.Location = new System.Drawing.Point(395, 45);
+            this.dtpFechaIngreso.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtpFechaIngreso.Name = "dtpFechaIngreso";
-            this.dtpFechaIngreso.Size = new System.Drawing.Size(200, 22);
+            this.dtpFechaIngreso.Size = new System.Drawing.Size(151, 20);
             this.dtpFechaIngreso.TabIndex = 1;
             // 
             // dtpFechaSalida
             // 
-            this.dtpFechaSalida.Location = new System.Drawing.Point(527, 139);
+            this.dtpFechaSalida.Location = new System.Drawing.Point(395, 113);
+            this.dtpFechaSalida.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtpFechaSalida.Name = "dtpFechaSalida";
-            this.dtpFechaSalida.Size = new System.Drawing.Size(200, 22);
+            this.dtpFechaSalida.Size = new System.Drawing.Size(151, 20);
             this.dtpFechaSalida.TabIndex = 2;
-            // 
-            // cboEstado
-            // 
-            this.cboEstado.FormattingEnabled = true;
-            this.cboEstado.Location = new System.Drawing.Point(154, 132);
-            this.cboEstado.Name = "cboEstado";
-            this.cboEstado.Size = new System.Drawing.Size(130, 24);
-            this.cboEstado.TabIndex = 3;
             // 
             // lblPasaporte
             // 
             this.lblPasaporte.AutoSize = true;
-            this.lblPasaporte.Location = new System.Drawing.Point(58, 60);
+            this.lblPasaporte.Location = new System.Drawing.Point(44, 49);
+            this.lblPasaporte.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPasaporte.Name = "lblPasaporte";
-            this.lblPasaporte.Size = new System.Drawing.Size(73, 17);
+            this.lblPasaporte.Size = new System.Drawing.Size(55, 13);
             this.lblPasaporte.TabIndex = 4;
             this.lblPasaporte.Text = "Pasaporte";
-            // 
-            // lblEstado
-            // 
-            this.lblEstado.AutoSize = true;
-            this.lblEstado.Location = new System.Drawing.Point(79, 139);
-            this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(52, 17);
-            this.lblEstado.TabIndex = 5;
-            this.lblEstado.Text = "Estado";
             // 
             // lblFechaSalida
             // 
             this.lblFechaSalida.AutoSize = true;
-            this.lblFechaSalida.Location = new System.Drawing.Point(401, 144);
+            this.lblFechaSalida.Location = new System.Drawing.Point(301, 117);
+            this.lblFechaSalida.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFechaSalida.Name = "lblFechaSalida";
-            this.lblFechaSalida.Size = new System.Drawing.Size(90, 17);
+            this.lblFechaSalida.Size = new System.Drawing.Size(69, 13);
             this.lblFechaSalida.TabIndex = 6;
             this.lblFechaSalida.Text = "Fecha Salida";
             // 
             // lblFechaIngreso
             // 
             this.lblFechaIngreso.AutoSize = true;
-            this.lblFechaIngreso.Location = new System.Drawing.Point(401, 60);
+            this.lblFechaIngreso.Location = new System.Drawing.Point(301, 49);
+            this.lblFechaIngreso.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFechaIngreso.Name = "lblFechaIngreso";
-            this.lblFechaIngreso.Size = new System.Drawing.Size(98, 17);
+            this.lblFechaIngreso.Size = new System.Drawing.Size(75, 13);
             this.lblFechaIngreso.TabIndex = 7;
             this.lblFechaIngreso.Text = "Fecha Ingreso";
             // 
@@ -140,16 +127,16 @@ namespace Hotel.Presentacion
             this.clmFechaSalida,
             this.clmNumeroCochera,
             this.clmCantidadPersonas});
-            this.dgvReserva.Location = new System.Drawing.Point(33, 255);
+            this.dgvReserva.Location = new System.Drawing.Point(25, 207);
+            this.dgvReserva.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvReserva.Name = "dgvReserva";
             this.dgvReserva.ReadOnly = true;
             this.dgvReserva.RowHeadersWidth = 51;
             this.dgvReserva.RowTemplate.Height = 24;
             this.dgvReserva.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvReserva.Size = new System.Drawing.Size(1089, 217);
+            this.dgvReserva.Size = new System.Drawing.Size(817, 176);
             this.dgvReserva.TabIndex = 12;
             this.dgvReserva.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReserva_CellClick);
-            this.dgvReserva.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReserva_CellContentClick);
             // 
             // clmNroReserva
             // 
@@ -225,13 +212,14 @@ namespace Hotel.Presentacion
             this.clmNumeroHabitacion,
             this.clmTipoHabitacion,
             this.clmPrecioHabitacion});
-            this.dgvDetalleReserva.Location = new System.Drawing.Point(33, 544);
+            this.dgvDetalleReserva.Location = new System.Drawing.Point(25, 442);
+            this.dgvDetalleReserva.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvDetalleReserva.Name = "dgvDetalleReserva";
             this.dgvDetalleReserva.ReadOnly = true;
             this.dgvDetalleReserva.RowHeadersWidth = 51;
             this.dgvDetalleReserva.RowTemplate.Height = 24;
             this.dgvDetalleReserva.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDetalleReserva.Size = new System.Drawing.Size(570, 217);
+            this.dgvDetalleReserva.Size = new System.Drawing.Size(428, 176);
             this.dgvDetalleReserva.TabIndex = 13;
             this.dgvDetalleReserva.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetalleReserva_CellClick);
             // 
@@ -270,18 +258,20 @@ namespace Hotel.Presentacion
             // lblReserva
             // 
             this.lblReserva.AutoSize = true;
-            this.lblReserva.Location = new System.Drawing.Point(30, 235);
+            this.lblReserva.Location = new System.Drawing.Point(22, 191);
+            this.lblReserva.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblReserva.Name = "lblReserva";
-            this.lblReserva.Size = new System.Drawing.Size(61, 17);
+            this.lblReserva.Size = new System.Drawing.Size(47, 13);
             this.lblReserva.TabIndex = 14;
             this.lblReserva.Text = "Reserva";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(30, 524);
+            this.label2.Location = new System.Drawing.Point(22, 426);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 17);
+            this.label2.Size = new System.Drawing.Size(83, 13);
             this.label2.TabIndex = 15;
             this.label2.Text = "Detalle Reserva";
             // 
@@ -295,9 +285,10 @@ namespace Hotel.Presentacion
             this.btnSalir.FlatAppearance.BorderSize = 0;
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(808, 667);
+            this.btnSalir.Location = new System.Drawing.Point(606, 542);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(150, 40);
+            this.btnSalir.Size = new System.Drawing.Size(112, 32);
             this.btnSalir.TabIndex = 11;
             this.btnSalir.Text = "Salir";
             this.btnSalir.TextColor = System.Drawing.Color.White;
@@ -314,9 +305,10 @@ namespace Hotel.Presentacion
             this.btnCancelarReserva.FlatAppearance.BorderSize = 0;
             this.btnCancelarReserva.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelarReserva.ForeColor = System.Drawing.Color.White;
-            this.btnCancelarReserva.Location = new System.Drawing.Point(808, 568);
+            this.btnCancelarReserva.Location = new System.Drawing.Point(606, 462);
+            this.btnCancelarReserva.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelarReserva.Name = "btnCancelarReserva";
-            this.btnCancelarReserva.Size = new System.Drawing.Size(150, 40);
+            this.btnCancelarReserva.Size = new System.Drawing.Size(112, 32);
             this.btnCancelarReserva.TabIndex = 10;
             this.btnCancelarReserva.Text = "Cancelar Reserva";
             this.btnCancelarReserva.TextColor = System.Drawing.Color.White;
@@ -333,13 +325,15 @@ namespace Hotel.Presentacion
             this.btnConsultar.FlatAppearance.BorderSize = 0;
             this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConsultar.ForeColor = System.Drawing.Color.White;
-            this.btnConsultar.Location = new System.Drawing.Point(853, 132);
+            this.btnConsultar.Location = new System.Drawing.Point(640, 107);
+            this.btnConsultar.Margin = new System.Windows.Forms.Padding(2);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(150, 40);
+            this.btnConsultar.Size = new System.Drawing.Size(112, 32);
             this.btnConsultar.TabIndex = 9;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.TextColor = System.Drawing.Color.White;
             this.btnConsultar.UseVisualStyleBackColor = false;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // btnLimpiar
             // 
@@ -351,19 +345,21 @@ namespace Hotel.Presentacion
             this.btnLimpiar.FlatAppearance.BorderSize = 0;
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiar.ForeColor = System.Drawing.Color.White;
-            this.btnLimpiar.Location = new System.Drawing.Point(853, 48);
+            this.btnLimpiar.Location = new System.Drawing.Point(640, 39);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(2);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(150, 40);
+            this.btnLimpiar.Size = new System.Drawing.Size(112, 32);
             this.btnLimpiar.TabIndex = 8;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.TextColor = System.Drawing.Color.White;
             this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // frmConsultaReservas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1161, 798);
+            this.ClientSize = new System.Drawing.Size(871, 648);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblReserva);
             this.Controls.Add(this.dgvDetalleReserva);
@@ -374,12 +370,11 @@ namespace Hotel.Presentacion
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.lblFechaIngreso);
             this.Controls.Add(this.lblFechaSalida);
-            this.Controls.Add(this.lblEstado);
             this.Controls.Add(this.lblPasaporte);
-            this.Controls.Add(this.cboEstado);
             this.Controls.Add(this.dtpFechaSalida);
             this.Controls.Add(this.dtpFechaIngreso);
             this.Controls.Add(this.txtPasaporte);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmConsultaReservas";
             this.Text = "Reservas";
             this.Load += new System.EventHandler(this.frmConsultaReservas_Load);
@@ -395,9 +390,7 @@ namespace Hotel.Presentacion
         private System.Windows.Forms.TextBox txtPasaporte;
         private System.Windows.Forms.DateTimePicker dtpFechaIngreso;
         private System.Windows.Forms.DateTimePicker dtpFechaSalida;
-        private System.Windows.Forms.ComboBox cboEstado;
         private System.Windows.Forms.Label lblPasaporte;
-        private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.Label lblFechaSalida;
         private System.Windows.Forms.Label lblFechaIngreso;
         private Custom.RJButton btnLimpiar;

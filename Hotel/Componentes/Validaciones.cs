@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Hotel.Componentes
 {
-    class Validaciones
+    public static class Validaciones
     {
-        public bool PasaporteCorrecto(string pasaporte)
+        public static bool PasaporteCorrecto(string pasaporte)
         {
 
             Regex formato = new Regex(@"[A-Z]{3}[0-9]{6}");
@@ -32,5 +32,6 @@ namespace Hotel.Componentes
             }
 
         }
+        
     }
 }

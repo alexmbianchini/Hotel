@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -14,6 +15,7 @@ namespace Hotel.Presentacion
     public partial class frmConsultaReservas : Form
     {
         ReservaService oReserva = new ReservaService();
+        HuespedService oHuesped = new HuespedService();
         int numeroReserva = 0;
         public frmConsultaReservas()
         {
@@ -22,7 +24,8 @@ namespace Hotel.Presentacion
 
         private void frmConsultaReservas_Load(object sender, EventArgs e)
         {
-            CargarGrilla(dgvReserva, oReserva.RecuperarReservadas());
+            ReestablecerFechasPredeterminadas();
+            Cargar();
         }
 
 
@@ -61,10 +64,6 @@ namespace Hotel.Presentacion
 
         }
 
-        private void dgvReserva_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void dgvReserva_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -97,6 +96,51 @@ namespace Hotel.Presentacion
         {
             this.Close();
         }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            this.txtPasaporte.Clear();
+            ReestablecerFechasPredeterminadas();
+            Cargar();
+            this.dgvDetalleReserva.Rows.Clear();
+        }
+
+        private void ReestablecerFechasPredeterminadas()
+        {
+            this.dtpFechaIngreso.Value = DateTime.Today;
+            this.dtpFechaSalida.Value = DateTime.Today.AddDays(1);
+        }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            // Se valida que el pasaporte tenga el formato correcto
+            if(oHuesped.PasaporteCorrecto(this.txtPasaporte.Text))
+            {
+                if(oReserva.ValidarFechas(dtpFechaIngreso.Value, dtpFechaSalida.Value))
+                {
+                    CargarGrilla(dgvReserva, oReserva.RecuperarReservasParaCancelarFiltradas(txtPasaporte.Text, dtpFechaIngreso.Value.ToString(), dtpFechaSalida.Value.ToString()));
+                }
+                else
+                {
+                    MessageBox.Show("Debe ingresar un rango de fechas válido", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                
+            }
+            else
+            {
+                MessageBox.Show("Debe ingresar un formato de pasaporte 'AAA000000', 3 letras y 6 números", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            
+
+        }
+
+
+        private void Cargar()
+        {
+            CargarGrilla(dgvReserva, oReserva.RecuperarReservadas());
+        }
+
+        
     }
 }
 
