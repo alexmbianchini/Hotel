@@ -29,6 +29,10 @@ namespace Hotel.Presentacion
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtPasaporte = new System.Windows.Forms.TextBox();
             this.dtpFechaIngreso = new System.Windows.Forms.DateTimePicker();
             this.dtpFechaSalida = new System.Windows.Forms.DateTimePicker();
@@ -50,7 +54,7 @@ namespace Hotel.Presentacion
             this.clmTipoHabitacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmPrecioHabitacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblReserva = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblDetalleReserva = new System.Windows.Forms.Label();
             this.btnSalir = new Hotel.Custom.RJButton();
             this.btnCancelarReserva = new Hotel.Custom.RJButton();
             this.btnConsultar = new Hotel.Custom.RJButton();
@@ -61,55 +65,62 @@ namespace Hotel.Presentacion
             // 
             // txtPasaporte
             // 
-            this.txtPasaporte.Location = new System.Drawing.Point(116, 46);
-            this.txtPasaporte.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPasaporte.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPasaporte.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPasaporte.Location = new System.Drawing.Point(167, 25);
+            this.txtPasaporte.Margin = new System.Windows.Forms.Padding(2);
             this.txtPasaporte.Name = "txtPasaporte";
-            this.txtPasaporte.Size = new System.Drawing.Size(98, 20);
+            this.txtPasaporte.Size = new System.Drawing.Size(98, 25);
             this.txtPasaporte.TabIndex = 0;
             // 
             // dtpFechaIngreso
             // 
-            this.dtpFechaIngreso.Location = new System.Drawing.Point(395, 45);
-            this.dtpFechaIngreso.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpFechaIngreso.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaIngreso.Location = new System.Drawing.Point(167, 80);
+            this.dtpFechaIngreso.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFechaIngreso.Name = "dtpFechaIngreso";
-            this.dtpFechaIngreso.Size = new System.Drawing.Size(151, 20);
+            this.dtpFechaIngreso.Size = new System.Drawing.Size(189, 25);
             this.dtpFechaIngreso.TabIndex = 1;
             // 
             // dtpFechaSalida
             // 
-            this.dtpFechaSalida.Location = new System.Drawing.Point(395, 113);
-            this.dtpFechaSalida.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpFechaSalida.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaSalida.Location = new System.Drawing.Point(167, 132);
+            this.dtpFechaSalida.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFechaSalida.Name = "dtpFechaSalida";
-            this.dtpFechaSalida.Size = new System.Drawing.Size(151, 20);
+            this.dtpFechaSalida.Size = new System.Drawing.Size(189, 25);
             this.dtpFechaSalida.TabIndex = 2;
             // 
             // lblPasaporte
             // 
             this.lblPasaporte.AutoSize = true;
-            this.lblPasaporte.Location = new System.Drawing.Point(44, 49);
+            this.lblPasaporte.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPasaporte.Location = new System.Drawing.Point(77, 31);
             this.lblPasaporte.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPasaporte.Name = "lblPasaporte";
-            this.lblPasaporte.Size = new System.Drawing.Size(55, 13);
+            this.lblPasaporte.Size = new System.Drawing.Size(70, 19);
             this.lblPasaporte.TabIndex = 4;
             this.lblPasaporte.Text = "Pasaporte";
             // 
             // lblFechaSalida
             // 
             this.lblFechaSalida.AutoSize = true;
-            this.lblFechaSalida.Location = new System.Drawing.Point(301, 117);
+            this.lblFechaSalida.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaSalida.Location = new System.Drawing.Point(62, 138);
             this.lblFechaSalida.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFechaSalida.Name = "lblFechaSalida";
-            this.lblFechaSalida.Size = new System.Drawing.Size(69, 13);
+            this.lblFechaSalida.Size = new System.Drawing.Size(85, 19);
             this.lblFechaSalida.TabIndex = 6;
             this.lblFechaSalida.Text = "Fecha Salida";
             // 
             // lblFechaIngreso
             // 
             this.lblFechaIngreso.AutoSize = true;
-            this.lblFechaIngreso.Location = new System.Drawing.Point(301, 49);
+            this.lblFechaIngreso.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaIngreso.Location = new System.Drawing.Point(52, 86);
             this.lblFechaIngreso.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFechaIngreso.Name = "lblFechaIngreso";
-            this.lblFechaIngreso.Size = new System.Drawing.Size(75, 13);
+            this.lblFechaIngreso.Size = new System.Drawing.Size(95, 19);
             this.lblFechaIngreso.TabIndex = 7;
             this.lblFechaIngreso.Text = "Fecha Ingreso";
             // 
@@ -117,6 +128,15 @@ namespace Hotel.Presentacion
             // 
             this.dgvReserva.AllowUserToAddRows = false;
             this.dgvReserva.AllowUserToDeleteRows = false;
+            this.dgvReserva.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(180)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvReserva.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvReserva.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvReserva.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmNroReserva,
@@ -127,8 +147,16 @@ namespace Hotel.Presentacion
             this.clmFechaSalida,
             this.clmNumeroCochera,
             this.clmCantidadPersonas});
-            this.dgvReserva.Location = new System.Drawing.Point(25, 207);
-            this.dgvReserva.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvReserva.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvReserva.Location = new System.Drawing.Point(25, 217);
+            this.dgvReserva.Margin = new System.Windows.Forms.Padding(2);
             this.dgvReserva.Name = "dgvReserva";
             this.dgvReserva.ReadOnly = true;
             this.dgvReserva.RowHeadersWidth = 51;
@@ -206,14 +234,31 @@ namespace Hotel.Presentacion
             // 
             this.dgvDetalleReserva.AllowUserToAddRows = false;
             this.dgvDetalleReserva.AllowUserToDeleteRows = false;
+            this.dgvDetalleReserva.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(180)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetalleReserva.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvDetalleReserva.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDetalleReserva.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmItem,
             this.clmNumeroHabitacion,
             this.clmTipoHabitacion,
             this.clmPrecioHabitacion});
-            this.dgvDetalleReserva.Location = new System.Drawing.Point(25, 442);
-            this.dgvDetalleReserva.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDetalleReserva.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvDetalleReserva.Location = new System.Drawing.Point(25, 452);
+            this.dgvDetalleReserva.Margin = new System.Windows.Forms.Padding(2);
             this.dgvDetalleReserva.Name = "dgvDetalleReserva";
             this.dgvDetalleReserva.ReadOnly = true;
             this.dgvDetalleReserva.RowHeadersWidth = 51;
@@ -258,37 +303,40 @@ namespace Hotel.Presentacion
             // lblReserva
             // 
             this.lblReserva.AutoSize = true;
-            this.lblReserva.Location = new System.Drawing.Point(22, 191);
+            this.lblReserva.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReserva.Location = new System.Drawing.Point(21, 185);
             this.lblReserva.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblReserva.Name = "lblReserva";
-            this.lblReserva.Size = new System.Drawing.Size(47, 13);
+            this.lblReserva.Size = new System.Drawing.Size(56, 19);
             this.lblReserva.TabIndex = 14;
             this.lblReserva.Text = "Reserva";
             // 
-            // label2
+            // lblDetalleReserva
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(22, 426);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 13);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Detalle Reserva";
+            this.lblDetalleReserva.AutoSize = true;
+            this.lblDetalleReserva.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDetalleReserva.Location = new System.Drawing.Point(21, 422);
+            this.lblDetalleReserva.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDetalleReserva.Name = "lblDetalleReserva";
+            this.lblDetalleReserva.Size = new System.Drawing.Size(102, 19);
+            this.lblDetalleReserva.TabIndex = 15;
+            this.lblDetalleReserva.Text = "Detalle Reserva";
             // 
             // btnSalir
             // 
-            this.btnSalir.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnSalir.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
+            this.btnSalir.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
             this.btnSalir.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnSalir.BorderRadius = 20;
             this.btnSalir.BorderSize = 0;
             this.btnSalir.FlatAppearance.BorderSize = 0;
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(606, 542);
+            this.btnSalir.Location = new System.Drawing.Point(569, 558);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(112, 32);
+            this.btnSalir.Size = new System.Drawing.Size(117, 40);
             this.btnSalir.TabIndex = 11;
             this.btnSalir.Text = "Salir";
             this.btnSalir.TextColor = System.Drawing.Color.White;
@@ -297,18 +345,19 @@ namespace Hotel.Presentacion
             // 
             // btnCancelarReserva
             // 
-            this.btnCancelarReserva.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnCancelarReserva.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnCancelarReserva.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
+            this.btnCancelarReserva.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
             this.btnCancelarReserva.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnCancelarReserva.BorderRadius = 20;
             this.btnCancelarReserva.BorderSize = 0;
             this.btnCancelarReserva.FlatAppearance.BorderSize = 0;
             this.btnCancelarReserva.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelarReserva.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelarReserva.ForeColor = System.Drawing.Color.White;
-            this.btnCancelarReserva.Location = new System.Drawing.Point(606, 462);
+            this.btnCancelarReserva.Location = new System.Drawing.Point(569, 472);
             this.btnCancelarReserva.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelarReserva.Name = "btnCancelarReserva";
-            this.btnCancelarReserva.Size = new System.Drawing.Size(112, 32);
+            this.btnCancelarReserva.Size = new System.Drawing.Size(117, 52);
             this.btnCancelarReserva.TabIndex = 10;
             this.btnCancelarReserva.Text = "Cancelar Reserva";
             this.btnCancelarReserva.TextColor = System.Drawing.Color.White;
@@ -317,18 +366,19 @@ namespace Hotel.Presentacion
             // 
             // btnConsultar
             // 
-            this.btnConsultar.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnConsultar.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnConsultar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
+            this.btnConsultar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
             this.btnConsultar.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnConsultar.BorderRadius = 20;
             this.btnConsultar.BorderSize = 0;
             this.btnConsultar.FlatAppearance.BorderSize = 0;
             this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultar.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsultar.ForeColor = System.Drawing.Color.White;
-            this.btnConsultar.Location = new System.Drawing.Point(640, 107);
+            this.btnConsultar.Location = new System.Drawing.Point(481, 117);
             this.btnConsultar.Margin = new System.Windows.Forms.Padding(2);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(112, 32);
+            this.btnConsultar.Size = new System.Drawing.Size(117, 40);
             this.btnConsultar.TabIndex = 9;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.TextColor = System.Drawing.Color.White;
@@ -337,18 +387,19 @@ namespace Hotel.Presentacion
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnLimpiar.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
+            this.btnLimpiar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
             this.btnLimpiar.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnLimpiar.BorderRadius = 20;
             this.btnLimpiar.BorderSize = 0;
             this.btnLimpiar.FlatAppearance.BorderSize = 0;
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiar.ForeColor = System.Drawing.Color.White;
-            this.btnLimpiar.Location = new System.Drawing.Point(640, 39);
+            this.btnLimpiar.Location = new System.Drawing.Point(481, 44);
             this.btnLimpiar.Margin = new System.Windows.Forms.Padding(2);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(112, 32);
+            this.btnLimpiar.Size = new System.Drawing.Size(117, 40);
             this.btnLimpiar.TabIndex = 8;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.TextColor = System.Drawing.Color.White;
@@ -359,8 +410,10 @@ namespace Hotel.Presentacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(871, 648);
-            this.Controls.Add(this.label2);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(209)))), ((int)(((byte)(217)))));
+            this.ClientSize = new System.Drawing.Size(878, 655);
+            this.ControlBox = false;
+            this.Controls.Add(this.lblDetalleReserva);
             this.Controls.Add(this.lblReserva);
             this.Controls.Add(this.dgvDetalleReserva);
             this.Controls.Add(this.dgvReserva);
@@ -374,8 +427,9 @@ namespace Hotel.Presentacion
             this.Controls.Add(this.dtpFechaSalida);
             this.Controls.Add(this.dtpFechaIngreso);
             this.Controls.Add(this.txtPasaporte);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmConsultaReservas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Reservas";
             this.Load += new System.EventHandler(this.frmConsultaReservas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvReserva)).EndInit();
@@ -404,7 +458,7 @@ namespace Hotel.Presentacion
         private System.Windows.Forms.DataGridViewTextBoxColumn clmTipoHabitacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmPrecioHabitacion;
         private System.Windows.Forms.Label lblReserva;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblDetalleReserva;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmNroReserva;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmPasaporte;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmNombre;
