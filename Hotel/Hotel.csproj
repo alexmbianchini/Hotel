@@ -64,7 +64,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Componentes\Validaciones.cs" />
     <Compile Include="Custom\MenuColorTable.cs" />
     <Compile Include="Custom\MenuRenderer.cs" />
     <Compile Include="Custom\RJButton.cs">
@@ -142,6 +141,20 @@
     </Compile>
     <Compile Include="Presentacion\frmNuevaReserva.Designer.cs">
       <DependentUpon>frmNuevaReserva.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Reportes\DSReservas.cs">
+      <DependentUpon>DSReservas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Reportes\frmReporteReserva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Reportes\frmReporteReserva.Designer.cs">
+      <DependentUpon>frmReporteReserva.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Reportes\DSReservas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSReservas.xsd</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Vehiculo\frmNuevoEditarVehiculo.cs">
       <SubType>Form</SubType>
@@ -260,6 +273,10 @@
     <EmbeddedResource Include="Presentacion\Huespedes\frmNuevoEditarHuesped.resx">
       <DependentUpon>frmNuevoEditarHuesped.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Reportes\frmReporteReserva.resx">
+      <DependentUpon>frmReporteReserva.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Reportes\ReportReservas.rdlc" />
     <EmbeddedResource Include="Presentacion\TipoHabit\frmAMTipoHabitacion.resx">
       <DependentUpon>frmAMTipoHabitacion.cs</DependentUpon>
     </EmbeddedResource>
@@ -307,6 +324,17 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Presentacion\Reportes\DSReservas.xsc">
+      <DependentUpon>DSReservas.xsd</DependentUpon>
+    </None>
+    <None Include="Presentacion\Reportes\DSReservas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSReservas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Presentacion\Reportes\DSReservas.xss">
+      <DependentUpon>DSReservas.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

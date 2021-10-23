@@ -21,7 +21,9 @@ namespace Hotel.Datos
         {
             conexion = new SqlConnection();
             comando = new SqlCommand();
-            cadenaConexion = @"Data Source=sql5108.site4now.net;Initial Catalog=db_a78fa0_hotel;User ID=db_a78fa0_hotel_admin;Password=alexlufabri3k1";
+            cadenaConexion = @"Data Source=SQL5104.site4now.net;Initial Catalog=db_a7b7c9_hotel;User Id=db_a7b7c9_hotel_admin;Password=alexlufabri3k1";
+           
+            //cadenaConexion = @"Data Source=sql5108.site4now.net;Initial Catalog=db_a78fa0_hotel;User ID=db_a78fa0_hotel_admin;Password=alexlufabri3k1";
 
             conexion.ConnectionString = cadenaConexion;
 

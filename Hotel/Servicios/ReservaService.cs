@@ -60,5 +60,10 @@ namespace Hotel.Servicios
             }
             return false;
         }
+
+        public DataTable RecuperarDatosReservaReporte(string fechaDesde, string fechaHasta)
+        {
+            return dao.RecuperarDatosReservaReporte(fechaDesde, fechaHasta);
+        }
     }
 }

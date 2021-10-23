@@ -199,6 +199,43 @@ namespace Hotel.Datos.Dao
             
             return DBHelper.ObtenerInstancia().Ejecutar(consulta);
         }
+
+        public DataTable RecuperarDatosReservaReporte(string fechaDesde, string fechaHasta)
+        {
+            string consulta = "SELECT RESERVA.id_reserva, RESERVA.fecha_hora_ingreso_real, RESERVA.fecha_hora_salida_real, RESERVA.cantidad_personas, HUESPEDES.numero_pasaporte, PAISES.nombre AS pais" +
+                ", RESERVA.numero_cochera, RESERVA.precio_unitario_cochera, TIPO_HABITACION.nombre AS tipo_habitacion, DETALLE_RESERVA.precio_unitario_habitacion," +
+                " DATEDIFF(DAY, RESERVA.fecha_hora_ingreso_estimada, RESERVA.fecha_hora_salida_estimada) AS cantidad_dias" +
+                ", (DATEDIFF(DAY, RESERVA.fecha_hora_ingreso_estimada, RESERVA.fecha_hora_salida_estimada) * DETALLE_RESERVA.precio_unitario_habitacion) AS total_habitaciones," +
+                " (DATEDIFF(DAY, RESERVA.fecha_hora_ingreso_estimada, RESERVA.fecha_hora_salida_estimada) * RESERVA.precio_unitario_cochera) AS total_cocheras" +
+
+                " FROM RESERVA" +
+                " INNER JOIN  HUESPEDES ON RESERVA.id_huesped = HUESPEDES.id INNER JOIN DETALLE_RESERVA ON RESERVA.id_reserva = DETALLE_RESERVA.id_reserva INNER JOIN" +
+                " HABITACIONES ON DETALLE_RESERVA.numero_habitacion = HABITACIONES.numero INNER JOIN TIPO_HABITACION ON HABITACIONES.tipo_habitacion = TIPO_HABITACION.cod_tipo INNER JOIN" +
+                " PAISES ON HUESPEDES.pais_residencia = PAISES.id" +
+
+
+                "WHERE RESERVA.borrado_logico = 0 AND RESERVA.estado = 3 " +
+                "AND RESERVA.fecha_hora_ingreso_estimada BETWEEN CONVERT(DATETIME, '" + fechaDesde + "', 103)" +
+                "AND CONVERT(DATETIME, '" + fechaHasta + "', 103)";
+
+            /*
+        SELECT        RESERVA.id_reserva, RESERVA.fecha_hora_ingreso_real, RESERVA.fecha_hora_salida_real, RESERVA.cantidad_personas, HUESPEDES.numero_pasaporte, PAISES.nombre AS pais, RESERVA.numero_cochera, 
+                                 RESERVA.precio_unitario_cochera, TIPO_HABITACION.nombre AS tipo_habitacion, DETALLE_RESERVA.precio_unitario_habitacion, DATEDIFF(DAY, RESERVA.fecha_hora_ingreso_estimada, RESERVA.fecha_hora_salida_estimada) 
+                                 AS cantidad_dias, (DATEDIFF(DAY, RESERVA.fecha_hora_ingreso_estimada, RESERVA.fecha_hora_salida_estimada) * DETALLE_RESERVA.precio_unitario_habitacion) AS total_habitaciones, 
+						         (DATEDIFF(DAY, RESERVA.fecha_hora_ingreso_estimada, RESERVA.fecha_hora_salida_estimada) * RESERVA.precio_unitario_cochera) AS total_cocheras 
+        FROM			RESERVA INNER JOIN
+                                 HUESPEDES ON RESERVA.id_huesped = HUESPEDES.id INNER JOIN
+                                 DETALLE_RESERVA ON RESERVA.id_reserva = DETALLE_RESERVA.id_reserva INNER JOIN
+                                 HABITACIONES ON DETALLE_RESERVA.numero_habitacion = HABITACIONES.numero INNER JOIN
+                                 TIPO_HABITACION ON HABITACIONES.tipo_habitacion = TIPO_HABITACION.cod_tipo INNER JOIN
+                                 PAISES ON HUESPEDES.pais_residencia = PAISES.id
+
+        WHERE RESERVA.borrado_logico = 0 AND RESERVA.estado = 3 
+        AND RESERVA.fecha_hora_ingreso_estimada BETWEEN CONVERT(DATETIME, RESERVA.fecha_hora_ingreso_estimada, 103) AND CONVERT(DATETIME, RESERVA.fecha_hora_salida_estimada, 103)
+            */
+
+            return DBHelper.ObtenerInstancia().Ejecutar(consulta);
+        }
     }
 }
 

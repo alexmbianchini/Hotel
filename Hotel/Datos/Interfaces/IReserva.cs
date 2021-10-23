@@ -23,6 +23,7 @@ namespace Hotel.Datos.Interfaces
         bool Cancelar(int numeroReserva);
 
         DataTable RecuperarReservasParaCancelarFiltradas(string pasaporte, string fechaDesde, string fechaHasta);
+        DataTable RecuperarDatosReservaReporte(string fechaDesde, string fechaHasta);
 
     }
 }
