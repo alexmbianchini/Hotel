@@ -61,6 +61,15 @@ namespace Hotel.Servicios
             return false;
         }
 
+        public bool ValidarFechaDesdeMenorFechaHasta(DateTime fechaDesde, DateTime fechaHasta)
+        {
+            if(fechaDesde <= fechaHasta)
+            {
+                return true;
+            }
+            return false;
+        }
+
         public DataTable RecuperarDatosReservaReporte(string fechaDesde, string fechaHasta)
         {
             return dao.RecuperarDatosReservaReporte(fechaDesde, fechaHasta);

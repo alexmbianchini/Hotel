@@ -29,30 +29,70 @@ namespace Hotel.Presentacion
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-            // Tomamos los datos para cargar el DataSet
-            var datos = oReserva.RecuperarDatosReservaReporte(dtpFechaDesde.Value.ToString(), dtpFechaHasta.Value.ToString());
-            
-            // Limpiamos el Reporte
-            this.rwReserva.LocalReport.DataSources.Clear();
 
-            // Cargamos la Tabla con los datos que recuperamos
-            var tablaReservas = new ReportDataSource("Reserva", datos);
+            if (oReserva.ValidarFechaDesdeMenorFechaHasta(dtpFechaDesde.Value, dtpFechaHasta.Value))
+            {
+                // Tomamos los datos para cargar el DataSet
+                var datos = oReserva.RecuperarDatosReservaReporte(dtpFechaDesde.Value.ToString(), dtpFechaHasta.Value.ToString());
+                float total = 0;
+                for (int i = 0; i < datos.Rows.Count; i++)
+                {
+                    total += Convert.ToSingle(datos.Rows[i]["cantidad_dias"]) * Convert.ToSingle(datos.Rows[i]["precio_unitario_habitacion"]);
+                }
 
-            // Cargamos Reporte
-            this.rwReserva.LocalReport.DataSources.Add(tablaReservas);
+                // Limpiamos el Reporte
+                this.rwReserva.LocalReport.DataSources.Clear();
 
-            // Armamos Parámetros en Estructuras
-            var fechaHoy = DateTime.Now.ToString("dd/MM/yyyy hh:mm");
-            var paramFechaHoy = new ReportParameter("FechaEmision", fechaHoy);
+                // Cargamos la Tabla con los datos que recuperamos
+                var tablaReservas = new ReportDataSource("DSReservas", datos);
 
-            var parametros = new List<ReportParameter>();
-            parametros.Add(paramFechaHoy);
+                // Cargamos Reporte
+                this.rwReserva.LocalReport.DataSources.Add(tablaReservas);
 
-            // Cargamos Parámetros en el Reporte
-            this.rwReserva.LocalReport.SetParameters(parametros);
+                // Armamos Parámetros en Estructuras
+                var fechaHoy = DateTime.Now.ToString("dd/MM/yyyy hh:mm");
+                var paramFechaHoy = new ReportParameter("FechaEmision", fechaHoy);
+                var paramTotal = new ReportParameter("ParamTotal", total.ToString());
 
-            this.rwReserva.RefreshReport();
+                var parametros = new List<ReportParameter>();
+                parametros.Add(paramFechaHoy);
+                parametros.Add(paramTotal);
 
+                // Cargamos Parámetros en el Reporte
+                this.rwReserva.LocalReport.SetParameters(parametros);
+
+                this.rwReserva.RefreshReport();
+            }
+            else
+            {
+                MessageBox.Show("Debe ingresar un rango de fechas válido", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                dtpFechaDesde.Focus();
+                lblFechaDesde.ForeColor = Color.Red;
+                lblFechaHasta.ForeColor = Color.Red;
+                dtpFechaDesde.Value = DateTime.Today;
+                dtpFechaHasta.Value = DateTime.Today;
+            }
+
+
+        }
+
+        private void lblFechaHasta_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtpFechaHasta_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblFechaDesde_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtpFechaDesde_ValueChanged(object sender, EventArgs e)
+        {
 
         }
     }
