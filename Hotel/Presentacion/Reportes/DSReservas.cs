@@ -7,5 +7,9 @@
         partial class ReservaDataTable
         {
         }
+
+        partial class ReservaDataTable
+        {
+        }
     }
 }

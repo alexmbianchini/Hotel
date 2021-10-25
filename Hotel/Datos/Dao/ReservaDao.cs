@@ -203,10 +203,8 @@ namespace Hotel.Datos.Dao
         public DataTable RecuperarDatosReservaReporte(string fechaDesde, string fechaHasta)
         {
             string consulta = "SELECT RESERVA.id_reserva, RESERVA.fecha_hora_ingreso_real, RESERVA.fecha_hora_salida_real, RESERVA.cantidad_personas, HUESPEDES.numero_pasaporte, PAISES.nombre AS pais" +
-                ", RESERVA.numero_cochera, RESERVA.precio_unitario_cochera, TIPO_HABITACION.nombre AS tipo_habitacion, DETALLE_RESERVA.precio_unitario_habitacion," +
+                ", RESERVA.precio_unitario_cochera, TIPO_HABITACION.nombre AS tipo_habitacion, DETALLE_RESERVA.precio_unitario_habitacion," +
                 " DATEDIFF(DAY, RESERVA.fecha_hora_ingreso_estimada, RESERVA.fecha_hora_salida_estimada) AS cantidad_dias" +
-                ", (DATEDIFF(DAY, RESERVA.fecha_hora_ingreso_estimada, RESERVA.fecha_hora_salida_estimada) * DETALLE_RESERVA.precio_unitario_habitacion) AS total_habitaciones," +
-                " (DATEDIFF(DAY, RESERVA.fecha_hora_ingreso_estimada, RESERVA.fecha_hora_salida_estimada) * RESERVA.precio_unitario_cochera) AS total_cocheras" +
 
                 " FROM RESERVA" +
                 " INNER JOIN  HUESPEDES ON RESERVA.id_huesped = HUESPEDES.id INNER JOIN DETALLE_RESERVA ON RESERVA.id_reserva = DETALLE_RESERVA.id_reserva INNER JOIN" +

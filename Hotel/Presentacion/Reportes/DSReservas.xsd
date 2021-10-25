@@ -6,45 +6,7 @@
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="db_a7b7c9_hotelConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="db_a7b7c9_hotelConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Hotel.Properties.Settings.GlobalReference.Default.db_a7b7c9_hotelConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
-        <Tables>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ReservaTableAdapter" GeneratorDataComponentClassName="ReservaTableAdapter" Name="Reserva" UserDataComponentName="ReservaTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="db_a7b7c9_hotelConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        RESERVA.id_reserva, RESERVA.fecha_hora_ingreso_real, RESERVA.fecha_hora_salida_real, RESERVA.cantidad_personas, HUESPEDES.numero_pasaporte, PAISES.nombre AS pais, RESERVA.numero_cochera, 
-                         RESERVA.precio_unitario_cochera, TIPO_HABITACION.nombre AS tipo_habitacion, DETALLE_RESERVA.precio_unitario_habitacion, DATEDIFF(DAY, RESERVA.fecha_hora_ingreso_estimada, RESERVA.fecha_hora_salida_estimada) 
-                         AS cantidad_dias, (DATEDIFF(DAY, RESERVA.fecha_hora_ingreso_estimada, RESERVA.fecha_hora_salida_estimada) * DETALLE_RESERVA.precio_unitario_habitacion) AS total_habitaciones, 
-						 (DATEDIFF(DAY, RESERVA.fecha_hora_ingreso_estimada, RESERVA.fecha_hora_salida_estimada) * RESERVA.precio_unitario_cochera) AS total_cocheras 
-FROM			RESERVA INNER JOIN
-                         HUESPEDES ON RESERVA.id_huesped = HUESPEDES.id INNER JOIN
-                         DETALLE_RESERVA ON RESERVA.id_reserva = DETALLE_RESERVA.id_reserva INNER JOIN
-                         HABITACIONES ON DETALLE_RESERVA.numero_habitacion = HABITACIONES.numero INNER JOIN
-                         TIPO_HABITACION ON HABITACIONES.tipo_habitacion = TIPO_HABITACION.cod_tipo INNER JOIN
-                         PAISES ON HUESPEDES.pais_residencia = PAISES.id</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="id_reserva" DataSetColumn="id_reserva" />
-              <Mapping SourceColumn="fecha_hora_ingreso_real" DataSetColumn="fecha_hora_ingreso_real" />
-              <Mapping SourceColumn="fecha_hora_salida_real" DataSetColumn="fecha_hora_salida_real" />
-              <Mapping SourceColumn="cantidad_personas" DataSetColumn="cantidad_personas" />
-              <Mapping SourceColumn="numero_pasaporte" DataSetColumn="numero_pasaporte" />
-              <Mapping SourceColumn="pais" DataSetColumn="pais" />
-              <Mapping SourceColumn="numero_cochera" DataSetColumn="numero_cochera" />
-              <Mapping SourceColumn="precio_unitario_cochera" DataSetColumn="precio_unitario_cochera" />
-              <Mapping SourceColumn="tipo_habitacion" DataSetColumn="tipo_habitacion" />
-              <Mapping SourceColumn="precio_unitario_habitacion" DataSetColumn="precio_unitario_habitacion" />
-              <Mapping SourceColumn="cantidad_dias" DataSetColumn="cantidad_dias" />
-              <Mapping SourceColumn="total_habitaciones" DataSetColumn="total_habitaciones" />
-              <Mapping SourceColumn="total_cocheras" DataSetColumn="total_cocheras" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
-        </Tables>
+        <Tables />
         <Sources />
       </DataSource>
     </xs:appinfo>
@@ -55,45 +17,20 @@ FROM			RESERVA INNER JOIN
         <xs:element name="Reserva" msprop:Generator_TableClassName="ReservaDataTable" msprop:Generator_TableVarName="tableReserva" msprop:Generator_TablePropName="Reserva" msprop:Generator_RowDeletingName="ReservaRowDeleting" msprop:Generator_RowChangingName="ReservaRowChanging" msprop:Generator_RowEvHandlerName="ReservaRowChangeEventHandler" msprop:Generator_RowDeletedName="ReservaRowDeleted" msprop:Generator_UserTableName="Reserva" msprop:Generator_RowChangedName="ReservaRowChanged" msprop:Generator_RowEvArgName="ReservaRowChangeEvent" msprop:Generator_RowClassName="ReservaRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="id_reserva" msprop:Generator_ColumnVarNameInTable="columnid_reserva" msprop:Generator_ColumnPropNameInRow="id_reserva" msprop:Generator_ColumnPropNameInTable="id_reservaColumn" msprop:Generator_UserColumnName="id_reserva" type="xs:int" />
-              <xs:element name="fecha_hora_ingreso_real" msprop:Generator_ColumnVarNameInTable="columnfecha_hora_ingreso_real" msprop:Generator_ColumnPropNameInRow="fecha_hora_ingreso_real" msprop:Generator_ColumnPropNameInTable="fecha_hora_ingreso_realColumn" msprop:Generator_UserColumnName="fecha_hora_ingreso_real" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="fecha_hora_salida_real" msprop:Generator_ColumnVarNameInTable="columnfecha_hora_salida_real" msprop:Generator_ColumnPropNameInRow="fecha_hora_salida_real" msprop:Generator_ColumnPropNameInTable="fecha_hora_salida_realColumn" msprop:Generator_UserColumnName="fecha_hora_salida_real" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="cantidad_personas" msprop:Generator_ColumnVarNameInTable="columncantidad_personas" msprop:Generator_ColumnPropNameInRow="cantidad_personas" msprop:Generator_ColumnPropNameInTable="cantidad_personasColumn" msprop:Generator_UserColumnName="cantidad_personas" type="xs:int" minOccurs="0" />
-              <xs:element name="numero_pasaporte" msprop:Generator_ColumnVarNameInTable="columnnumero_pasaporte" msprop:Generator_ColumnPropNameInRow="numero_pasaporte" msprop:Generator_ColumnPropNameInTable="numero_pasaporteColumn" msprop:Generator_UserColumnName="numero_pasaporte">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="pais" msprop:Generator_ColumnVarNameInTable="columnpais" msprop:Generator_ColumnPropNameInRow="pais" msprop:Generator_ColumnPropNameInTable="paisColumn" msprop:Generator_UserColumnName="pais" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="numero_cochera" msprop:Generator_ColumnVarNameInTable="columnnumero_cochera" msprop:Generator_ColumnPropNameInRow="numero_cochera" msprop:Generator_ColumnPropNameInTable="numero_cocheraColumn" msprop:Generator_UserColumnName="numero_cochera" type="xs:int" minOccurs="0" />
-              <xs:element name="precio_unitario_cochera" msprop:Generator_ColumnVarNameInTable="columnprecio_unitario_cochera" msprop:Generator_ColumnPropNameInRow="precio_unitario_cochera" msprop:Generator_ColumnPropNameInTable="precio_unitario_cocheraColumn" msprop:Generator_UserColumnName="precio_unitario_cochera" type="xs:decimal" minOccurs="0" />
-              <xs:element name="tipo_habitacion" msprop:Generator_ColumnVarNameInTable="columntipo_habitacion" msprop:Generator_ColumnPropNameInRow="tipo_habitacion" msprop:Generator_ColumnPropNameInTable="tipo_habitacionColumn" msprop:Generator_UserColumnName="tipo_habitacion" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="precio_unitario_habitacion" msprop:Generator_ColumnVarNameInTable="columnprecio_unitario_habitacion" msprop:Generator_ColumnPropNameInRow="precio_unitario_habitacion" msprop:Generator_ColumnPropNameInTable="precio_unitario_habitacionColumn" msprop:Generator_UserColumnName="precio_unitario_habitacion" type="xs:decimal" minOccurs="0" />
-              <xs:element name="cantidad_dias" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columncantidad_dias" msprop:Generator_ColumnPropNameInRow="cantidad_dias" msprop:Generator_ColumnPropNameInTable="cantidad_diasColumn" msprop:Generator_UserColumnName="cantidad_dias" type="xs:int" minOccurs="0" />
-              <xs:element name="total_habitaciones" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columntotal_habitaciones" msprop:Generator_ColumnPropNameInRow="total_habitaciones" msprop:Generator_ColumnPropNameInTable="total_habitacionesColumn" msprop:Generator_UserColumnName="total_habitaciones" type="xs:decimal" minOccurs="0" />
-              <xs:element name="total_cocheras" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columntotal_cocheras" msprop:Generator_ColumnPropNameInRow="total_cocheras" msprop:Generator_ColumnPropNameInTable="total_cocherasColumn" msprop:Generator_UserColumnName="total_cocheras" type="xs:decimal" minOccurs="0" />
+              <xs:element name="id_reserva" msprop:Generator_ColumnVarNameInTable="columnid_reserva" msprop:Generator_ColumnPropNameInRow="id_reserva" msprop:Generator_ColumnPropNameInTable="id_reservaColumn" msprop:Generator_UserColumnName="id_reserva" type="xs:string" minOccurs="0" />
+              <xs:element name="fecha_hora_ingreso_real" msprop:Generator_ColumnVarNameInTable="columnfecha_hora_ingreso_real" msprop:Generator_ColumnPropNameInRow="fecha_hora_ingreso_real" msprop:Generator_ColumnPropNameInTable="fecha_hora_ingreso_realColumn" msprop:Generator_UserColumnName="fecha_hora_ingreso_real" type="xs:string" minOccurs="0" />
+              <xs:element name="fecha_hora_salida_real" msprop:Generator_ColumnVarNameInTable="columnfecha_hora_salida_real" msprop:Generator_ColumnPropNameInRow="fecha_hora_salida_real" msprop:Generator_ColumnPropNameInTable="fecha_hora_salida_realColumn" msprop:Generator_UserColumnName="fecha_hora_salida_real" type="xs:string" minOccurs="0" />
+              <xs:element name="cantidad_personas" msprop:Generator_ColumnVarNameInTable="columncantidad_personas" msprop:Generator_ColumnPropNameInRow="cantidad_personas" msprop:Generator_ColumnPropNameInTable="cantidad_personasColumn" msprop:Generator_UserColumnName="cantidad_personas" type="xs:string" minOccurs="0" />
+              <xs:element name="numero_pasaporte" msprop:Generator_ColumnVarNameInTable="columnnumero_pasaporte" msprop:Generator_ColumnPropNameInRow="numero_pasaporte" msprop:Generator_ColumnPropNameInTable="numero_pasaporteColumn" msprop:Generator_UserColumnName="numero_pasaporte" type="xs:string" minOccurs="0" />
+              <xs:element name="pais" msprop:Generator_ColumnVarNameInTable="columnpais" msprop:Generator_ColumnPropNameInRow="pais" msprop:Generator_ColumnPropNameInTable="paisColumn" msprop:Generator_UserColumnName="pais" type="xs:string" minOccurs="0" />
+              <xs:element name="precio_unitario_cochera" msprop:Generator_ColumnVarNameInTable="columnprecio_unitario_cochera" msprop:Generator_ColumnPropNameInRow="precio_unitario_cochera" msprop:Generator_ColumnPropNameInTable="precio_unitario_cocheraColumn" msprop:Generator_UserColumnName="precio_unitario_cochera" type="xs:string" minOccurs="0" />
+              <xs:element name="tipo_habitacion" msprop:Generator_ColumnVarNameInTable="columntipo_habitacion" msprop:Generator_ColumnPropNameInRow="tipo_habitacion" msprop:Generator_ColumnPropNameInTable="tipo_habitacionColumn" msprop:Generator_UserColumnName="tipo_habitacion" type="xs:string" minOccurs="0" />
+              <xs:element name="precio_unitario_habitacion" msprop:Generator_ColumnVarNameInTable="columnprecio_unitario_habitacion" msprop:Generator_ColumnPropNameInRow="precio_unitario_habitacion" msprop:Generator_ColumnPropNameInTable="precio_unitario_habitacionColumn" msprop:Generator_UserColumnName="precio_unitario_habitacion" type="xs:string" minOccurs="0" />
+              <xs:element name="cantidad_dias" msprop:Generator_ColumnVarNameInTable="columncantidad_dias" msprop:Generator_ColumnPropNameInRow="cantidad_dias" msprop:Generator_ColumnPropNameInTable="cantidad_diasColumn" msprop:Generator_UserColumnName="cantidad_dias" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
       </xs:choice>
     </xs:complexType>
-    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:Reserva" />
-      <xs:field xpath="mstns:id_reserva" />
-    </xs:unique>
   </xs:element>
 </xs:schema>
