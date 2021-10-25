@@ -4,6 +4,10 @@
 
     partial class DSReservas
     {
+        partial class TipoHabitReservaDataTable
+        {
+        }
+
         partial class ReservaDataTable
         {
         }

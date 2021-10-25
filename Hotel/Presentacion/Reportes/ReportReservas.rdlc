@@ -76,33 +76,33 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>2.10312cm</Width>
+                  <Width>2.09651cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.90229cm</Width>
+                  <Width>3.89568cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.83834cm</Width>
+                  <Width>3.83173cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.78563cm</Width>
+                  <Width>1.77902cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>2.49339cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>2.49339cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>2.49339cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>2.49339cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>1.10271cm</Height>
+                  <Height>1.08948cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -392,7 +392,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.6cm</Height>
+                  <Height>0.58677cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -661,10 +661,10 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DSReservas</DataSetName>
-            <Top>1.58433cm</Top>
-            <Left>0.65828cm</Left>
-            <Height>1.70271cm</Height>
-            <Width>21.62938cm</Width>
+            <Top>1.53142cm</Top>
+            <Left>0.7112cm</Left>
+            <Height>1.67625cm</Height>
+            <Width>21.57646cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -672,7 +672,7 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>2in</Height>
+        <Height>3.26934in</Height>
         <Style />
       </Body>
       <Width>12.89843in</Width>

@@ -130,16 +130,22 @@
     <Compile Include="Negocio\TipoTarjeta.cs" />
     <Compile Include="Negocio\Usuario.cs" />
     <Compile Include="Negocio\Vehiculo.cs" />
-    <Compile Include="Presentacion\frmConsultaReservas.cs">
+    <Compile Include="Presentacion\frmIngresoPorTipoHabit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\frmConsultaReservas.Designer.cs">
+    <Compile Include="Presentacion\frmIngresoPorTipoHabit.Designer.cs">
+      <DependentUpon>frmIngresoPorTipoHabit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Reservas\frmConsultaReservas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Reservas\frmConsultaReservas.Designer.cs">
       <DependentUpon>frmConsultaReservas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\frmNuevaReserva.cs">
+    <Compile Include="Presentacion\Reservas\frmNuevaReserva.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\frmNuevaReserva.Designer.cs">
+    <Compile Include="Presentacion\Reservas\frmNuevaReserva.Designer.cs">
       <DependentUpon>frmNuevaReserva.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Reportes\DSReservas.cs">
@@ -261,10 +267,14 @@
     <EmbeddedResource Include="Custom\RJTextBox.resx">
       <DependentUpon>RJTextBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\frmConsultaReservas.resx">
+    <EmbeddedResource Include="Presentacion\frmIngresoPorTipoHabit.resx">
+      <DependentUpon>frmIngresoPorTipoHabit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Reportes\ReporteIngresoXTipoHabit.rdlc" />
+    <EmbeddedResource Include="Presentacion\Reservas\frmConsultaReservas.resx">
       <DependentUpon>frmConsultaReservas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\frmNuevaReserva.resx">
+    <EmbeddedResource Include="Presentacion\Reservas\frmNuevaReserva.resx">
       <DependentUpon>frmNuevaReserva.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Huespedes\frmHuesped.resx">

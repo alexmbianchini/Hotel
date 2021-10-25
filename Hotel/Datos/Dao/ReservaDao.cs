@@ -213,7 +213,7 @@ namespace Hotel.Datos.Dao
 
 
                 " WHERE RESERVA.borrado_logico = 0 AND RESERVA.estado = 3" +
-                " AND RESERVA.fecha_hora_ingreso_estimada BETWEEN CONVERT(DATETIME, '" + fechaDesde + "', 103)" +
+                " AND RESERVA.fecha_hora_ingreso_real BETWEEN CONVERT(DATETIME, '" + fechaDesde + "', 103)" +
                 " AND CONVERT(DATETIME, '" + fechaHasta + "', 103)" +
                 " ORDER BY RESERVA.id_reserva, RESERVA.fecha_hora_ingreso_real";
 
@@ -233,6 +233,20 @@ namespace Hotel.Datos.Dao
         AND RESERVA.fecha_hora_ingreso_estimada BETWEEN CONVERT(DATETIME, RESERVA.fecha_hora_ingreso_estimada, 103) AND CONVERT(DATETIME, RESERVA.fecha_hora_salida_estimada, 103)
             */
 
+            return DBHelper.ObtenerInstancia().Ejecutar(consulta);
+        }
+
+        public DataTable RecuperarDatosTipoHabitacionReservada(string fechaDesde, string fechaHasta)
+        {
+            string consulta = "SELECT t.nombre as tipo_habitacion, " +
+                "(DATEDIFF(DAY, r.fecha_hora_ingreso_estimada, r.fecha_hora_salida_estimada) * d.precio_unitario_habitacion) AS ingreso" +
+                " FROM RESERVA r" +
+                " INNER JOIN DETALLE_RESERVA d ON (r.id_reserva = d.id_reserva)" +
+                " INNER JOIN HABITACIONES h ON (d.numero_habitacion = h.numero)" +
+                " INNER JOIN TIPO_HABITACION t ON (h.tipo_habitacion = t.cod_tipo)" +
+                " WHERE r.borrado_logico = 0" +
+                " AND r.fecha_hora_ingreso_real BETWEEN CONVERT(DATETIME, '" + fechaDesde + "', 103)" +
+                " AND CONVERT(DATETIME, '" + fechaHasta + "', 103)";
             return DBHelper.ObtenerInstancia().Ejecutar(consulta);
         }
     }

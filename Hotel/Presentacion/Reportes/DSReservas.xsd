@@ -14,7 +14,7 @@
   <xs:element name="DSReservas" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSReservas" msprop:Generator_UserDSName="DSReservas">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Reserva" msprop:Generator_TableClassName="ReservaDataTable" msprop:Generator_TableVarName="tableReserva" msprop:Generator_TablePropName="Reserva" msprop:Generator_RowDeletingName="ReservaRowDeleting" msprop:Generator_RowChangingName="ReservaRowChanging" msprop:Generator_RowEvHandlerName="ReservaRowChangeEventHandler" msprop:Generator_RowDeletedName="ReservaRowDeleted" msprop:Generator_UserTableName="Reserva" msprop:Generator_RowChangedName="ReservaRowChanged" msprop:Generator_RowEvArgName="ReservaRowChangeEvent" msprop:Generator_RowClassName="ReservaRow">
+        <xs:element name="Reserva" msprop:Generator_TableClassName="ReservaDataTable" msprop:Generator_TableVarName="tableReserva" msprop:Generator_RowChangedName="ReservaRowChanged" msprop:Generator_TablePropName="Reserva" msprop:Generator_RowDeletingName="ReservaRowDeleting" msprop:Generator_RowChangingName="ReservaRowChanging" msprop:Generator_RowEvHandlerName="ReservaRowChangeEventHandler" msprop:Generator_RowDeletedName="ReservaRowDeleted" msprop:Generator_RowClassName="ReservaRow" msprop:Generator_UserTableName="Reserva" msprop:Generator_RowEvArgName="ReservaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_reserva" msprop:Generator_ColumnVarNameInTable="columnid_reserva" msprop:Generator_ColumnPropNameInRow="id_reserva" msprop:Generator_ColumnPropNameInTable="id_reservaColumn" msprop:Generator_UserColumnName="id_reserva" type="xs:string" minOccurs="0" />
@@ -27,6 +27,14 @@
               <xs:element name="tipo_habitacion" msprop:Generator_ColumnVarNameInTable="columntipo_habitacion" msprop:Generator_ColumnPropNameInRow="tipo_habitacion" msprop:Generator_ColumnPropNameInTable="tipo_habitacionColumn" msprop:Generator_UserColumnName="tipo_habitacion" type="xs:string" minOccurs="0" />
               <xs:element name="precio_unitario_habitacion" msprop:Generator_ColumnVarNameInTable="columnprecio_unitario_habitacion" msprop:Generator_ColumnPropNameInRow="precio_unitario_habitacion" msprop:Generator_ColumnPropNameInTable="precio_unitario_habitacionColumn" msprop:Generator_UserColumnName="precio_unitario_habitacion" type="xs:string" minOccurs="0" />
               <xs:element name="cantidad_dias" msprop:Generator_ColumnVarNameInTable="columncantidad_dias" msprop:Generator_ColumnPropNameInRow="cantidad_dias" msprop:Generator_ColumnPropNameInTable="cantidad_diasColumn" msprop:Generator_UserColumnName="cantidad_dias" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TipoHabitReserva" msprop:Generator_TableClassName="TipoHabitReservaDataTable" msprop:Generator_TableVarName="tableTipoHabitReserva" msprop:Generator_TablePropName="TipoHabitReserva" msprop:Generator_RowDeletingName="TipoHabitReservaRowDeleting" msprop:Generator_RowChangingName="TipoHabitReservaRowChanging" msprop:Generator_RowEvHandlerName="TipoHabitReservaRowChangeEventHandler" msprop:Generator_RowDeletedName="TipoHabitReservaRowDeleted" msprop:Generator_UserTableName="TipoHabitReserva" msprop:Generator_RowChangedName="TipoHabitReservaRowChanged" msprop:Generator_RowEvArgName="TipoHabitReservaRowChangeEvent" msprop:Generator_RowClassName="TipoHabitReservaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="tipo_habitacion" msprop:Generator_ColumnVarNameInTable="columntipo_habitacion" msprop:Generator_ColumnPropNameInRow="tipo_habitacion" msprop:Generator_ColumnPropNameInTable="tipo_habitacionColumn" msprop:Generator_UserColumnName="tipo_habitacion" type="xs:string" minOccurs="0" />
+              <xs:element name="ingreso" msprop:Generator_ColumnVarNameInTable="columningreso" msprop:Generator_ColumnPropNameInRow="ingreso" msprop:Generator_ColumnPropNameInTable="ingresoColumn" msprop:Generator_UserColumnName="ingreso" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
