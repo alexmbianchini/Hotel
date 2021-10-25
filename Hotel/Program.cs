@@ -24,7 +24,8 @@ namespace Hotel
             //Application.Run(new Hotel.Presentacion.Huespedes.frmHuesped());
             //Application.Run(new Presentacion.frmVehiculo());
             //Application.Run(Hotel.Presentacion.frmNuevaReserva.ObtenerInstancia());
-            Application.Run(new Hotel.Presentacion.frmConsultaReservas());
+            //Application.Run(new Hotel.Presentacion.frmConsultaReservas());
+            Application.Run(new Hotel.Presentacion.frmReporteReserva());
 
         }
     }

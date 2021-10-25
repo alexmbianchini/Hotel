@@ -29,22 +29,22 @@ namespace Hotel.Presentacion
         /// </summary>
         private void InitializeComponent()
         {
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.rwReserva = new Microsoft.Reporting.WinForms.ReportViewer();
             this.dtpFechaDesde = new System.Windows.Forms.DateTimePicker();
             this.lblFechaDesde = new System.Windows.Forms.Label();
             this.lblFechaHasta = new System.Windows.Forms.Label();
             this.dtpFechaHasta = new System.Windows.Forms.DateTimePicker();
-            this.btnCalcular = new Hotel.Custom.RJButton();
+            this.btnConsultar = new Hotel.Custom.RJButton();
             this.SuspendLayout();
             // 
-            // reportViewer1
+            // rwReserva
             // 
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Hotel.Presentacion.Reportes.Report1.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(1, 55);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(797, 395);
-            this.reportViewer1.TabIndex = 0;
+            this.rwReserva.LocalReport.ReportEmbeddedResource = "Hotel.Presentacion.Reportes.ReportReservas.rdlc";
+            this.rwReserva.Location = new System.Drawing.Point(1, 55);
+            this.rwReserva.Name = "rwReserva";
+            this.rwReserva.ServerReport.BearerToken = null;
+            this.rwReserva.Size = new System.Drawing.Size(797, 395);
+            this.rwReserva.TabIndex = 0;
             // 
             // dtpFechaDesde
             // 
@@ -78,24 +78,24 @@ namespace Hotel.Presentacion
             this.dtpFechaHasta.Size = new System.Drawing.Size(200, 20);
             this.dtpFechaHasta.TabIndex = 3;
             // 
-            // btnCalcular
+            // btnConsultar
             // 
-            this.btnCalcular.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnCalcular.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnCalcular.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnCalcular.BorderRadius = 18;
-            this.btnCalcular.BorderSize = 0;
-            this.btnCalcular.FlatAppearance.BorderSize = 0;
-            this.btnCalcular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCalcular.ForeColor = System.Drawing.Color.White;
-            this.btnCalcular.Location = new System.Drawing.Point(664, 20);
-            this.btnCalcular.Name = "btnCalcular";
-            this.btnCalcular.Size = new System.Drawing.Size(89, 29);
-            this.btnCalcular.TabIndex = 5;
-            this.btnCalcular.Text = "Calcular";
-            this.btnCalcular.TextColor = System.Drawing.Color.White;
-            this.btnCalcular.UseVisualStyleBackColor = false;
-            this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click);
+            this.btnConsultar.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnConsultar.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnConsultar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnConsultar.BorderRadius = 18;
+            this.btnConsultar.BorderSize = 0;
+            this.btnConsultar.FlatAppearance.BorderSize = 0;
+            this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultar.ForeColor = System.Drawing.Color.White;
+            this.btnConsultar.Location = new System.Drawing.Point(664, 20);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(89, 29);
+            this.btnConsultar.TabIndex = 5;
+            this.btnConsultar.Text = "Consultar";
+            this.btnConsultar.TextColor = System.Drawing.Color.White;
+            this.btnConsultar.UseVisualStyleBackColor = false;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // frmReporteReserva
             // 
@@ -103,12 +103,12 @@ namespace Hotel.Presentacion
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Bisque;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnCalcular);
+            this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.lblFechaHasta);
             this.Controls.Add(this.dtpFechaHasta);
             this.Controls.Add(this.lblFechaDesde);
             this.Controls.Add(this.dtpFechaDesde);
-            this.Controls.Add(this.reportViewer1);
+            this.Controls.Add(this.rwReserva);
             this.Name = "frmReporteReserva";
             this.Text = "frmReporteReserva";
             this.Load += new System.EventHandler(this.frmReporteReserva_Load);
@@ -119,11 +119,11 @@ namespace Hotel.Presentacion
 
         #endregion
 
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private Microsoft.Reporting.WinForms.ReportViewer rwReserva;
         private System.Windows.Forms.DateTimePicker dtpFechaDesde;
         private System.Windows.Forms.Label lblFechaDesde;
         private System.Windows.Forms.Label lblFechaHasta;
         private System.Windows.Forms.DateTimePicker dtpFechaHasta;
-        private Custom.RJButton btnCalcular;
+        private Custom.RJButton btnConsultar;
     }
 }
