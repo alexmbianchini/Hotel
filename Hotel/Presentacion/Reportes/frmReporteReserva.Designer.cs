@@ -1,4 +1,7 @@
 ﻿
+using System;
+
+
 namespace Hotel.Presentacion
 {
     partial class frmReporteReserva
