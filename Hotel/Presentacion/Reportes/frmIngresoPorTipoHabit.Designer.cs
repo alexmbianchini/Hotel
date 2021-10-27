@@ -29,87 +29,98 @@ namespace Hotel.Presentacion
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnConsultar = new Hotel.Custom.RJButton();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmIngresoPorTipoHabit));
             this.lblFechaHasta = new System.Windows.Forms.Label();
             this.dtpFechaHasta = new System.Windows.Forms.DateTimePicker();
             this.lblFechaDesde = new System.Windows.Forms.Label();
             this.dtpFechaDesde = new System.Windows.Forms.DateTimePicker();
             this.rwTipoHabit = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.btnConsultar = new Hotel.Custom.RJButton();
             this.SuspendLayout();
+            // 
+            // lblFechaHasta
+            // 
+            this.lblFechaHasta.AutoSize = true;
+            this.lblFechaHasta.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaHasta.Location = new System.Drawing.Point(131, 64);
+            this.lblFechaHasta.Name = "lblFechaHasta";
+            this.lblFechaHasta.Size = new System.Drawing.Size(87, 19);
+            this.lblFechaHasta.TabIndex = 9;
+            this.lblFechaHasta.Text = "Fecha Hasta:";
+            // 
+            // dtpFechaHasta
+            // 
+            this.dtpFechaHasta.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaHasta.Location = new System.Drawing.Point(227, 64);
+            this.dtpFechaHasta.Name = "dtpFechaHasta";
+            this.dtpFechaHasta.Size = new System.Drawing.Size(248, 25);
+            this.dtpFechaHasta.TabIndex = 8;
+            // 
+            // lblFechaDesde
+            // 
+            this.lblFechaDesde.AutoSize = true;
+            this.lblFechaDesde.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaDesde.Location = new System.Drawing.Point(131, 26);
+            this.lblFechaDesde.Name = "lblFechaDesde";
+            this.lblFechaDesde.Size = new System.Drawing.Size(90, 19);
+            this.lblFechaDesde.TabIndex = 7;
+            this.lblFechaDesde.Text = "Fecha Desde:";
+            // 
+            // dtpFechaDesde
+            // 
+            this.dtpFechaDesde.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaDesde.Location = new System.Drawing.Point(227, 22);
+            this.dtpFechaDesde.Name = "dtpFechaDesde";
+            this.dtpFechaDesde.Size = new System.Drawing.Size(248, 25);
+            this.dtpFechaDesde.TabIndex = 6;
+            // 
+            // rwTipoHabit
+            // 
+            this.rwTipoHabit.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rwTipoHabit.LocalReport.ReportEmbeddedResource = "Hotel.Presentacion.Reportes.ReporteIngresoXTipoHabit.rdlc";
+            this.rwTipoHabit.Location = new System.Drawing.Point(12, 116);
+            this.rwTipoHabit.Name = "rwTipoHabit";
+            this.rwTipoHabit.ServerReport.BearerToken = null;
+            this.rwTipoHabit.Size = new System.Drawing.Size(776, 382);
+            this.rwTipoHabit.TabIndex = 11;
             // 
             // btnConsultar
             // 
-            this.btnConsultar.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnConsultar.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnConsultar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
+            this.btnConsultar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
             this.btnConsultar.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnConsultar.BorderRadius = 18;
             this.btnConsultar.BorderSize = 0;
             this.btnConsultar.FlatAppearance.BorderSize = 0;
             this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultar.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsultar.ForeColor = System.Drawing.Color.White;
-            this.btnConsultar.Location = new System.Drawing.Point(660, 13);
+            this.btnConsultar.Location = new System.Drawing.Point(541, 43);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(89, 29);
+            this.btnConsultar.Size = new System.Drawing.Size(98, 40);
             this.btnConsultar.TabIndex = 10;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.TextColor = System.Drawing.Color.White;
             this.btnConsultar.UseVisualStyleBackColor = false;
             this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
-            // lblFechaHasta
-            // 
-            this.lblFechaHasta.AutoSize = true;
-            this.lblFechaHasta.Location = new System.Drawing.Point(347, 21);
-            this.lblFechaHasta.Name = "lblFechaHasta";
-            this.lblFechaHasta.Size = new System.Drawing.Size(71, 13);
-            this.lblFechaHasta.TabIndex = 9;
-            this.lblFechaHasta.Text = "Fecha Hasta:";
-            // 
-            // dtpFechaHasta
-            // 
-            this.dtpFechaHasta.Location = new System.Drawing.Point(424, 17);
-            this.dtpFechaHasta.Name = "dtpFechaHasta";
-            this.dtpFechaHasta.Size = new System.Drawing.Size(200, 20);
-            this.dtpFechaHasta.TabIndex = 8;
-            // 
-            // lblFechaDesde
-            // 
-            this.lblFechaDesde.AutoSize = true;
-            this.lblFechaDesde.Location = new System.Drawing.Point(34, 21);
-            this.lblFechaDesde.Name = "lblFechaDesde";
-            this.lblFechaDesde.Size = new System.Drawing.Size(74, 13);
-            this.lblFechaDesde.TabIndex = 7;
-            this.lblFechaDesde.Text = "Fecha Desde:";
-            // 
-            // dtpFechaDesde
-            // 
-            this.dtpFechaDesde.Location = new System.Drawing.Point(111, 17);
-            this.dtpFechaDesde.Name = "dtpFechaDesde";
-            this.dtpFechaDesde.Size = new System.Drawing.Size(200, 20);
-            this.dtpFechaDesde.TabIndex = 6;
-            // 
-            // rwTipoHabit
-            // 
-            this.rwTipoHabit.LocalReport.ReportEmbeddedResource = "Hotel.Presentacion.Reportes.ReporteIngresoXTipoHabit.rdlc";
-            this.rwTipoHabit.Location = new System.Drawing.Point(12, 56);
-            this.rwTipoHabit.Name = "rwTipoHabit";
-            this.rwTipoHabit.ServerReport.BearerToken = null;
-            this.rwTipoHabit.Size = new System.Drawing.Size(776, 382);
-            this.rwTipoHabit.TabIndex = 11;
-            // 
             // frmIngresoPorTipoHabit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(209)))), ((int)(((byte)(217)))));
+            this.ClientSize = new System.Drawing.Size(800, 510);
             this.Controls.Add(this.rwTipoHabit);
             this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.lblFechaHasta);
             this.Controls.Add(this.dtpFechaHasta);
             this.Controls.Add(this.lblFechaDesde);
             this.Controls.Add(this.dtpFechaDesde);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frmIngresoPorTipoHabit";
-            this.Text = "frmIngresoPorTipoHabit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Load += new System.EventHandler(this.frmIngresoPorTipoHabit_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

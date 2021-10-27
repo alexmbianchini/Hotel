@@ -130,10 +130,10 @@
     <Compile Include="Negocio\TipoTarjeta.cs" />
     <Compile Include="Negocio\Usuario.cs" />
     <Compile Include="Negocio\Vehiculo.cs" />
-    <Compile Include="Presentacion\frmIngresoPorTipoHabit.cs">
+    <Compile Include="Presentacion\Reportes\frmIngresoPorTipoHabit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\frmIngresoPorTipoHabit.Designer.cs">
+    <Compile Include="Presentacion\Reportes\frmIngresoPorTipoHabit.Designer.cs">
       <DependentUpon>frmIngresoPorTipoHabit.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Reservas\frmConsultaReservas.cs">
@@ -267,7 +267,7 @@
     <EmbeddedResource Include="Custom\RJTextBox.resx">
       <DependentUpon>RJTextBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\frmIngresoPorTipoHabit.resx">
+    <EmbeddedResource Include="Presentacion\Reportes\frmIngresoPorTipoHabit.resx">
       <DependentUpon>frmIngresoPorTipoHabit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Reportes\ReporteIngresoXTipoHabit.rdlc" />

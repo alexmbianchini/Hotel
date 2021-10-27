@@ -131,6 +131,23 @@ namespace Hotel.Presentacion
             frmTipoHabitacion frth = new frmTipoHabitacion();
             frth.ShowDialog();
         }
+
+        private void reporteReservasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReporteReserva frr = new frmReporteReserva();
+            frr.ShowDialog();
+        }
+
+        private void estadisticasTipoHabitacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmIngresoPorTipoHabit fri = new frmIngresoPorTipoHabit();
+            fri.ShowDialog();
+        }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            mstReportes.Show(btnReportes, btnReportes.Width, 0);
+        }
     }
 }
  
