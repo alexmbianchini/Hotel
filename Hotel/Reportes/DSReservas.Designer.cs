@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace Hotel.Presentacion.Reportes {
+namespace Hotel.Reportes {
     
     
     /// <summary>

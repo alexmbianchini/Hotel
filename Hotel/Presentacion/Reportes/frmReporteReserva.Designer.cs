@@ -44,7 +44,7 @@ namespace Hotel.Presentacion
             // rwReserva
             // 
             this.rwReserva.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rwReserva.LocalReport.ReportEmbeddedResource = "Hotel.Presentacion.Reportes.ReportReservas.rdlc";
+            this.rwReserva.LocalReport.ReportEmbeddedResource = "Hotel.Reportes.ReportReservas.rdlc";
             this.rwReserva.Location = new System.Drawing.Point(12, 138);
             this.rwReserva.Name = "rwReserva";
             this.rwReserva.ServerReport.BearerToken = null;

@@ -132,10 +132,10 @@
     <Compile Include="Negocio\TipoTarjeta.cs" />
     <Compile Include="Negocio\Usuario.cs" />
     <Compile Include="Negocio\Vehiculo.cs" />
-    <Compile Include="Presentacion\Reportes\DataSet1.Designer.cs">
+    <Compile Include="Reportes\DSRoomService.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet1.xsd</DependentUpon>
+      <DependentUpon>DSRoomService.xsd</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Reportes\frmIngresoPorTipoHabit.cs">
       <SubType>Form</SubType>
@@ -161,7 +161,7 @@
     <Compile Include="Presentacion\Reservas\frmNuevaReserva.Designer.cs">
       <DependentUpon>frmNuevaReserva.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Reportes\DSReservas.cs">
+    <Compile Include="Reportes\DSReservas.cs">
       <DependentUpon>DSReservas.xsd</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Reportes\frmReporteReserva.cs">
@@ -170,7 +170,7 @@
     <Compile Include="Presentacion\Reportes\frmReporteReserva.Designer.cs">
       <DependentUpon>frmReporteReserva.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Reportes\DSReservas.Designer.cs">
+    <Compile Include="Reportes\DSReservas.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DSReservas.xsd</DependentUpon>
@@ -287,8 +287,8 @@
     <EmbeddedResource Include="Presentacion\Reportes\frmReporteRoomService.resx">
       <DependentUpon>frmReporteRoomService.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Reportes\ReporteIngresoXTipoHabit.rdlc" />
-    <EmbeddedResource Include="Presentacion\Reportes\ReporteRoomService.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteIngresoXTipoHabit.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteRoomService.rdlc" />
     <EmbeddedResource Include="Presentacion\Reservas\frmConsultaReservas.resx">
       <DependentUpon>frmConsultaReservas.cs</DependentUpon>
     </EmbeddedResource>
@@ -304,7 +304,7 @@
     <EmbeddedResource Include="Presentacion\Reportes\frmReporteReserva.resx">
       <DependentUpon>frmReporteReserva.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Reportes\ReportReservas.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportReservas.rdlc" />
     <EmbeddedResource Include="Presentacion\TipoHabit\frmAMTipoHabitacion.resx">
       <DependentUpon>frmAMTipoHabitacion.cs</DependentUpon>
     </EmbeddedResource>
@@ -352,26 +352,26 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
-    <None Include="Presentacion\Reportes\DataSet1.xsc">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
+    <None Include="Reportes\DSRoomService.xsc">
+      <DependentUpon>DSRoomService.xsd</DependentUpon>
     </None>
-    <None Include="Presentacion\Reportes\DataSet1.xsd">
+    <None Include="Reportes\DSRoomService.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+      <LastGenOutput>DSRoomService.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Presentacion\Reportes\DataSet1.xss">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
+    <None Include="Reportes\DSRoomService.xss">
+      <DependentUpon>DSRoomService.xsd</DependentUpon>
     </None>
-    <None Include="Presentacion\Reportes\DSReservas.xsc">
+    <None Include="Reportes\DSReservas.xsc">
       <DependentUpon>DSReservas.xsd</DependentUpon>
     </None>
-    <None Include="Presentacion\Reportes\DSReservas.xsd">
+    <None Include="Reportes\DSReservas.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>DSReservas.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Presentacion\Reportes\DSReservas.xss">
+    <None Include="Reportes\DSReservas.xss">
       <DependentUpon>DSReservas.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">

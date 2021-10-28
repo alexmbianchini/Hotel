@@ -77,7 +77,7 @@ namespace Hotel.Presentacion
             // rwTipoHabit
             // 
             this.rwTipoHabit.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rwTipoHabit.LocalReport.ReportEmbeddedResource = "Hotel.Presentacion.Reportes.ReporteIngresoXTipoHabit.rdlc";
+            this.rwTipoHabit.LocalReport.ReportEmbeddedResource = "Hotel.Reportes.ReporteIngresoXTipoHabit.rdlc";
             this.rwTipoHabit.Location = new System.Drawing.Point(12, 116);
             this.rwTipoHabit.Name = "rwTipoHabit";
             this.rwTipoHabit.ServerReport.BearerToken = null;

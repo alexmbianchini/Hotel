@@ -1,4 +1,4 @@
-﻿namespace Hotel.Presentacion.Reportes
+﻿namespace Hotel.Reportes
 {
 
 

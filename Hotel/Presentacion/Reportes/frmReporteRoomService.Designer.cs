@@ -44,7 +44,7 @@ namespace Hotel.Presentacion.Reportes
             this.lblFechaDesde.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFechaDesde.Location = new System.Drawing.Point(12, 50);
             this.lblFechaDesde.Name = "lblFechaDesde";
-            this.lblFechaDesde.Size = new System.Drawing.Size(114, 23);
+            this.lblFechaDesde.Size = new System.Drawing.Size(94, 20);
             this.lblFechaDesde.TabIndex = 0;
             this.lblFechaDesde.Text = "Fecha Desde";
             // 
@@ -74,7 +74,7 @@ namespace Hotel.Presentacion.Reportes
             this.lblFechaHasta.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFechaHasta.Location = new System.Drawing.Point(387, 51);
             this.lblFechaHasta.Name = "lblFechaHasta";
-            this.lblFechaHasta.Size = new System.Drawing.Size(107, 23);
+            this.lblFechaHasta.Size = new System.Drawing.Size(90, 20);
             this.lblFechaHasta.TabIndex = 3;
             this.lblFechaHasta.Text = "Fecha Hasta";
             // 
@@ -83,7 +83,7 @@ namespace Hotel.Presentacion.Reportes
             this.dtpFechaHasta.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaHasta.Location = new System.Drawing.Point(500, 44);
             this.dtpFechaHasta.Name = "dtpFechaHasta";
-            this.dtpFechaHasta.Size = new System.Drawing.Size(200, 30);
+            this.dtpFechaHasta.Size = new System.Drawing.Size(200, 25);
             this.dtpFechaHasta.TabIndex = 4;
             this.dtpFechaHasta.ValueChanged += new System.EventHandler(this.dtpFechaHasta_ValueChanged);
             // 
@@ -92,12 +92,12 @@ namespace Hotel.Presentacion.Reportes
             this.dtpFechaDesde.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaDesde.Location = new System.Drawing.Point(132, 45);
             this.dtpFechaDesde.Name = "dtpFechaDesde";
-            this.dtpFechaDesde.Size = new System.Drawing.Size(200, 30);
+            this.dtpFechaDesde.Size = new System.Drawing.Size(200, 25);
             this.dtpFechaDesde.TabIndex = 5;
             // 
             // repRoomService
             // 
-            this.repRoomService.LocalReport.ReportEmbeddedResource = "Hotel.Presentacion.Reportes.ReporteRoomService.rdlc";
+            this.repRoomService.LocalReport.ReportEmbeddedResource = "Hotel.Reportes.ReporteRoomService.rdlc";
             this.repRoomService.Location = new System.Drawing.Point(16, 117);
             this.repRoomService.Name = "repRoomService";
             this.repRoomService.ServerReport.BearerToken = null;
