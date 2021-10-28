@@ -82,6 +82,7 @@
       <DependentUpon>RJTextBox.cs</DependentUpon>
     </Compile>
     <Compile Include="Datos\Dao\CocheraDao.cs" />
+    <Compile Include="Datos\Dao\DetalleServicioCuentaDao.cs" />
     <Compile Include="Datos\Dao\HuespedDao.cs" />
     <Compile Include="Datos\Dao\PaisDao.cs" />
     <Compile Include="Datos\Dao\PisoDao.cs" />
@@ -96,6 +97,7 @@
     <Compile Include="Datos\Dao\TipoHabitacionDao.cs" />
     <Compile Include="Datos\Dao\UsuarioDao.cs" />
     <Compile Include="Datos\Interfaces\ICochera.cs" />
+    <Compile Include="Datos\Interfaces\IDetalleServicioCuenta.cs" />
     <Compile Include="Datos\Interfaces\IEmpleado.cs" />
     <Compile Include="Datos\Interfaces\IEstadoHabitacion.cs" />
     <Compile Include="Datos\Interfaces\IHabitacion.cs" />
@@ -130,11 +132,22 @@
     <Compile Include="Negocio\TipoTarjeta.cs" />
     <Compile Include="Negocio\Usuario.cs" />
     <Compile Include="Negocio\Vehiculo.cs" />
+    <Compile Include="Presentacion\Reportes\DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Reportes\frmIngresoPorTipoHabit.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\Reportes\frmIngresoPorTipoHabit.Designer.cs">
       <DependentUpon>frmIngresoPorTipoHabit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Reportes\frmReporteRoomService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Reportes\frmReporteRoomService.Designer.cs">
+      <DependentUpon>frmReporteRoomService.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Reservas\frmConsultaReservas.cs">
       <SubType>Form</SubType>
@@ -251,6 +264,7 @@
     <Compile Include="Seguridad\Encriptacion.cs" />
     <Compile Include="Servicios\CocheraService.cs" />
     <Compile Include="Servicios\ComboBoxService.cs" />
+    <Compile Include="Servicios\DetalleServicioCuentaService.cs" />
     <Compile Include="Servicios\EmpleadoService.cs" />
     <Compile Include="Servicios\EstadoHabitacionService.cs" />
     <Compile Include="Servicios\HabitacionService.cs" />
@@ -270,7 +284,11 @@
     <EmbeddedResource Include="Presentacion\Reportes\frmIngresoPorTipoHabit.resx">
       <DependentUpon>frmIngresoPorTipoHabit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Reportes\frmReporteRoomService.resx">
+      <DependentUpon>frmReporteRoomService.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Reportes\ReporteIngresoXTipoHabit.rdlc" />
+    <EmbeddedResource Include="Presentacion\Reportes\ReporteRoomService.rdlc" />
     <EmbeddedResource Include="Presentacion\Reservas\frmConsultaReservas.resx">
       <DependentUpon>frmConsultaReservas.cs</DependentUpon>
     </EmbeddedResource>
@@ -334,6 +352,17 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Presentacion\Reportes\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Presentacion\Reportes\DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Presentacion\Reportes\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Presentacion\Reportes\DSReservas.xsc">
       <DependentUpon>DSReservas.xsd</DependentUpon>
     </None>
