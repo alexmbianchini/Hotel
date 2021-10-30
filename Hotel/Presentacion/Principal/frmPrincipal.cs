@@ -148,6 +148,16 @@ namespace Hotel.Presentacion
         {
             mstReportes.Show(btnReportes, btnReportes.Width, 0);
         }
+
+        private void reporteRoomServiceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void reporteCocherasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
+        }
     }
 }
  

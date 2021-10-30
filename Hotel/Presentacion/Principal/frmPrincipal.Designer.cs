@@ -57,6 +57,8 @@ namespace Hotel.Presentacion
             this.mstReportes = new Hotel.Custom.RJDropdownMenu(this.components);
             this.reporteReservasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.estadisticasTipoHabitacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteRoomServiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteCocherasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mstHuespedes.SuspendLayout();
             this.mstMiUsuario.SuspendLayout();
             this.mstAdministracion.SuspendLayout();
@@ -398,12 +400,14 @@ namespace Hotel.Presentacion
             this.mstReportes.IsMainMenu = false;
             this.mstReportes.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.reporteReservasToolStripMenuItem,
-            this.estadisticasTipoHabitacionToolStripMenuItem});
+            this.estadisticasTipoHabitacionToolStripMenuItem,
+            this.reporteRoomServiceToolStripMenuItem,
+            this.reporteCocherasToolStripMenuItem});
             this.mstReportes.MenuItemHeight = 25;
             this.mstReportes.MenuItemTextColor = System.Drawing.Color.Empty;
             this.mstReportes.Name = "mstReportes";
             this.mstReportes.PrimaryColor = System.Drawing.Color.Empty;
-            this.mstReportes.Size = new System.Drawing.Size(222, 48);
+            this.mstReportes.Size = new System.Drawing.Size(222, 114);
             // 
             // reporteReservasToolStripMenuItem
             // 
@@ -418,6 +422,20 @@ namespace Hotel.Presentacion
             this.estadisticasTipoHabitacionToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.estadisticasTipoHabitacionToolStripMenuItem.Text = "Estadisticas Tipo Habitacion";
             this.estadisticasTipoHabitacionToolStripMenuItem.Click += new System.EventHandler(this.estadisticasTipoHabitacionToolStripMenuItem_Click);
+            // 
+            // reporteRoomServiceToolStripMenuItem
+            // 
+            this.reporteRoomServiceToolStripMenuItem.Name = "reporteRoomServiceToolStripMenuItem";
+            this.reporteRoomServiceToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
+            this.reporteRoomServiceToolStripMenuItem.Text = "Reporte Room Service";
+            this.reporteRoomServiceToolStripMenuItem.Click += new System.EventHandler(this.reporteRoomServiceToolStripMenuItem_Click);
+            // 
+            // reporteCocherasToolStripMenuItem
+            // 
+            this.reporteCocherasToolStripMenuItem.Name = "reporteCocherasToolStripMenuItem";
+            this.reporteCocherasToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
+            this.reporteCocherasToolStripMenuItem.Text = "Reporte Cocheras";
+            this.reporteCocherasToolStripMenuItem.Click += new System.EventHandler(this.reporteCocherasToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
@@ -487,5 +505,7 @@ namespace Hotel.Presentacion
         private Custom.RJDropdownMenu mstReportes;
         private System.Windows.Forms.ToolStripMenuItem reporteReservasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem estadisticasTipoHabitacionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reporteRoomServiceToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reporteCocherasToolStripMenuItem;
     }
 }

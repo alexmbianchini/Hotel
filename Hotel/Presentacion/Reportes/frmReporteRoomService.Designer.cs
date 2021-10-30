@@ -115,6 +115,7 @@ namespace Hotel.Presentacion.Reportes
             this.Controls.Add(this.lblFechaHasta);
             this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.lblFechaDesde);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmReporteRoomService";

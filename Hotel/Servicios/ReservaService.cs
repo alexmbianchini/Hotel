@@ -78,5 +78,10 @@ namespace Hotel.Servicios
         {
             return dao.RecuperarDatosTipoHabitacionReservada(fechaDesde, fechaHasta);
         }
+
+        public DataTable RecuperarDatosReservaCochera(string fechaDesde, string fechaHasta)
+        {
+            return dao.RecuperarDatosReservaCochera(fechaDesde, fechaHasta);
+        }
     }
 }

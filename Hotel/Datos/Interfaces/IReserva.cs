@@ -28,5 +28,8 @@ namespace Hotel.Datos.Interfaces
 
         DataTable RecuperarDatosTipoHabitacionReservada(string fechaDesde, string fechaHasta);
 
+        DataTable RecuperarDatosReservaCochera(string fechaDesde, string fechaHasta);
+
+
     }
 }

@@ -132,6 +132,12 @@
     <Compile Include="Negocio\TipoTarjeta.cs" />
     <Compile Include="Negocio\Usuario.cs" />
     <Compile Include="Negocio\Vehiculo.cs" />
+    <Compile Include="Presentacion\Reportes\frmReporteCochera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Reportes\frmReporteCochera.Designer.cs">
+      <DependentUpon>frmReporteCochera.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\DSRoomService.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -284,9 +290,13 @@
     <EmbeddedResource Include="Presentacion\Reportes\frmIngresoPorTipoHabit.resx">
       <DependentUpon>frmIngresoPorTipoHabit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Reportes\frmReporteCochera.resx">
+      <DependentUpon>frmReporteCochera.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Reportes\frmReporteRoomService.resx">
       <DependentUpon>frmReporteRoomService.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteCocheras.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteIngresoXTipoHabit.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteRoomService.rdlc" />
     <EmbeddedResource Include="Presentacion\Reservas\frmConsultaReservas.resx">
@@ -389,6 +399,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Imagenes\corte-de-ojos.png" />
+    <Content Include="Imagenes\headerHotel.jpg" />
     <Content Include="Imagenes\hotelfondo.jpg" />
     <Content Include="Imagenes\icons8-closed-eye-24 %281%29.png" />
     <Content Include="Imagenes\icons8-closed-eye-24.png" />
