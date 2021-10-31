@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Hotel.Presentacion.Huespedes;
+using Hotel.Presentacion.Reportes;
 
 namespace Hotel.Presentacion
 {
@@ -151,12 +152,14 @@ namespace Hotel.Presentacion
 
         private void reporteRoomServiceToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmReporteRoomService frrs = new frmReporteRoomService();
+            frrs.ShowDialog();
         }
 
         private void reporteCocherasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
+            frmReporteCochera frco = new frmReporteCochera();
+            frco.ShowDialog();
         }
     }
 }
