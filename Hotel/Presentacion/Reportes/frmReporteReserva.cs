@@ -29,7 +29,8 @@ namespace Hotel.Presentacion
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-
+            lblFechaDesde.ForeColor = Color.Black;
+            lblFechaHasta.ForeColor = Color.Black;
             if (oReserva.ValidarFechaDesdeMenorFechaHasta(dtpFechaDesde.Value, dtpFechaHasta.Value))
             {
                 // Tomamos los datos para cargar el DataSet

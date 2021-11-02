@@ -334,6 +334,7 @@ namespace Hotel.Presentacion
 
         private void CargarForm()
         {
+            
             this.txtPasaporte.Enabled = true;
             this.txtNombre.Enabled = false;
             this.txtApellido.Enabled = false;
@@ -366,6 +367,7 @@ namespace Hotel.Presentacion
             this.txtSubtotal.Text = (0).ToString();
             this.txtSubtotalCochera.Text = (0).ToString();
             this.txtTotal.Text = (0).ToString();
+            
         }
 
 
