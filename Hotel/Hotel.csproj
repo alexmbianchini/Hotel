@@ -132,11 +132,22 @@
     <Compile Include="Negocio\TipoTarjeta.cs" />
     <Compile Include="Negocio\Usuario.cs" />
     <Compile Include="Negocio\Vehiculo.cs" />
+    <Compile Include="Presentacion\Reportes\frmReporteReservaPais.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Reportes\frmReporteReservaPais.Designer.cs">
+      <DependentUpon>frmReporteReservaPais.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Reportes\frmReporteCochera.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\Reportes\frmReporteCochera.Designer.cs">
       <DependentUpon>frmReporteCochera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\DSPaises.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSPaises.xsd</DependentUpon>
     </Compile>
     <Compile Include="Reportes\DSRoomService.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -287,6 +298,9 @@
     <EmbeddedResource Include="Custom\RJTextBox.resx">
       <DependentUpon>RJTextBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Reportes\frmReporteReservaPais.resx">
+      <DependentUpon>frmReporteReservaPais.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Reportes\frmIngresoPorTipoHabit.resx">
       <DependentUpon>frmIngresoPorTipoHabit.cs</DependentUpon>
     </EmbeddedResource>
@@ -298,6 +312,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ReporteCocheras.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteIngresoXTipoHabit.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteReservasXPais.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteRoomService.rdlc" />
     <EmbeddedResource Include="Presentacion\Reservas\frmConsultaReservas.resx">
       <DependentUpon>frmConsultaReservas.cs</DependentUpon>
@@ -362,6 +377,17 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Reportes\DSPaises.xsc">
+      <DependentUpon>DSPaises.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DSPaises.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSPaises.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\DSPaises.xss">
+      <DependentUpon>DSPaises.xsd</DependentUpon>
+    </None>
     <None Include="Reportes\DSRoomService.xsc">
       <DependentUpon>DSRoomService.xsd</DependentUpon>
     </None>

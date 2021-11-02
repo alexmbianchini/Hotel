@@ -83,5 +83,10 @@ namespace Hotel.Servicios
         {
             return dao.RecuperarDatosReservaCochera(fechaDesde, fechaHasta);
         }
+
+        public DataTable RecuperarParaReportePaises(string fechaDesde, string fechaHasta)
+        {
+            return dao.RecuperarParaReportePaises(fechaDesde, fechaHasta);
+        }
     }
 }

@@ -30,6 +30,7 @@ namespace Hotel.Datos.Interfaces
 
         DataTable RecuperarDatosReservaCochera(string fechaDesde, string fechaHasta);
 
+        DataTable RecuperarParaReportePaises(string fechaDesde, string fechaHasta);
 
     }
 }

@@ -16,7 +16,7 @@ namespace Hotel
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Hotel.Presentacion.frmPrincipal());
+            //Application.Run(new Hotel.Presentacion.frmPrincipal());
             //Application.Run(new Presentacion.frmUsuario());
             //Application.Run(new Presentacion.frmHabitacion());
             //Application.Run(new Presentacion.UsuarioEmpleado.frmPassword());
@@ -29,6 +29,7 @@ namespace Hotel
             //Application.Run(new Hotel.Presentacion.frmIngresoPorTipoHabit());
             //Application.Run(new Hotel.Presentacion.Reportes.frmReporteRoomService());
             //Application.Run(new Hotel.Presentacion.Reportes.frmReporteCochera());
+            Application.Run(new Hotel.Presentacion.frmReporteReservaPais());
         }
     }
 }
