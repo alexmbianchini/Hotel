@@ -59,6 +59,7 @@ namespace Hotel.Presentacion
             this.estadisticasTipoHabitacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteRoomServiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteCocherasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportePaisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mstHuespedes.SuspendLayout();
             this.mstMiUsuario.SuspendLayout();
             this.mstAdministracion.SuspendLayout();
@@ -402,12 +403,13 @@ namespace Hotel.Presentacion
             this.reporteReservasToolStripMenuItem,
             this.estadisticasTipoHabitacionToolStripMenuItem,
             this.reporteRoomServiceToolStripMenuItem,
-            this.reporteCocherasToolStripMenuItem});
+            this.reporteCocherasToolStripMenuItem,
+            this.reportePaisToolStripMenuItem});
             this.mstReportes.MenuItemHeight = 25;
             this.mstReportes.MenuItemTextColor = System.Drawing.Color.Empty;
             this.mstReportes.Name = "mstReportes";
             this.mstReportes.PrimaryColor = System.Drawing.Color.Empty;
-            this.mstReportes.Size = new System.Drawing.Size(222, 114);
+            this.mstReportes.Size = new System.Drawing.Size(222, 136);
             // 
             // reporteReservasToolStripMenuItem
             // 
@@ -436,6 +438,13 @@ namespace Hotel.Presentacion
             this.reporteCocherasToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.reporteCocherasToolStripMenuItem.Text = "Reporte Cocheras";
             this.reporteCocherasToolStripMenuItem.Click += new System.EventHandler(this.reporteCocherasToolStripMenuItem_Click);
+            // 
+            // reportePaisToolStripMenuItem
+            // 
+            this.reportePaisToolStripMenuItem.Name = "reportePaisToolStripMenuItem";
+            this.reportePaisToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
+            this.reportePaisToolStripMenuItem.Text = "Reporte Pais";
+            this.reportePaisToolStripMenuItem.Click += new System.EventHandler(this.reportePaisToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
@@ -507,5 +516,6 @@ namespace Hotel.Presentacion
         private System.Windows.Forms.ToolStripMenuItem estadisticasTipoHabitacionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reporteRoomServiceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reporteCocherasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reportePaisToolStripMenuItem;
     }
 }

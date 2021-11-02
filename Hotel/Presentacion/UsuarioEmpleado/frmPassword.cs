@@ -81,7 +81,7 @@ namespace Hotel.Presentacion.UsuarioEmpleado
                             // Modificar datos en la base de datos y verificar que se inserten con éxito
                             if (oUsuario.Modificar(oUsuarioSelected))
                             {
-                                MessageBox.Show("Se ha Cambiado la Contraseña Con Éxito!");
+                                MessageBox.Show("Se cambió la Contraseña", "Aviso", MessageBoxButtons.OK ,MessageBoxIcon.Information);
                                 this.Close();
                             }
                             else

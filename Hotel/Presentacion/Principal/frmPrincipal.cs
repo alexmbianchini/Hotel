@@ -161,6 +161,12 @@ namespace Hotel.Presentacion
             frmReporteCochera frco = new frmReporteCochera();
             frco.ShowDialog();
         }
+
+        private void reportePaisToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReporteReservaPais frrp = new frmReporteReservaPais();
+            frrp.ShowDialog();
+        }
     }
 }
  
