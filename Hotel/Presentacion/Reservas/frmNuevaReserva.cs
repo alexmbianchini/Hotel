@@ -247,12 +247,12 @@ namespace Hotel.Presentacion
 
             CalcularTotales(dgvReservas);
 
-            // Habilita los botenes q¿correspondientes para que el usuario pueda continuar con la transacción.
+            // Habilita los botenes correspondientes para que el usuario pueda continuar con la transacción.
             btnQuitarHabitacion.Enabled = true;
             btnQuitarHabitacion.Visible = true;
             btnAceptar.Enabled = true;
             btnAceptar.Visible = true;
-
+            
 
         }
 
@@ -260,11 +260,20 @@ namespace Hotel.Presentacion
         // Botón que permite quitar habitaciones del detalle de la reserva y las devuelve a la grilla de habitaciones disponibles.
         private void btnQuitarHabitacion_Click(object sender, EventArgs e)
         {
+            if (dgvReservas.Rows.Count == 0)
+            {  
+                MessageBox.Show("No hay habitaciones para quitar de la reserva", "Aviso", MessageBoxButtons.OK);
+                btnQuitarHabitacion.Visible = false;
+                btnQuitarHabitacion.Enabled = false;
+            }
+            else
+            {
+                PasarFila(dgvReservas, dgvHabitaciones);
 
+                CalcularTotales(dgvReservas);
+            }
+                
             
-            PasarFila(dgvReservas, dgvHabitaciones);
-
-            CalcularTotales(dgvReservas);
              
         }
 

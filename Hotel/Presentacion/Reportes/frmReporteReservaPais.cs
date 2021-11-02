@@ -40,9 +40,15 @@ namespace Hotel.Presentacion
 
                 var fechaHoy = DateTime.Now.ToString("dd/MM/yyyy hh:mm");
                 var paramFechaHoy = new ReportParameter("fechaEmision", fechaHoy);
-                
+                var fechaDesde = dtpFechaDesde.Value.ToString();
+                var fechaHasta = dtpFechaHasta.Value.ToString();
+                var paramFechaDesde = new ReportParameter("fechaDesde", fechaDesde);
+                var paramFechaHasta = new ReportParameter("fechaHasta", fechaHasta);
+
                 var parametros = new List<ReportParameter>();
                 parametros.Add(paramFechaHoy);
+                parametros.Add(paramFechaDesde);
+                parametros.Add(paramFechaHasta);
 
                 this.rwPaises.LocalReport.SetParameters(parametros);
 
