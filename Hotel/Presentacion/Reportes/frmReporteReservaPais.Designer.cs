@@ -36,13 +36,15 @@ namespace Hotel.Presentacion
             this.dtpFechaDesde = new System.Windows.Forms.DateTimePicker();
             this.rwPaises = new Microsoft.Reporting.WinForms.ReportViewer();
             this.btnConsultar = new Hotel.Custom.RJButton();
+            this.cboPais = new System.Windows.Forms.ComboBox();
+            this.lblPais = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblFechaHasta
             // 
             this.lblFechaHasta.AutoSize = true;
             this.lblFechaHasta.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaHasta.Location = new System.Drawing.Point(175, 70);
+            this.lblFechaHasta.Location = new System.Drawing.Point(19, 70);
             this.lblFechaHasta.Name = "lblFechaHasta";
             this.lblFechaHasta.Size = new System.Drawing.Size(87, 19);
             this.lblFechaHasta.TabIndex = 9;
@@ -51,7 +53,7 @@ namespace Hotel.Presentacion
             // dtpFechaHasta
             // 
             this.dtpFechaHasta.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaHasta.Location = new System.Drawing.Point(268, 64);
+            this.dtpFechaHasta.Location = new System.Drawing.Point(112, 64);
             this.dtpFechaHasta.Name = "dtpFechaHasta";
             this.dtpFechaHasta.Size = new System.Drawing.Size(254, 25);
             this.dtpFechaHasta.TabIndex = 8;
@@ -60,7 +62,7 @@ namespace Hotel.Presentacion
             // 
             this.lblFechaDesde.AutoSize = true;
             this.lblFechaDesde.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaDesde.Location = new System.Drawing.Point(172, 18);
+            this.lblFechaDesde.Location = new System.Drawing.Point(16, 18);
             this.lblFechaDesde.Name = "lblFechaDesde";
             this.lblFechaDesde.Size = new System.Drawing.Size(90, 19);
             this.lblFechaDesde.TabIndex = 7;
@@ -69,7 +71,7 @@ namespace Hotel.Presentacion
             // dtpFechaDesde
             // 
             this.dtpFechaDesde.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaDesde.Location = new System.Drawing.Point(268, 12);
+            this.dtpFechaDesde.Location = new System.Drawing.Point(112, 12);
             this.dtpFechaDesde.Name = "dtpFechaDesde";
             this.dtpFechaDesde.Size = new System.Drawing.Size(254, 25);
             this.dtpFechaDesde.TabIndex = 6;
@@ -94,7 +96,7 @@ namespace Hotel.Presentacion
             this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConsultar.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsultar.ForeColor = System.Drawing.Color.White;
-            this.btnConsultar.Location = new System.Drawing.Point(593, 30);
+            this.btnConsultar.Location = new System.Drawing.Point(700, 30);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(101, 41);
             this.btnConsultar.TabIndex = 10;
@@ -103,12 +105,32 @@ namespace Hotel.Presentacion
             this.btnConsultar.UseVisualStyleBackColor = false;
             this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
+            // cboPais
+            // 
+            this.cboPais.FormattingEnabled = true;
+            this.cboPais.Location = new System.Drawing.Point(517, 16);
+            this.cboPais.Name = "cboPais";
+            this.cboPais.Size = new System.Drawing.Size(130, 21);
+            this.cboPais.TabIndex = 13;
+            // 
+            // lblPais
+            // 
+            this.lblPais.AutoSize = true;
+            this.lblPais.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPais.Location = new System.Drawing.Point(463, 16);
+            this.lblPais.Name = "lblPais";
+            this.lblPais.Size = new System.Drawing.Size(43, 20);
+            this.lblPais.TabIndex = 12;
+            this.lblPais.Text = "País :";
+            // 
             // frmReporteReservaPais
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(209)))), ((int)(((byte)(217)))));
             this.ClientSize = new System.Drawing.Size(832, 553);
+            this.Controls.Add(this.cboPais);
+            this.Controls.Add(this.lblPais);
             this.Controls.Add(this.rwPaises);
             this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.lblFechaHasta);
@@ -132,5 +154,7 @@ namespace Hotel.Presentacion
         private System.Windows.Forms.Label lblFechaDesde;
         private System.Windows.Forms.DateTimePicker dtpFechaDesde;
         private Microsoft.Reporting.WinForms.ReportViewer rwPaises;
+        private System.Windows.Forms.ComboBox cboPais;
+        private System.Windows.Forms.Label lblPais;
     }
 }
