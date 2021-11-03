@@ -29,6 +29,7 @@ namespace Hotel.Presentacion
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReporteReservaPais));
             this.lblFechaHasta = new System.Windows.Forms.Label();
             this.dtpFechaHasta = new System.Windows.Forms.DateTimePicker();
             this.lblFechaDesde = new System.Windows.Forms.Label();
@@ -114,8 +115,9 @@ namespace Hotel.Presentacion
             this.Controls.Add(this.dtpFechaHasta);
             this.Controls.Add(this.lblFechaDesde);
             this.Controls.Add(this.dtpFechaDesde);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmReporteReservaPais";
-            this.Text = "frmReporteReservaPais";
+            this.Text = "Reporte Paises";
             this.Load += new System.EventHandler(this.frmReporteReservaPais_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

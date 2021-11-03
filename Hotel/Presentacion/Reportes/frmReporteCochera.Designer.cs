@@ -29,6 +29,7 @@ namespace Hotel.Presentacion.Reportes
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReporteCochera));
             this.lblFechaDesde = new System.Windows.Forms.Label();
             this.lblFechaHasta = new System.Windows.Forms.Label();
             this.dtpFechaDesde = new System.Windows.Forms.DateTimePicker();
@@ -72,17 +73,18 @@ namespace Hotel.Presentacion.Reportes
             // btnConsultar
             // 
             this.btnConsultar.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnConsultar.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnConsultar.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnConsultar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
+            this.btnConsultar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
             this.btnConsultar.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnConsultar.BorderRadius = 20;
             this.btnConsultar.BorderSize = 0;
             this.btnConsultar.FlatAppearance.BorderSize = 0;
             this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultar.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F);
             this.btnConsultar.ForeColor = System.Drawing.Color.White;
-            this.btnConsultar.Location = new System.Drawing.Point(518, 61);
+            this.btnConsultar.Location = new System.Drawing.Point(447, 48);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(150, 40);
+            this.btnConsultar.Size = new System.Drawing.Size(114, 40);
             this.btnConsultar.TabIndex = 4;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.TextColor = System.Drawing.Color.White;
@@ -92,16 +94,17 @@ namespace Hotel.Presentacion.Reportes
             // repCochera
             // 
             this.repCochera.LocalReport.ReportEmbeddedResource = "Hotel.Reportes.ReporteCocheras.rdlc";
-            this.repCochera.Location = new System.Drawing.Point(75, 140);
+            this.repCochera.Location = new System.Drawing.Point(5, 140);
             this.repCochera.Name = "repCochera";
             this.repCochera.ServerReport.BearerToken = null;
-            this.repCochera.Size = new System.Drawing.Size(670, 246);
+            this.repCochera.Size = new System.Drawing.Size(792, 298);
             this.repCochera.TabIndex = 5;
             // 
             // frmReporteCochera
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(209)))), ((int)(((byte)(217)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.repCochera);
             this.Controls.Add(this.btnConsultar);
@@ -109,8 +112,9 @@ namespace Hotel.Presentacion.Reportes
             this.Controls.Add(this.dtpFechaDesde);
             this.Controls.Add(this.lblFechaHasta);
             this.Controls.Add(this.lblFechaDesde);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmReporteCochera";
-            this.Text = "frmReporteCochera";
+            this.Text = "Reporte Cocheras";
             this.Load += new System.EventHandler(this.frmReporteCochera_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

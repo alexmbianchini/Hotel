@@ -128,6 +128,7 @@ namespace Hotel.Presentacion
             this.MaximizeBox = false;
             this.Name = "frmReporteReserva";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Reporte Ingreso Reservas";
             this.Load += new System.EventHandler(this.frmReporteReserva_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

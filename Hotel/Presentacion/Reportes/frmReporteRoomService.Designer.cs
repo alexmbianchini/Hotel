@@ -120,6 +120,7 @@ namespace Hotel.Presentacion.Reportes
             this.MaximizeBox = false;
             this.Name = "frmReporteRoomService";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Reporte Room Service";
             this.Load += new System.EventHandler(this.frmReporteRoomService_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

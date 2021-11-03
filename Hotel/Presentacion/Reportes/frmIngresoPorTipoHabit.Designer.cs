@@ -121,6 +121,7 @@ namespace Hotel.Presentacion
             this.MaximizeBox = false;
             this.Name = "frmIngresoPorTipoHabit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Reporte Ingreso Por Tipo Habitacion";
             this.Load += new System.EventHandler(this.frmIngresoPorTipoHabit_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
