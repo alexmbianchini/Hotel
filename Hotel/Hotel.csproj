@@ -132,6 +132,12 @@
     <Compile Include="Negocio\TipoTarjeta.cs" />
     <Compile Include="Negocio\Usuario.cs" />
     <Compile Include="Negocio\Vehiculo.cs" />
+    <Compile Include="Presentacion\Reportes\frmReporteReservaXHabit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Reportes\frmReporteReservaXHabit.Designer.cs">
+      <DependentUpon>frmReporteReservaXHabit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Reportes\frmReporteReservaPais.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +149,11 @@
     </Compile>
     <Compile Include="Presentacion\Reportes\frmReporteCochera.Designer.cs">
       <DependentUpon>frmReporteCochera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\DSReservasXHabit.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSReservasXHabit.xsd</DependentUpon>
     </Compile>
     <Compile Include="Reportes\DSPaises.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -298,6 +309,9 @@
     <EmbeddedResource Include="Custom\RJTextBox.resx">
       <DependentUpon>RJTextBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Reportes\frmReporteReservaXHabit.resx">
+      <DependentUpon>frmReporteReservaXHabit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Reportes\frmReporteReservaPais.resx">
       <DependentUpon>frmReporteReservaPais.cs</DependentUpon>
     </EmbeddedResource>
@@ -311,6 +325,7 @@
       <DependentUpon>frmReporteRoomService.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ReporteCocheras.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteIngresoReservaxNroHabit.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteIngresoXTipoHabit.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteReservasXPais.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteRoomService.rdlc" />
@@ -377,6 +392,17 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Reportes\DSReservasXHabit.xsc">
+      <DependentUpon>DSReservasXHabit.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DSReservasXHabit.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSReservasXHabit.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\DSReservasXHabit.xss">
+      <DependentUpon>DSReservasXHabit.xsd</DependentUpon>
+    </None>
     <None Include="Reportes\DSPaises.xsc">
       <DependentUpon>DSPaises.xsd</DependentUpon>
     </None>

@@ -60,6 +60,7 @@ namespace Hotel.Presentacion
             this.reporteRoomServiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteCocherasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportePaisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteNumeroHabitacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mstHuespedes.SuspendLayout();
             this.mstMiUsuario.SuspendLayout();
             this.mstAdministracion.SuspendLayout();
@@ -404,47 +405,55 @@ namespace Hotel.Presentacion
             this.estadisticasTipoHabitacionToolStripMenuItem,
             this.reporteRoomServiceToolStripMenuItem,
             this.reporteCocherasToolStripMenuItem,
-            this.reportePaisToolStripMenuItem});
+            this.reportePaisToolStripMenuItem,
+            this.reporteNumeroHabitacionToolStripMenuItem});
             this.mstReportes.MenuItemHeight = 25;
             this.mstReportes.MenuItemTextColor = System.Drawing.Color.Empty;
             this.mstReportes.Name = "mstReportes";
             this.mstReportes.PrimaryColor = System.Drawing.Color.Empty;
-            this.mstReportes.Size = new System.Drawing.Size(222, 136);
+            this.mstReportes.Size = new System.Drawing.Size(224, 158);
             // 
             // reporteReservasToolStripMenuItem
             // 
             this.reporteReservasToolStripMenuItem.Name = "reporteReservasToolStripMenuItem";
-            this.reporteReservasToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
+            this.reporteReservasToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
             this.reporteReservasToolStripMenuItem.Text = "Reporte Reservas";
             this.reporteReservasToolStripMenuItem.Click += new System.EventHandler(this.reporteReservasToolStripMenuItem_Click);
             // 
             // estadisticasTipoHabitacionToolStripMenuItem
             // 
             this.estadisticasTipoHabitacionToolStripMenuItem.Name = "estadisticasTipoHabitacionToolStripMenuItem";
-            this.estadisticasTipoHabitacionToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
+            this.estadisticasTipoHabitacionToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
             this.estadisticasTipoHabitacionToolStripMenuItem.Text = "Estadisticas Tipo Habitacion";
             this.estadisticasTipoHabitacionToolStripMenuItem.Click += new System.EventHandler(this.estadisticasTipoHabitacionToolStripMenuItem_Click);
             // 
             // reporteRoomServiceToolStripMenuItem
             // 
             this.reporteRoomServiceToolStripMenuItem.Name = "reporteRoomServiceToolStripMenuItem";
-            this.reporteRoomServiceToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
+            this.reporteRoomServiceToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
             this.reporteRoomServiceToolStripMenuItem.Text = "Reporte Room Service";
             this.reporteRoomServiceToolStripMenuItem.Click += new System.EventHandler(this.reporteRoomServiceToolStripMenuItem_Click);
             // 
             // reporteCocherasToolStripMenuItem
             // 
             this.reporteCocherasToolStripMenuItem.Name = "reporteCocherasToolStripMenuItem";
-            this.reporteCocherasToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
+            this.reporteCocherasToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
             this.reporteCocherasToolStripMenuItem.Text = "Reporte Cocheras";
             this.reporteCocherasToolStripMenuItem.Click += new System.EventHandler(this.reporteCocherasToolStripMenuItem_Click);
             // 
             // reportePaisToolStripMenuItem
             // 
             this.reportePaisToolStripMenuItem.Name = "reportePaisToolStripMenuItem";
-            this.reportePaisToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
+            this.reportePaisToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
             this.reportePaisToolStripMenuItem.Text = "Reporte Pais";
             this.reportePaisToolStripMenuItem.Click += new System.EventHandler(this.reportePaisToolStripMenuItem_Click);
+            // 
+            // reporteNumeroHabitacionToolStripMenuItem
+            // 
+            this.reporteNumeroHabitacionToolStripMenuItem.Name = "reporteNumeroHabitacionToolStripMenuItem";
+            this.reporteNumeroHabitacionToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+            this.reporteNumeroHabitacionToolStripMenuItem.Text = "Reporte Numero Habitacion";
+            this.reporteNumeroHabitacionToolStripMenuItem.Click += new System.EventHandler(this.reporteNumeroHabitacionToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
@@ -517,5 +526,6 @@ namespace Hotel.Presentacion
         private System.Windows.Forms.ToolStripMenuItem reporteRoomServiceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reporteCocherasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportePaisToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reporteNumeroHabitacionToolStripMenuItem;
     }
 }

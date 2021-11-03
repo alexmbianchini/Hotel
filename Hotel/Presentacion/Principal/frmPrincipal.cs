@@ -167,6 +167,12 @@ namespace Hotel.Presentacion
             frmReporteReservaPais frrp = new frmReporteReservaPais();
             frrp.ShowDialog();
         }
+
+        private void reporteNumeroHabitacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReporteReservaxHabit frcxh = new frmReporteReservaxHabit();
+            frcxh.ShowDialog();
+        }
     }
 }
  

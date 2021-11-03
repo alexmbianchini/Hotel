@@ -285,6 +285,24 @@ namespace Hotel.Datos.Dao
 
             return DBHelper.ObtenerInstancia().Ejecutar(consulta);
         }
+
+        public DataTable RecuperarDatosReservaCocheraXNroHabit(string fechaDesde, string fechaHasta)
+        {
+            string consulta = "SELECT d.precio_unitario_habitacion, d.numero_habitacion," +
+                " DATEDIFF(DAY, r.fecha_hora_ingreso_estimada, r.fecha_hora_salida_estimada) AS cantidad_dias," +
+                " DATEDIFF(DAY, r.fecha_hora_ingreso_estimada, r.fecha_hora_salida_estimada) * d.precio_unitario_habitacion as precio" +
+
+                " FROM RESERVA r" +
+                " INNER JOIN DETALLE_RESERVA d ON (r.id_reserva = d.id_reserva)" +
+
+                " WHERE r.borrado_logico = 0 AND r.estado = 3" +
+                " AND r.fecha_hora_ingreso_real BETWEEN CONVERT(DATETIME, '" + fechaDesde + "', 103)" +
+                " AND CONVERT(DATETIME, '" + fechaHasta + "', 103)" +
+                " ORDER BY r.id_reserva, r.fecha_hora_ingreso_real";
+
+
+            return DBHelper.ObtenerInstancia().Ejecutar(consulta);
+        }
     }
 }
 

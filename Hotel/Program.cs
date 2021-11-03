@@ -29,7 +29,7 @@ namespace Hotel
             //Application.Run(new Hotel.Presentacion.frmIngresoPorTipoHabit());
             //Application.Run(new Hotel.Presentacion.Reportes.frmReporteRoomService());
             //Application.Run(new Hotel.Presentacion.Reportes.frmReporteCochera());
-            //Application.Run(new Hotel.Presentacion.frmReporteReservaPais());
+            //Application.Run(new Hotel.Presentacion.frmReporteReservaPais());;
         }
     }
 }
