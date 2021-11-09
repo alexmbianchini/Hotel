@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace Hotel.Datos.Interfaces
 {
-    interface IDetalleServicioCuenta
+    interface IMenu
     {
-       DataTable RecuperarDatosInforme(string fechaInicio, string fechaFin, int producto);
-       
+        DataTable RecuperarTodos();
     }
 }

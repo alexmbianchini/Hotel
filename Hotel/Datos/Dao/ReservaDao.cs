@@ -267,7 +267,7 @@ namespace Hotel.Datos.Dao
             return DBHelper.ObtenerInstancia().Ejecutar(consulta);
         }
 
-        public DataTable RecuperarParaReportePaises(string fechaDesde, string fechaHasta)
+        public DataTable RecuperarParaReportePaises(string fechaDesde, string fechaHasta, int pais)
         {
             string consulta = "SELECT RESERVA.id_reserva, RESERVA.fecha_hora_ingreso_real, RESERVA.fecha_hora_salida_real, RESERVA.cantidad_personas, PAISES.nombre AS pais," +
                " DATEDIFF(DAY, RESERVA.fecha_hora_ingreso_estimada, RESERVA.fecha_hora_salida_estimada) AS cantidad_dias" +
@@ -280,8 +280,13 @@ namespace Hotel.Datos.Dao
 
                 " WHERE RESERVA.borrado_logico = 0 AND RESERVA.estado = 3" +
                 " AND RESERVA.fecha_hora_ingreso_real BETWEEN CONVERT(DATETIME, '" + fechaDesde + "', 103)" +
-                " AND CONVERT(DATETIME, '" + fechaHasta + "', 103)" +
-                " ORDER BY RESERVA.id_reserva, RESERVA.fecha_hora_ingreso_real";
+                " AND CONVERT(DATETIME, '" + fechaHasta + "', 103)";
+                if (pais != 0)
+                {
+                consulta += " AND HUESPEDES.pais_residencia = " + pais;
+                }
+                
+                consulta += " ORDER BY RESERVA.id_reserva, RESERVA.fecha_hora_ingreso_real";
 
             return DBHelper.ObtenerInstancia().Ejecutar(consulta);
         }

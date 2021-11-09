@@ -17,10 +17,10 @@ namespace Hotel.Servicios
             dao = new DetalleServicioCuentaDao();
         }
 
-        public DataTable RecuperarDatosInforme(string fechaInicio, string fechaFin)
+        public DataTable RecuperarDatosInforme(string fechaInicio, string fechaFin, int producto)
         {
 
-            return dao.RecuperarDatosInforme(fechaInicio, fechaFin);
+            return dao.RecuperarDatosInforme(fechaInicio, fechaFin, producto);
         }
     }
 }

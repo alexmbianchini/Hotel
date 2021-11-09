@@ -15,6 +15,8 @@ namespace Hotel.Presentacion.Reportes
     public partial class frmReporteRoomService : Form
     {
         DetalleServicioCuentaService oDetalle = new DetalleServicioCuentaService();
+        ComboBoxService oComboBox = new ComboBoxService();
+        MenuService oMenu = new MenuService();
         public frmReporteRoomService()
         {
             InitializeComponent();
@@ -27,12 +29,20 @@ namespace Hotel.Presentacion.Reportes
 
         private void frmReporteRoomService_Load(object sender, EventArgs e)
         {
-           
+            oComboBox.CargarCombo(cboProducto, oMenu.RecuperarTodos(), "descripcion", "codigo_producto");
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-            var datos = oDetalle.RecuperarDatosInforme(dtpFechaDesde.Value.ToString(), dtpFechaHasta.Value.ToString());
+            int producto = cboProducto.SelectedIndex + 1;
+
+            
+            var datos = oDetalle.RecuperarDatosInforme(dtpFechaDesde.Value.ToString(), dtpFechaHasta.Value.ToString(), producto);
+
+            if (datos.Rows.Count < 1)
+            {
+                cboProducto.SelectedIndex = -1;
+            }
 
             int total = 0;
 

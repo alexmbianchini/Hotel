@@ -10,12 +10,17 @@ namespace Hotel.Datos.Dao
 {
     class DetalleServicioCuentaDao : IDetalleServicioCuenta
     {
-        public DataTable RecuperarDatosInforme(string fechaInicio, string fechaFin)
+        public DataTable RecuperarDatosInforme(string fechaInicio, string fechaFin, int producto)
         {
             string consulta = "SELECT d.nro_cuenta, d.nro_habitacion, d.cod_producto, d.precio_unitario, d.fecha_hora, m.descripcion" +
                 " FROM DETALLE_SERVICIOS_CUENTA d" +
                 " INNER JOIN MENU m ON(d.cod_producto = m.codigo_producto)" +
                 " WHERE d.fecha_hora BETWEEN CONVERT(DATETIME, '" + fechaInicio + "', 103) AND CONVERT(DATETIME, '" + fechaFin + "', 103)";
+
+            if (producto != 0)
+            {
+                consulta += " AND d.cod_producto = " + producto;
+            }
 
 
             return DBHelper.ObtenerInstancia().Ejecutar(consulta);

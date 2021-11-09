@@ -84,6 +84,7 @@
     <Compile Include="Datos\Dao\CocheraDao.cs" />
     <Compile Include="Datos\Dao\DetalleServicioCuentaDao.cs" />
     <Compile Include="Datos\Dao\HuespedDao.cs" />
+    <Compile Include="Datos\Dao\MenuDao.cs" />
     <Compile Include="Datos\Dao\PaisDao.cs" />
     <Compile Include="Datos\Dao\PisoDao.cs" />
     <Compile Include="Datos\Dao\ReservaDao.cs" />
@@ -102,6 +103,7 @@
     <Compile Include="Datos\Interfaces\IEstadoHabitacion.cs" />
     <Compile Include="Datos\Interfaces\IHabitacion.cs" />
     <Compile Include="Datos\Interfaces\IHuesped.cs" />
+    <Compile Include="Datos\Interfaces\IMenu.cs" />
     <Compile Include="Datos\Interfaces\IPais.cs" />
     <Compile Include="Datos\Interfaces\IPiso.cs" />
     <Compile Include="Datos\Interfaces\IPuesto.cs" />
@@ -297,6 +299,7 @@
     <Compile Include="Servicios\EstadoHabitacionService.cs" />
     <Compile Include="Servicios\HabitacionService.cs" />
     <Compile Include="Servicios\HuespedService.cs" />
+    <Compile Include="Servicios\MenuService.cs" />
     <Compile Include="Servicios\PaisService.cs" />
     <Compile Include="Servicios\PisoService.cs" />
     <Compile Include="Servicios\PuestoService.cs" />

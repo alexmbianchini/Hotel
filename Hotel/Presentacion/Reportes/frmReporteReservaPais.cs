@@ -15,6 +15,9 @@ namespace Hotel.Presentacion
     public partial class frmReporteReservaPais : Form
     {
         ReservaService oReserva = new ReservaService();
+        ComboBoxService oComboBox = new ComboBoxService();
+        PaisService oPais = new PaisService();
+        
         public frmReporteReservaPais()
         {
             InitializeComponent();
@@ -23,6 +26,8 @@ namespace Hotel.Presentacion
         private void frmReporteReservaPais_Load(object sender, EventArgs e)
         {
 
+            oComboBox.CargarCombo(cboPais, oPais.RecuperarTodos(), "nombre", "id");
+
             this.rwPaises.RefreshReport();
         }
 
@@ -30,7 +35,9 @@ namespace Hotel.Presentacion
         {
             if(oReserva.ValidarFechaDesdeMenorFechaHasta(dtpFechaDesde.Value, dtpFechaHasta.Value))
             {
-                var datos = oReserva.RecuperarParaReportePaises(dtpFechaDesde.Value.ToString(), dtpFechaHasta.Value.ToString());
+                int pais = cboPais.SelectedIndex + 1;
+
+                var datos = oReserva.RecuperarParaReportePaises(dtpFechaDesde.Value.ToString(), dtpFechaHasta.Value.ToString(), pais);
 
                 this.rwPaises.LocalReport.DataSources.Clear();
 
