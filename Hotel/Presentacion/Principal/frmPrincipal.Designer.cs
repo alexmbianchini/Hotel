@@ -78,9 +78,10 @@ namespace Hotel.Presentacion
             this.rjButton5.FlatAppearance.BorderSize = 0;
             this.rjButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjButton5.ForeColor = System.Drawing.Color.White;
-            this.rjButton5.Location = new System.Drawing.Point(0, 433);
+            this.rjButton5.Location = new System.Drawing.Point(0, 533);
+            this.rjButton5.Margin = new System.Windows.Forms.Padding(4);
             this.rjButton5.Name = "rjButton5";
-            this.rjButton5.Size = new System.Drawing.Size(201, 69);
+            this.rjButton5.Size = new System.Drawing.Size(268, 85);
             this.rjButton5.TabIndex = 13;
             this.rjButton5.TextColor = System.Drawing.Color.White;
             this.rjButton5.UseVisualStyleBackColor = false;
@@ -96,11 +97,12 @@ namespace Hotel.Presentacion
             this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReportes.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReportes.ForeColor = System.Drawing.Color.White;
-            this.btnReportes.Location = new System.Drawing.Point(0, 369);
+            this.btnReportes.Location = new System.Drawing.Point(0, 454);
+            this.btnReportes.Margin = new System.Windows.Forms.Padding(4);
             this.btnReportes.Name = "btnReportes";
-            this.btnReportes.Size = new System.Drawing.Size(201, 69);
+            this.btnReportes.Size = new System.Drawing.Size(268, 85);
             this.btnReportes.TabIndex = 12;
-            this.btnReportes.Text = "Reportes";
+            this.btnReportes.Text = "Reportes y Estadísticas";
             this.btnReportes.TextColor = System.Drawing.Color.White;
             this.btnReportes.UseVisualStyleBackColor = false;
             this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
@@ -116,9 +118,10 @@ namespace Hotel.Presentacion
             this.btnAdministracion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdministracion.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdministracion.ForeColor = System.Drawing.Color.White;
-            this.btnAdministracion.Location = new System.Drawing.Point(0, 303);
+            this.btnAdministracion.Location = new System.Drawing.Point(0, 373);
+            this.btnAdministracion.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdministracion.Name = "btnAdministracion";
-            this.btnAdministracion.Size = new System.Drawing.Size(201, 69);
+            this.btnAdministracion.Size = new System.Drawing.Size(268, 85);
             this.btnAdministracion.TabIndex = 11;
             this.btnAdministracion.Text = "Administracion";
             this.btnAdministracion.TextColor = System.Drawing.Color.White;
@@ -136,9 +139,10 @@ namespace Hotel.Presentacion
             this.btnMiUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMiUsuario.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMiUsuario.ForeColor = System.Drawing.Color.White;
-            this.btnMiUsuario.Location = new System.Drawing.Point(0, 235);
+            this.btnMiUsuario.Location = new System.Drawing.Point(0, 289);
+            this.btnMiUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.btnMiUsuario.Name = "btnMiUsuario";
-            this.btnMiUsuario.Size = new System.Drawing.Size(201, 69);
+            this.btnMiUsuario.Size = new System.Drawing.Size(268, 85);
             this.btnMiUsuario.TabIndex = 10;
             this.btnMiUsuario.Text = "Mi Usuario";
             this.btnMiUsuario.TextColor = System.Drawing.Color.White;
@@ -156,9 +160,10 @@ namespace Hotel.Presentacion
             this.btnReserva.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReserva.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReserva.ForeColor = System.Drawing.Color.White;
-            this.btnReserva.Location = new System.Drawing.Point(0, 116);
+            this.btnReserva.Location = new System.Drawing.Point(0, 143);
+            this.btnReserva.Margin = new System.Windows.Forms.Padding(4);
             this.btnReserva.Name = "btnReserva";
-            this.btnReserva.Size = new System.Drawing.Size(201, 62);
+            this.btnReserva.Size = new System.Drawing.Size(268, 76);
             this.btnReserva.TabIndex = 9;
             this.btnReserva.Text = "Reserva";
             this.btnReserva.TextColor = System.Drawing.Color.White;
@@ -176,9 +181,10 @@ namespace Hotel.Presentacion
             this.btnHuespedes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHuespedes.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuespedes.ForeColor = System.Drawing.Color.White;
-            this.btnHuespedes.Location = new System.Drawing.Point(0, 170);
+            this.btnHuespedes.Location = new System.Drawing.Point(0, 209);
+            this.btnHuespedes.Margin = new System.Windows.Forms.Padding(4);
             this.btnHuespedes.Name = "btnHuespedes";
-            this.btnHuespedes.Size = new System.Drawing.Size(201, 69);
+            this.btnHuespedes.Size = new System.Drawing.Size(268, 85);
             this.btnHuespedes.TabIndex = 8;
             this.btnHuespedes.Text = "Huespedes";
             this.btnHuespedes.TextColor = System.Drawing.Color.White;
@@ -199,8 +205,9 @@ namespace Hotel.Presentacion
             this.rjButton8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjButton8.ForeColor = System.Drawing.Color.White;
             this.rjButton8.Location = new System.Drawing.Point(0, -2);
+            this.rjButton8.Margin = new System.Windows.Forms.Padding(4);
             this.rjButton8.Name = "rjButton8";
-            this.rjButton8.Size = new System.Drawing.Size(201, 98);
+            this.rjButton8.Size = new System.Drawing.Size(268, 121);
             this.rjButton8.TabIndex = 7;
             this.rjButton8.TextColor = System.Drawing.Color.White;
             this.rjButton8.UseVisualStyleBackColor = false;
@@ -215,8 +222,9 @@ namespace Hotel.Presentacion
             this.btnVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVehiculo.ForeColor = System.Drawing.Color.White;
             this.btnVehiculo.Location = new System.Drawing.Point(0, 0);
+            this.btnVehiculo.Margin = new System.Windows.Forms.Padding(4);
             this.btnVehiculo.Name = "btnVehiculo";
-            this.btnVehiculo.Size = new System.Drawing.Size(150, 40);
+            this.btnVehiculo.Size = new System.Drawing.Size(200, 49);
             this.btnVehiculo.TabIndex = 14;
             this.btnVehiculo.TextColor = System.Drawing.Color.White;
             this.btnVehiculo.UseVisualStyleBackColor = false;
@@ -231,8 +239,9 @@ namespace Hotel.Presentacion
             this.btnHuesped.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHuesped.ForeColor = System.Drawing.Color.White;
             this.btnHuesped.Location = new System.Drawing.Point(0, 0);
+            this.btnHuesped.Margin = new System.Windows.Forms.Padding(4);
             this.btnHuesped.Name = "btnHuesped";
-            this.btnHuesped.Size = new System.Drawing.Size(150, 40);
+            this.btnHuesped.Size = new System.Drawing.Size(200, 49);
             this.btnHuesped.TabIndex = 15;
             this.btnHuesped.TextColor = System.Drawing.Color.White;
             this.btnHuesped.UseVisualStyleBackColor = false;
@@ -247,8 +256,9 @@ namespace Hotel.Presentacion
             this.btnTipoHabitacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTipoHabitacion.ForeColor = System.Drawing.Color.White;
             this.btnTipoHabitacion.Location = new System.Drawing.Point(0, 0);
+            this.btnTipoHabitacion.Margin = new System.Windows.Forms.Padding(4);
             this.btnTipoHabitacion.Name = "btnTipoHabitacion";
-            this.btnTipoHabitacion.Size = new System.Drawing.Size(150, 40);
+            this.btnTipoHabitacion.Size = new System.Drawing.Size(200, 49);
             this.btnTipoHabitacion.TabIndex = 16;
             this.btnTipoHabitacion.TextColor = System.Drawing.Color.White;
             this.btnTipoHabitacion.UseVisualStyleBackColor = false;
@@ -263,8 +273,9 @@ namespace Hotel.Presentacion
             this.btnContra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnContra.ForeColor = System.Drawing.Color.White;
             this.btnContra.Location = new System.Drawing.Point(0, 0);
+            this.btnContra.Margin = new System.Windows.Forms.Padding(4);
             this.btnContra.Name = "btnContra";
-            this.btnContra.Size = new System.Drawing.Size(150, 40);
+            this.btnContra.Size = new System.Drawing.Size(200, 49);
             this.btnContra.TabIndex = 17;
             this.btnContra.TextColor = System.Drawing.Color.White;
             this.btnContra.UseVisualStyleBackColor = false;
@@ -279,8 +290,9 @@ namespace Hotel.Presentacion
             this.btnHabitaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHabitaciones.ForeColor = System.Drawing.Color.White;
             this.btnHabitaciones.Location = new System.Drawing.Point(0, 0);
+            this.btnHabitaciones.Margin = new System.Windows.Forms.Padding(4);
             this.btnHabitaciones.Name = "btnHabitaciones";
-            this.btnHabitaciones.Size = new System.Drawing.Size(150, 40);
+            this.btnHabitaciones.Size = new System.Drawing.Size(200, 49);
             this.btnHabitaciones.TabIndex = 18;
             this.btnHabitaciones.TextColor = System.Drawing.Color.White;
             this.btnHabitaciones.UseVisualStyleBackColor = false;
@@ -295,8 +307,9 @@ namespace Hotel.Presentacion
             this.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUsuarios.ForeColor = System.Drawing.Color.White;
             this.btnUsuarios.Location = new System.Drawing.Point(0, 0);
+            this.btnUsuarios.Margin = new System.Windows.Forms.Padding(4);
             this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(150, 40);
+            this.btnUsuarios.Size = new System.Drawing.Size(200, 49);
             this.btnUsuarios.TabIndex = 19;
             this.btnUsuarios.TextColor = System.Drawing.Color.White;
             this.btnUsuarios.UseVisualStyleBackColor = false;
@@ -312,15 +325,17 @@ namespace Hotel.Presentacion
             this.rjButton1.FlatAppearance.BorderSize = 0;
             this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjButton1.ForeColor = System.Drawing.Color.White;
-            this.rjButton1.Location = new System.Drawing.Point(0, 75);
+            this.rjButton1.Location = new System.Drawing.Point(0, 92);
+            this.rjButton1.Margin = new System.Windows.Forms.Padding(4);
             this.rjButton1.Name = "rjButton1";
-            this.rjButton1.Size = new System.Drawing.Size(201, 55);
+            this.rjButton1.Size = new System.Drawing.Size(268, 68);
             this.rjButton1.TabIndex = 0;
             this.rjButton1.TextColor = System.Drawing.Color.White;
             this.rjButton1.UseVisualStyleBackColor = false;
             // 
             // mstHuespedes
             // 
+            this.mstHuespedes.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.mstHuespedes.IsMainMenu = false;
             this.mstHuespedes.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.huespedToolStripMenuItem,
@@ -329,24 +344,25 @@ namespace Hotel.Presentacion
             this.mstHuespedes.MenuItemTextColor = System.Drawing.Color.Empty;
             this.mstHuespedes.Name = "mstHuespedes";
             this.mstHuespedes.PrimaryColor = System.Drawing.Color.Empty;
-            this.mstHuespedes.Size = new System.Drawing.Size(125, 48);
+            this.mstHuespedes.Size = new System.Drawing.Size(141, 52);
             // 
             // huespedToolStripMenuItem
             // 
             this.huespedToolStripMenuItem.Name = "huespedToolStripMenuItem";
-            this.huespedToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.huespedToolStripMenuItem.Size = new System.Drawing.Size(140, 24);
             this.huespedToolStripMenuItem.Text = "Huesped";
             this.huespedToolStripMenuItem.Click += new System.EventHandler(this.huespedToolStripMenuItem_Click);
             // 
             // vehiculosToolStripMenuItem1
             // 
             this.vehiculosToolStripMenuItem1.Name = "vehiculosToolStripMenuItem1";
-            this.vehiculosToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
+            this.vehiculosToolStripMenuItem1.Size = new System.Drawing.Size(140, 24);
             this.vehiculosToolStripMenuItem1.Text = "Vehiculos";
             this.vehiculosToolStripMenuItem1.Click += new System.EventHandler(this.vehiculosToolStripMenuItem1_Click);
             // 
             // mstMiUsuario
             // 
+            this.mstMiUsuario.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.mstMiUsuario.IsMainMenu = false;
             this.mstMiUsuario.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.contraseñaToolStripMenuItem});
@@ -354,17 +370,18 @@ namespace Hotel.Presentacion
             this.mstMiUsuario.MenuItemTextColor = System.Drawing.Color.Empty;
             this.mstMiUsuario.Name = "mstMiUsuario";
             this.mstMiUsuario.PrimaryColor = System.Drawing.Color.Empty;
-            this.mstMiUsuario.Size = new System.Drawing.Size(135, 26);
+            this.mstMiUsuario.Size = new System.Drawing.Size(153, 28);
             // 
             // contraseñaToolStripMenuItem
             // 
             this.contraseñaToolStripMenuItem.Name = "contraseñaToolStripMenuItem";
-            this.contraseñaToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.contraseñaToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
             this.contraseñaToolStripMenuItem.Text = "Contraseña";
             this.contraseñaToolStripMenuItem.Click += new System.EventHandler(this.contraseñaToolStripMenuItem_Click);
             // 
             // mstAdministracion
             // 
+            this.mstAdministracion.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.mstAdministracion.IsMainMenu = false;
             this.mstAdministracion.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.usuariosToolStripMenuItem,
@@ -374,31 +391,32 @@ namespace Hotel.Presentacion
             this.mstAdministracion.MenuItemTextColor = System.Drawing.Color.Empty;
             this.mstAdministracion.Name = "mstAdministracion";
             this.mstAdministracion.PrimaryColor = System.Drawing.Color.Empty;
-            this.mstAdministracion.Size = new System.Drawing.Size(159, 70);
+            this.mstAdministracion.Size = new System.Drawing.Size(186, 76);
             // 
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(185, 24);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
             // habitacionesToolStripMenuItem
             // 
             this.habitacionesToolStripMenuItem.Name = "habitacionesToolStripMenuItem";
-            this.habitacionesToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.habitacionesToolStripMenuItem.Size = new System.Drawing.Size(185, 24);
             this.habitacionesToolStripMenuItem.Text = "Habitaciones";
             this.habitacionesToolStripMenuItem.Click += new System.EventHandler(this.habitacionesToolStripMenuItem_Click);
             // 
             // tipoHabitacionToolStripMenuItem
             // 
             this.tipoHabitacionToolStripMenuItem.Name = "tipoHabitacionToolStripMenuItem";
-            this.tipoHabitacionToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.tipoHabitacionToolStripMenuItem.Size = new System.Drawing.Size(185, 24);
             this.tipoHabitacionToolStripMenuItem.Text = "Tipo Habitacion";
             this.tipoHabitacionToolStripMenuItem.Click += new System.EventHandler(this.tipoHabitacionToolStripMenuItem_Click);
             // 
             // mstReportes
             // 
+            this.mstReportes.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.mstReportes.IsMainMenu = false;
             this.mstReportes.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.reporteReservasToolStripMenuItem,
@@ -411,58 +429,58 @@ namespace Hotel.Presentacion
             this.mstReportes.MenuItemTextColor = System.Drawing.Color.Empty;
             this.mstReportes.Name = "mstReportes";
             this.mstReportes.PrimaryColor = System.Drawing.Color.Empty;
-            this.mstReportes.Size = new System.Drawing.Size(224, 158);
+            this.mstReportes.Size = new System.Drawing.Size(323, 176);
             // 
             // reporteReservasToolStripMenuItem
             // 
             this.reporteReservasToolStripMenuItem.Name = "reporteReservasToolStripMenuItem";
-            this.reporteReservasToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+            this.reporteReservasToolStripMenuItem.Size = new System.Drawing.Size(322, 24);
             this.reporteReservasToolStripMenuItem.Text = "Reporte Reservas";
             this.reporteReservasToolStripMenuItem.Click += new System.EventHandler(this.reporteReservasToolStripMenuItem_Click);
             // 
             // estadisticasTipoHabitacionToolStripMenuItem
             // 
             this.estadisticasTipoHabitacionToolStripMenuItem.Name = "estadisticasTipoHabitacionToolStripMenuItem";
-            this.estadisticasTipoHabitacionToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+            this.estadisticasTipoHabitacionToolStripMenuItem.Size = new System.Drawing.Size(322, 24);
             this.estadisticasTipoHabitacionToolStripMenuItem.Text = "Estadisticas Tipo Habitacion";
             this.estadisticasTipoHabitacionToolStripMenuItem.Click += new System.EventHandler(this.estadisticasTipoHabitacionToolStripMenuItem_Click);
             // 
             // reporteRoomServiceToolStripMenuItem
             // 
             this.reporteRoomServiceToolStripMenuItem.Name = "reporteRoomServiceToolStripMenuItem";
-            this.reporteRoomServiceToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+            this.reporteRoomServiceToolStripMenuItem.Size = new System.Drawing.Size(322, 24);
             this.reporteRoomServiceToolStripMenuItem.Text = "Reporte Room Service";
             this.reporteRoomServiceToolStripMenuItem.Click += new System.EventHandler(this.reporteRoomServiceToolStripMenuItem_Click);
             // 
             // reporteCocherasToolStripMenuItem
             // 
             this.reporteCocherasToolStripMenuItem.Name = "reporteCocherasToolStripMenuItem";
-            this.reporteCocherasToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+            this.reporteCocherasToolStripMenuItem.Size = new System.Drawing.Size(322, 24);
             this.reporteCocherasToolStripMenuItem.Text = "Reporte Cocheras";
             this.reporteCocherasToolStripMenuItem.Click += new System.EventHandler(this.reporteCocherasToolStripMenuItem_Click);
             // 
             // reportePaisToolStripMenuItem
             // 
             this.reportePaisToolStripMenuItem.Name = "reportePaisToolStripMenuItem";
-            this.reportePaisToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+            this.reportePaisToolStripMenuItem.Size = new System.Drawing.Size(322, 24);
             this.reportePaisToolStripMenuItem.Text = "Reporte Pais";
             this.reportePaisToolStripMenuItem.Click += new System.EventHandler(this.reportePaisToolStripMenuItem_Click);
             // 
             // reporteNumeroHabitacionToolStripMenuItem
             // 
             this.reporteNumeroHabitacionToolStripMenuItem.Name = "reporteNumeroHabitacionToolStripMenuItem";
-            this.reporteNumeroHabitacionToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
-            this.reporteNumeroHabitacionToolStripMenuItem.Text = "Reporte Numero Habitacion";
+            this.reporteNumeroHabitacionToolStripMenuItem.Size = new System.Drawing.Size(322, 24);
+            this.reporteNumeroHabitacionToolStripMenuItem.Text = "Estadisticas Cocheras por Habitacion";
             this.reporteNumeroHabitacionToolStripMenuItem.Click += new System.EventHandler(this.reporteNumeroHabitacionToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImage = global::Hotel.Properties.Resources.hotelfondo;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(766, 463);
+            this.ClientSize = new System.Drawing.Size(1021, 570);
             this.Controls.Add(this.rjButton5);
             this.Controls.Add(this.btnReportes);
             this.Controls.Add(this.btnAdministracion);
@@ -480,7 +498,7 @@ namespace Hotel.Presentacion
             this.ForeColor = System.Drawing.SystemColors.Control;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

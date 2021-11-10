@@ -412,6 +412,10 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
+                                  <Value>$ </Value>
+                                  <Style />
+                                </TextRun>
+                                <TextRun>
                                   <Value>=Fields!precio_unitario_cochera.Value</Value>
                                   <Style />
                                 </TextRun>
@@ -441,6 +445,10 @@
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
+                                <TextRun>
+                                  <Value>$ </Value>
+                                  <Style />
+                                </TextRun>
                                 <TextRun>
                                   <Value>=Fields!cantidad_dias.Value * Fields!precio_unitario_cochera.Value</Value>
                                   <Style />
@@ -534,6 +542,10 @@
             <Paragraphs>
               <Paragraph>
                 <TextRuns>
+                  <TextRun>
+                    <Value>$ </Value>
+                    <Style />
+                  </TextRun>
                   <TextRun>
                     <Value>=Parameters!ParamTotal.Value</Value>
                     <Style />
